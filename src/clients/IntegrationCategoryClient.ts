@@ -1,0 +1,38 @@
+/**
+ * ProjectManager API for TypeScript
+ *
+ * (c) 2023-2023 ProjectManager.com, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     ProjectManager.com <support@projectmanager.com>
+ * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
+ */
+
+import { ProjectManagerClient } from "..";
+import { AstroResult } from "..";
+import { AstroResult } from "..";
+
+export class IntegrationCategoryClient {
+  private readonly client: ProjectManagerClient;
+
+  /**
+   * Internal constructor for this client library
+   */
+  public constructor(client: ProjectManagerClient) {
+    this.client = client;
+  }
+
+  /**
+   * Retrieves the list of available IntegrationProvider categories.
+   *
+   * An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
+   *
+   */
+  retrieveProviderCategories(): Promise<AstroResult<AstroResult<IntegrationCategoryDtoList>>> {
+    const url = `/api/data/integrations/categories`;
+    return this.client.request<AstroResult<IntegrationCategoryDtoList>>("get", url, null, null);
+  }
+}
