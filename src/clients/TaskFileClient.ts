@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { FileDto } from "..";
 
 export class TaskFileClient {
   private readonly client: ProjectManagerClient;
@@ -35,7 +35,7 @@ export class TaskFileClient {
    * @param taskId The reference to the task
    * @param filename The full path of a file to upload to the API
    */
-  uploadTaskFile(taskId: string, filename: string): Promise<AstroResult<AstroResult<FileDto>>> {
+  uploadTaskFile(taskId: string, filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/tasks/${taskId}/files`;
     return this.client.fileUpload("post", url, null, filename);
   }

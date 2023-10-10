@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ProjectCustomerDto } from "..";
 
 export class ProjectCustomerClient {
   private readonly client: ProjectManagerClient;
@@ -31,8 +31,8 @@ export class ProjectCustomerClient {
    * A ProjectCustomer is a code used to identify costs within your Projects.  Each ProjectCustomer has a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared among Projects.
    *
    */
-  retrieveProjectCustomers(): Promise<AstroResult<AstroResult<ProjectCustomerDtoList>>> {
+  retrieveProjectCustomers(): Promise<AstroResult<ProjectCustomerDto[]>> {
     const url = `/api/data/projects/customers`;
-    return this.client.request<AstroResult<ProjectCustomerDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectCustomerDto[]>>("get", url, null, null);
   }
 }

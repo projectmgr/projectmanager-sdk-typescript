@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { IntegrationDto } from "..";
+import { NewIntegrationInstanceDto } from "..";
+import { CreateIntegrationInstanceDto } from "..";
 
 export class IntegrationClient {
   private readonly client: ProjectManagerClient;
@@ -32,7 +34,7 @@ export class IntegrationClient {
    *
    * @param integrationId The unique identifier of this Integration
    */
-  retrieveIntegration(integrationId: string): Promise<AstroResult<AstroResult<IntegrationDto>>> {
+  retrieveIntegration(integrationId: string): Promise<AstroResult<IntegrationDto>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<IntegrationDto>>("get", url, null, null);
   }
@@ -44,7 +46,7 @@ export class IntegrationClient {
    *
    * @param integrationId The unique identifier of the Integration to enable
    */
-  enableIntegration(integrationId: string): Promise<AstroResult<AstroResult<IntegrationDto>>> {
+  enableIntegration(integrationId: string): Promise<AstroResult<IntegrationDto>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<IntegrationDto>>("post", url, null, null);
   }
@@ -56,9 +58,9 @@ export class IntegrationClient {
    *
    * @param integrationId The unique identifier of the Integration to disable
    */
-  disableIntegration(integrationId: string): Promise<AstroResult<AstroResult<>>> {
+  disableIntegration(integrationId: string): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/${integrationId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 
   /**
@@ -67,9 +69,9 @@ export class IntegrationClient {
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    */
-  retrieveAllIntegrations(): Promise<AstroResult<AstroResult<IntegrationDtoList>>> {
+  retrieveAllIntegrations(): Promise<AstroResult<IntegrationDto[]>> {
     const url = `/api/data/integrations`;
-    return this.client.request<AstroResult<IntegrationDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<IntegrationDto[]>>("get", url, null, null);
   }
 
   /**
@@ -80,7 +82,7 @@ export class IntegrationClient {
    * @param integrationId The unique identifier of the Integration to add to this Workspace
    * @param body The information about this Integration to add
    */
-  addIntegrationInstance(integrationId: string, body: CreateIntegrationInstanceDto): Promise<AstroResult<AstroResult<NewIntegrationInstanceDto>>> {
+  addIntegrationInstance(integrationId: string, body: CreateIntegrationInstanceDto): Promise<AstroResult<NewIntegrationInstanceDto>> {
     const url = `/api/data/integrations/${integrationId}/instance`;
     return this.client.request<AstroResult<NewIntegrationInstanceDto>>("post", url, null, body);
   }
@@ -92,8 +94,8 @@ export class IntegrationClient {
    *
    * @param integrationInstanceId The unique identifier of the IntegrationInstance to remove from this Workspace
    */
-  removeIntegrationInstance(integrationInstanceId: string): Promise<AstroResult<AstroResult<>>> {
+  removeIntegrationInstance(integrationInstanceId: string): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/instances/${integrationInstanceId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }

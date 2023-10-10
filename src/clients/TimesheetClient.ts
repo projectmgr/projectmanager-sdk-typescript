@@ -13,7 +13,11 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { TimesheetResponseDto } from "..";
+import { TimesheetCreateRequestDto } from "..";
+import { TimesheetGetResponseDto } from "..";
+import { TimesheetUpdateRequestDto } from "..";
+import { TimesheetAdminTypeDto } from "..";
 
 export class TimesheetClient {
   private readonly client: ProjectManagerClient;
@@ -30,7 +34,7 @@ export class TimesheetClient {
    *
    * @param body Payload
    */
-  createtimeentry(body: TimesheetCreateRequestDto): Promise<AstroResult<AstroResult<TimesheetResponseDto>>> {
+  createtimeentry(body: TimesheetCreateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
     const url = `/api/data/timesheets`;
     return this.client.request<AstroResult<TimesheetResponseDto>>("post", url, null, body);
   }
@@ -47,7 +51,7 @@ export class TimesheetClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  queryTimeSheets($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<AstroResult<TimesheetGetResponseDtoList>>> {
+  queryTimeSheets($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<TimesheetGetResponseDto[]>> {
     const url = `/api/data/timesheets`;
     const options = {
       params: {
@@ -59,7 +63,7 @@ export class TimesheetClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<TimesheetGetResponseDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<TimesheetGetResponseDto[]>>("get", url, options, null);
   }
 
   /**
@@ -67,9 +71,9 @@ export class TimesheetClient {
    *
    * @param timesheetId time entry id
    */
-  deletetimeentry(timesheetId: string): Promise<AstroResult<AstroResult<>>> {
+  deletetimeentry(timesheetId: string): Promise<AstroResult<object>> {
     const url = `/api/data/timesheets/${timesheetId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 
   /**
@@ -78,7 +82,7 @@ export class TimesheetClient {
    * @param timesheetId time entry id
    * @param body payload
    */
-  updatetimeentry(timesheetId: string, body: TimesheetUpdateRequestDto): Promise<AstroResult<AstroResult<TimesheetResponseDto>>> {
+  updatetimeentry(timesheetId: string, body: TimesheetUpdateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
     const url = `/api/data/timesheets/${timesheetId}`;
     return this.client.request<AstroResult<TimesheetResponseDto>>("put", url, null, body);
   }
@@ -87,8 +91,8 @@ export class TimesheetClient {
    * Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
    *
    */
-  returnsactiveadmintasksthatareusedtoreporttime(): Promise<AstroResult<AstroResult<TimesheetAdminTypeDtoList>>> {
+  returnsactiveadmintasksthatareusedtoreporttime(): Promise<AstroResult<TimesheetAdminTypeDto[]>> {
     const url = `/api/data/timesheets/admin-tasks`;
-    return this.client.request<AstroResult<TimesheetAdminTypeDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<TimesheetAdminTypeDto[]>>("get", url, null, null);
   }
 }

@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ProjectStatusDto } from "..";
 
 export class ProjectStatusClient {
   private readonly client: ProjectManagerClient;
@@ -31,8 +31,8 @@ export class ProjectStatusClient {
    * A ProjectStatus is a named condition used by your business to categorize the completion level of Tasks and Projects within your Workspace.  You can name your ProjectStatus levels anything you like and you can reorganize the order of the ProjectPriority levels at any time.
    *
    */
-  retrieveProjectStatuses(): Promise<AstroResult<AstroResult<ProjectStatusDtoList>>> {
+  retrieveProjectStatuses(): Promise<AstroResult<ProjectStatusDto[]>> {
     const url = `/api/data/projects/statuses`;
-    return this.client.request<AstroResult<ProjectStatusDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectStatusDto[]>>("get", url, null, null);
   }
 }

@@ -13,7 +13,8 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { DashboardSettingDto } from "..";
+import { DashboardSettingCreateDto } from "..";
 
 export class DashboardClient {
   private readonly client: ProjectManagerClient;
@@ -30,7 +31,7 @@ export class DashboardClient {
    *
    * @param type The dashboard type that is not custom
    */
-  retrieveDashboardUserSettings(type: DashboardType): Promise<AstroResult<AstroResult<DashboardSettingDto>>> {
+  retrieveDashboardUserSettings(type: DashboardType): Promise<AstroResult<DashboardSettingDto>> {
     const url = `/api/data/dashboards/settings/${type}`;
     return this.client.request<AstroResult<DashboardSettingDto>>("get", url, null, null);
   }
@@ -40,7 +41,7 @@ export class DashboardClient {
    *
    * @param body User dashboard settings object
    */
-  createorUpdateUserDashboardSettings(body: DashboardSettingCreateDto): Promise<AstroResult<AstroResult<DashboardSettingDto>>> {
+  createorUpdateUserDashboardSettings(body: DashboardSettingCreateDto): Promise<AstroResult<DashboardSettingDto>> {
     const url = `/api/data/dashboards/settings`;
     return this.client.request<AstroResult<DashboardSettingDto>>("post", url, null, body);
   }

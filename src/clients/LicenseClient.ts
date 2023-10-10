@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { LicenseDto } from "..";
 
 export class LicenseClient {
   private readonly client: ProjectManagerClient;
@@ -31,9 +31,9 @@ export class LicenseClient {
    * Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
    *
    */
-  retrieveLicenses(): Promise<AstroResult<AstroResult<LicenseDtoList>>> {
+  retrieveLicenses(): Promise<AstroResult<LicenseDto[]>> {
     const url = `/api/data/license`;
-    return this.client.request<AstroResult<LicenseDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<LicenseDto[]>>("get", url, null, null);
   }
 
   /**
@@ -43,8 +43,8 @@ export class LicenseClient {
    *
    * @param bundleSku Information about the SKU you wish to add to your Workspace
    */
-  addLicense(bundleSku: string): Promise<AstroResult<AstroResult<LicenseDtoList>>> {
+  addLicense(bundleSku: string): Promise<AstroResult<LicenseDto[]>> {
     const url = `/api/data/license/${bundleSku}/try`;
-    return this.client.request<AstroResult<LicenseDtoList>>("post", url, null, null);
+    return this.client.request<AstroResult<LicenseDto[]>>("post", url, null, null);
   }
 }

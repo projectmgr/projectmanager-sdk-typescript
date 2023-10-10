@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { IntegrationProviderDto } from "..";
+import { DirectLinkDto } from "..";
+import { AuthenticationStatusDto } from "..";
 
 export class IntegrationProviderClient {
   private readonly client: ProjectManagerClient;
@@ -31,9 +33,9 @@ export class IntegrationProviderClient {
    * An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    */
-  listProviders(): Promise<AstroResult<AstroResult<IntegrationProviderDtoList>>> {
+  listProviders(): Promise<AstroResult<IntegrationProviderDto[]>> {
     const url = `/api/data/integrations/providers`;
-    return this.client.request<AstroResult<IntegrationProviderDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<IntegrationProviderDto[]>>("get", url, null, null);
   }
 
   /**
@@ -43,7 +45,7 @@ export class IntegrationProviderClient {
    *
    * @param providerId The unique identifier of the IntegrationProvider for which you are requesting authentication information
    */
-  activateIntegrationProvider(providerId: string): Promise<AstroResult<AstroResult<DirectLinkDto>>> {
+  activateIntegrationProvider(providerId: string): Promise<AstroResult<DirectLinkDto>> {
     const url = `/api/data/integrations/providers/${providerId}`;
     return this.client.request<AstroResult<DirectLinkDto>>("post", url, null, null);
   }
@@ -54,9 +56,9 @@ export class IntegrationProviderClient {
    * @param providerId The identifier to the provider
    * @param body Specify the auth status
    */
-  updateIntegrationProvider(providerId: string, body: AuthenticationStatusDto): Promise<AstroResult<AstroResult<>>> {
+  updateIntegrationProvider(providerId: string, body: AuthenticationStatusDto): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/providers/${providerId}`;
-    return this.client.request<AstroResult<>>("put", url, null, body);
+    return this.client.request<AstroResult<object>>("put", url, null, body);
   }
 
   /**
@@ -64,9 +66,9 @@ export class IntegrationProviderClient {
    *
    * @param providerId The identifier to the provider
    */
-  deactivateIntegrationProvider(providerId: string): Promise<AstroResult<AstroResult<>>> {
+  deactivateIntegrationProvider(providerId: string): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/providers/${providerId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 
   /**
@@ -76,7 +78,7 @@ export class IntegrationProviderClient {
    *
    * @param providerId The unique identifier of the IntegrationProvider for which you are requesting authentication information
    */
-  createUserIntegrationProviderConnection(providerId: string): Promise<AstroResult<AstroResult<DirectLinkDto>>> {
+  createUserIntegrationProviderConnection(providerId: string): Promise<AstroResult<DirectLinkDto>> {
     const url = `/api/data/integrations/providers/${providerId}/user-connection`;
     return this.client.request<AstroResult<DirectLinkDto>>("post", url, null, null);
   }
@@ -87,8 +89,8 @@ export class IntegrationProviderClient {
    * @param providerId The identifier to the provider
    * @param body Specify the auth status
    */
-  updateUserIntegrationProviderConnection(providerId: string, body: AuthenticationStatusDto): Promise<AstroResult<AstroResult<>>> {
+  updateUserIntegrationProviderConnection(providerId: string, body: AuthenticationStatusDto): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/providers/${providerId}/user-connection`;
-    return this.client.request<AstroResult<>>("put", url, null, body);
+    return this.client.request<AstroResult<object>>("put", url, null, body);
   }
 }

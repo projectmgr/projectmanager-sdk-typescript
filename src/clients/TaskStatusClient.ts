@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { TaskStatusDto } from "..";
+import { TaskStatusCreateDto } from "..";
+import { TaskStatusUpdateDto } from "..";
 
 export class TaskStatusClient {
   private readonly client: ProjectManagerClient;
@@ -32,9 +34,9 @@ export class TaskStatusClient {
    *
    * @param projectId The unique identifier of the Project to retrieve TaskStatuses
    */
-  retrieveTaskStatuses(projectId: string): Promise<AstroResult<AstroResult<TaskStatusDtoList>>> {
+  retrieveTaskStatuses(projectId: string): Promise<AstroResult<TaskStatusDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses`;
-    return this.client.request<AstroResult<TaskStatusDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<TaskStatusDto[]>>("get", url, null, null);
   }
 
   /**
@@ -45,7 +47,7 @@ export class TaskStatusClient {
    * @param projectId The unique identifier of the Project for the new TaskStatus
    * @param body Information about the new TaskStatus level to create within this Project
    */
-  createTaskStatus(projectId: string, body: TaskStatusCreateDto): Promise<AstroResult<AstroResult<TaskStatusDto>>> {
+  createTaskStatus(projectId: string, body: TaskStatusCreateDto): Promise<AstroResult<TaskStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses`;
     return this.client.request<AstroResult<TaskStatusDto>>("post", url, null, body);
   }
@@ -58,7 +60,7 @@ export class TaskStatusClient {
    * @param projectId The unique identifier of the Project for the new TaskStatus
    * @param body Information about the existing TaskStatus level to update within this Project
    */
-  updateTaskStatus(projectId: string, body: TaskStatusUpdateDto): Promise<AstroResult<AstroResult<TaskStatusDto>>> {
+  updateTaskStatus(projectId: string, body: TaskStatusUpdateDto): Promise<AstroResult<TaskStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses`;
     return this.client.request<AstroResult<TaskStatusDto>>("put", url, null, body);
   }
@@ -71,8 +73,8 @@ export class TaskStatusClient {
    * @param projectId The unique identifier of the Project for the TaskStatus level to delete
    * @param taskStatusId The Id of the TaskStatus level to be removed.
    */
-  deleteTaskStatus(projectId: string, taskStatusId: string): Promise<AstroResult<AstroResult<>>> {
+  deleteTaskStatus(projectId: string, taskStatusId: string): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses/${taskStatusId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }

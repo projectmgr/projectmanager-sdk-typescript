@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { UpdateRequestDto } from "..";
 
 export class FileClient {
   private readonly client: ProjectManagerClient;
@@ -35,14 +35,14 @@ export class FileClient {
    * @param documentId The unique identifier of the document to download
    * @param type If you specify a type of `html`, processes the file using text encoding, otherwise binary
    */
-  downloadFile(documentId: string, type?: string): Promise<AstroResult<AstroResult<>>> {
+  downloadFile(documentId: string, type?: string): Promise<AstroResult<object>> {
     const url = `/api/data/files/${documentId}/download`;
     const options = {
       params: {
         type,
       },
     };
-    return this.client.request<AstroResult<>>("get", url, options, null);
+    return this.client.request<AstroResult<object>>("get", url, options, null);
   }
 
   /**
@@ -55,8 +55,8 @@ export class FileClient {
    * @param fileId The unique identifier of the File to update
    * @param body Information to change about the File and its location
    */
-  updateFile(fileId: string, body: UpdateRequestDto): Promise<AstroResult<AstroResult<>>> {
+  updateFile(fileId: string, body: UpdateRequestDto): Promise<AstroResult<object>> {
     const url = `/api/data/files/${fileId}`;
-    return this.client.request<AstroResult<>>("put", url, null, body);
+    return this.client.request<AstroResult<object>>("put", url, null, body);
   }
 }

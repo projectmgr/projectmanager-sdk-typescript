@@ -13,7 +13,11 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { GetProjectFieldsResponseDto } from "..";
+import { CreateProjectFieldResponseDto } from "..";
+import { CreateProjectFieldDto } from "..";
+import { DeleteProjectFieldDto } from "..";
+import { UpdateProjectFieldValueDto } from "..";
 
 export class ProjectFieldClient {
   private readonly client: ProjectManagerClient;
@@ -31,9 +35,9 @@ export class ProjectFieldClient {
    * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
    *
    */
-  retrieveProjectFields(): Promise<AstroResult<AstroResult<GetProjectFieldsResponseDtoList>>> {
+  retrieveProjectFields(): Promise<AstroResult<GetProjectFieldsResponseDto[]>> {
     const url = `/api/data/projects/fields`;
-    return this.client.request<AstroResult<GetProjectFieldsResponseDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<GetProjectFieldsResponseDto[]>>("get", url, null, null);
   }
 
   /**
@@ -43,7 +47,7 @@ export class ProjectFieldClient {
    *
    * @param body Information about the ProjectField to create
    */
-  createProjectField(body: CreateProjectFieldDto): Promise<AstroResult<AstroResult<CreateProjectFieldResponseDto>>> {
+  createProjectField(body: CreateProjectFieldDto): Promise<AstroResult<CreateProjectFieldResponseDto>> {
     const url = `/api/data/projects/fields`;
     return this.client.request<AstroResult<CreateProjectFieldResponseDto>>("post", url, null, body);
   }
@@ -55,9 +59,9 @@ export class ProjectFieldClient {
    *
    * @param body The identity of the ProjectField to delete
    */
-  deleteProjectField(body: DeleteProjectFieldDto): Promise<AstroResult<AstroResult<>>> {
+  deleteProjectField(body: DeleteProjectFieldDto): Promise<AstroResult<object>> {
     const url = `/api/data/projects/fields`;
-    return this.client.request<AstroResult<>>("delete", url, null, body);
+    return this.client.request<AstroResult<object>>("delete", url, null, body);
   }
 
   /**
@@ -69,8 +73,8 @@ export class ProjectFieldClient {
    * @param fieldId The unique identifier of this ProjectField
    * @param body The new information for this ProjectField
    */
-  updateProjectField(projectId: string, fieldId: string, body: UpdateProjectFieldValueDto): Promise<AstroResult<AstroResult<>>> {
+  updateProjectField(projectId: string, fieldId: string, body: UpdateProjectFieldValueDto): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/fields/${fieldId}`;
-    return this.client.request<AstroResult<>>("put", url, null, body);
+    return this.client.request<AstroResult<object>>("put", url, null, body);
   }
 }

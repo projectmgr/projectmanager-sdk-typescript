@@ -13,7 +13,13 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { TaskDto } from "..";
+import { TaskDetailsDto } from "..";
+import { ChangeSetStatusDto } from "..";
+import { TaskUpdateDto } from "..";
+import { TaskCreateDto } from "..";
+import { TaskPriorityDto } from "..";
+import { BulkTaskCreateDto } from "..";
 
 export class TaskClient {
   private readonly client: ProjectManagerClient;
@@ -37,7 +43,7 @@ export class TaskClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  queryTasks($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<AstroResult<TaskDtoList>>> {
+  queryTasks($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<TaskDto[]>> {
     const url = `/api/data/tasks`;
     const options = {
       params: {
@@ -49,7 +55,7 @@ export class TaskClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<TaskDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<TaskDto[]>>("get", url, options, null);
   }
 
   /**
@@ -59,7 +65,7 @@ export class TaskClient {
    *
    * @param taskId The unique identifier or short ID of the Task to retrieve
    */
-  retrieveTask(taskId: string): Promise<AstroResult<AstroResult<TaskDetailsDto>>> {
+  retrieveTask(taskId: string): Promise<AstroResult<TaskDetailsDto>> {
     const url = `/api/data/tasks/${taskId}`;
     return this.client.request<AstroResult<TaskDetailsDto>>("get", url, null, null);
   }
@@ -76,7 +82,7 @@ export class TaskClient {
    * @param taskId The unique identifier of the Task to update
    * @param body All non-null fields in this object will replace existing data in the Task
    */
-  updateTask(taskId: string, body: TaskUpdateDto): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  updateTask(taskId: string, body: TaskUpdateDto): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -90,7 +96,7 @@ export class TaskClient {
    *
    * @param taskId Unique identifier of the Task to delete
    */
-  deleteTask(taskId: string): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  deleteTask(taskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, null);
   }
@@ -103,7 +109,7 @@ export class TaskClient {
    * @param projectId The unique identifier of the Project that will contain this Task
    * @param body The new Task to create
    */
-  createTask(projectId: string, body: TaskCreateDto): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  createTask(projectId: string, body: TaskCreateDto): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -116,9 +122,9 @@ export class TaskClient {
    * Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
    *
    */
-  retrieveTaskPriorities(): Promise<AstroResult<AstroResult<TaskPriorityDtoList>>> {
+  retrieveTaskPriorities(): Promise<AstroResult<TaskPriorityDto[]>> {
     const url = `/api/data/tasks/priorities`;
-    return this.client.request<AstroResult<TaskPriorityDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<TaskPriorityDto[]>>("get", url, null, null);
   }
 
   /**
@@ -129,8 +135,8 @@ export class TaskClient {
    * @param projectId The unique identifier of the Project that will contain these Tasks
    * @param body The list of new Tasks to create
    */
-  createManyTasks(projectId: string, body: BulkTaskCreateDto[]): Promise<AstroResult<AstroResult<ChangeSetStatusDtoList>>> {
+  createManyTasks(projectId: string, body: BulkTaskCreateDto[]): Promise<AstroResult<ChangeSetStatusDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/bulk`;
-    return this.client.request<AstroResult<ChangeSetStatusDtoList>>("post", url, null, body);
+    return this.client.request<AstroResult<ChangeSetStatusDto[]>>("post", url, null, body);
   }
 }

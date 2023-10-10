@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ResourceTeamDto } from "..";
+import { CreateResourceTeamDto } from "..";
+import { UpdateResourceTeamDto } from "..";
 
 export class ResourceTeamClient {
   private readonly client: ProjectManagerClient;
@@ -37,7 +39,7 @@ export class ResourceTeamClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  retrieveResourceTeams($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<AstroResult<ResourceTeamDtoList>>> {
+  retrieveResourceTeams($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
     const url = `/api/data/resources/teams`;
     const options = {
       params: {
@@ -49,7 +51,7 @@ export class ResourceTeamClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<ResourceTeamDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<ResourceTeamDto[]>>("get", url, options, null);
   }
 
   /**
@@ -57,7 +59,7 @@ export class ResourceTeamClient {
    *
    * @param body The name of the team to create.
    */
-  createResourceTeam(body: CreateResourceTeamDto): Promise<AstroResult<AstroResult<ResourceTeamDto>>> {
+  createResourceTeam(body: CreateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
     const url = `/api/data/resources/teams`;
     return this.client.request<AstroResult<ResourceTeamDto>>("post", url, null, body);
   }
@@ -67,9 +69,9 @@ export class ResourceTeamClient {
    *
    * @param resourceTeamId The Id of the team to be removed.
    */
-  deleteResourceTeam(resourceTeamId: string): Promise<AstroResult<AstroResult<>>> {
+  deleteResourceTeam(resourceTeamId: string): Promise<AstroResult<object>> {
     const url = `/api/data/resources/teams/${resourceTeamId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 
   /**
@@ -78,7 +80,7 @@ export class ResourceTeamClient {
    * @param teamresourceId The id of the resource team
    * @param body The name of the team to Update.
    */
-  updateResourceTeam(teamresourceId: string, body: UpdateResourceTeamDto): Promise<AstroResult<AstroResult<ResourceTeamDto>>> {
+  updateResourceTeam(teamresourceId: string, body: UpdateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
     const url = `/api/data/resources/teams/${teamresourceId}`;
     return this.client.request<AstroResult<ResourceTeamDto>>("put", url, null, body);
   }

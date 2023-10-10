@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ChangesetGetResponseDto } from "..";
 
 export class ChangesetClient {
   private readonly client: ProjectManagerClient;
@@ -34,7 +34,7 @@ export class ChangesetClient {
    *
    * @param changeSetId The unique ID number of the Changeset to retrieve
    */
-  retrieveChangeset(changeSetId: string): Promise<AstroResult<AstroResult<ChangesetGetResponseDto>>> {
+  retrieveChangeset(changeSetId: string): Promise<AstroResult<ChangesetGetResponseDto>> {
     const url = `/api/data/changesets/${changeSetId}`;
     return this.client.request<AstroResult<ChangesetGetResponseDto>>("get", url, null, null);
   }
@@ -50,7 +50,7 @@ export class ChangesetClient {
    *
    * @param changeSetId The unique ID number of the Changeset to retrieve
    */
-  retrieveCompletedChangeset(changeSetId: string): Promise<AstroResult<AstroResult<ChangesetGetResponseDto>>> {
+  retrieveCompletedChangeset(changeSetId: string): Promise<AstroResult<ChangesetGetResponseDto>> {
     const url = `/api/data/changesets/${changeSetId}/poll`;
     return this.client.request<AstroResult<ChangesetGetResponseDto>>("get", url, null, null);
   }

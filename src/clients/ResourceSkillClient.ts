@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ResourceSkillDto } from "..";
+import { CreateResourceSkillDto } from "..";
+import { UpdateResourceSkillDto } from "..";
 
 export class ResourceSkillClient {
   private readonly client: ProjectManagerClient;
@@ -37,7 +39,7 @@ export class ResourceSkillClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  retrieveResourceSkills($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<AstroResult<ResourceSkillDtoList>>> {
+  retrieveResourceSkills($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<ResourceSkillDto[]>> {
     const url = `/api/data/resources/skills`;
     const options = {
       params: {
@@ -49,7 +51,7 @@ export class ResourceSkillClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<ResourceSkillDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<ResourceSkillDto[]>>("get", url, options, null);
   }
 
   /**
@@ -57,7 +59,7 @@ export class ResourceSkillClient {
    *
    * @param body The name of the skill to create.
    */
-  createResourceSkill(body: CreateResourceSkillDto): Promise<AstroResult<AstroResult<ResourceSkillDto>>> {
+  createResourceSkill(body: CreateResourceSkillDto): Promise<AstroResult<ResourceSkillDto>> {
     const url = `/api/data/resources/skills`;
     return this.client.request<AstroResult<ResourceSkillDto>>("post", url, null, body);
   }
@@ -68,7 +70,7 @@ export class ResourceSkillClient {
    * @param skillId The id of the skill to update.
    * @param body The data of the skill to update.
    */
-  updateResourceSkill(skillId: string, body: UpdateResourceSkillDto): Promise<AstroResult<AstroResult<ResourceSkillDto>>> {
+  updateResourceSkill(skillId: string, body: UpdateResourceSkillDto): Promise<AstroResult<ResourceSkillDto>> {
     const url = `/api/data/resources/skills/${skillId}`;
     return this.client.request<AstroResult<ResourceSkillDto>>("put", url, null, body);
   }
@@ -78,8 +80,8 @@ export class ResourceSkillClient {
    *
    * @param resourceSkillId The Id of the skill to be removed.
    */
-  deleteResourceSkill(resourceSkillId: string): Promise<AstroResult<AstroResult<>>> {
+  deleteResourceSkill(resourceSkillId: string): Promise<AstroResult<object>> {
     const url = `/api/data/resources/skills/${resourceSkillId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }

@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { TagDto } from "..";
+import { TagCreateDto } from "..";
+import { TagUpdateDto } from "..";
 
 export class TagClient {
   private readonly client: ProjectManagerClient;
@@ -37,7 +39,7 @@ export class TagClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  queryTags($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<AstroResult<TagDtoList>>> {
+  queryTags($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<TagDto[]>> {
     const url = `/api/data/tags`;
     const options = {
       params: {
@@ -49,7 +51,7 @@ export class TagClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<TagDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<TagDto[]>>("get", url, options, null);
   }
 
   /**
@@ -59,7 +61,7 @@ export class TagClient {
    *
    * @param body The information for the new Tag to create
    */
-  createTag(body: TagCreateDto): Promise<AstroResult<AstroResult<TagDto>>> {
+  createTag(body: TagCreateDto): Promise<AstroResult<TagDto>> {
     const url = `/api/data/tags`;
     return this.client.request<AstroResult<TagDto>>("post", url, null, body);
   }
@@ -72,7 +74,7 @@ export class TagClient {
    * @param tagId The id of the tag
    * @param body The information to update the tag
    */
-  updateTag(tagId: string, body: TagUpdateDto): Promise<AstroResult<AstroResult<TagDto>>> {
+  updateTag(tagId: string, body: TagUpdateDto): Promise<AstroResult<TagDto>> {
     const url = `/api/data/tags/${tagId}`;
     return this.client.request<AstroResult<TagDto>>("put", url, null, body);
   }

@@ -13,7 +13,8 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ChangeSetStatusDto } from "..";
+import { NameDto } from "..";
 
 export class TaskTagClient {
   private readonly client: ProjectManagerClient;
@@ -33,7 +34,7 @@ export class TaskTagClient {
    * @param taskId The unique identifier of the Task for which we will replace TaskTags
    * @param body The replacement list of TaskTags for this Task
    */
-  replaceTaskTags(taskId: string, body: NameDto[]): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  replaceTaskTags(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/tags`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -46,7 +47,7 @@ export class TaskTagClient {
    * @param taskId The unique identifier of the Task for which we will add TaskTags
    * @param body The new TaskTags to add to this Task
    */
-  addTaskTagtoTask(taskId: string, body: NameDto[]): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  addTaskTagtoTask(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/tags`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -59,7 +60,7 @@ export class TaskTagClient {
    * @param taskId The unique identifier of the Task for which we will remove existing TaskTags
    * @param body The TaskTags to remove from this Task
    */
-  removeTaskTagfromTask(taskId: string, body: NameDto[]): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  removeTaskTagfromTask(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/tags`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, body);
   }

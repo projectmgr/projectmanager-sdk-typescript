@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { UserRoleDto } from "..";
 
 export class UserRoleClient {
   private readonly client: ProjectManagerClient;
@@ -31,8 +31,8 @@ export class UserRoleClient {
    * A UserRole is a name for a privilege level granted to a specific User.  The 'Global Admin' UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed. You can choose which UserRole applies to a User within your Workspace.
    *
    */
-  retrieveUserRoles(): Promise<AstroResult<AstroResult<UserRoleDtoList>>> {
+  retrieveUserRoles(): Promise<AstroResult<UserRoleDto[]>> {
     const url = `/api/data/users/roles`;
-    return this.client.request<AstroResult<UserRoleDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<UserRoleDto[]>>("get", url, null, null);
   }
 }

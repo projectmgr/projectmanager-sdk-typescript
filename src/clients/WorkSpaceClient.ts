@@ -13,7 +13,8 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { WorkSpaceDto } from "..";
+import { WorkSpaceJoinDto } from "..";
 
 export class WorkSpaceClient {
   private readonly client: ProjectManagerClient;
@@ -31,9 +32,9 @@ export class WorkSpaceClient {
    * A single User may have access to multiple Workspaces, although they can only be logged on to one Workspace at a time.  This API lists all Workspaces to which the currently logged on user is entitled to access.  To determine which Workspace a user is currently logged on use the `/api/data/me` endpoint.
    *
    */
-  retrieveWorkspaces(): Promise<AstroResult<AstroResult<WorkSpaceDtoList>>> {
+  retrieveWorkspaces(): Promise<AstroResult<WorkSpaceDto[]>> {
     const url = `/api/data/workspaces`;
-    return this.client.request<AstroResult<WorkSpaceDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<WorkSpaceDto[]>>("get", url, null, null);
   }
 
   /**
@@ -46,8 +47,8 @@ export class WorkSpaceClient {
    * @param organizationId The unique identifier of the Organization that you are inviting a User to joi
    * @param body Information about the user which will receive the invitation
    */
-  invitetoWorkspace(organizationId: string, body: WorkSpaceJoinDto): Promise<AstroResult<AstroResult<>>> {
+  invitetoWorkspace(organizationId: string, body: WorkSpaceJoinDto): Promise<AstroResult<object>> {
     const url = `/api/data/workspaces/${organizationId}/join`;
-    return this.client.request<AstroResult<>>("post", url, null, body);
+    return this.client.request<AstroResult<object>>("post", url, null, body);
   }
 }

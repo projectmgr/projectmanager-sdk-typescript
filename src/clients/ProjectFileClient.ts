@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { FileDto } from "..";
 
 export class ProjectFileClient {
   private readonly client: ProjectManagerClient;
@@ -35,7 +35,7 @@ export class ProjectFileClient {
    * @param projectId The reference to the project
    * @param filename The full path of a file to upload to the API
    */
-  uploadProjectFile(projectId: string, filename: string): Promise<AstroResult<AstroResult<FileDto>>> {
+  uploadProjectFile(projectId: string, filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/files`;
     return this.client.fileUpload("post", url, null, filename);
   }
@@ -51,7 +51,7 @@ export class ProjectFileClient {
    * @param folderId The reference to the sub folder to put the file into
    * @param filename The full path of a file to upload to the API
    */
-  uploadProjectFileToFolder(projectId: string, folderId: string, filename: string): Promise<AstroResult<AstroResult<FileDto>>> {
+  uploadProjectFileToFolder(projectId: string, folderId: string, filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/folders/${folderId}/files`;
     return this.client.fileUpload("post", url, null, filename);
   }

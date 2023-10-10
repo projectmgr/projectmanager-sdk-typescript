@@ -13,7 +13,8 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ApiKeyDto } from "..";
+import { ApiKeyCreateDto } from "..";
 
 export class ApiKeyClient {
   private readonly client: ProjectManagerClient;
@@ -34,7 +35,7 @@ export class ApiKeyClient {
    *
    * @param body Options for the API key to create
    */
-  createApiKey(body: ApiKeyCreateDto): Promise<AstroResult<AstroResult<ApiKeyDto>>> {
+  createApiKey(body: ApiKeyCreateDto): Promise<AstroResult<ApiKeyDto>> {
     const url = `/api/data/api-keys`;
     return this.client.request<AstroResult<ApiKeyDto>>("post", url, null, body);
   }
@@ -47,9 +48,9 @@ export class ApiKeyClient {
    * Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company's security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
    *
    */
-  listApiKeys(): Promise<AstroResult<AstroResult<ApiKeyDtoList>>> {
+  listApiKeys(): Promise<AstroResult<ApiKeyDto[]>> {
     const url = `/api/data/api-keys`;
-    return this.client.request<AstroResult<ApiKeyDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<ApiKeyDto[]>>("get", url, null, null);
   }
 
   /**
@@ -60,9 +61,9 @@ export class ApiKeyClient {
    * Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company's security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
    *
    */
-  revokeAllApiKeys(): Promise<AstroResult<AstroResult<>>> {
+  revokeAllApiKeys(): Promise<AstroResult<object>> {
     const url = `/api/data/api-keys/revoke-all`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 
   /**
@@ -74,8 +75,8 @@ export class ApiKeyClient {
    *
    * @param id The unique identifier of the API key to revoke
    */
-  revokeAPIKey(id: string): Promise<AstroResult<AstroResult<>>> {
+  revokeAPIKey(id: string): Promise<AstroResult<object>> {
     const url = `/api/data/api-keys/${id}/revoke`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }

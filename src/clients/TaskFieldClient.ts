@@ -13,7 +13,11 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { GetTaskFieldsResponseDto } from "..";
+import { ChangeSetStatusDto } from "..";
+import { CreateTaskFieldRequestDto } from "..";
+import { TaskFieldsValueResponseDto } from "..";
+import { UpdateTaskFieldValueDto } from "..";
 
 export class TaskFieldClient {
   private readonly client: ProjectManagerClient;
@@ -32,9 +36,9 @@ export class TaskFieldClient {
    *
    * @param projectId The unique identifier of the Project to retrieve TaskFields
    */
-  retrieveTaskFields(projectId: string): Promise<AstroResult<AstroResult<GetTaskFieldsResponseDtoList>>> {
+  retrieveTaskFields(projectId: string): Promise<AstroResult<GetTaskFieldsResponseDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/fields`;
-    return this.client.request<AstroResult<GetTaskFieldsResponseDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<GetTaskFieldsResponseDto[]>>("get", url, null, null);
   }
 
   /**
@@ -45,7 +49,7 @@ export class TaskFieldClient {
    * @param projectId The unique identifier of the Project within which to create this TaskField
    * @param body Information about the TaskField to create
    */
-  createTaskField(projectId: string, body: CreateTaskFieldRequestDto): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  createTaskField(projectId: string, body: CreateTaskFieldRequestDto): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks/fields`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -58,9 +62,9 @@ export class TaskFieldClient {
    * @param projectId The unique identifier of the Project that contains this TaskField
    * @param fieldId The unique identifier of the TaskField to delete
    */
-  deleteTaskField(projectId: string, fieldId: string): Promise<AstroResult<AstroResult<>>> {
+  deleteTaskField(projectId: string, fieldId: string): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/tasks/fields/${fieldId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 
   /**
@@ -71,7 +75,7 @@ export class TaskFieldClient {
    * @param taskId The unique identifier of the Task of the value to retrieve
    * @param fieldId The unique identifier of the TaskField of the value to retrieve
    */
-  retrieveTaskFieldValue(taskId: string, fieldId: string): Promise<AstroResult<AstroResult<TaskFieldsValueResponseDto>>> {
+  retrieveTaskFieldValue(taskId: string, fieldId: string): Promise<AstroResult<TaskFieldsValueResponseDto>> {
     const url = `/api/data/tasks/${taskId}/fields/${fieldId}`;
     return this.client.request<AstroResult<TaskFieldsValueResponseDto>>("get", url, null, null);
   }
@@ -85,7 +89,7 @@ export class TaskFieldClient {
    * @param fieldId The unique identifier of the TaskField whose value you wish to update
    * @param body The new value for this TaskField for this Task
    */
-  updateTaskFieldValue(taskId: string, fieldId: string, body: UpdateTaskFieldValueDto): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  updateTaskFieldValue(taskId: string, fieldId: string, body: UpdateTaskFieldValueDto): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/fields/${fieldId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -97,8 +101,8 @@ export class TaskFieldClient {
    *
    * @param taskId The unique identifier of the Task for which we want TaskField values
    */
-  retrieveAllTaskFieldValues(taskId: string): Promise<AstroResult<AstroResult<TaskFieldsValueResponseDtoList>>> {
+  retrieveAllTaskFieldValues(taskId: string): Promise<AstroResult<TaskFieldsValueResponseDto[]>> {
     const url = `/api/data/tasks/${taskId}/fields`;
-    return this.client.request<AstroResult<TaskFieldsValueResponseDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<TaskFieldsValueResponseDto[]>>("get", url, null, null);
   }
 }

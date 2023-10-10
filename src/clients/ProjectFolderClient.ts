@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ProjectFolderDto } from "..";
 
 export class ProjectFolderClient {
   private readonly client: ProjectManagerClient;
@@ -31,8 +31,8 @@ export class ProjectFolderClient {
    * A ProjectFolder is a named storage location that can contain Projects.
    *
    */
-  retrieveProjectFolders(): Promise<AstroResult<AstroResult<ProjectFolderDtoList>>> {
+  retrieveProjectFolders(): Promise<AstroResult<ProjectFolderDto[]>> {
     const url = `/api/data/project-folders`;
-    return this.client.request<AstroResult<ProjectFolderDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectFolderDto[]>>("get", url, null, null);
   }
 }

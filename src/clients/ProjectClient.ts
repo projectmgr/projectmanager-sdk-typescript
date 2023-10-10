@@ -13,7 +13,10 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ProjectDto } from "..";
+import { ProjectCreateResponseDto } from "..";
+import { ProjectCreateRequestDto } from "..";
+import { ProjectUpdateDto } from "..";
 
 export class ProjectClient {
   private readonly client: ProjectManagerClient;
@@ -37,7 +40,7 @@ export class ProjectClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  queryProjects($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<AstroResult<ProjectDtoList>>> {
+  queryProjects($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<ProjectDto[]>> {
     const url = `/api/data/projects`;
     const options = {
       params: {
@@ -49,7 +52,7 @@ export class ProjectClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<ProjectDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<ProjectDto[]>>("get", url, options, null);
   }
 
   /**
@@ -59,7 +62,7 @@ export class ProjectClient {
    *
    * @param body Information about the Project you wish to create
    */
-  createProject(body: ProjectCreateRequestDto): Promise<AstroResult<AstroResult<ProjectCreateResponseDto>>> {
+  createProject(body: ProjectCreateRequestDto): Promise<AstroResult<ProjectCreateResponseDto>> {
     const url = `/api/data/projects`;
     return this.client.request<AstroResult<ProjectCreateResponseDto>>("post", url, null, body);
   }
@@ -71,7 +74,7 @@ export class ProjectClient {
    *
    * @param projectId The unique identifier of the Project to retrieve.
    */
-  retrieveProject(projectId: string): Promise<AstroResult<AstroResult<ProjectDto>>> {
+  retrieveProject(projectId: string): Promise<AstroResult<ProjectDto>> {
     const url = `/api/data/projects/${projectId}`;
     return this.client.request<AstroResult<ProjectDto>>("get", url, null, null);
   }
@@ -86,8 +89,8 @@ export class ProjectClient {
    * @param projectId The unique identifier of the Project to update
    * @param body All non-null fields in this object will replace previous data within the Project
    */
-  updateProject(projectId: string, body: ProjectUpdateDto): Promise<AstroResult<AstroResult<>>> {
+  updateProject(projectId: string, body: ProjectUpdateDto): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}`;
-    return this.client.request<AstroResult<>>("put", url, null, body);
+    return this.client.request<AstroResult<object>>("put", url, null, body);
   }
 }

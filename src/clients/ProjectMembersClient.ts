@@ -13,7 +13,8 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ProjectMemberDto } from "..";
+import { ProjectMemberRoleDto } from "..";
 
 export class ProjectMembersClient {
   private readonly client: ProjectManagerClient;
@@ -31,14 +32,14 @@ export class ProjectMembersClient {
    * @param projectId Reference to the project
    * @param includeAllUsers Set to true to include all users in the workspace
    */
-  retrieveProjectMembers(projectId: string, includeAllUsers?: boolean): Promise<AstroResult<AstroResult<ProjectMemberDtoList>>> {
+  retrieveProjectMembers(projectId: string, includeAllUsers?: boolean): Promise<AstroResult<ProjectMemberDto[]>> {
     const url = `/api/data/projects/${projectId}/members`;
     const options = {
       params: {
         includeAllUsers,
       },
     };
-    return this.client.request<AstroResult<ProjectMemberDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<ProjectMemberDto[]>>("get", url, options, null);
   }
 
   /**
@@ -47,7 +48,7 @@ export class ProjectMembersClient {
    * @param projectId Reference of Project
    * @param userId Reference of User
    */
-  retrieveUserProjectMemberShip(projectId: string, userId: string): Promise<AstroResult<AstroResult<ProjectMemberDto>>> {
+  retrieveUserProjectMemberShip(projectId: string, userId: string): Promise<AstroResult<ProjectMemberDto>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<ProjectMemberDto>>("get", url, null, null);
   }
@@ -59,7 +60,7 @@ export class ProjectMembersClient {
    * @param userId Reference to User
    * @param body The permission to set
    */
-  createUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<AstroResult<ProjectMemberDto>>> {
+  createUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<ProjectMemberDto>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<ProjectMemberDto>>("post", url, null, body);
   }
@@ -71,7 +72,7 @@ export class ProjectMembersClient {
    * @param userId Reference to User
    * @param body The permission to update
    */
-  updateUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<AstroResult<ProjectMemberDto>>> {
+  updateUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<ProjectMemberDto>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<ProjectMemberDto>>("put", url, null, body);
   }
@@ -82,8 +83,8 @@ export class ProjectMembersClient {
    * @param projectId Reference to Project
    * @param userId Reference to User
    */
-  removeUserProjectMembership(projectId: string, userId: string): Promise<AstroResult<AstroResult<>>> {
+  removeUserProjectMembership(projectId: string, userId: string): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
-    return this.client.request<AstroResult<>>("delete", url, null, null);
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }

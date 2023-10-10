@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ProjectTemplateDto } from "..";
 
 export class ProjectTemplateClient {
   private readonly client: ProjectManagerClient;
@@ -31,8 +31,8 @@ export class ProjectTemplateClient {
    * A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.
    *
    */
-  retrieveProjectTemplates(): Promise<AstroResult<AstroResult<ProjectTemplateDtoList>>> {
+  retrieveProjectTemplates(): Promise<AstroResult<ProjectTemplateDto[]>> {
     const url = `/api/data/projects/templates`;
-    return this.client.request<AstroResult<ProjectTemplateDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectTemplateDto[]>>("get", url, null, null);
   }
 }

@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ChangeSetStatusDto } from "..";
+import { AssigneeUpsertDto } from "..";
+import { IdDto } from "..";
 
 export class TaskAssigneeClient {
   private readonly client: ProjectManagerClient;
@@ -33,7 +35,7 @@ export class TaskAssigneeClient {
    * @param taskId The unique identifier of the Task whose TaskAssignees will be replaced
    * @param body The new list of TaskAssignees for this Task
    */
-  replaceTaskAssignees(taskId: string, body: AssigneeUpsertDto[]): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  replaceTaskAssignees(taskId: string, body: AssigneeUpsertDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/assignees`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -46,7 +48,7 @@ export class TaskAssigneeClient {
    * @param taskId The unique identifier of the Task to add or update an assignment
    * @param body List of Assignee data
    */
-  createOrUpdateTaskAssignee(taskId: string, body: AssigneeUpsertDto[]): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  createOrUpdateTaskAssignee(taskId: string, body: AssigneeUpsertDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/assignees`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -59,7 +61,7 @@ export class TaskAssigneeClient {
    * @param taskId The unique identifier of the Task whose TaskAssignee will be removed
    * @param body List of TaskAssignee records to remove
    */
-  deleteTaskAssignees(taskId: string, body: IdDto[]): Promise<AstroResult<AstroResult<ChangeSetStatusDto>>> {
+  deleteTaskAssignees(taskId: string, body: IdDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/assignees`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, body);
   }

@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { FileDto } from "..";
 
 export class HomeFileClient {
   private readonly client: ProjectManagerClient;
@@ -34,7 +34,7 @@ export class HomeFileClient {
    *
    * @param filename The full path of a file to upload to the API
    */
-  uploadHomeFile(filename: string): Promise<AstroResult<AstroResult<FileDto>>> {
+  uploadHomeFile(filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/home/files`;
     return this.client.fileUpload("post", url, null, filename);
   }
@@ -49,7 +49,7 @@ export class HomeFileClient {
    * @param folderId The reference to the sub folder to put the file into
    * @param filename The full path of a file to upload to the API
    */
-  uploadHomeFileToFolder(folderId: string, filename: string): Promise<AstroResult<AstroResult<FileDto>>> {
+  uploadHomeFileToFolder(folderId: string, filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/home/folders/${folderId}/files`;
     return this.client.fileUpload("post", url, null, filename);
   }

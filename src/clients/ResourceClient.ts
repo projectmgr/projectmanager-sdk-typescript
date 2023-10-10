@@ -13,7 +13,9 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ResourceDto } from "..";
+import { ResourceCreateDto } from "..";
+import { ResourceUpdateDto } from "..";
 
 export class ResourceClient {
   private readonly client: ProjectManagerClient;
@@ -32,7 +34,7 @@ export class ResourceClient {
    *
    * @param body The details for the new Resource to create
    */
-  createResource(body: ResourceCreateDto): Promise<AstroResult<AstroResult<ResourceDto>>> {
+  createResource(body: ResourceCreateDto): Promise<AstroResult<ResourceDto>> {
     const url = `/api/data/resources`;
     return this.client.request<AstroResult<ResourceDto>>("post", url, null, body);
   }
@@ -49,7 +51,7 @@ export class ResourceClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  queryResources($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<AstroResult<ResourceDtoList>>> {
+  queryResources($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<ResourceDto[]>> {
     const url = `/api/data/resources`;
     const options = {
       params: {
@@ -61,7 +63,7 @@ export class ResourceClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<ResourceDtoList>>("get", url, options, null);
+    return this.client.request<AstroResult<ResourceDto[]>>("get", url, options, null);
   }
 
   /**
@@ -72,7 +74,7 @@ export class ResourceClient {
    * @param resourceId The id of the resource
    * @param body The information to update the resource
    */
-  updateResource(resourceId: string, body: ResourceUpdateDto): Promise<AstroResult<AstroResult<ResourceDto>>> {
+  updateResource(resourceId: string, body: ResourceUpdateDto): Promise<AstroResult<ResourceDto>> {
     const url = `/api/data/resources/${resourceId}`;
     return this.client.request<AstroResult<ResourceDto>>("put", url, null, body);
   }

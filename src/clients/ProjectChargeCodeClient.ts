@@ -13,7 +13,7 @@
 
 import { ProjectManagerClient } from "..";
 import { AstroResult } from "..";
-import { AstroResult } from "..";
+import { ProjectChargeCodeDto } from "..";
 
 export class ProjectChargeCodeClient {
   private readonly client: ProjectManagerClient;
@@ -31,8 +31,8 @@ export class ProjectChargeCodeClient {
    * A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared among Projects.
    *
    */
-  retrieveChargeCodes(): Promise<AstroResult<AstroResult<ProjectChargeCodeDtoList>>> {
+  retrieveChargeCodes(): Promise<AstroResult<ProjectChargeCodeDto[]>> {
     const url = `/api/data/projects/chargecodes`;
-    return this.client.request<AstroResult<ProjectChargeCodeDtoList>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectChargeCodeDto[]>>("get", url, null, null);
   }
 }
