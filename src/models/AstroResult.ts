@@ -12,14 +12,13 @@
  */
 
 import { AstroError } from "..";
-import { HttpStatusCode } from "..";
 
 /**
  * An API result that contains different values depending on whether the API call succeeded or failed.
  * Use the `Success` value to determine if the API call succeeded.  If the API call failed, you can
  * examine the `Error` value to determine what went wrong.
  */
-export type AstroResult = {
+export type AstroResult<T> = {
 
   /**
    * If the API call failed, this will contain information about the error that occurred.
@@ -39,5 +38,10 @@ export type AstroResult = {
   /**
    * The HTTP code of the response.
    */
-  statusCode: HttpStatusCode;
+  statusCode: number;
+
+  /**
+   * If the API call is successful, this will contain the results.
+   */
+  data: T | null;
 };
