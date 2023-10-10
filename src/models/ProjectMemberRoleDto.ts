@@ -20,5 +20,5 @@ export type ProjectMemberRoleDto = {
   /**
    * Role to apply
    */
-  role: ProjectPermission;
+  role: string;
 };

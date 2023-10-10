@@ -31,7 +31,7 @@ export class DashboardClient {
    *
    * @param type The dashboard type that is not custom
    */
-  retrieveDashboardUserSettings(type: DashboardType): Promise<AstroResult<DashboardSettingDto>> {
+  retrieveDashboardUserSettings(type: string): Promise<AstroResult<DashboardSettingDto>> {
     const url = `/api/data/dashboards/settings/${type}`;
     return this.client.request<AstroResult<DashboardSettingDto>>("get", url, null, null);
   }

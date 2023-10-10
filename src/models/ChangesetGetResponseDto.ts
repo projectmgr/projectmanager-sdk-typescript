@@ -34,5 +34,5 @@ export type ChangesetGetResponseDto = {
   /**
    * A status flag that indicates the progress of the Changeset through resolution.
    */
-  state: State;
+  state: string;
 };
