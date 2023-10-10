@@ -15,9 +15,10 @@
         "form-data": "^4.0.0"
     },
     "files": [
-        "ProjectManager.SDK.d.ts",
-        "ProjectManager.SDK.js",
-        "ProjectManager.SDK.js.map"
+        "LICENSE",
+        "README.md",
+        "package.json",
+        "dist/**/*"
     ],
     "scripts": {
         "compile": "tsc",
@@ -26,8 +27,8 @@
         "clear": "rimraf dist/* && rimraf build/compiled/*",
         "build": "node ./build/build.js"
     },
-    "main": "ProjectManager.SDK.js",
-    "types": "ProjectManager.SDK.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "type": "module",
     "platform": "node",
     "devDependencies": {
