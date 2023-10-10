@@ -282,7 +282,7 @@ export class ProjectManagerClient {
    * Upload a file to a REST endpoint and retrieve results as JSON
    */
   public async fileUpload<T>(method: axios.Method, path: string, options: unknown, filename: string): Promise<T> {
-    const fileBuffer = fs.readFileSync(filename);
+    const fileBuffer = await fs.promises.readFile(filename);
     const formData = new FormData();
     formData.append("file", fileBuffer);
     const requestConfig: axios.AxiosRequestConfig = {

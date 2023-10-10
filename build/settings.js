@@ -5,6 +5,7 @@ export function createBuildSettings(options) {
     entryPoints: ['src/index.ts'],
     outfile: 'dist/bundle.js',
     bundle: true,
+    platform: 'node',
     plugins: [
       esbuildPluginTsc({
         force: true
