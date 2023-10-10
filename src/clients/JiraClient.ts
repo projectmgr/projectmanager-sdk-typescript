@@ -48,15 +48,4 @@ export class JiraClient {
     const url = `/api/data/integrations/jira/projects/${jiraProjectId}/project`;
     return this.client.request<AstroResult<RetunJiraProjectsDto>>("get", url, null, null);
   }
-
-  /**
-   * Retrieves a list of Projects from Jira with coonectid for user
-   *
-   * The Jira API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
-   *
-   */
-  retrieveProjectsfromJira(): Promise<AstroResult<RetunJiraProjectsDto[]>> {
-    const url = `/api/data/integrations/jira`;
-    return this.client.request<AstroResult<RetunJiraProjectsDto[]>>("get", url, null, null);
-  }
 }

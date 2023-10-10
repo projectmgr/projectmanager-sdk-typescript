@@ -165,6 +165,7 @@ export class ProjectManagerClient {
   /**
    * Construct a new API client to target the specific environment.
    *
+   * Predefined environment names:
    *   * production - https://api.projectmanager.com
    * 
    * @param env The name of the environment to use
@@ -172,9 +173,9 @@ export class ProjectManagerClient {
    */
   public static withEnvironment(env: string): ProjectManagerClient {
     switch (env) {
-      case "production": url = "https://api.projectmanager.com"; break;
+      case "production": return new ProjectManagerClient("https://api.projectmanager.com");
+      default: return new ProjectManagerClient(env);
     }
-    return new ProjectManagerClient(url);
   }
 
   /**
@@ -223,7 +224,7 @@ export class ProjectManagerClient {
    * @param func The async function to be called to modify headers before any request
    * @returns The API client for function chaining
    */
-  public withCustomHeaderFunc(func: (headers: unknown) => Promise<unknown>): AstroResult
+  public withCustomHeaderFunc(func: (headers: unknown) => Promise<unknown>): ProjectManagerClient
   {
     this.customHeaderFunc = func;
     return this;
@@ -267,7 +268,7 @@ export class ProjectManagerClient {
   /**
    * Make a GET request using this client
    */
-  public async request<T>(method: axios.Method, path: string, options: unknown, body: unknown): Promise<AstroResult<T>> {
+  public async request<T>(method: axios.Method, path: string, options: unknown, body: unknown): Promise<T> {
     const requestConfig = {
       url: new url.URL(path, this.serverUrl).href,
       method,
@@ -275,14 +276,13 @@ export class ProjectManagerClient {
       data: body,
       headers: await this.getHeaders(),
     };
-    const result = await axios.default.request(requestConfig);
-    return new AstroResult<T>(result.status, result.data);
+    return await axios.default.request(requestConfig);
   }
 
   /**
    * Upload a file to a REST endpoint and retrieve results as JSON
    */
-  public async fileUpload<T>(method: axios.Method, path: string, options: unknown, filename: string): Promise<AstroResult<T>> {
+  public async fileUpload<T>(method: axios.Method, path: string, options: unknown, filename: string): Promise<T> {
     const fileBuffer = fs.readFileSync(filename);
     const formData = new FormData();
     formData.append("file", fileBuffer);
@@ -293,8 +293,7 @@ export class ProjectManagerClient {
       params: options,
       headers: await this.getHeaders(),
     };
-    const result = await axios.default.request(requestConfig);
-    return new AstroResult<T>(result.status, result.data);
+    return await axios.default.request(requestConfig);
   }
 
   /**
@@ -310,7 +309,6 @@ export class ProjectManagerClient {
       headers: await this.getHeaders(),
       responseType,
     };
-    const result = await axios.default.request(requestConfig);
-    return new AstroResult<Blob>(result.status, new blob.Blob(result.data));
+    return await axios.default.request(requestConfig);
   }
 }

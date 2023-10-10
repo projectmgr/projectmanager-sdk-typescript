@@ -14,7 +14,6 @@
  */
 
 export { ProjectManagerClient } from "./ProjectManagerClient";
-export { AstroResult } from "./AstroResult";
 
 export { ApiKeyClient } from "./clients/ApiKeyClient";
 export { ChangesetClient } from "./clients/ChangesetClient";
