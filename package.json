@@ -23,7 +23,7 @@
         "compile": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "eslint \"**/*.ts\"",
-        "clear": "rimraf dist/*",
+        "clear": "rimraf dist/* && rimraf build/compiled/*",
         "build": "node ./build/build.js"
     },
     "main": "ProjectManager.SDK.js",
