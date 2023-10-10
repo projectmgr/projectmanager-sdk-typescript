@@ -50,7 +50,6 @@ import { WorkSpaceClient } from ".";
 import { AstroResult } from ".";
 
 import * as axios from "axios";
-import * as blob from "buffer";
 import * as FormData from "form-data";
 import * as fs from "fs";
 import * as os from "os";
