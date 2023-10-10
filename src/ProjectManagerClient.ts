@@ -50,7 +50,7 @@ import { WorkSpaceClient } from ".";
 import { AstroResult } from ".";
 
 import * as axios from "axios";
-import * as FormData from "form-data";
+import { default as FormData } from "form-data";
 import * as fs from "fs";
 import * as os from "os";
 import * as url from "url";
