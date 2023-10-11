@@ -257,7 +257,7 @@ export class ProjectManagerClient {
       data: body,
       headers: await this.getHeaders(),
     };
-    var result = await axios.default.request(requestConfig);
+    const result = await axios.default.request(requestConfig);
     return result.data;
   }
 
@@ -275,7 +275,7 @@ export class ProjectManagerClient {
       params: options,
       headers: await this.getHeaders(),
     };
-    var result = await axios.default.request(requestConfig);
+    const result = await axios.default.request(requestConfig);
     return result.data;
   }
 
@@ -292,7 +292,7 @@ export class ProjectManagerClient {
       headers: await this.getHeaders(),
       responseType,
     };
-    var result = await axios.default.request(requestConfig);
+    const result = await axios.default.request(requestConfig);
     return result.data;
   }
 }
