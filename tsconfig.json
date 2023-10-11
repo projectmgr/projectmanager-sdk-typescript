@@ -1,18 +1,15 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
     "removeComments": false,
     "sourceMap": true,
-    "target": "es2018",
     "outDir": "dist",
     "declaration": true,
     "strict": true,
-    "module": "esnext",
     "noEmitOnError": true,
-    "lib": [
-      "es2017"
-    ],
     "esModuleInterop": true,
+    "module": "node16",
+    "lib": ["dom", "es2015"],
+    "allowImportingTsExtensions": true
   },
   "include": [
     "src/**/*.ts"
