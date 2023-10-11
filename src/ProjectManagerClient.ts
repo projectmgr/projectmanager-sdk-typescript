@@ -77,7 +77,6 @@ export class ProjectManagerClient {
   private readonly serverUrl: string;
   private readonly version: string = "11.1.2053";
   private bearerToken: string | null = null;
-  private apiKey: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
   private customHeaderFunc: ((headers: unknown) => Promise<unknown>) | null = null;
@@ -198,20 +197,6 @@ export class ProjectManagerClient {
    */
   public withBearerToken(token: string): ProjectManagerClient {
     this.bearerToken = token;
-    this.apiKey = null;
-    return this;
-  }
-
-  /**
-   * Configures this API client to use an API Key.
-   *
-   * 
-   * 
-   * @param apiKey The API key to use for this API session
-   */
-  public withApiKey(apiKey: string): ProjectManagerClient {
-    this.apiKey = apiKey;
-    this.bearerToken = null;
     return this;
   }
   
@@ -254,9 +239,6 @@ export class ProjectManagerClient {
     if (this.bearerToken !== null) {
       headers["Authorization"] = `Bearer ${this.bearerToken}`;
     } 
-    if (this.apiKey !== null) {
-      headers["ApiKey"] = this.apiKey;
-    }
     if (this.customHeaderFunc != null) {
       return (await this.customHeaderFunc(headers)) as ApiHeaders;
     } else {
@@ -275,7 +257,8 @@ export class ProjectManagerClient {
       data: body,
       headers: await this.getHeaders(),
     };
-    return await axios.default.request(requestConfig);
+    var result = await axios.default.request(requestConfig);
+    return result.data;
   }
 
   /**
@@ -292,7 +275,8 @@ export class ProjectManagerClient {
       params: options,
       headers: await this.getHeaders(),
     };
-    return await axios.default.request(requestConfig);
+    var result = await axios.default.request(requestConfig);
+    return result.data;
   }
 
   /**
@@ -308,6 +292,7 @@ export class ProjectManagerClient {
       headers: await this.getHeaders(),
       responseType,
     };
-    return await axios.default.request(requestConfig);
+    var result = await axios.default.request(requestConfig);
+    return result.data;
   }
 }
