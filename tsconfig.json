@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "removeComments": false,
+    "sourceMap": true,
+    "outDir": "dist",
+    "declaration": true,
+    "strict": true,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "module": "node16",
+    "lib": ["dom", "es2015"]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+    "name": "projectmanager-sdk",
+    "version": "11.1.2053",
+    "description": "Software development kit for the ProjectManager.com API. for TypeScript",
+    "repository": "https://github.com/projectmgr/projectmanager-sdk-typescript",
+    "license": "MIT",
+    "author": "ProjectManager.com support@projectmanager.com ()",
+    "keywords": [
+        "projectmanager project management task tracking projects tasks"
+    ],
+    "homepage": "",
+    "dependencies": {
+        "axios": "^0.24.0",
+        "form-data": "^4.0.0"
+    },
+    "files": [
+        "LICENSE",
+        "README.md",
+        "package.json",
+        "dist/**/*"
+    ],
+    "scripts": {
+        "compile": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint \"**/*.ts\"",
+        "clear": "rimraf dist/* && rimraf build/compiled/*",
+        "build": "node ./build/build.js"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "platform": "node",
+    "devDependencies": {
+        "@types/node": "^20.8.4",
+        "@typescript-eslint/eslint-plugin": "^6.7.5",
+        "@typescript-eslint/parser": "^6.7.5",
+        "esbuild": "^0.19.4",
+        "esbuild-plugin-tsc": "^0.4.0",
+        "eslint": "^8.11.0",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.5.5"
+    }
+}
