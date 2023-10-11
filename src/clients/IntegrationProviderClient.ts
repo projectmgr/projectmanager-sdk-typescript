@@ -11,11 +11,11 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { IntegrationProviderDto } from "..";
-import { DirectLinkDto } from "..";
-import { AuthenticationStatusDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { IntegrationProviderDto } from "../index.js";
+import { DirectLinkDto } from "../index.js";
+import { AuthenticationStatusDto } from "../index.js";
 
 export class IntegrationProviderClient {
   private readonly client: ProjectManagerClient;

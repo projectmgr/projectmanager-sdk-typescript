@@ -12,48 +12,48 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ApiKeyClient } from ".";
-import { ChangesetClient } from ".";
-import { DashboardClient } from ".";
-import { DiscussionClient } from ".";
-import { FileClient } from ".";
-import { HomeFileClient } from ".";
-import { IntegrationClient } from ".";
-import { IntegrationCategoryClient } from ".";
-import { IntegrationProviderClient } from ".";
-import { JiraClient } from ".";
-import { LicenseClient } from ".";
-import { MeClient } from ".";
-import { ProjectClient } from ".";
-import { ProjectChargeCodeClient } from ".";
-import { ProjectCustomerClient } from ".";
-import { ProjectFieldClient } from ".";
-import { ProjectFileClient } from ".";
-import { ProjectFolderClient } from ".";
-import { ProjectMembersClient } from ".";
-import { ProjectPriorityClient } from ".";
-import { ProjectStatusClient } from ".";
-import { ProjectTemplateClient } from ".";
-import { ResourceClient } from ".";
-import { ResourceSkillClient } from ".";
-import { ResourceTeamClient } from ".";
-import { TagClient } from ".";
-import { TaskClient } from ".";
-import { TaskAssigneeClient } from ".";
-import { TaskFieldClient } from ".";
-import { TaskFileClient } from ".";
-import { TaskStatusClient } from ".";
-import { TaskTagClient } from ".";
-import { TimesheetClient } from ".";
-import { UserRoleClient } from ".";
-import { WorkSpaceClient } from ".";
-import { AstroResult } from ".";
+import { ApiKeyClient } from "./index.js";
+import { ChangesetClient } from "./index.js";
+import { DashboardClient } from "./index.js";
+import { DiscussionClient } from "./index.js";
+import { FileClient } from "./index.js";
+import { HomeFileClient } from "./index.js";
+import { IntegrationClient } from "./index.js";
+import { IntegrationCategoryClient } from "./index.js";
+import { IntegrationProviderClient } from "./index.js";
+import { JiraClient } from "./index.js";
+import { LicenseClient } from "./index.js";
+import { MeClient } from "./index.js";
+import { ProjectClient } from "./index.js";
+import { ProjectChargeCodeClient } from "./index.js";
+import { ProjectCustomerClient } from "./index.js";
+import { ProjectFieldClient } from "./index.js";
+import { ProjectFileClient } from "./index.js";
+import { ProjectFolderClient } from "./index.js";
+import { ProjectMembersClient } from "./index.js";
+import { ProjectPriorityClient } from "./index.js";
+import { ProjectStatusClient } from "./index.js";
+import { ProjectTemplateClient } from "./index.js";
+import { ResourceClient } from "./index.js";
+import { ResourceSkillClient } from "./index.js";
+import { ResourceTeamClient } from "./index.js";
+import { TagClient } from "./index.js";
+import { TaskClient } from "./index.js";
+import { TaskAssigneeClient } from "./index.js";
+import { TaskFieldClient } from "./index.js";
+import { TaskFileClient } from "./index.js";
+import { TaskStatusClient } from "./index.js";
+import { TaskTagClient } from "./index.js";
+import { TimesheetClient } from "./index.js";
+import { UserRoleClient } from "./index.js";
+import { WorkSpaceClient } from "./index.js";
+import { AstroResult } from "./index.js";
 
-import * as axios from "axios";
+import axios, { Method } from "axios";
 import { default as FormData } from "form-data";
-import * as fs from "fs";
-import * as os from "os";
-import * as url from "url";
+import fs from "fs";
+import os from "os";
+import url from "url";
 
 /**
  * List of headers used by the API
@@ -267,7 +267,7 @@ export class ProjectManagerClient {
   /**
    * Make a GET request using this client
    */
-  public async request<T>(method: axios.Method, path: string, options: unknown, body: unknown): Promise<T> {
+  public async request<T>(method: Method, path: string, options: unknown, body: unknown): Promise<T> {
     const requestConfig = {
       url: new url.URL(path, this.serverUrl).href,
       method,
@@ -281,7 +281,7 @@ export class ProjectManagerClient {
   /**
    * Upload a file to a REST endpoint and retrieve results as JSON
    */
-  public async fileUpload<T>(method: axios.Method, path: string, options: unknown, filename: string): Promise<T> {
+  public async fileUpload<T>(method: Method, path: string, options: unknown, filename: string): Promise<T> {
     const fileBuffer = await fs.promises.readFile(filename);
     const formData = new FormData();
     formData.append("file", fileBuffer);
@@ -298,7 +298,7 @@ export class ProjectManagerClient {
   /**
    * Make a GET request using this client and download the results as a blob
    */
-  public async requestBlob(method: axios.Method, path: string, options: unknown, body: unknown): Promise<AstroResult<Blob>> {
+  public async requestBlob(method: Method, path: string, options: unknown, body: unknown): Promise<AstroResult<Blob>> {
     const responseType: axios.ResponseType = "blob";
     const requestConfig: axios.AxiosRequestConfig = {
       url: new url.URL(path, this.serverUrl).href,

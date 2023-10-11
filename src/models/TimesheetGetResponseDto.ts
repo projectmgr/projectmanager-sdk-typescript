@@ -11,8 +11,8 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { TimesheetTaskDto } from "..";
-import { TimeSheetProjectDto } from "..";
+import { TimesheetTaskDto } from "../index.js";
+import { TimeSheetProjectDto } from "../index.js";
 
 /**
  * Created Time entry response data

@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectCreateAccessMemberDto } from "..";
+import { ProjectCreateAccessMemberDto } from "../index.js";
 
 /**
  * Specify who has access to a newly created project

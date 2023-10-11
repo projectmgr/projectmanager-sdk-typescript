@@ -11,10 +11,10 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { ProjectMemberDto } from "..";
-import { ProjectMemberRoleDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { ProjectMemberDto } from "../index.js";
+import { ProjectMemberRoleDto } from "../index.js";
 
 export class ProjectMembersClient {
   private readonly client: ProjectManagerClient;

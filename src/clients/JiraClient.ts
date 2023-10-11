@@ -11,9 +11,9 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { RetunJiraProjectsDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { RetunJiraProjectsDto } from "../index.js";
 
 export class JiraClient {
   private readonly client: ProjectManagerClient;

@@ -11,9 +11,9 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ResourceApproverDto } from "..";
-import { ResourceTeamDto } from "..";
-import { ResourceSkillDto } from "..";
+import { ResourceApproverDto } from "../index.js";
+import { ResourceTeamDto } from "../index.js";
+import { ResourceSkillDto } from "../index.js";
 
 /**
  * A Resource represents a person, material, or tool that is used within your Projects.

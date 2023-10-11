@@ -11,9 +11,9 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { ChangesetGetResponseDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { ChangesetGetResponseDto } from "../index.js";
 
 export class ChangesetClient {
   private readonly client: ProjectManagerClient;

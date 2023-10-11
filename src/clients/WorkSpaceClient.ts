@@ -11,10 +11,10 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { WorkSpaceDto } from "..";
-import { WorkSpaceJoinDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { WorkSpaceDto } from "../index.js";
+import { WorkSpaceJoinDto } from "../index.js";
 
 export class WorkSpaceClient {
   private readonly client: ProjectManagerClient;

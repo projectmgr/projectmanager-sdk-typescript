@@ -11,15 +11,15 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { TaskDto } from "..";
-import { TaskDetailsDto } from "..";
-import { ChangeSetStatusDto } from "..";
-import { TaskUpdateDto } from "..";
-import { TaskCreateDto } from "..";
-import { TaskPriorityDto } from "..";
-import { BulkTaskCreateDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { TaskDto } from "../index.js";
+import { TaskDetailsDto } from "../index.js";
+import { ChangeSetStatusDto } from "../index.js";
+import { TaskUpdateDto } from "../index.js";
+import { TaskCreateDto } from "../index.js";
+import { TaskPriorityDto } from "../index.js";
+import { BulkTaskCreateDto } from "../index.js";
 
 export class TaskClient {
   private readonly client: ProjectManagerClient;

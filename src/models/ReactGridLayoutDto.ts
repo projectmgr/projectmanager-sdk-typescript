@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ReactGridLayoutItemDto } from "..";
+import { ReactGridLayoutItemDto } from "../index.js";
 
 /**
  * A setting for react grid layout sizes

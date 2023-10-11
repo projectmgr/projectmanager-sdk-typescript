@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { DiscussionEmoji } from "..";
+import { DiscussionEmoji } from "../index.js";
 
 /**
  * Tasks can have discussions attached to them.  These discussions can include text with simple

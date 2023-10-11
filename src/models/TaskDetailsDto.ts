@@ -11,11 +11,11 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { TaskProjectDto } from "..";
-import { TaskTagDto } from "..";
-import { TaskAssigneeDto } from "..";
-import { TaskTodoDto } from "..";
-import { TaskStatusDto } from "..";
+import { TaskProjectDto } from "../index.js";
+import { TaskTagDto } from "../index.js";
+import { TaskAssigneeDto } from "../index.js";
+import { TaskTodoDto } from "../index.js";
+import { TaskStatusDto } from "../index.js";
 
 /**
  * A Task is an individual element of work that must be performed to complete a Project.  A

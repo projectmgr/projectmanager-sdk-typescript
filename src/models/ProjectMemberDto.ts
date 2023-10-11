@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { PermissionOptionsDto } from "..";
+import { PermissionOptionsDto } from "../index.js";
 
 /**
  * A ProjectMember is a user who can collaborate on a Project.  You can control

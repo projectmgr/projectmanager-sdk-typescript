@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ReactGridLayoutDto } from "..";
+import { ReactGridLayoutDto } from "../index.js";
 
 /**
  * User dashboard create or update dto

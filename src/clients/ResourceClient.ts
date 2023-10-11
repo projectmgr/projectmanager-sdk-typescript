@@ -11,11 +11,11 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { ResourceDto } from "..";
-import { ResourceCreateDto } from "..";
-import { ResourceUpdateDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { ResourceDto } from "../index.js";
+import { ResourceCreateDto } from "../index.js";
+import { ResourceUpdateDto } from "../index.js";
 
 export class ResourceClient {
   private readonly client: ProjectManagerClient;

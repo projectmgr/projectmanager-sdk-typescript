@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectCreateAccessDto } from "..";
+import { ProjectCreateAccessDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks

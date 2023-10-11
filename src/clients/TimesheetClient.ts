@@ -11,13 +11,13 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { TimesheetResponseDto } from "..";
-import { TimesheetCreateRequestDto } from "..";
-import { TimesheetGetResponseDto } from "..";
-import { TimesheetUpdateRequestDto } from "..";
-import { TimesheetAdminTypeDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { TimesheetResponseDto } from "../index.js";
+import { TimesheetCreateRequestDto } from "../index.js";
+import { TimesheetGetResponseDto } from "../index.js";
+import { TimesheetUpdateRequestDto } from "../index.js";
+import { TimesheetAdminTypeDto } from "../index.js";
 
 export class TimesheetClient {
   private readonly client: ProjectManagerClient;

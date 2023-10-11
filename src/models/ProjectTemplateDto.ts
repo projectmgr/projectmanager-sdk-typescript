@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectTemplateCategoryDto } from "..";
+import { ProjectTemplateCategoryDto } from "../index.js";
 
 /**
  * A ProjectTemplate is a named document that contains default Project details.

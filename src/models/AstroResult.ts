@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { AstroError } from "..";
+import { AstroError } from "../index.js";
 
 /**
  * An API result that contains different values depending on whether the API call succeeded or failed.

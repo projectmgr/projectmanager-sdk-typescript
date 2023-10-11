@@ -11,10 +11,10 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectManagerClient } from "..";
-import { AstroResult } from "..";
-import { DashboardSettingDto } from "..";
-import { DashboardSettingCreateDto } from "..";
+import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
+import { DashboardSettingDto } from "../index.js";
+import { DashboardSettingCreateDto } from "../index.js";
 
 export class DashboardClient {
   private readonly client: ProjectManagerClient;

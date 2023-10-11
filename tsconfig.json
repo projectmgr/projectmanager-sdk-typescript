@@ -8,8 +8,7 @@
     "noEmitOnError": true,
     "esModuleInterop": true,
     "module": "node16",
-    "lib": ["dom", "es2015"],
-    "allowImportingTsExtensions": true
+    "lib": ["dom", "es2015"]
   },
   "include": [
     "src/**/*.ts"

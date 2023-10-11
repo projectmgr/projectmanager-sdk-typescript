@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ReactGridLayoutDto } from "..";
+import { ReactGridLayoutDto } from "../index.js";
 
 /**
  * The Dashboards API is intended for use by ProjectManager

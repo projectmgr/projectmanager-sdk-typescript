@@ -11,7 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { WorkSpaceLinksDto } from "..";
+import { WorkSpaceLinksDto } from "../index.js";
 
 /**
  * TODO - What is this?

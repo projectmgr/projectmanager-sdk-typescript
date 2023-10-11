@@ -11,12 +11,12 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectFolderDto } from "..";
-import { ProjectStatusDto } from "..";
-import { ProjectPriorityDto } from "..";
-import { ProjectChargeCodeDto } from "..";
-import { ProjectManagerDto } from "..";
-import { ProjectCustomerDto } from "..";
+import { ProjectFolderDto } from "../index.js";
+import { ProjectStatusDto } from "../index.js";
+import { ProjectPriorityDto } from "../index.js";
+import { ProjectChargeCodeDto } from "../index.js";
+import { ProjectManagerDto } from "../index.js";
+import { ProjectCustomerDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
