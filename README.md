@@ -41,8 +41,11 @@ var client = ProjectManagerClient
 
 // Call the RetrieveMe endpoint to verify that you are logged on
 var result = await client.Me.retrieveMe();
-if (result.suc)
-console.log(`Connected as ${result.data?.fullName} (${result.data?.emailAddress})`);
+if (result.success) {
+    console.log(`Connected as ${result.data?.fullName} (${result.data?.emailAddress})`);
+} else {
+    console.log(`Failed to connect: ${result.error}`);
+}
 ```
 
         

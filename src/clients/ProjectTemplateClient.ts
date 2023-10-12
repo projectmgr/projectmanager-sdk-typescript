@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectTemplateDto } from "../index.js";
+import { ProjectTemplateCategoryDto } from "../index.js";
 
 export class ProjectTemplateClient {
   private readonly client: ProjectManagerClient;

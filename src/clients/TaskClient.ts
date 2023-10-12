@@ -19,7 +19,6 @@ import { ChangeSetStatusDto } from "../index.js";
 import { TaskUpdateDto } from "../index.js";
 import { TaskCreateDto } from "../index.js";
 import { TaskPriorityDto } from "../index.js";
-import { BulkTaskCreateDto } from "../index.js";
 
 export class TaskClient {
   private readonly client: ProjectManagerClient;
@@ -135,7 +134,7 @@ export class TaskClient {
    * @param projectId The unique identifier of the Project that will contain these Tasks
    * @param body The list of new Tasks to create
    */
-  createManyTasks(projectId: string, body: BulkTaskCreateDto[]): Promise<AstroResult<ChangeSetStatusDto[]>> {
+  createManyTasks(projectId: string, body: TaskCreateDto[]): Promise<AstroResult<ChangeSetStatusDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/bulk`;
     return this.client.request<AstroResult<ChangeSetStatusDto[]>>("post", url, null, body);
   }

@@ -27,6 +27,15 @@ export class ProjectMembersClient {
   }
 
   /**
+   * Returns a list of membership options for new projects.
+   *
+   */
+  retrieveNewProjectMembers(): Promise<AstroResult<ProjectMemberDto[]>> {
+    const url = `/api/data/projects/members`;
+    return this.client.request<AstroResult<ProjectMemberDto[]>>("get", url, null, null);
+  }
+
+  /**
    * Returns a list of membership options for existing members. Optionally include users who are not a member yet.
    *
    * @param projectId Reference to the project

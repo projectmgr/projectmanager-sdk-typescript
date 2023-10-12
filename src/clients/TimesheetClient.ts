@@ -15,7 +15,7 @@ import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { TimesheetResponseDto } from "../index.js";
 import { TimesheetCreateRequestDto } from "../index.js";
-import { TimesheetGetResponseDto } from "../index.js";
+import { TimesheetDto } from "../index.js";
 import { TimesheetUpdateRequestDto } from "../index.js";
 import { TimesheetAdminTypeDto } from "../index.js";
 
@@ -51,7 +51,7 @@ export class TimesheetClient {
    * @param $orderby Order collection by this field.
    * @param $expand Include related data in the response
    */
-  queryTimeSheets($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<TimesheetGetResponseDto[]>> {
+  queryTimeSheets($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<TimesheetDto[]>> {
     const url = `/api/data/timesheets`;
     const options = {
       params: {
@@ -63,7 +63,7 @@ export class TimesheetClient {
         $expand,
       },
     };
-    return this.client.request<AstroResult<TimesheetGetResponseDto[]>>("get", url, options, null);
+    return this.client.request<AstroResult<TimesheetDto[]>>("get", url, options, null);
   }
 
   /**

@@ -14,8 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectDto } from "../index.js";
-import { ProjectCreateResponseDto } from "../index.js";
-import { ProjectCreateRequestDto } from "../index.js";
+import { ProjectCreateDto } from "../index.js";
 import { ProjectUpdateDto } from "../index.js";
 
 export class ProjectClient {
@@ -62,9 +61,9 @@ export class ProjectClient {
    *
    * @param body Information about the Project you wish to create
    */
-  createProject(body: ProjectCreateRequestDto): Promise<AstroResult<ProjectCreateResponseDto>> {
+  createProject(body: ProjectCreateDto): Promise<AstroResult<ProjectDto>> {
     const url = `/api/data/projects`;
-    return this.client.request<AstroResult<ProjectCreateResponseDto>>("post", url, null, body);
+    return this.client.request<AstroResult<ProjectDto>>("post", url, null, body);
   }
 
   /**
