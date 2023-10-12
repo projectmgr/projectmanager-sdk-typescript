@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    96.0.2102
+ * @version    96.0.2104
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -74,7 +74,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "96.0.2102";
+  private readonly version: string = "96.0.2104";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
