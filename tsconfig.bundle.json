@@ -5,7 +5,7 @@
     ],
     "compilerOptions": {
       "emitDeclarationOnly": true,
-      "outDir": "bundle",
+      "outFile": "bundle/index.d.ts",
       "isolatedModules": false,
       "declaration": true,
       // helps local development, could be dropped out of the NPM package though

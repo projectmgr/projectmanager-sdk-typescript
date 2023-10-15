@@ -17,7 +17,7 @@
         "LICENSE",
         "README.md",
         "package.json",
-        "bundle/**/*"
+        "dist/**/*"
     ],
     "scripts": {
         "clear": "rimraf ./dist && rimraf *.tgz && rimraf ./bundle",
