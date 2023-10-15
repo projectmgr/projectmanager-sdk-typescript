@@ -113,4 +113,12 @@ export type TaskUpdateDto = {
    * If set, this represents the actual tracked cost for this Task.
    */
   actualCost: number | null;
+
+  /**
+   * Color theme definition for this task.
+   *
+   * eg. Blue, Brown, DarkBlue, DarkGrey, Gold, Green, Grey, LightBrown, LightGreen,
+   * LightGrey, LightPurple, LightYellow, Magenta, Mauve, Navy, Orange, Purple, Red.
+   */
+  theme: string | null;
 };

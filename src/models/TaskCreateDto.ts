@@ -20,14 +20,6 @@
 export type TaskCreateDto = {
 
   /**
-   * The unique identifier of this Task.
-   *
-   * TODO - Are people allowed to set this when creating a task?  Doesn't that violate
-   * the principle of GUIDs?
-   */
-  id: string | null;
-
-  /**
    * The common name of this Task.
    */
   name: string;
@@ -36,12 +28,6 @@ export type TaskCreateDto = {
    * A description of the work to be performed in this Task.
    */
   description: string | null;
-
-  /**
-   * If this Task is the child of another Task, set this value to the unique identifier
-   * of the parent Task.
-   */
-  parentTaskId: string | null;
 
   /**
    * The numerical percentage, from 0-100, representing the percentage completion
@@ -102,4 +88,12 @@ export type TaskCreateDto = {
    * The actual cost of this Task to date, if known.
    */
   actualCost: number | null;
+
+  /**
+   * Color theme definition for this task.
+   *
+   * eg. Blue, Brown, DarkBlue, DarkGrey, Gold, Green, Grey, LightBrown, LightGreen,
+   * LightGrey, LightPurple, LightYellow, Magenta, Mauve, Navy, Orange, Purple, Red.
+   */
+  theme: string | null;
 };

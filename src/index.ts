@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.2053
+ * @version    96.0.2123
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -24,7 +24,6 @@ export { HomeFileClient } from "./clients/HomeFileClient.js";
 export { IntegrationClient } from "./clients/IntegrationClient.js";
 export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.js";
 export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.js";
-export { JiraClient } from "./clients/JiraClient.js";
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
 export { ProjectClient } from "./clients/ProjectClient.js";
@@ -57,7 +56,6 @@ export { AssigneeUpsertDto } from "./models/AssigneeUpsertDto.js";
 export { AstroError } from "./models/AstroError.js";
 export { AstroResult } from "./models/AstroResult.js";
 export { AuthenticationStatusDto } from "./models/AuthenticationStatusDto.js";
-export { BulkTaskCreateDto } from "./models/BulkTaskCreateDto.js";
 export { ChangesetGetResponseDto } from "./models/ChangesetGetResponseDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { CreateIntegrationInstanceDto } from "./models/CreateIntegrationInstanceDto.js";
@@ -89,8 +87,7 @@ export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
 export { ProjectCreateAccessDto } from "./models/ProjectCreateAccessDto.js";
 export { ProjectCreateAccessMemberDto } from "./models/ProjectCreateAccessMemberDto.js";
-export { ProjectCreateRequestDto } from "./models/ProjectCreateRequestDto.js";
-export { ProjectCreateResponseDto } from "./models/ProjectCreateResponseDto.js";
+export { ProjectCreateDto } from "./models/ProjectCreateDto.js";
 export { ProjectCustomerDto } from "./models/ProjectCustomerDto.js";
 export { ProjectDto } from "./models/ProjectDto.js";
 export { ProjectFolderDto } from "./models/ProjectFolderDto.js";
@@ -110,7 +107,6 @@ export { ResourceDto } from "./models/ResourceDto.js";
 export { ResourceSkillDto } from "./models/ResourceSkillDto.js";
 export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";
-export { RetunJiraProjectsDto } from "./models/RetunJiraProjectsDto.js";
 export { TagCreateDto } from "./models/TagCreateDto.js";
 export { TagDto } from "./models/TagDto.js";
 export { TagUpdateDto } from "./models/TagUpdateDto.js";
@@ -129,8 +125,9 @@ export { TaskTodoDto } from "./models/TaskTodoDto.js";
 export { TaskUpdateDto } from "./models/TaskUpdateDto.js";
 export { TimesheetAdminTypeDto } from "./models/TimesheetAdminTypeDto.js";
 export { TimesheetCreateRequestDto } from "./models/TimesheetCreateRequestDto.js";
-export { TimesheetGetResponseDto } from "./models/TimesheetGetResponseDto.js";
+export { TimesheetDto } from "./models/TimesheetDto.js";
 export { TimeSheetProjectDto } from "./models/TimeSheetProjectDto.js";
+export { TimesheetResourceDto } from "./models/TimesheetResourceDto.js";
 export { TimesheetResponseDto } from "./models/TimesheetResponseDto.js";
 export { TimesheetTaskDto } from "./models/TimesheetTaskDto.js";
 export { TimesheetUpdateRequestDto } from "./models/TimesheetUpdateRequestDto.js";

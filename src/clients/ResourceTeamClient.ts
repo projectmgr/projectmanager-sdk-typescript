@@ -32,23 +32,23 @@ export class ResourceTeamClient {
    *
    * A ResourceTeam is a grouping of Resources that allows you to keep track of assignments in a manner consistent with your business needs.  You can assign Resources to be members of zero, one, or many ResourceTeams.
    *
-   * @param $top The number of records to return
-   * @param $skip Skips the given number of records and then returns $top records
-   * @param $filter Filter the expression according to oData queries
-   * @param $select Specify which properties should be returned
-   * @param $orderby Order collection by this field.
-   * @param $expand Include related data in the response
+   * @param top The number of records to return
+   * @param skip Skips the given number of records and then returns $top records
+   * @param filter Filter the expression according to oData queries
+   * @param select Specify which properties should be returned
+   * @param orderby Order collection by this field.
+   * @param expand Include related data in the response
    */
-  retrieveResourceTeams($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
+  retrieveResourceTeams(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
     const url = `/api/data/resources/teams`;
     const options = {
       params: {
-        $top,
-        $skip,
-        $filter,
-        $select,
-        $orderby,
-        $expand,
+        '$top': top,
+        '$skip': skip,
+        '$filter': filter,
+        '$select': select,
+        '$orderby': orderby,
+        '$expand': expand,
       },
     };
     return this.client.request<AstroResult<ResourceTeamDto[]>>("get", url, options, null);

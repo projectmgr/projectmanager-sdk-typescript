@@ -18,7 +18,7 @@ import { ProjectCreateAccessDto } from "../index.js";
  * represent individual items of work that team members must complete.  The sum total of Tasks
  * within a Project represents the work to be completed for that Project.
  */
-export type ProjectCreateRequestDto = {
+export type ProjectCreateDto = {
 
   /**
    * The name of the Project.
@@ -107,4 +107,16 @@ export type ProjectCreateRequestDto = {
    * to a static non-Custom template.
    */
   templateId: string | null;
+
+  /**
+   * The target planned completion date for this Project, or null if one has
+   * not been selected.  This value can be updated in the Project Settings
+   * page or the Portfolio Project page within the application.
+   */
+  targetDate: string | null;
+
+  /**
+   * True if this Project is marked as favorite for current user
+   */
+  favorite: boolean | null;
 };

@@ -1,6 +1,6 @@
 {
     "name": "projectmanager-sdk",
-    "version": "11.1.2053",
+    "version": "96.0.2123",
     "description": "Software development kit for the ProjectManager.com API. for TypeScript",
     "repository": "https://github.com/projectmgr/projectmanager-sdk-typescript",
     "license": "MIT",
@@ -20,11 +20,12 @@
         "dist/**/*"
     ],
     "scripts": {
+        "clear": "rimraf ./dist && rimraf *.tgz && rimraf ./bundle",
         "compile": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "eslint \"**/*.ts\"",
-        "clear": "rimraf dist/* && rimraf build/compiled/*",
-        "build": "node ./build/build.js"
+        "lint": "eslint \"src/**/*.ts\"",
+        "build": "node ./build/build.js",
+        "build-types": "tsc --emitDeclarationOnly --declaration --project tsconfig.bundle.json"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

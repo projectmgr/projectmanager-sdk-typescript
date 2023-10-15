@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    11.1.2053
+ * @version    96.0.2123
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -21,7 +21,6 @@ import { HomeFileClient } from "./index.js";
 import { IntegrationClient } from "./index.js";
 import { IntegrationCategoryClient } from "./index.js";
 import { IntegrationProviderClient } from "./index.js";
-import { JiraClient } from "./index.js";
 import { LicenseClient } from "./index.js";
 import { MeClient } from "./index.js";
 import { ProjectClient } from "./index.js";
@@ -75,7 +74,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "11.1.2053";
+  private readonly version: string = "96.0.2123";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -90,7 +89,6 @@ export class ProjectManagerClient {
   public readonly Integration: IntegrationClient;
   public readonly IntegrationCategory: IntegrationCategoryClient;
   public readonly IntegrationProvider: IntegrationProviderClient;
-  public readonly Jira: JiraClient;
   public readonly License: LicenseClient;
   public readonly Me: MeClient;
   public readonly Project: ProjectClient;
@@ -132,7 +130,6 @@ export class ProjectManagerClient {
     this.Integration = new IntegrationClient(this);
     this.IntegrationCategory = new IntegrationCategoryClient(this);
     this.IntegrationProvider = new IntegrationProviderClient(this);
-    this.Jira = new JiraClient(this);
     this.License = new LicenseClient(this);
     this.Me = new MeClient(this);
     this.Project = new ProjectClient(this);

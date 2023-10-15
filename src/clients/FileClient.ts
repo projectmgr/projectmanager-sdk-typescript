@@ -39,7 +39,7 @@ export class FileClient {
     const url = `/api/data/files/${documentId}/download`;
     const options = {
       params: {
-        type,
+        'type': type,
       },
     };
     return this.client.request<AstroResult<object>>("get", url, options, null);

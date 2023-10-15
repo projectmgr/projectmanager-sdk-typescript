@@ -11,7 +11,6 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectTemplateCategoryDto } from "../index.js";
 
 /**
  * A ProjectTemplate is a named document that contains default Project details.
@@ -70,9 +69,7 @@ export type ProjectTemplateDto = {
   isCustom: boolean;
 
   /**
-   * The ProjectTemplateCategories that this Project Template belongs to.
-   *
-   * Custom ProjectTemplates do not belong to any ProjectTemplateCategories.
+   * The web default view of the template.
    */
-  categories: ProjectTemplateCategoryDto[] | null;
+  defaultView: string | null;
 };

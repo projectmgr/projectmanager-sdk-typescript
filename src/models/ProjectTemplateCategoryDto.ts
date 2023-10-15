@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { ProjectTemplateDto } from "../index.js";
 
 /**
  * Information about a Category of ProjectTemplates.
@@ -31,4 +32,9 @@ export type ProjectTemplateCategoryDto = {
    * The overall order of this ProjectTemplate Category
    */
   order: number;
+
+  /**
+   * A list of templates in this category
+   */
+  templates: ProjectTemplateDto[] | null;
 };

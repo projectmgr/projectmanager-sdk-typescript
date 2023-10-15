@@ -24,8 +24,8 @@ jobs:
         run: npm audit
       - name: ESLint
         run: npm run lint
-      - name: npm build
-        run: npm run build
+      - name: npm compile
+        run: npm run compile
       - name: Publish NPM Package
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run:

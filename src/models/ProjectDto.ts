@@ -17,6 +17,7 @@ import { ProjectPriorityDto } from "../index.js";
 import { ProjectChargeCodeDto } from "../index.js";
 import { ProjectManagerDto } from "../index.js";
 import { ProjectCustomerDto } from "../index.js";
+import { ProjectMemberDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
@@ -147,4 +148,14 @@ export type ProjectDto = {
    * for future Projects.
    */
   isTemplate: boolean;
+
+  /**
+   * True if this Project is marked as favorite for current user
+   */
+  favorite: boolean;
+
+  /**
+   * The members of the project
+   */
+  members: ProjectMemberDto[] | null;
 };
