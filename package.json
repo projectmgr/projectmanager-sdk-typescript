@@ -17,14 +17,15 @@
         "LICENSE",
         "README.md",
         "package.json",
-        "dist/**/*"
+        "bundle/**/*"
     ],
     "scripts": {
+        "clear": "rimraf ./dist && rimraf *.tgz && rimraf ./bundle",
         "compile": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "eslint \"**/*.ts\"",
-        "clear": "rimraf dist/* && rimraf build/compiled/*",
-        "build": "node ./build/build.js"
+        "lint": "eslint \"src/**/*.ts\"",
+        "build": "node ./build/build.js",
+        "build-types": "tsc --emitDeclarationOnly --declaration --project tsconfig.bundle.json"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
