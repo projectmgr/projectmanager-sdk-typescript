@@ -32,23 +32,23 @@ export class ProjectClient {
    *
    * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
    *
-   * @param $top The number of records to return
-   * @param $skip Skips the given number of records and then returns $top records
-   * @param $filter Filter the expression according to oData queries
-   * @param $select Specify which properties should be returned
-   * @param $orderby Order collection by this field.
-   * @param $expand Include related data in the response
+   * @param top The number of records to return
+   * @param skip Skips the given number of records and then returns $top records
+   * @param filter Filter the expression according to oData queries
+   * @param select Specify which properties should be returned
+   * @param orderby Order collection by this field.
+   * @param expand Include related data in the response
    */
-  queryProjects($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<ProjectDto[]>> {
+  queryProjects(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ProjectDto[]>> {
     const url = `/api/data/projects`;
     const options = {
       params: {
-        $top,
-        $skip,
-        $filter,
-        $select,
-        $orderby,
-        $expand,
+        '$top': top,
+        '$skip': skip,
+        '$filter': filter,
+        '$select': select,
+        '$orderby': orderby,
+        '$expand': expand,
       },
     };
     return this.client.request<AstroResult<ProjectDto[]>>("get", url, options, null);

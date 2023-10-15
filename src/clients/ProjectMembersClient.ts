@@ -45,7 +45,7 @@ export class ProjectMembersClient {
     const url = `/api/data/projects/${projectId}/members`;
     const options = {
       params: {
-        includeAllUsers,
+        'includeAllUsers': includeAllUsers,
       },
     };
     return this.client.request<AstroResult<ProjectMemberDto[]>>("get", url, options, null);

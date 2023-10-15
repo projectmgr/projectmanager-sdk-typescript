@@ -44,23 +44,23 @@ export class TimesheetClient {
    *
    * Time Sheets is a list of times per task
    *
-   * @param $top The number of records to return
-   * @param $skip Skips the given number of records and then returns $top records
-   * @param $filter Filter the expression according to oData queries
-   * @param $select Specify which properties should be returned
-   * @param $orderby Order collection by this field.
-   * @param $expand Include related data in the response
+   * @param top The number of records to return
+   * @param skip Skips the given number of records and then returns $top records
+   * @param filter Filter the expression according to oData queries
+   * @param select Specify which properties should be returned
+   * @param orderby Order collection by this field.
+   * @param expand Include related data in the response
    */
-  queryTimeSheets($top?: number, $skip?: number, $filter?: string, $select?: string, $orderby?: string, $expand?: string): Promise<AstroResult<TimesheetDto[]>> {
+  queryTimeSheets(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<TimesheetDto[]>> {
     const url = `/api/data/timesheets`;
     const options = {
       params: {
-        $top,
-        $skip,
-        $filter,
-        $select,
-        $orderby,
-        $expand,
+        '$top': top,
+        '$skip': skip,
+        '$filter': filter,
+        '$select': select,
+        '$orderby': orderby,
+        '$expand': expand,
       },
     };
     return this.client.request<AstroResult<TimesheetDto[]>>("get", url, options, null);
