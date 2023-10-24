@@ -12,7 +12,10 @@
  */
 
 import { TaskProjectDto } from "../index.js";
+import { TaskTagDto } from "../index.js";
 import { TaskAssigneeDto } from "../index.js";
+import { TaskTodoDto } from "../index.js";
+import { TaskStatusDto } from "../index.js";
 
 /**
  * A Task is an individual element of work that must be performed to complete a Project.  A
@@ -32,6 +35,11 @@ export type TaskDto = {
   project: TaskProjectDto | null;
 
   /**
+   * The TaskTags that apply to this Task.
+   */
+  tags: TaskTagDto[] | null;
+
+  /**
    * The unique identifier of the Project to which this Task belongs.
    */
   projectId: string;
@@ -40,6 +48,11 @@ export type TaskDto = {
    * The list of assignees who are to work on this Task, if any.
    */
   assignees: TaskAssigneeDto[] | null;
+
+  /**
+   * A list of TaskTodo items, which are sub-tasks within this Task.
+   */
+  todos: TaskTodoDto[] | null;
 
   /**
    * A short ID that can be used to refer to this Task.  This short ID is
@@ -56,6 +69,11 @@ export type TaskDto = {
    * A description of the work to be performed in this Task.
    */
   description: string | null;
+
+  /**
+   * The TaskStatus assigned to this Task.
+   */
+  status: TaskStatusDto | null;
 
   /**
    * The date when work on this Task is planned to begin.
@@ -177,4 +195,14 @@ export type TaskDto = {
    * The planned cost for this Task.  Cannot be negative.
    */
   plannedCost: number | null;
+
+  /**
+   * The planned duration (in minutes) for this Task.
+   */
+  plannedDuration: number | null;
+
+  /**
+   * The planned effort (in minutes) for this Task.
+   */
+  plannedEffort: number | null;
 };

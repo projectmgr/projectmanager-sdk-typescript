@@ -78,7 +78,7 @@ export type TaskDetailsDto = {
   /**
    * The date when work on this Task is planned to begin.
    */
-  plannedStartDate: string;
+  plannedStartDate: string | null;
 
   /**
    * The date when work on this Task is expected to complete.
