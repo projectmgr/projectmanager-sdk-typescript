@@ -27,7 +27,8 @@ import { ProjectMemberDto } from "../index.js";
 export type ProjectDto = {
 
   /**
-   * The unique identifier of the Project.
+   * The unique identifier of the Project.  This value is set by the system and cannot
+   * be set with a CreateProject or changed with an UpdateProject call.
    */
   id: string;
 
@@ -94,6 +95,32 @@ export type ProjectDto = {
   targetDate: string | null;
 
   /**
+   * The planned start date for this Project. This is calculated based
+   * off of the earliest task start date
+   */
+  plannedStartDate: string | null;
+
+  /**
+   * The planned start date for this Project. This is calculated based
+   * off of the latest task finish date
+   */
+  plannedFinishDate: string | null;
+
+  /**
+   * The actual start date for this Project. This is calculated based
+   * on the earliest task actual start date, or null if no projects have
+   * been started
+   */
+  actualStartDate: string | null;
+
+  /**
+   * The actual finish date for this Project. This is calculated based
+   * on the latest task actual finish date, or null if no projects have
+   * been finished
+   */
+  actualFinishDate: string | null;
+
+  /**
    * The ProjectPriority level of this Project, if defined.
    */
   priority: ProjectPriorityDto | null;
@@ -135,11 +162,17 @@ export type ProjectDto = {
 
   /**
    * The timestamp in UTC when the Project was most recently modified.
+   *
+   * This field is automatically determined by the system when this Project is modified
+   * and cannot be directly changed by the user.
    */
   modifyDate: string;
 
   /**
    * The timestamp in UTC when the Project was created.
+   *
+   * This field is automatically determined by the system when this Project is created
+   * and cannot be changed by the user.
    */
   createDate: string;
 

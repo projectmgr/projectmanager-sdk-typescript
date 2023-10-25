@@ -138,4 +138,36 @@ export class TaskClient {
     const url = `/api/data/projects/${projectId}/tasks/bulk`;
     return this.client.request<AstroResult<ChangeSetStatusDto[]>>("post", url, null, body);
   }
+
+  /**
+   * Adds a task parent relationship
+   *
+   * @param taskId The task that will become the child
+   * @param parentTaskId The parent task
+   */
+  addParentTask(taskId: string, parentTaskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
+    const url = `/api/data/tasks/${taskId}/parent/${parentTaskId}`;
+    return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, null);
+  }
+
+  /**
+   * Updates a task parent relationship
+   *
+   * @param taskId The task that will become the child
+   * @param parentTaskId The parent task
+   */
+  updateParentTask(taskId: string, parentTaskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
+    const url = `/api/data/tasks/${taskId}/parent/${parentTaskId}`;
+    return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, null);
+  }
+
+  /**
+   * Removes a task parent relationship completely
+   *
+   * @param taskId The child task
+   */
+  removeParentTask(taskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
+    const url = `/api/data/tasks/${taskId}/parent`;
+    return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, null);
+  }
 }
