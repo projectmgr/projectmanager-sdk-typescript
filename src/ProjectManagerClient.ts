@@ -48,7 +48,7 @@ import { UserRoleClient } from "./index.js";
 import { WorkSpaceClient } from "./index.js";
 import { AstroResult } from "./index.js";
 
-import axios, { Method } from "axios";
+import axios, { AxiosRequestConfig, Method, ResponseType } from "axios";
 import { default as FormData } from "form-data";
 import fs from "fs";
 import os from "os";
@@ -254,7 +254,7 @@ export class ProjectManagerClient {
       data: body,
       headers: await this.getHeaders(),
     };
-    const result = await axios.default.request(requestConfig);
+    const result = await axios.request(requestConfig);
     return result.data;
   }
 
@@ -265,14 +265,14 @@ export class ProjectManagerClient {
     const fileBuffer = await fs.promises.readFile(filename);
     const formData = new FormData();
     formData.append("file", fileBuffer);
-    const requestConfig: axios.AxiosRequestConfig = {
+    const requestConfig: AxiosRequestConfig = {
       url: new url.URL(path, this.serverUrl).href,
       method,
       data: formData,
       params: options,
       headers: await this.getHeaders(),
     };
-    const result = await axios.default.request(requestConfig);
+    const result = await axios.request(requestConfig);
     return result.data;
   }
 
@@ -280,8 +280,8 @@ export class ProjectManagerClient {
    * Make a GET request using this client and download the results as a blob
    */
   public async requestBlob(method: Method, path: string, options: unknown, body: unknown): Promise<AstroResult<Blob>> {
-    const responseType: axios.ResponseType = "blob";
-    const requestConfig: axios.AxiosRequestConfig = {
+    const responseType: ResponseType = "blob";
+    const requestConfig: AxiosRequestConfig = {
       url: new url.URL(path, this.serverUrl).href,
       method,
       params: options,
@@ -289,7 +289,7 @@ export class ProjectManagerClient {
       headers: await this.getHeaders(),
       responseType,
     };
-    const result = await axios.default.request(requestConfig);
+    const result = await axios.request(requestConfig);
     return result.data;
   }
 }
