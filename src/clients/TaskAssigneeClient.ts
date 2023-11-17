@@ -33,10 +33,9 @@ export class TaskAssigneeClient {
    * A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
    *
    * @param taskId The unique identifier of the Task whose TaskAssignees will be replaced
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The new list of TaskAssignees for this Task
    */
-  replaceTaskAssignees(taskId: string, body: AssigneeUpsertDto[], xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
+  replaceTaskAssignees(taskId: string, body: AssigneeUpsertDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/assignees`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -47,10 +46,9 @@ export class TaskAssigneeClient {
    * A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
    *
    * @param taskId The unique identifier of the Task to add or update an assignment
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body List of Assignee data
    */
-  createOrUpdateTaskAssignee(taskId: string, body: AssigneeUpsertDto[], xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
+  createOrUpdateTaskAssignee(taskId: string, body: AssigneeUpsertDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/assignees`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -61,10 +59,9 @@ export class TaskAssigneeClient {
    * A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources to a Task and designate what proportion of their time will be allocated to this Task.
    *
    * @param taskId The unique identifier of the Task whose TaskAssignee will be removed
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body List of TaskAssignee records to remove
    */
-  deleteTaskAssignees(taskId: string, body: IdDto[], xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
+  deleteTaskAssignees(taskId: string, body: IdDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/assignees`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, body);
   }

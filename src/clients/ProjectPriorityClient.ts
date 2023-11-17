@@ -32,9 +32,8 @@ export class ProjectPriorityClient {
    *
    * Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProjectPriorities(xintegrationname?: ): Promise<AstroResult<ProjectPriorityDto[]>> {
+  retrieveProjectPriorities(): Promise<AstroResult<ProjectPriorityDto[]>> {
     const url = `/api/data/projects/priorities`;
     return this.client.request<AstroResult<ProjectPriorityDto[]>>("get", url, null, null);
   }

@@ -31,9 +31,8 @@ export class DiscussionClient {
    * Retrieve all comments written about a task
    *
    * @param taskId The unique ID number of the task to retrieve comments
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveTaskComments(taskId: string, xintegrationname?: ): Promise<AstroResult<DiscussionDto[]>> {
+  retrieveTaskComments(taskId: string): Promise<AstroResult<DiscussionDto[]>> {
     const url = `/api/data/tasks/${taskId}/discussions`;
     return this.client.request<AstroResult<DiscussionDto[]>>("get", url, null, null);
   }
@@ -44,10 +43,9 @@ export class DiscussionClient {
    * Tasks can have discussions attached to them.  These discussions can include text with simple formatting.  Discussion comments are formatted using [Markdown](https://www.markdownguide.org/) and users should be aware that HTML embedding is not permitted due to the risk of cross-site attacks and other embedding challenges.
    *
    * @param taskId The unique ID number of the task being commented upon
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The Markdown-formatted text of the comment
    */
-  createTaskComments(taskId: string, body: DiscussionCreateDto, xintegrationname?: ): Promise<AstroResult<DiscussionCreateResponseDto>> {
+  createTaskComments(taskId: string, body: DiscussionCreateDto): Promise<AstroResult<DiscussionCreateResponseDto>> {
     const url = `/api/data/tasks/${taskId}/discussions`;
     return this.client.request<AstroResult<DiscussionCreateResponseDto>>("post", url, null, body);
   }

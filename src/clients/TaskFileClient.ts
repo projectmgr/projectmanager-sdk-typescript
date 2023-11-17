@@ -33,10 +33,9 @@ export class TaskFileClient {
    * When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
    *
    * @param taskId The reference to the task
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param filename The full path of a file to upload to the API
    */
-  uploadTaskFile(taskId: string, filename: string, xintegrationname?: ): Promise<AstroResult<FileDto>> {
+  uploadTaskFile(taskId: string, filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/tasks/${taskId}/files`;
     return this.client.fileUpload("post", url, null, filename);
   }

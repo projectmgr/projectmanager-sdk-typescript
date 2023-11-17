@@ -33,9 +33,8 @@ export class TaskStatusClient {
    * A TaskStatus is a named status level used by your business to determine how to measure the progress of Tasks.  You can define your own named status levels that are appropriate for your business and determine which status levels are considered done.
    *
    * @param projectId The unique identifier of the Project to retrieve TaskStatuses
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveTaskStatuses(projectId: string, xintegrationname?: ): Promise<AstroResult<TaskStatusDto[]>> {
+  retrieveTaskStatuses(projectId: string): Promise<AstroResult<TaskStatusDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses`;
     return this.client.request<AstroResult<TaskStatusDto[]>>("get", url, null, null);
   }
@@ -46,10 +45,9 @@ export class TaskStatusClient {
    * A TaskStatus is a named status level used by your business to determine how to measure the progress of Tasks.  You can define your own named status levels that are appropriate for your business.
    *
    * @param projectId The unique identifier of the Project for the new TaskStatus
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Information about the new TaskStatus level to create within this Project
    */
-  createTaskStatus(projectId: string, body: TaskStatusCreateDto, xintegrationname?: ): Promise<AstroResult<TaskStatusDto>> {
+  createTaskStatus(projectId: string, body: TaskStatusCreateDto): Promise<AstroResult<TaskStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses`;
     return this.client.request<AstroResult<TaskStatusDto>>("post", url, null, body);
   }
@@ -60,10 +58,9 @@ export class TaskStatusClient {
    * A TaskStatus is a named status level used by your business to determine how to measure the progress of Tasks.  You can define your own named status levels that are appropriate for your business.
    *
    * @param projectId The unique identifier of the Project for the new TaskStatus
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Information about the existing TaskStatus level to update within this Project
    */
-  updateTaskStatus(projectId: string, body: TaskStatusUpdateDto, xintegrationname?: ): Promise<AstroResult<TaskStatusDto>> {
+  updateTaskStatus(projectId: string, body: TaskStatusUpdateDto): Promise<AstroResult<TaskStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses`;
     return this.client.request<AstroResult<TaskStatusDto>>("put", url, null, body);
   }
@@ -75,9 +72,8 @@ export class TaskStatusClient {
    *
    * @param projectId The unique identifier of the Project for the TaskStatus level to delete
    * @param taskStatusId The Id of the TaskStatus level to be removed.
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  deleteTaskStatus(projectId: string, taskStatusId: string, xintegrationname?: ): Promise<AstroResult<object>> {
+  deleteTaskStatus(projectId: string, taskStatusId: string): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/tasks/statuses/${taskStatusId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }

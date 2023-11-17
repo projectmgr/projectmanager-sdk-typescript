@@ -35,9 +35,8 @@ export class ProjectFieldClient {
    *
    * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProjectFields(xintegrationname?: ): Promise<AstroResult<GetProjectFieldsResponseDto[]>> {
+  retrieveProjectFields(): Promise<AstroResult<GetProjectFieldsResponseDto[]>> {
     const url = `/api/data/projects/fields`;
     return this.client.request<AstroResult<GetProjectFieldsResponseDto[]>>("get", url, null, null);
   }
@@ -47,10 +46,9 @@ export class ProjectFieldClient {
    *
    * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Information about the ProjectField to create
    */
-  createProjectField(body: CreateProjectFieldDto, xintegrationname?: ): Promise<AstroResult<CreateProjectFieldResponseDto>> {
+  createProjectField(body: CreateProjectFieldDto): Promise<AstroResult<CreateProjectFieldResponseDto>> {
     const url = `/api/data/projects/fields`;
     return this.client.request<AstroResult<CreateProjectFieldResponseDto>>("post", url, null, body);
   }
@@ -60,10 +58,9 @@ export class ProjectFieldClient {
    *
    * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The identity of the ProjectField to delete
    */
-  deleteProjectField(body: DeleteProjectFieldDto, xintegrationname?: ): Promise<AstroResult<object>> {
+  deleteProjectField(body: DeleteProjectFieldDto): Promise<AstroResult<object>> {
     const url = `/api/data/projects/fields`;
     return this.client.request<AstroResult<object>>("delete", url, null, body);
   }
@@ -75,10 +72,9 @@ export class ProjectFieldClient {
    *
    * @param projectId The unique identifier of the Project that contains this ProjectField
    * @param fieldId The unique identifier of this ProjectField
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The new information for this ProjectField
    */
-  updateProjectField(projectId: string, fieldId: string, body: UpdateProjectFieldValueDto, xintegrationname?: ): Promise<AstroResult<object>> {
+  updateProjectField(projectId: string, fieldId: string, body: UpdateProjectFieldValueDto): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/fields/${fieldId}`;
     return this.client.request<AstroResult<object>>("put", url, null, body);
   }
@@ -88,9 +84,8 @@ export class ProjectFieldClient {
    *
    * @param projectId The unique identifier of the Project of the value to retrieve
    * @param fieldId The unique identifier of the ProjectField of the value to retrieve
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProjectFieldValue(projectId: string, fieldId: string, xintegrationname?: ): Promise<AstroResult<ProjectFieldsValueResponseDto>> {
+  retrieveProjectFieldValue(projectId: string, fieldId: string): Promise<AstroResult<ProjectFieldsValueResponseDto>> {
     const url = `/api/data/projects/${projectId}/fields/${fieldId}`;
     return this.client.request<AstroResult<ProjectFieldsValueResponseDto>>("get", url, null, null);
   }
@@ -99,9 +94,8 @@ export class ProjectFieldClient {
    * Retrieves all ProjectField values for a particular Project.
    *
    * @param projectId The unique identifier of the Project for which we want ProjectField values
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveAllProjectFieldValues(projectId: string, xintegrationname?: ): Promise<AstroResult<ProjectFieldsValueResponseDto[]>> {
+  retrieveAllProjectFieldValues(projectId: string): Promise<AstroResult<ProjectFieldsValueResponseDto[]>> {
     const url = `/api/data/projects/${projectId}/fields`;
     return this.client.request<AstroResult<ProjectFieldsValueResponseDto[]>>("get", url, null, null);
   }

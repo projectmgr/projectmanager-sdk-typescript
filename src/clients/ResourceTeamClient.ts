@@ -32,7 +32,6 @@ export class ResourceTeamClient {
    *
    * A ResourceTeam is a grouping of Resources that allows you to keep track of assignments in a manner consistent with your business needs.  You can assign Resources to be members of zero, one, or many ResourceTeams.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
@@ -40,7 +39,7 @@ export class ResourceTeamClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  retrieveResourceTeams(xintegrationname?: , top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
+  retrieveResourceTeams(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
     const url = `/api/data/resources/teams`;
     const options = {
       params: {
@@ -58,10 +57,9 @@ export class ResourceTeamClient {
   /**
    * Create a Resource Team.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The name of the team to create.
    */
-  createResourceTeam(body: CreateResourceTeamDto, xintegrationname?: ): Promise<AstroResult<ResourceTeamDto>> {
+  createResourceTeam(body: CreateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
     const url = `/api/data/resources/teams`;
     return this.client.request<AstroResult<ResourceTeamDto>>("post", url, null, body);
   }
@@ -70,9 +68,8 @@ export class ResourceTeamClient {
    * The endpoint is used to delete a resource team. Users assigned to this team will no longer be assigned thereafter.
    *
    * @param resourceTeamId The Id of the team to be removed.
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  deleteResourceTeam(resourceTeamId: string, xintegrationname?: ): Promise<AstroResult<object>> {
+  deleteResourceTeam(resourceTeamId: string): Promise<AstroResult<object>> {
     const url = `/api/data/resources/teams/${resourceTeamId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -81,10 +78,9 @@ export class ResourceTeamClient {
    * Update a Resource Team.
    *
    * @param teamresourceId The id of the resource team
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The name of the team to Update.
    */
-  updateResourceTeam(teamresourceId: string, body: UpdateResourceTeamDto, xintegrationname?: ): Promise<AstroResult<ResourceTeamDto>> {
+  updateResourceTeam(teamresourceId: string, body: UpdateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
     const url = `/api/data/resources/teams/${teamresourceId}`;
     return this.client.request<AstroResult<ResourceTeamDto>>("put", url, null, body);
   }

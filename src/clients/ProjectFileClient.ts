@@ -33,10 +33,9 @@ export class ProjectFileClient {
    * When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
    *
    * @param projectId The reference to the project
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param filename The full path of a file to upload to the API
    */
-  uploadProjectFile(projectId: string, filename: string, xintegrationname?: ): Promise<AstroResult<FileDto>> {
+  uploadProjectFile(projectId: string, filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/files`;
     return this.client.fileUpload("post", url, null, filename);
   }
@@ -52,10 +51,9 @@ export class ProjectFileClient {
    *
    * @param projectId The reference to the project
    * @param folderId The reference to the sub folder to put the file into
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param filename The full path of a file to upload to the API
    */
-  uploadProjectFileToFolder(projectId: string, folderId: string, filename: string, xintegrationname?: ): Promise<AstroResult<FileDto>> {
+  uploadProjectFileToFolder(projectId: string, folderId: string, filename: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/folders/${folderId}/files`;
     return this.client.fileUpload("post", url, null, filename);
   }

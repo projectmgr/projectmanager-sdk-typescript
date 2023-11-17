@@ -31,9 +31,8 @@ export class IntegrationClient {
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of this Integration
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveIntegration(integrationId: string, xintegrationname?: ): Promise<AstroResult<IntegrationDto>> {
+  retrieveIntegration(integrationId: string): Promise<AstroResult<IntegrationDto>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<IntegrationDto>>("get", url, null, null);
   }
@@ -44,9 +43,8 @@ export class IntegrationClient {
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of the Integration to enable
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  enableIntegration(integrationId: string, xintegrationname?: ): Promise<AstroResult<IntegrationDto>> {
+  enableIntegration(integrationId: string): Promise<AstroResult<IntegrationDto>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<IntegrationDto>>("post", url, null, null);
   }
@@ -57,9 +55,8 @@ export class IntegrationClient {
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of the Integration to disable
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  disableIntegration(integrationId: string, xintegrationname?: ): Promise<AstroResult<object>> {
+  disableIntegration(integrationId: string): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -69,9 +66,8 @@ export class IntegrationClient {
    *
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveAllIntegrations(xintegrationname?: ): Promise<AstroResult<IntegrationDto[]>> {
+  retrieveAllIntegrations(): Promise<AstroResult<IntegrationDto[]>> {
     const url = `/api/data/integrations`;
     return this.client.request<AstroResult<IntegrationDto[]>>("get", url, null, null);
   }

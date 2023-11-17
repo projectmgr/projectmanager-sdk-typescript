@@ -30,9 +30,8 @@ export class ProjectCustomerClient {
    *
    * A ProjectCustomer is a code used to identify costs within your Projects.  Each ProjectCustomer has a name and a unique identifier.  ProjectCustomers are defined per Workspace and are shared among Projects.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProjectCustomers(xintegrationname?: ): Promise<AstroResult<ProjectCustomerDto[]>> {
+  retrieveProjectCustomers(): Promise<AstroResult<ProjectCustomerDto[]>> {
     const url = `/api/data/projects/customers`;
     return this.client.request<AstroResult<ProjectCustomerDto[]>>("get", url, null, null);
   }

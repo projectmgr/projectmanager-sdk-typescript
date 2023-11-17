@@ -35,9 +35,8 @@ export class TaskFieldClient {
    * A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
    *
    * @param projectId The unique identifier of the Project to retrieve TaskFields
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveTaskFields(projectId: string, xintegrationname?: ): Promise<AstroResult<GetTaskFieldsResponseDto[]>> {
+  retrieveTaskFields(projectId: string): Promise<AstroResult<GetTaskFieldsResponseDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/fields`;
     return this.client.request<AstroResult<GetTaskFieldsResponseDto[]>>("get", url, null, null);
   }
@@ -48,10 +47,9 @@ export class TaskFieldClient {
    * A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
    *
    * @param projectId The unique identifier of the Project within which to create this TaskField
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Information about the TaskField to create
    */
-  createTaskField(projectId: string, body: CreateTaskFieldRequestDto, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
+  createTaskField(projectId: string, body: CreateTaskFieldRequestDto): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks/fields`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -63,9 +61,8 @@ export class TaskFieldClient {
    *
    * @param projectId The unique identifier of the Project that contains this TaskField
    * @param fieldId The unique identifier of the TaskField to delete
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  deleteTaskField(projectId: string, fieldId: string, xintegrationname?: ): Promise<AstroResult<object>> {
+  deleteTaskField(projectId: string, fieldId: string): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/tasks/fields/${fieldId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -77,9 +74,8 @@ export class TaskFieldClient {
    *
    * @param taskId The unique identifier of the Task of the value to retrieve
    * @param fieldId The unique identifier of the TaskField of the value to retrieve
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveTaskFieldValue(taskId: string, fieldId: string, xintegrationname?: ): Promise<AstroResult<TaskFieldsValueResponseDto>> {
+  retrieveTaskFieldValue(taskId: string, fieldId: string): Promise<AstroResult<TaskFieldsValueResponseDto>> {
     const url = `/api/data/tasks/${taskId}/fields/${fieldId}`;
     return this.client.request<AstroResult<TaskFieldsValueResponseDto>>("get", url, null, null);
   }
@@ -91,10 +87,9 @@ export class TaskFieldClient {
    *
    * @param taskId The unique identifier of the Task whose value you wish to update
    * @param fieldId The unique identifier of the TaskField whose value you wish to update
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The new value for this TaskField for this Task
    */
-  updateTaskFieldValue(taskId: string, fieldId: string, body: UpdateTaskFieldValueDto, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
+  updateTaskFieldValue(taskId: string, fieldId: string, body: UpdateTaskFieldValueDto): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/fields/${fieldId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -105,9 +100,8 @@ export class TaskFieldClient {
    * A TaskField is a custom field defined within your Workspace for a specific Project.  You can define TaskFields for any integration purpose that is important to your business.  Each TaskField has a data type as well as options in how it is handled.  TaskFields can be edited for each Task inside this Project.
    *
    * @param taskId The unique identifier of the Task for which we want TaskField values
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveAllTaskFieldValues(taskId: string, xintegrationname?: ): Promise<AstroResult<TaskFieldsValueResponseDto[]>> {
+  retrieveAllTaskFieldValues(taskId: string): Promise<AstroResult<TaskFieldsValueResponseDto[]>> {
     const url = `/api/data/tasks/${taskId}/fields`;
     return this.client.request<AstroResult<TaskFieldsValueResponseDto[]>>("get", url, null, null);
   }

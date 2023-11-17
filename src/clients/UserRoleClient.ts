@@ -30,9 +30,8 @@ export class UserRoleClient {
    *
    * A UserRole is a name for a privilege level granted to a specific User.  The 'Global Admin' UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed. You can choose which UserRole applies to a User within your Workspace.
    *
-   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveUserRoles(xintegrationname?: ): Promise<AstroResult<UserRoleDto[]>> {
+  retrieveUserRoles(): Promise<AstroResult<UserRoleDto[]>> {
     const url = `/api/data/users/roles`;
     return this.client.request<AstroResult<UserRoleDto[]>>("get", url, null, null);
   }
