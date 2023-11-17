@@ -29,11 +29,6 @@ export type IntegrationInstanceDto = {
   integrationShortId: string | null;
 
   /**
-   * Metadata for this IntegrationInstance
-   */
-  config: object | null;
-
-  /**
    * The unique identifier of the user who enabled this IntegrationInstance
    */
   enabledBy: string;
@@ -47,4 +42,19 @@ export type IntegrationInstanceDto = {
    * Timestamp when this record was most recently modified
    */
   modifyDate: string;
+
+  /**
+   * The id of the project manager project this instance is related to
+   */
+  projectId: string;
+
+  /**
+   * The identifier in the integration provider, could be a reference to a file, task, project.
+   */
+  providerItemId: string | null;
+
+  /**
+   * The name of the item in the integration provider.
+   */
+  providerItemName: string | null;
 };

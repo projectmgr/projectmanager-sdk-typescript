@@ -11,15 +11,15 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { ODataTypeAnnotation } from "../index.js";
 
-/**
- * The Integrations API is intended for use by ProjectManager and its business
- * development partners.  Please contact ProjectManager's sales team to request use of this API.
- */
-export type CreateIntegrationInstanceDto = {
+export type ODataEntitySetInfo = {
 
-  /**
-   * Extra metadata required by this Integration Instance.
-   */
-  config: object | null;
+  typeAnnotation: ODataTypeAnnotation | null;
+
+  url: string | null;
+
+  name: string | null;
+
+  title: string | null;
 };

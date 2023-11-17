@@ -95,28 +95,40 @@ export type ProjectDto = {
   targetDate: string | null;
 
   /**
-   * The planned start date for this Project. This is calculated based
-   * off of the earliest task start date
+   * A calculated field of the estimated date on which this Project is
+   * expected to start.
+   *
+   * This date is calculated based on the earliest estimated start date for
+   * a Task within this Project. This value is null if no Tasks have an
+   * estimated start date within this Project.
    */
   plannedStartDate: string | null;
 
   /**
-   * The planned start date for this Project. This is calculated based
-   * off of the latest task finish date
+   * A calculated field of the estimated date on which this Project is
+   * expected to finish.
+   *
+   * This date is calculated based on the latest planned finish date for a
+   * Task within this Project. This value is null if no Tasks have an
+   * estimated finish date within this Project.
    */
   plannedFinishDate: string | null;
 
   /**
-   * The actual start date for this Project. This is calculated based
-   * on the earliest task actual start date, or null if no projects have
-   * been started
+   * A calculated field of the actual date on which this Project started.
+   *
+   * This date is calculated based on the earliest actual start date for a
+   * Task within this Project. This value is null if no Tasks have an actual
+   * start date within this Project.
    */
   actualStartDate: string | null;
 
   /**
-   * The actual finish date for this Project. This is calculated based
-   * on the latest task actual finish date, or null if no projects have
-   * been finished
+   * A calculated field of the actual date on which this Project finished.
+   *
+   *  This date is calculated based on the latest actual finish date for a
+   *  Task within this Project. This value is null if no Tasks have an
+   *  actual finish date within this Project.
    */
   actualFinishDate: string | null;
 
@@ -191,4 +203,9 @@ export type ProjectDto = {
    * The members of the project
    */
   members: ProjectMemberDto[] | null;
+
+  /**
+   * Project fields array with values
+   */
+  fields: object | null;
 };

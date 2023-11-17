@@ -32,9 +32,10 @@ export class TaskTagClient {
    * A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you classify your Tasks and prioritize work.
    *
    * @param taskId The unique identifier of the Task for which we will replace TaskTags
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The replacement list of TaskTags for this Task
    */
-  replaceTaskTags(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
+  replaceTaskTags(taskId: string, body: NameDto[], xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/tags`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -45,9 +46,10 @@ export class TaskTagClient {
    * A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you classify your Tasks and prioritize work.
    *
    * @param taskId The unique identifier of the Task for which we will add TaskTags
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The new TaskTags to add to this Task
    */
-  addTaskTagtoTask(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
+  addTaskTagtoTask(taskId: string, body: NameDto[], xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/tags`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -58,9 +60,10 @@ export class TaskTagClient {
    * A TaskTag is a connection between a Task and a Tag.  Each Task can have zero, one or many TaskTags associated with it.  TaskTags can be assigned and removed from the Task to help you classify your Tasks and prioritize work.
    *
    * @param taskId The unique identifier of the Task for which we will remove existing TaskTags
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The TaskTags to remove from this Task
    */
-  removeTaskTagfromTask(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
+  removeTaskTagfromTask(taskId: string, body: NameDto[], xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/tags`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, body);
   }

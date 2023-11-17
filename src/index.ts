@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    97.0.2178
+ * @version    98.0.2363
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -55,10 +55,11 @@ export { ApiKeyDto } from "./models/ApiKeyDto.js";
 export { AssigneeUpsertDto } from "./models/AssigneeUpsertDto.js";
 export { AstroError } from "./models/AstroError.js";
 export { AstroResult } from "./models/AstroResult.js";
+export { AuthenticationDto } from "./models/AuthenticationDto.js";
 export { AuthenticationStatusDto } from "./models/AuthenticationStatusDto.js";
 export { ChangesetGetResponseDto } from "./models/ChangesetGetResponseDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
-export { CreateIntegrationInstanceDto } from "./models/CreateIntegrationInstanceDto.js";
+export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
 export { CreateProjectFieldDto } from "./models/CreateProjectFieldDto.js";
 export { CreateProjectFieldResponseDto } from "./models/CreateProjectFieldResponseDto.js";
 export { CreateResourceSkillDto } from "./models/CreateResourceSkillDto.js";
@@ -76,13 +77,27 @@ export { FileDto } from "./models/FileDto.js";
 export { GetProjectFieldsResponseDto } from "./models/GetProjectFieldsResponseDto.js";
 export { GetTaskFieldsResponseDto } from "./models/GetTaskFieldsResponseDto.js";
 export { IdDto } from "./models/IdDto.js";
+export { IEdmEntityContainer } from "./models/IEdmEntityContainer.js";
+export { IEdmEntityContainerElement } from "./models/IEdmEntityContainerElement.js";
+export { IEdmExpression } from "./models/IEdmExpression.js";
+export { IEdmModel } from "./models/IEdmModel.js";
+export { IEdmSchemaElement } from "./models/IEdmSchemaElement.js";
+export { IEdmTerm } from "./models/IEdmTerm.js";
+export { IEdmType } from "./models/IEdmType.js";
+export { IEdmTypeReference } from "./models/IEdmTypeReference.js";
+export { IEdmVocabularyAnnotation } from "./models/IEdmVocabularyAnnotation.js";
+export { IntegrationAuthSetupDto } from "./models/IntegrationAuthSetupDto.js";
 export { IntegrationCategoryDto } from "./models/IntegrationCategoryDto.js";
 export { IntegrationDto } from "./models/IntegrationDto.js";
 export { IntegrationInstanceDto } from "./models/IntegrationInstanceDto.js";
 export { IntegrationProviderDto } from "./models/IntegrationProviderDto.js";
 export { LicenseDto } from "./models/LicenseDto.js";
 export { NameDto } from "./models/NameDto.js";
-export { NewIntegrationInstanceDto } from "./models/NewIntegrationInstanceDto.js";
+export { ODataEntitySetInfo } from "./models/ODataEntitySetInfo.js";
+export { ODataFunctionImportInfo } from "./models/ODataFunctionImportInfo.js";
+export { ODataServiceDocument } from "./models/ODataServiceDocument.js";
+export { ODataSingletonInfo } from "./models/ODataSingletonInfo.js";
+export { ODataTypeAnnotation } from "./models/ODataTypeAnnotation.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
 export { ProjectCreateAccessDto } from "./models/ProjectCreateAccessDto.js";
@@ -90,6 +105,7 @@ export { ProjectCreateAccessMemberDto } from "./models/ProjectCreateAccessMember
 export { ProjectCreateDto } from "./models/ProjectCreateDto.js";
 export { ProjectCustomerDto } from "./models/ProjectCustomerDto.js";
 export { ProjectDto } from "./models/ProjectDto.js";
+export { ProjectFieldsValueResponseDto } from "./models/ProjectFieldsValueResponseDto.js";
 export { ProjectFolderDto } from "./models/ProjectFolderDto.js";
 export { ProjectManagerDto } from "./models/ProjectManagerDto.js";
 export { ProjectMemberDto } from "./models/ProjectMemberDto.js";
@@ -114,6 +130,7 @@ export { TaskAssigneeDto } from "./models/TaskAssigneeDto.js";
 export { TaskCreateDto } from "./models/TaskCreateDto.js";
 export { TaskDetailsDto } from "./models/TaskDetailsDto.js";
 export { TaskDto } from "./models/TaskDto.js";
+export { TaskFieldDto } from "./models/TaskFieldDto.js";
 export { TaskFieldsValueResponseDto } from "./models/TaskFieldsValueResponseDto.js";
 export { TaskPriorityDto } from "./models/TaskPriorityDto.js";
 export { TaskProjectDto } from "./models/TaskProjectDto.js";

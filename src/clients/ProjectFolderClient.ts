@@ -30,8 +30,9 @@ export class ProjectFolderClient {
    *
    * A ProjectFolder is a named storage location that can contain Projects.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProjectFolders(): Promise<AstroResult<ProjectFolderDto[]>> {
+  retrieveProjectFolders(xintegrationname?: ): Promise<AstroResult<ProjectFolderDto[]>> {
     const url = `/api/data/project-folders`;
     return this.client.request<AstroResult<ProjectFolderDto[]>>("get", url, null, null);
   }

@@ -32,6 +32,7 @@ export class TagClient {
    *
    * A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
@@ -39,7 +40,7 @@ export class TagClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  queryTags(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<TagDto[]>> {
+  queryTags(xintegrationname?: , top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<TagDto[]>> {
     const url = `/api/data/tags`;
     const options = {
       params: {
@@ -59,22 +60,24 @@ export class TagClient {
    *
    * A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The information for the new Tag to create
    */
-  createTag(body: TagCreateDto): Promise<AstroResult<TagDto>> {
+  createTag(body: TagCreateDto, xintegrationname?: ): Promise<AstroResult<TagDto>> {
     const url = `/api/data/tags`;
     return this.client.request<AstroResult<TagDto>>("post", url, null, body);
   }
 
   /**
-   * Updates a new Tag based on information you provide.
+   * Updates an existing Tag based on information you provide.
    *
    * A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
    *
    * @param tagId The id of the tag
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The information to update the tag
    */
-  updateTag(tagId: string, body: TagUpdateDto): Promise<AstroResult<TagDto>> {
+  updateTag(tagId: string, body: TagUpdateDto, xintegrationname?: ): Promise<AstroResult<TagDto>> {
     const url = `/api/data/tags/${tagId}`;
     return this.client.request<AstroResult<TagDto>>("put", url, null, body);
   }

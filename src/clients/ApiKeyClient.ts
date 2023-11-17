@@ -33,9 +33,10 @@ export class ApiKeyClient {
    *
    * Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company's security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Options for the API key to create
    */
-  createApiKey(body: ApiKeyCreateDto): Promise<AstroResult<ApiKeyDto>> {
+  createApiKey(body: ApiKeyCreateDto, xintegrationname?: ): Promise<AstroResult<ApiKeyDto>> {
     const url = `/api/data/api-keys`;
     return this.client.request<AstroResult<ApiKeyDto>>("post", url, null, body);
   }
@@ -47,8 +48,9 @@ export class ApiKeyClient {
    *
    * Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company's security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  listApiKeys(): Promise<AstroResult<ApiKeyDto[]>> {
+  listApiKeys(xintegrationname?: ): Promise<AstroResult<ApiKeyDto[]>> {
     const url = `/api/data/api-keys`;
     return this.client.request<AstroResult<ApiKeyDto[]>>("get", url, null, null);
   }
@@ -60,8 +62,9 @@ export class ApiKeyClient {
    *
    * Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company's security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  revokeAllApiKeys(): Promise<AstroResult<object>> {
+  revokeAllApiKeys(xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/api-keys/revoke-all`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -74,8 +77,9 @@ export class ApiKeyClient {
    * Some best practices for working with API keys: * An API key is valid for a two year period after it is created.  We encourage you to rotate your API keys regularly according to your company's security policies. * You should create separate API keys for each system that works with your API.  If that API key is exposed or if that program needs to be shut down, you can revoke that one key and reissue it. * An API key is tied to the workspace that created it. A single API key can only interact with one workspace.
    *
    * @param id The unique identifier of the API key to revoke
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  revokeAPIKey(id: string): Promise<AstroResult<object>> {
+  revokeAPIKey(id: string, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/api-keys/${id}/revoke`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }

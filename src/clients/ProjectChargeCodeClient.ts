@@ -26,12 +26,13 @@ export class ProjectChargeCodeClient {
   }
 
   /**
-   * Retrieve all defined ChargeCodes that can be used when creating Tasks.
+   * Retrieve all defined ChargeCodes that can be used when creating Projects.
    *
    * A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared among Projects.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveChargeCodes(): Promise<AstroResult<ProjectChargeCodeDto[]>> {
+  retrieveChargeCodes(xintegrationname?: ): Promise<AstroResult<ProjectChargeCodeDto[]>> {
     const url = `/api/data/projects/chargecodes`;
     return this.client.request<AstroResult<ProjectChargeCodeDto[]>>("get", url, null, null);
   }

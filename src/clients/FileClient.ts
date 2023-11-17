@@ -34,8 +34,9 @@ export class FileClient {
    *
    * @param documentId The unique identifier of the document to download
    * @param type If you specify a type of `html`, processes the file using text encoding, otherwise binary
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  downloadFile(documentId: string, type?: string): Promise<AstroResult<object>> {
+  downloadFile(documentId: string, type?: string, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/files/${documentId}/download`;
     const options = {
       params: {
@@ -53,9 +54,10 @@ export class FileClient {
    * When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
    *
    * @param fileId The unique identifier of the File to update
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Information to change about the File and its location
    */
-  updateFile(fileId: string, body: UpdateRequestDto): Promise<AstroResult<object>> {
+  updateFile(fileId: string, body: UpdateRequestDto, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/files/${fileId}`;
     return this.client.request<AstroResult<object>>("put", url, null, body);
   }

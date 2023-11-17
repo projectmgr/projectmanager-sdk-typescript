@@ -33,8 +33,9 @@ export class ChangesetClient {
    * When checking the status of a Changeset, you can call either RetrieveChangeset or RetrieveCompletedChangeset.  Using RetrieveChangeset will give you the immediate status of the Changeset.  Using RetrieveCompletedChangeset will delay the response until the Changeset has finished processing.
    *
    * @param changeSetId The unique ID number of the Changeset to retrieve
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveChangeset(changeSetId: string): Promise<AstroResult<ChangesetGetResponseDto>> {
+  retrieveChangeset(changeSetId: string, xintegrationname?: ): Promise<AstroResult<ChangesetGetResponseDto>> {
     const url = `/api/data/changesets/${changeSetId}`;
     return this.client.request<AstroResult<ChangesetGetResponseDto>>("get", url, null, null);
   }
@@ -49,8 +50,9 @@ export class ChangesetClient {
    * Although most Changesets complete instantly, some Changesets may need additional time to complete.  If the Changeset cannot be processed within a reasonable length of time, this API call may fail.  If this API fails, it will return a status error indicating the Changeset is still being processed.
    *
    * @param changeSetId The unique ID number of the Changeset to retrieve
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveCompletedChangeset(changeSetId: string): Promise<AstroResult<ChangesetGetResponseDto>> {
+  retrieveCompletedChangeset(changeSetId: string, xintegrationname?: ): Promise<AstroResult<ChangesetGetResponseDto>> {
     const url = `/api/data/changesets/${changeSetId}/poll`;
     return this.client.request<AstroResult<ChangesetGetResponseDto>>("get", url, null, null);
   }

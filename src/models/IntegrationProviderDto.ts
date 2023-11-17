@@ -12,6 +12,7 @@
  */
 
 import { IntegrationDto } from "../index.js";
+import { IntegrationAuthSetupDto } from "../index.js";
 
 /**
  * The Integrations API is intended for use by ProjectManager and its business
@@ -68,4 +69,9 @@ export type IntegrationProviderDto = {
    * The list of available Integrations for this Provider.
    */
   integrations: IntegrationDto[] | null;
+
+  /**
+   * The list of available AuthSetup for this Provider.
+   */
+  authSetup: IntegrationAuthSetupDto | null;
 };

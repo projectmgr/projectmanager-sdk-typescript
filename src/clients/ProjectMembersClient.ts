@@ -29,8 +29,9 @@ export class ProjectMembersClient {
   /**
    * Returns a list of membership options for new projects.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveNewProjectMembers(): Promise<AstroResult<ProjectMemberDto[]>> {
+  retrieveNewProjectMembers(xintegrationname?: ): Promise<AstroResult<ProjectMemberDto[]>> {
     const url = `/api/data/projects/members`;
     return this.client.request<AstroResult<ProjectMemberDto[]>>("get", url, null, null);
   }
@@ -40,8 +41,9 @@ export class ProjectMembersClient {
    *
    * @param projectId Reference to the project
    * @param includeAllUsers Set to true to include all users in the workspace
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProjectMembers(projectId: string, includeAllUsers?: boolean): Promise<AstroResult<ProjectMemberDto[]>> {
+  retrieveProjectMembers(projectId: string, includeAllUsers?: boolean, xintegrationname?: ): Promise<AstroResult<ProjectMemberDto[]>> {
     const url = `/api/data/projects/${projectId}/members`;
     const options = {
       params: {
@@ -56,8 +58,9 @@ export class ProjectMembersClient {
    *
    * @param projectId Reference of Project
    * @param userId Reference of User
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveUserProjectMemberShip(projectId: string, userId: string): Promise<AstroResult<ProjectMemberDto>> {
+  retrieveUserProjectMemberShip(projectId: string, userId: string, xintegrationname?: ): Promise<AstroResult<ProjectMemberDto>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<ProjectMemberDto>>("get", url, null, null);
   }
@@ -67,9 +70,10 @@ export class ProjectMembersClient {
    *
    * @param projectId Reference to Project
    * @param userId Reference to User
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The permission to set
    */
-  createUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<ProjectMemberDto>> {
+  createUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto, xintegrationname?: ): Promise<AstroResult<ProjectMemberDto>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<ProjectMemberDto>>("post", url, null, body);
   }
@@ -79,9 +83,10 @@ export class ProjectMembersClient {
    *
    * @param projectId Reference to Project
    * @param userId Reference to User
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The permission to update
    */
-  updateUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<ProjectMemberDto>> {
+  updateUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto, xintegrationname?: ): Promise<AstroResult<ProjectMemberDto>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<ProjectMemberDto>>("put", url, null, body);
   }
@@ -91,8 +96,9 @@ export class ProjectMembersClient {
    *
    * @param projectId Reference to Project
    * @param userId Reference to User
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  removeUserProjectMembership(projectId: string, userId: string): Promise<AstroResult<object>> {
+  removeUserProjectMembership(projectId: string, userId: string, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }

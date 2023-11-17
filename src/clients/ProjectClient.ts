@@ -32,6 +32,7 @@ export class ProjectClient {
    *
    * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
@@ -39,7 +40,7 @@ export class ProjectClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  queryProjects(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ProjectDto[]>> {
+  queryProjects(xintegrationname?: , top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ProjectDto[]>> {
     const url = `/api/data/projects`;
     const options = {
       params: {
@@ -59,9 +60,10 @@ export class ProjectClient {
    *
    * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Information about the Project you wish to create
    */
-  createProject(body: ProjectCreateDto): Promise<AstroResult<ProjectDto>> {
+  createProject(body: ProjectCreateDto, xintegrationname?: ): Promise<AstroResult<ProjectDto>> {
     const url = `/api/data/projects`;
     return this.client.request<AstroResult<ProjectDto>>("post", url, null, body);
   }
@@ -72,8 +74,9 @@ export class ProjectClient {
    * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
    *
    * @param projectId The unique identifier of the Project to retrieve.
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProject(projectId: string): Promise<AstroResult<ProjectDto>> {
+  retrieveProject(projectId: string, xintegrationname?: ): Promise<AstroResult<ProjectDto>> {
     const url = `/api/data/projects/${projectId}`;
     return this.client.request<AstroResult<ProjectDto>>("get", url, null, null);
   }
@@ -86,9 +89,10 @@ export class ProjectClient {
    * Multiple users can be working on data at the same time.  When you call an API to update an object, this call is converted into a Changeset that is then applied sequentially.  You can use RetrieveChangeset to see the status of an individual Changeset.
    *
    * @param projectId The unique identifier of the Project to update
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body All non-null fields in this object will replace previous data within the Project
    */
-  updateProject(projectId: string, body: ProjectUpdateDto): Promise<AstroResult<object>> {
+  updateProject(projectId: string, body: ProjectUpdateDto, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}`;
     return this.client.request<AstroResult<object>>("put", url, null, body);
   }

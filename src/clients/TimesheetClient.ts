@@ -32,9 +32,10 @@ export class TimesheetClient {
   /**
    * Creates new time entry for given resource on given day.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body Payload
    */
-  createtimeentry(body: TimesheetCreateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
+  createtimeentry(body: TimesheetCreateRequestDto, xintegrationname?: ): Promise<AstroResult<TimesheetResponseDto>> {
     const url = `/api/data/timesheets`;
     return this.client.request<AstroResult<TimesheetResponseDto>>("post", url, null, body);
   }
@@ -44,6 +45,7 @@ export class TimesheetClient {
    *
    * Time Sheets is a list of times per task
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
@@ -51,7 +53,7 @@ export class TimesheetClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  queryTimeSheets(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<TimesheetDto[]>> {
+  queryTimeSheets(xintegrationname?: , top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<TimesheetDto[]>> {
     const url = `/api/data/timesheets`;
     const options = {
       params: {
@@ -70,8 +72,9 @@ export class TimesheetClient {
    * Delete time entry by id.
    *
    * @param timesheetId time entry id
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  deletetimeentry(timesheetId: string): Promise<AstroResult<object>> {
+  deletetimeentry(timesheetId: string, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/timesheets/${timesheetId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -80,9 +83,10 @@ export class TimesheetClient {
    * Updates a time entry by its unique identifier.
    *
    * @param timesheetId time entry id
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body payload
    */
-  updatetimeentry(timesheetId: string, body: TimesheetUpdateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
+  updatetimeentry(timesheetId: string, body: TimesheetUpdateRequestDto, xintegrationname?: ): Promise<AstroResult<TimesheetResponseDto>> {
     const url = `/api/data/timesheets/${timesheetId}`;
     return this.client.request<AstroResult<TimesheetResponseDto>>("put", url, null, body);
   }
@@ -90,8 +94,9 @@ export class TimesheetClient {
   /**
    * Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  returnsactiveadmintasksthatareusedtoreporttime(): Promise<AstroResult<TimesheetAdminTypeDto[]>> {
+  returnsactiveadmintasksthatareusedtoreporttime(xintegrationname?: ): Promise<AstroResult<TimesheetAdminTypeDto[]>> {
     const url = `/api/data/timesheets/admin-tasks`;
     return this.client.request<AstroResult<TimesheetAdminTypeDto[]>>("get", url, null, null);
   }

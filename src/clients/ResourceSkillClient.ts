@@ -32,6 +32,7 @@ export class ResourceSkillClient {
    *
    * A ResourceSkill is a capability possessed by a Resource that can be used to distinguish different classes of Resources suitable for use by a Task.  You can specify that a Task requires a Resource with a particular set of ResourceSkills and then allocate Resources based on whether or not they have the suitable ResourceSkills.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
@@ -39,7 +40,7 @@ export class ResourceSkillClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  retrieveResourceSkills(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceSkillDto[]>> {
+  retrieveResourceSkills(xintegrationname?: , top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceSkillDto[]>> {
     const url = `/api/data/resources/skills`;
     const options = {
       params: {
@@ -57,9 +58,10 @@ export class ResourceSkillClient {
   /**
    * Create a Resource Skill.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The name of the skill to create.
    */
-  createResourceSkill(body: CreateResourceSkillDto): Promise<AstroResult<ResourceSkillDto>> {
+  createResourceSkill(body: CreateResourceSkillDto, xintegrationname?: ): Promise<AstroResult<ResourceSkillDto>> {
     const url = `/api/data/resources/skills`;
     return this.client.request<AstroResult<ResourceSkillDto>>("post", url, null, body);
   }
@@ -68,9 +70,10 @@ export class ResourceSkillClient {
    * Update a Resource Skill.
    *
    * @param skillId The id of the skill to update.
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The data of the skill to update.
    */
-  updateResourceSkill(skillId: string, body: UpdateResourceSkillDto): Promise<AstroResult<ResourceSkillDto>> {
+  updateResourceSkill(skillId: string, body: UpdateResourceSkillDto, xintegrationname?: ): Promise<AstroResult<ResourceSkillDto>> {
     const url = `/api/data/resources/skills/${skillId}`;
     return this.client.request<AstroResult<ResourceSkillDto>>("put", url, null, body);
   }
@@ -79,8 +82,9 @@ export class ResourceSkillClient {
    * The endpoint is used to delete a resource skill. Users assigned to this skill will no longer be assigned thereafter.
    *
    * @param resourceSkillId The Id of the skill to be removed.
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  deleteResourceSkill(resourceSkillId: string): Promise<AstroResult<object>> {
+  deleteResourceSkill(resourceSkillId: string, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/resources/skills/${resourceSkillId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }

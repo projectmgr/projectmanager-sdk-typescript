@@ -14,8 +14,6 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { IntegrationDto } from "../index.js";
-import { NewIntegrationInstanceDto } from "../index.js";
-import { CreateIntegrationInstanceDto } from "../index.js";
 
 export class IntegrationClient {
   private readonly client: ProjectManagerClient;
@@ -33,8 +31,9 @@ export class IntegrationClient {
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of this Integration
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveIntegration(integrationId: string): Promise<AstroResult<IntegrationDto>> {
+  retrieveIntegration(integrationId: string, xintegrationname?: ): Promise<AstroResult<IntegrationDto>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<IntegrationDto>>("get", url, null, null);
   }
@@ -45,8 +44,9 @@ export class IntegrationClient {
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of the Integration to enable
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  enableIntegration(integrationId: string): Promise<AstroResult<IntegrationDto>> {
+  enableIntegration(integrationId: string, xintegrationname?: ): Promise<AstroResult<IntegrationDto>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<IntegrationDto>>("post", url, null, null);
   }
@@ -57,8 +57,9 @@ export class IntegrationClient {
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of the Integration to disable
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  disableIntegration(integrationId: string): Promise<AstroResult<object>> {
+  disableIntegration(integrationId: string, xintegrationname?: ): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/${integrationId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -68,34 +69,10 @@ export class IntegrationClient {
    *
    * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveAllIntegrations(): Promise<AstroResult<IntegrationDto[]>> {
+  retrieveAllIntegrations(xintegrationname?: ): Promise<AstroResult<IntegrationDto[]>> {
     const url = `/api/data/integrations`;
     return this.client.request<AstroResult<IntegrationDto[]>>("get", url, null, null);
-  }
-
-  /**
-   * Adds a new Integration instance to a Workspace.
-   *
-   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
-   *
-   * @param integrationId The unique identifier of the Integration to add to this Workspace
-   * @param body The information about this Integration to add
-   */
-  addIntegrationInstance(integrationId: string, body: CreateIntegrationInstanceDto): Promise<AstroResult<NewIntegrationInstanceDto>> {
-    const url = `/api/data/integrations/${integrationId}/instance`;
-    return this.client.request<AstroResult<NewIntegrationInstanceDto>>("post", url, null, body);
-  }
-
-  /**
-   * Removes an existing Integration instance from a Workspace.
-   *
-   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
-   *
-   * @param integrationInstanceId The unique identifier of the IntegrationInstance to remove from this Workspace
-   */
-  removeIntegrationInstance(integrationInstanceId: string): Promise<AstroResult<object>> {
-    const url = `/api/data/integrations/instances/${integrationInstanceId}`;
-    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }

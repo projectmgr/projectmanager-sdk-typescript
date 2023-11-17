@@ -30,8 +30,9 @@ export class LicenseClient {
    *
    * Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveLicenses(): Promise<AstroResult<LicenseDto[]>> {
+  retrieveLicenses(xintegrationname?: ): Promise<AstroResult<LicenseDto[]>> {
     const url = `/api/data/license`;
     return this.client.request<AstroResult<LicenseDto[]>>("get", url, null, null);
   }
@@ -42,8 +43,9 @@ export class LicenseClient {
    * Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
    *
    * @param bundleSku Information about the SKU you wish to add to your Workspace
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  addLicense(bundleSku: string): Promise<AstroResult<LicenseDto[]>> {
+  addLicense(bundleSku: string, xintegrationname?: ): Promise<AstroResult<LicenseDto[]>> {
     const url = `/api/data/license/${bundleSku}/try`;
     return this.client.request<AstroResult<LicenseDto[]>>("post", url, null, null);
   }

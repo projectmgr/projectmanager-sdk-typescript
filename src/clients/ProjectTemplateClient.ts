@@ -31,8 +31,9 @@ export class ProjectTemplateClient {
    *
    * A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.  ProjectTemplates are categorized using the TemplateCategory system.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveProjectTemplates(): Promise<AstroResult<ProjectTemplateDto[]>> {
+  retrieveProjectTemplates(xintegrationname?: ): Promise<AstroResult<ProjectTemplateDto[]>> {
     const url = `/api/data/projects/templates`;
     return this.client.request<AstroResult<ProjectTemplateDto[]>>("get", url, null, null);
   }
@@ -42,8 +43,9 @@ export class ProjectTemplateClient {
    *
    * A ProjectTemplate is a definition of default project related data (eg. Tasks) that can be applied to a new project when it is created.  ProjectTemplates are categorized using the TemplateCategory system.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveTemplateCategories(): Promise<AstroResult<ProjectTemplateCategoryDto[]>> {
+  retrieveTemplateCategories(xintegrationname?: ): Promise<AstroResult<ProjectTemplateCategoryDto[]>> {
     const url = `/api/data/projects/templates/categories`;
     return this.client.request<AstroResult<ProjectTemplateCategoryDto[]>>("get", url, null, null);
   }

@@ -35,6 +35,7 @@ export class TaskClient {
    *
    * A Task is an individual element of work that must be performed to complete a Project.  A Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to indicate whether they have a dependency or a connection.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
@@ -42,7 +43,7 @@ export class TaskClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  queryTasks(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<TaskDto[]>> {
+  queryTasks(xintegrationname?: , top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<TaskDto[]>> {
     const url = `/api/data/tasks`;
     const options = {
       params: {
@@ -63,8 +64,9 @@ export class TaskClient {
    * A Task is an individual element of work that must be performed to complete a Project.  A Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to indicate whether they have a dependency or a connection.
    *
    * @param taskId The unique identifier or short ID of the Task to retrieve
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveTask(taskId: string): Promise<AstroResult<TaskDetailsDto>> {
+  retrieveTask(taskId: string, xintegrationname?: ): Promise<AstroResult<TaskDetailsDto>> {
     const url = `/api/data/tasks/${taskId}`;
     return this.client.request<AstroResult<TaskDetailsDto>>("get", url, null, null);
   }
@@ -79,9 +81,10 @@ export class TaskClient {
    * Known Issues:  This API returns an error if your Update call includes too many changes in a single API call.  Please restrict usage to one change per API request.  This API will be deprecated and replaced with an improved API call in a future release.
    *
    * @param taskId The unique identifier of the Task to update
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body All non-null fields in this object will replace existing data in the Task
    */
-  updateTask(taskId: string, body: TaskUpdateDto): Promise<AstroResult<ChangeSetStatusDto>> {
+  updateTask(taskId: string, body: TaskUpdateDto, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
   }
@@ -94,8 +97,9 @@ export class TaskClient {
    * Multiple users can be working on data at the same time.  When you call an API to update an object, this call is converted into a Changeset that is then applied sequentially.  You can use RetrieveChangeset to see the status of an individual Changeset.
    *
    * @param taskId Unique identifier of the Task to delete
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  deleteTask(taskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
+  deleteTask(taskId: string, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, null);
   }
@@ -106,9 +110,10 @@ export class TaskClient {
    * A Task is an individual element of work that must be performed to complete a Project.  A Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to indicate whether they have a dependency or a connection.
    *
    * @param projectId The unique identifier of the Project that will contain this Task
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The new Task to create
    */
-  createTask(projectId: string, body: TaskCreateDto): Promise<AstroResult<ChangeSetStatusDto>> {
+  createTask(projectId: string, body: TaskCreateDto, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/projects/${projectId}/tasks`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
   }
@@ -120,8 +125,9 @@ export class TaskClient {
    *
    * Note that TaskPriority and ProjectPriority are different classes of priority levels.  Even if they may have similar names, they are different objects and must be tracked separately.
    *
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  retrieveTaskPriorities(): Promise<AstroResult<TaskPriorityDto[]>> {
+  retrieveTaskPriorities(xintegrationname?: ): Promise<AstroResult<TaskPriorityDto[]>> {
     const url = `/api/data/tasks/priorities`;
     return this.client.request<AstroResult<TaskPriorityDto[]>>("get", url, null, null);
   }
@@ -132,9 +138,10 @@ export class TaskClient {
    * A Task is an individual element of work that must be performed to complete a Project.  A Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to indicate whether they have a dependency or a connection.
    *
    * @param projectId The unique identifier of the Project that will contain these Tasks
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    * @param body The list of new Tasks to create
    */
-  createManyTasks(projectId: string, body: TaskCreateDto[]): Promise<AstroResult<ChangeSetStatusDto[]>> {
+  createManyTasks(projectId: string, body: TaskCreateDto[], xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/bulk`;
     return this.client.request<AstroResult<ChangeSetStatusDto[]>>("post", url, null, body);
   }
@@ -144,8 +151,9 @@ export class TaskClient {
    *
    * @param taskId The task that will become the child
    * @param parentTaskId The parent task
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  addParentTask(taskId: string, parentTaskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
+  addParentTask(taskId: string, parentTaskId: string, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/parent/${parentTaskId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, null);
   }
@@ -155,8 +163,9 @@ export class TaskClient {
    *
    * @param taskId The task that will become the child
    * @param parentTaskId The parent task
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  updateParentTask(taskId: string, parentTaskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
+  updateParentTask(taskId: string, parentTaskId: string, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/parent/${parentTaskId}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, null);
   }
@@ -165,8 +174,9 @@ export class TaskClient {
    * Removes a task parent relationship completely
    *
    * @param taskId The child task
+   * @param xintegrationname The name of the calling system passed along as a header parameter
    */
-  removeParentTask(taskId: string): Promise<AstroResult<ChangeSetStatusDto>> {
+  removeParentTask(taskId: string, xintegrationname?: ): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/parent`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, null);
   }
