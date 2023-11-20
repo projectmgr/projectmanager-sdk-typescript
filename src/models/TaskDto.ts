@@ -16,6 +16,7 @@ import { TaskTagDto } from "../index.js";
 import { TaskAssigneeDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
 import { TaskStatusDto } from "../index.js";
+import { TaskFieldDto } from "../index.js";
 
 /**
  * A Task is an individual element of work that must be performed to complete a Project.  A
@@ -205,4 +206,9 @@ export type TaskDto = {
    * The planned effort (in minutes) for this Task.
    */
   plannedEffort: number | null;
+
+  /**
+   * Task fields array with values
+   */
+  fields: TaskFieldDto[] | null;
 };

@@ -46,12 +46,17 @@ export type TimesheetDto = {
   hours: number;
 
   /**
-   * associated tasks with time sheet
+   * Date and time (in UTC) that this timesheet entry was last modified.
+   */
+  modifiedDate: string;
+
+  /**
+   * The task associated with this timesheet entry
    */
   task: TimesheetTaskDto | null;
 
   /**
-   * associated projects with timesheet
+   * The project associated with this timesheet entry
    */
   project: TimeSheetProjectDto | null;
 

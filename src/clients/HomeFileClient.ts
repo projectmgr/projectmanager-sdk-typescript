@@ -26,7 +26,7 @@ export class HomeFileClient {
   }
 
   /**
-   * Uploads a file to a Home folder.
+   * Uploads a file to the My Files folder on your Home Files page.
    *
    * ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
    *
@@ -40,9 +40,11 @@ export class HomeFileClient {
   }
 
   /**
-   * Uploads a file to a home folder.
+   * Uploads a file to a specific folder on your Home Files page.
    *
    * ProjectManager allows you to store Files connected to other elements of your Workspace such as a Project, a Task, or Home.  Files are maintained separately based on the location where the file was stored.
+   *
+   * You can organize your files in the Home Files and Project Files pages by adding folders.
    *
    * When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
    *

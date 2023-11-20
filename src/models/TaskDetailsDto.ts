@@ -145,4 +145,9 @@ export type TaskDetailsDto = {
    * The planned cost for this Task.  Cannot be negative.
    */
   plannedCost: number | null;
+
+  /**
+   * Task fields array with values
+   */
+  fields: object | null;
 };

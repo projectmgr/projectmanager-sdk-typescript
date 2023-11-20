@@ -41,4 +41,9 @@ export type CreateProjectFieldDto = {
    * TODO - This object needs to support a list of options, in case dropdown is selected
    */
   type: string;
+
+  /**
+   * The short Id of this field - human readable identity
+   */
+  shortId: string | null;
 };

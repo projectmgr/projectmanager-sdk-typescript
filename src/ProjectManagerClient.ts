@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    97.0.2178
+ * @version    98.0.2363
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -48,7 +48,7 @@ import { UserRoleClient } from "./index.js";
 import { WorkSpaceClient } from "./index.js";
 import { AstroResult } from "./index.js";
 
-import axios, { Method } from "axios";
+import axios, { AxiosRequestConfig, Method, ResponseType } from "axios";
 import { default as FormData } from "form-data";
 import fs from "fs";
 import os from "os";
@@ -74,7 +74,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "97.0.2178";
+  private readonly version: string = "98.0.2363";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -254,7 +254,7 @@ export class ProjectManagerClient {
       data: body,
       headers: await this.getHeaders(),
     };
-    const result = await axios.default.request(requestConfig);
+    const result = await axios.request(requestConfig);
     return result.data;
   }
 
@@ -265,14 +265,14 @@ export class ProjectManagerClient {
     const fileBuffer = await fs.promises.readFile(filename);
     const formData = new FormData();
     formData.append("file", fileBuffer);
-    const requestConfig: axios.AxiosRequestConfig = {
+    const requestConfig: AxiosRequestConfig = {
       url: new url.URL(path, this.serverUrl).href,
       method,
       data: formData,
       params: options,
       headers: await this.getHeaders(),
     };
-    const result = await axios.default.request(requestConfig);
+    const result = await axios.request(requestConfig);
     return result.data;
   }
 
@@ -280,8 +280,8 @@ export class ProjectManagerClient {
    * Make a GET request using this client and download the results as a blob
    */
   public async requestBlob(method: Method, path: string, options: unknown, body: unknown): Promise<AstroResult<Blob>> {
-    const responseType: axios.ResponseType = "blob";
-    const requestConfig: axios.AxiosRequestConfig = {
+    const responseType: ResponseType = "blob";
+    const requestConfig: AxiosRequestConfig = {
       url: new url.URL(path, this.serverUrl).href,
       method,
       params: options,
@@ -289,7 +289,7 @@ export class ProjectManagerClient {
       headers: await this.getHeaders(),
       responseType,
     };
-    const result = await axios.default.request(requestConfig);
+    const result = await axios.request(requestConfig);
     return result.data;
   }
 }

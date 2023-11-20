@@ -13,20 +13,28 @@
 
 
 /**
- * A TaskField is a custom field defined within your Workspace for a specific Project.  You can
- * define TaskFields for any integration purpose that is important to your business.  Each
- * TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
- * for each Task inside this Project.
+ * A Project Field is a custom field defined within your Workspace for each Project. Each
+ * Project Field has a data type as well as options in how it is handled.
  */
-export type CreateTaskFieldRequestDto = {
+export type ProjectFieldsValueResponseDto = {
 
   /**
-   * The name of the TaskField
+   * The unique identifier of this Project Field.
+   */
+  id: string;
+
+  /**
+   * The value currently set for this Project Field.
+   */
+  value: string | null;
+
+  /**
+   * The name of this Project Field.
    */
   name: string | null;
 
   /**
-   * The type of this TaskField.  Valid types are the following:
+   * The type of this Project Field.  Valid types are the following:
    * * Text
    * * Number
    * * Date
@@ -35,9 +43,4 @@ export type CreateTaskFieldRequestDto = {
    * * Dropdown
    */
   type: string | null;
-
-  /**
-   * The short Id of this field - human readable identity
-   */
-  shortId: string | null;
 };

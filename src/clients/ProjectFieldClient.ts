@@ -18,6 +18,7 @@ import { CreateProjectFieldResponseDto } from "../index.js";
 import { CreateProjectFieldDto } from "../index.js";
 import { DeleteProjectFieldDto } from "../index.js";
 import { UpdateProjectFieldValueDto } from "../index.js";
+import { ProjectFieldsValueResponseDto } from "../index.js";
 
 export class ProjectFieldClient {
   private readonly client: ProjectManagerClient;
@@ -76,5 +77,26 @@ export class ProjectFieldClient {
   updateProjectField(projectId: string, fieldId: string, body: UpdateProjectFieldValueDto): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/fields/${fieldId}`;
     return this.client.request<AstroResult<object>>("put", url, null, body);
+  }
+
+  /**
+   * Retrieves the current ProjectField value for a particular Project and ProjectField.
+   *
+   * @param projectId The unique identifier of the Project of the value to retrieve
+   * @param fieldId The unique identifier of the ProjectField of the value to retrieve
+   */
+  retrieveProjectFieldValue(projectId: string, fieldId: string): Promise<AstroResult<ProjectFieldsValueResponseDto>> {
+    const url = `/api/data/projects/${projectId}/fields/${fieldId}`;
+    return this.client.request<AstroResult<ProjectFieldsValueResponseDto>>("get", url, null, null);
+  }
+
+  /**
+   * Retrieves all ProjectField values for a particular Project.
+   *
+   * @param projectId The unique identifier of the Project for which we want ProjectField values
+   */
+  retrieveAllProjectFieldValues(projectId: string): Promise<AstroResult<ProjectFieldsValueResponseDto[]>> {
+    const url = `/api/data/projects/${projectId}/fields`;
+    return this.client.request<AstroResult<ProjectFieldsValueResponseDto[]>>("get", url, null, null);
   }
 }
