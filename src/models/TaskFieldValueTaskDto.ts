@@ -13,22 +13,22 @@
 
 
 /**
- * This class contains the URL or AuthScheme to use to authenticate with the Integration Provider.
+ * The TaskFieldTask is a summary of the Task that this TaskFieldValue relates to.
  */
-export type ConnectionSchemaDto = {
+export type TaskFieldValueTaskDto = {
 
   /**
-   * Whether or not the Integration Provider is connected.
+   * The unique identifier of this Task.
    */
-  connected: boolean;
+  id: string;
 
   /**
-   * The URL to use to authenticate with the Integration Provider.
+   * The unique Short Id of this Task.
    */
-  url: string | null;
+  shortId: string | null;
 
   /**
-   * This class contains the AuthScheme to use to authenticate with the Integration Provider.
+   * The common name of this Task.
    */
-  authScheme: object | null;
+  name: string | null;
 };

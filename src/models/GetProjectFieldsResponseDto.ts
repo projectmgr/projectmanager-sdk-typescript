@@ -68,4 +68,9 @@ export type GetProjectFieldsResponseDto = {
    * list.
    */
   options: string[] | null;
+
+  /**
+   * The short Id of this field - human readable identity
+   */
+  shortId: string | null;
 };

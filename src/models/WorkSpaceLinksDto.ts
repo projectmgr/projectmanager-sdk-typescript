@@ -13,17 +13,17 @@
 
 
 /**
- * TODO - What is this?
+ * A shortcut link within the currently logged in Workspace.
  */
 export type WorkSpaceLinksDto = {
 
   /**
-   * TODO - What is this?
+   * The name of the project for this link.
    */
   project: string | null;
 
   /**
-   * This is the link to the api for this business, some legacy endpoints may need this.
+   * This is the link to the api for this business.  Some endpoints may need this value.
    */
   workSpaceApi: string | null;
 };

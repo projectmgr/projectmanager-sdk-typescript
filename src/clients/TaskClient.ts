@@ -14,7 +14,6 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { TaskDto } from "../index.js";
-import { TaskDetailsDto } from "../index.js";
 import { ChangeSetStatusDto } from "../index.js";
 import { TaskUpdateDto } from "../index.js";
 import { TaskCreateDto } from "../index.js";
@@ -64,9 +63,9 @@ export class TaskClient {
    *
    * @param taskId The unique identifier or short ID of the Task to retrieve
    */
-  retrieveTask(taskId: string): Promise<AstroResult<TaskDetailsDto>> {
+  retrieveTask(taskId: string): Promise<AstroResult<TaskDto>> {
     const url = `/api/data/tasks/${taskId}`;
-    return this.client.request<AstroResult<TaskDetailsDto>>("get", url, null, null);
+    return this.client.request<AstroResult<TaskDto>>("get", url, null, null);
   }
 
   /**

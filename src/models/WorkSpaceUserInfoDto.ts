@@ -14,32 +14,50 @@
 import { WorkSpaceLinksDto } from "../index.js";
 
 /**
- * TODO - What is this?
+ * Information about a currently logged in user.
+ *
+ * You can call the RetrieveMe API to gather information about the current user.
  */
 export type WorkSpaceUserInfoDto = {
 
   /**
-   * TODO - What is this?
+   * A collection of shortcut links for the currently logged in Workspace.
    */
   links: WorkSpaceLinksDto | null;
 
   /**
-   * TODO - What is this?
+   * The email address of the currently logged in user.
    */
   emailAddress: string | null;
 
   /**
-   * TODO - What is this?
+   * The unique identity of the currently logged in user.
    */
   id: string;
 
   /**
-   * TODO - What is this?
+   * The full name of the currently logged in user.
    */
   fullName: string | null;
 
   /**
-   * TODO - What is this?
+   * The name of the Workspace that the current user has logged onto.  For most companies, the workspace
+   * name will be the name of the business.
    */
   workSpaceName: string | null;
+
+  /**
+   * The user's role within the current Workspace.
+   */
+  roleName: string | null;
+
+  /**
+   * True if this user is considered a global administrator of the current Workspace.
+   */
+  isGlobalAdmin: boolean | null;
+
+  /**
+   * True if this user is considered an account administrator of the current Workspace.
+   */
+  isAccountAdministrator: boolean | null;
 };

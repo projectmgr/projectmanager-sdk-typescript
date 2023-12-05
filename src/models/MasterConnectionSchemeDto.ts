@@ -13,22 +13,22 @@
 
 
 /**
- * This class contains the URL or AuthScheme to use to authenticate with the Integration Provider.
+ * Master Connection Scheme for Providers
  */
-export type ConnectionSchemaDto = {
+export type MasterConnectionSchemeDto = {
 
   /**
-   * Whether or not the Integration Provider is connected.
+   * The value of the property
    */
-  connected: boolean;
+  value: string | null;
 
   /**
-   * The URL to use to authenticate with the Integration Provider.
+   * The type of the property
    */
-  url: string | null;
+  type: string | null;
 
   /**
-   * This class contains the AuthScheme to use to authenticate with the Integration Provider.
+   * Send to the client true/false
    */
-  authScheme: object | null;
+  sendToClient: boolean | null;
 };

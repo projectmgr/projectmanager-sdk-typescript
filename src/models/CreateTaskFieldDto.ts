@@ -18,20 +18,10 @@
  * TaskField has a data type as well as options in how it is handled.  TaskFields can be edited
  * for each Task inside this Project.
  */
-export type TaskFieldsValueResponseDto = {
+export type CreateTaskFieldDto = {
 
   /**
-   * The unique identifier of this TaskField.
-   */
-  id: string;
-
-  /**
-   * The value currently set for this TaskField for this Task.
-   */
-  value: string | null;
-
-  /**
-   * The name of this TaskField.
+   * The name of the TaskField
    */
   name: string | null;
 
@@ -42,7 +32,23 @@ export type TaskFieldsValueResponseDto = {
    * * Date
    * * Checkbox
    * * Currency
-   * * Dropdown
+   * * DropdownSingle
+   * * DropdownMulti
    */
   type: string | null;
+
+  /**
+   * A list of options for use of this TaskField.  This is only valid if
+   * the `Type` value is set to `Dropdown`.
+   *
+   * When a custom TaskField of type `DropDown` is shown to a user in the
+   * application, they will be able to choose one of the `Options` in this
+   * list.
+   */
+  options: string[] | null;
+
+  /**
+   * The short Id of this field - human readable identity
+   */
+  shortId: string | null;
 };

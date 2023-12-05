@@ -71,4 +71,9 @@ export type IntegrationDto = {
    * True if the user has authenticated
    */
   authenticated: boolean;
+
+  /**
+   * True if the integration is auto-enabled
+   */
+  autoEnabled: boolean;
 };
