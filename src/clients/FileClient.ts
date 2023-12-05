@@ -13,6 +13,7 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
+import { byte[] } from "../index.js";
 import { UpdateRequestDto } from "../index.js";
 
 export class FileClient {
@@ -43,6 +44,23 @@ export class FileClient {
       },
     };
     return this.client.request<AstroResult<object>>("get", url, options, null);
+  }
+
+  /**
+   * Downloads a thumbnail image associated with a document that was previously uploaded to ProjectManager.com.
+   *
+   * ProjectManager allows you to store files linked to various elements within your Workspace,
+   * such as Projects, Tasks, or your Home. Files are organized based on their storage location.
+   *
+   * When uploading a file, please allow some time for the file to undergo processing and verification.
+   * ProjectManager may reject file uploads containing issues such as malware. Once a file has
+   * completed the upload process, you can retrieve its associated thumbnail using the DownloadThumbnail API.
+   *
+   * @param documentId The unique identifier of the document for which to download the thumbnail.
+   */
+  downloadaThumbnailImage(documentId: string): Promise<byte[]> {
+    const url = `/api/data/files/${documentId}/thumbnail`;
+    return this.client.request<byte[]>("get", url, null, null);
   }
 
   /**

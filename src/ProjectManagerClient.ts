@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    99.0.2541
+ * @version    99.0.2548
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -43,6 +43,7 @@ import { TaskFieldClient } from "./index.js";
 import { TaskFileClient } from "./index.js";
 import { TaskStatusClient } from "./index.js";
 import { TaskTagClient } from "./index.js";
+import { TeamsClient } from "./index.js";
 import { TimesheetClient } from "./index.js";
 import { UserRoleClient } from "./index.js";
 import { WorkSpaceClient } from "./index.js";
@@ -74,7 +75,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "99.0.2541";
+  private readonly version: string = "99.0.2548";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -111,6 +112,7 @@ export class ProjectManagerClient {
   public readonly TaskFile: TaskFileClient;
   public readonly TaskStatus: TaskStatusClient;
   public readonly TaskTag: TaskTagClient;
+  public readonly Teams: TeamsClient;
   public readonly Timesheet: TimesheetClient;
   public readonly UserRole: UserRoleClient;
   public readonly WorkSpace: WorkSpaceClient;
@@ -152,6 +154,7 @@ export class ProjectManagerClient {
     this.TaskFile = new TaskFileClient(this);
     this.TaskStatus = new TaskStatusClient(this);
     this.TaskTag = new TaskTagClient(this);
+    this.Teams = new TeamsClient(this);
     this.Timesheet = new TimesheetClient(this);
     this.UserRole = new UserRoleClient(this);
     this.WorkSpace = new WorkSpaceClient(this);

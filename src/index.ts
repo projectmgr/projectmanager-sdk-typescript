@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    99.0.2541
+ * @version    99.0.2548
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -46,6 +46,7 @@ export { TaskFieldClient } from "./clients/TaskFieldClient.js";
 export { TaskFileClient } from "./clients/TaskFileClient.js";
 export { TaskStatusClient } from "./clients/TaskStatusClient.js";
 export { TaskTagClient } from "./clients/TaskTagClient.js";
+export { TeamsClient } from "./clients/TeamsClient.js";
 export { TimesheetClient } from "./clients/TimesheetClient.js";
 export { UserRoleClient } from "./clients/UserRoleClient.js";
 export { WorkSpaceClient } from "./clients/WorkSpaceClient.js";
