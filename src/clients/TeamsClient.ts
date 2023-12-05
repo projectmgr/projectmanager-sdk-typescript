@@ -12,6 +12,7 @@
  */
 
 import { ProjectManagerClient } from "../index.js";
+import { AstroResult } from "../index.js";
 
 export class TeamsClient {
   private readonly client: ProjectManagerClient;
