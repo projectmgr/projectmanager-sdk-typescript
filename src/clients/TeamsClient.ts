@@ -12,7 +12,6 @@
  */
 
 import { ProjectManagerClient } from "../index.js";
-import { byte[] } from "../index.js";
 
 export class TeamsClient {
   private readonly client: ProjectManagerClient;
@@ -31,8 +30,8 @@ export class TeamsClient {
    * contact ProjectManager's sales team to request use of this API.
    *
    */
-  retrievezipfileforTeamsIntegrations(): Promise<byte[]> {
+  retrievezipfileforTeamsIntegrations(): Promise<AstroResult<Blob>> {
     const url = `/api/data/integrations/teams/application`;
-    return this.client.request<byte[]>("get", url, null, null);
+    return this.client.requestBlob("get", url, null, null);
   }
 }

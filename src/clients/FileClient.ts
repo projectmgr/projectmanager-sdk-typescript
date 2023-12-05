@@ -13,7 +13,6 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { byte[] } from "../index.js";
 import { UpdateRequestDto } from "../index.js";
 
 export class FileClient {
@@ -58,9 +57,9 @@ export class FileClient {
    *
    * @param documentId The unique identifier of the document for which to download the thumbnail.
    */
-  downloadaThumbnailImage(documentId: string): Promise<byte[]> {
+  downloadaThumbnailImage(documentId: string): Promise<AstroResult<Blob>> {
     const url = `/api/data/files/${documentId}/thumbnail`;
-    return this.client.request<byte[]>("get", url, null, null);
+    return this.client.requestBlob("get", url, null, null);
   }
 
   /**
