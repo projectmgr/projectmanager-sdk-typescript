@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/v/projectmanager-sdk)
+
 # ProjectManager.com SDK for API v4
 
 This software development kit contains all API definitions for the [ProjectManager.com](https://www.projectmanager.com) REST API v4 as a software development kit for TypeScript / JavaScript.  
