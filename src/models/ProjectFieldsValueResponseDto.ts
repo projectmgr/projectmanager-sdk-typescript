@@ -13,8 +13,8 @@
 
 
 /**
- * A Project Field is a custom field defined within your Workspace for each Project. Each
- * Project Field has a data type as well as options in how it is handled.
+ * A ProjectField is a custom field defined within your Workspace for each Project. Each
+ * ProjectField has a data type as well as options in how it is handled.
  */
 export type ProjectFieldsValueResponseDto = {
 
@@ -43,4 +43,19 @@ export type ProjectFieldsValueResponseDto = {
    * * Dropdown
    */
   type: string | null;
+
+  /**
+   * The short Id of this field - human readable identity
+   */
+  shortId: string | null;
+
+  /**
+   * Date and time (in UTC) that this TaskField was created.
+   */
+  createdDate: string;
+
+  /**
+   * Date and time (in UTC) that this TaskField was last modified.
+   */
+  modifiedDate: string;
 };

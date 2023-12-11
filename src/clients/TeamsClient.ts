@@ -13,9 +13,8 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { ProjectCustomerDto } from "../index.js";
 
-export class ProjectCustomerClient {
+export class TeamsClient {
   private readonly client: ProjectManagerClient;
 
   /**
@@ -26,13 +25,14 @@ export class ProjectCustomerClient {
   }
 
   /**
-   * Retrieves all ProjectCustomers defined within your Workspace.
+   * Retrieves zip file for teams integrations.
    *
-   * A ProjectCustomer is a code used to identify customers associated with your Projects.  Each ProjectCustomer has a name and a unique identifier.  ProjectCustomers are defined per Workspace and are shared among Projects.
+   * The Teams API is intended for use by ProjectManager and its business development partners.  Please
+   * contact ProjectManager's sales team to request use of this API.
    *
    */
-  retrieveProjectCustomers(): Promise<AstroResult<ProjectCustomerDto[]>> {
-    const url = `/api/data/projects/customers`;
-    return this.client.request<AstroResult<ProjectCustomerDto[]>>("get", url, null, null);
+  retrievezipfileforTeamsIntegrations(): Promise<AstroResult<Blob>> {
+    const url = `/api/data/integrations/teams/application`;
+    return this.client.requestBlob("get", url, null, null);
   }
 }

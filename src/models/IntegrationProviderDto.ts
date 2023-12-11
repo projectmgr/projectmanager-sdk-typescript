@@ -74,4 +74,9 @@ export type IntegrationProviderDto = {
    * The list of available AuthSetup for this Provider.
    */
   authSetup: IntegrationAuthSetupDto | null;
+
+  /**
+   * Flag whether user/workspace needs to be setup in Workato
+   */
+  createInWorkato: boolean;
 };

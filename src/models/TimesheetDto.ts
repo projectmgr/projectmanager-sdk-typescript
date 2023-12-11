@@ -14,6 +14,7 @@
 import { TimesheetTaskDto } from "../index.js";
 import { TimeSheetProjectDto } from "../index.js";
 import { TimesheetResourceDto } from "../index.js";
+import { TimesheetAdminTypeDto } from "../index.js";
 
 /**
  * Created Time entry response data
@@ -64,4 +65,9 @@ export type TimesheetDto = {
    * The resource associated with this timesheet entry
    */
   resource: TimesheetResourceDto | null;
+
+  /**
+   * The administration type associated with this timesheet entry
+   */
+  adminType: TimesheetAdminTypeDto | null;
 };
