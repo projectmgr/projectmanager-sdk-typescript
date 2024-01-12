@@ -12,7 +12,6 @@
  */
 
 import { ProjectManagerClient } from "../index.js";
-import { byte } from "../index.js";
 import { AstroResult } from "../index.js";
 import { UpdateRequestDto } from "../index.js";
 
@@ -43,14 +42,14 @@ export class FileClient {
    * @param documentId The unique identifier of the document to download
    * @param type If you specify a type of `html`, processes the file using text encoding, otherwise binary
    */
-  downloadFile(documentId: string, type?: string): Promise<byte> {
+  downloadFile(documentId: string, type?: string): Promise<AstroResult<Blob>> {
     const url = `/api/data/files/${documentId}/download`;
     const options = {
       params: {
         'type': type,
       },
     };
-    return this.client.request<byte>("get", url, options, null);
+    return this.client.requestBlob("get", url, options, null);
   }
 
   /**
@@ -68,9 +67,9 @@ export class FileClient {
    *
    * @param documentId The unique identifier of the document for which to download the thumbnail.
    */
-  downloadaThumbnailImage(documentId: string): Promise<byte> {
+  downloadaThumbnailImage(documentId: string): Promise<AstroResult<Blob>> {
     const url = `/api/data/files/${documentId}/thumbnail`;
-    return this.client.request<byte>("get", url, null, null);
+    return this.client.requestBlob("get", url, null, null);
   }
 
   /**
