@@ -13,12 +13,22 @@
 
 
 /**
- * This class contains the URL to use to authenticate with the Integration Provider.
+ * Resource holiday entry
  */
-export type DirectLinkDto = {
+export type ResourceHolidayDto = {
 
   /**
-   * The URL to use to authenticate with the Integration Provider.
+   * Holiday id
    */
-  url: string | null;
+  id: string;
+
+  /**
+   * Date of holiday
+   */
+  date: string;
+
+  /**
+   * Resource id holoday associated to
+   */
+  resourceId: string;
 };

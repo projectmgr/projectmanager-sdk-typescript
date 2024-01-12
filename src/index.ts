@@ -1,15 +1,15 @@
 /***
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
- * @copyright  2023-2023 ProjectManager.com, Inc.
- * @version    99.0.2549
+ * @copyright  2023-2024 ProjectManager.com, Inc.
+ * @version    101.0.2818
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -20,12 +20,14 @@ export { ChangesetClient } from "./clients/ChangesetClient.js";
 export { DashboardClient } from "./clients/DashboardClient.js";
 export { DiscussionClient } from "./clients/DiscussionClient.js";
 export { FileClient } from "./clients/FileClient.js";
+export { HolidayClient } from "./clients/HolidayClient.js";
 export { HomeFileClient } from "./clients/HomeFileClient.js";
 export { IntegrationClient } from "./clients/IntegrationClient.js";
 export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.js";
 export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.js";
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
+export { NptFilesClient } from "./clients/NptFilesClient.js";
 export { ProjectClient } from "./clients/ProjectClient.js";
 export { ProjectChargeCodeClient } from "./clients/ProjectChargeCodeClient.js";
 export { ProjectCustomerClient } from "./clients/ProjectCustomerClient.js";
@@ -61,6 +63,7 @@ export { AuthenticationStatusDto } from "./models/AuthenticationStatusDto.js";
 export { ChangesetGetResponseDto } from "./models/ChangesetGetResponseDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
+export { CountryHolidayDto } from "./models/CountryHolidayDto.js";
 export { CreateProjectFieldDto } from "./models/CreateProjectFieldDto.js";
 export { CreateProjectFieldResponseDto } from "./models/CreateProjectFieldResponseDto.js";
 export { CreateResourceSkillDto } from "./models/CreateResourceSkillDto.js";
@@ -75,6 +78,7 @@ export { DiscussionDto } from "./models/DiscussionDto.js";
 export { DiscussionEmoji } from "./models/DiscussionEmoji.js";
 export { FileDto } from "./models/FileDto.js";
 export { GetProjectFieldsResponseDto } from "./models/GetProjectFieldsResponseDto.js";
+export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
 export { IdDto } from "./models/IdDto.js";
 export { IntegrationAuthSetupDto } from "./models/IntegrationAuthSetupDto.js";
 export { IntegrationCategoryDto } from "./models/IntegrationCategoryDto.js";
@@ -85,11 +89,6 @@ export { IntegrationProviderDto } from "./models/IntegrationProviderDto.js";
 export { LicenseDto } from "./models/LicenseDto.js";
 export { MasterConnectionSchemeDto } from "./models/MasterConnectionSchemeDto.js";
 export { NameDto } from "./models/NameDto.js";
-export { ODataEntitySetInfo } from "./models/ODataEntitySetInfo.js";
-export { ODataFunctionImportInfo } from "./models/ODataFunctionImportInfo.js";
-export { ODataServiceDocument } from "./models/ODataServiceDocument.js";
-export { ODataSingletonInfo } from "./models/ODataSingletonInfo.js";
-export { ODataTypeAnnotation } from "./models/ODataTypeAnnotation.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
 export { ProjectCreateAccessDto } from "./models/ProjectCreateAccessDto.js";
@@ -97,7 +96,7 @@ export { ProjectCreateAccessMemberDto } from "./models/ProjectCreateAccessMember
 export { ProjectCreateDto } from "./models/ProjectCreateDto.js";
 export { ProjectCustomerDto } from "./models/ProjectCustomerDto.js";
 export { ProjectDto } from "./models/ProjectDto.js";
-export { ProjectFieldsValueResponseDto } from "./models/ProjectFieldsValueResponseDto.js";
+export { ProjectFieldValueDto } from "./models/ProjectFieldValueDto.js";
 export { ProjectFolderDto } from "./models/ProjectFolderDto.js";
 export { ProjectManagerDto } from "./models/ProjectManagerDto.js";
 export { ProjectMemberDto } from "./models/ProjectMemberDto.js";
@@ -112,6 +111,7 @@ export { ReactGridLayoutItemDto } from "./models/ReactGridLayoutItemDto.js";
 export { ResourceApproverDto } from "./models/ResourceApproverDto.js";
 export { ResourceCreateDto } from "./models/ResourceCreateDto.js";
 export { ResourceDto } from "./models/ResourceDto.js";
+export { ResourceHolidayDto } from "./models/ResourceHolidayDto.js";
 export { ResourceSkillDto } from "./models/ResourceSkillDto.js";
 export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";

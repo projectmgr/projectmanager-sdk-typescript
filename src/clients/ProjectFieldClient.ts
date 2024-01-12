@@ -1,13 +1,13 @@
 /**
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -17,7 +17,7 @@ import { GetProjectFieldsResponseDto } from "../index.js";
 import { CreateProjectFieldResponseDto } from "../index.js";
 import { CreateProjectFieldDto } from "../index.js";
 import { UpdateProjectFieldValueDto } from "../index.js";
-import { ProjectFieldsValueResponseDto } from "../index.js";
+import { ProjectFieldValueDto } from "../index.js";
 
 export class ProjectFieldClient {
   private readonly client: ProjectManagerClient;
@@ -86,9 +86,9 @@ export class ProjectFieldClient {
    * @param projectId The unique identifier of the Project of the value to retrieve
    * @param fieldId The unique identifier or short ID of the ProjectField of the value to retrieve
    */
-  retrieveProjectFieldValue(projectId: string, fieldId: string): Promise<AstroResult<ProjectFieldsValueResponseDto>> {
+  retrieveProjectFieldValue(projectId: string, fieldId: string): Promise<AstroResult<ProjectFieldValueDto>> {
     const url = `/api/data/projects/${projectId}/fields/${fieldId}`;
-    return this.client.request<AstroResult<ProjectFieldsValueResponseDto>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectFieldValueDto>>("get", url, null, null);
   }
 
   /**
@@ -98,8 +98,8 @@ export class ProjectFieldClient {
    *
    * @param projectId The unique identifier of the Project for which we want ProjectField values
    */
-  retrieveAllProjectFieldValues(projectId: string): Promise<AstroResult<ProjectFieldsValueResponseDto[]>> {
+  retrieveAllProjectFieldValues(projectId: string): Promise<AstroResult<ProjectFieldValueDto[]>> {
     const url = `/api/data/projects/${projectId}/fields`;
-    return this.client.request<AstroResult<ProjectFieldsValueResponseDto[]>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectFieldValueDto[]>>("get", url, null, null);
   }
 }

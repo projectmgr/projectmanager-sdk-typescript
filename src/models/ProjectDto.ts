@@ -1,13 +1,13 @@
 /**
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -18,6 +18,7 @@ import { ProjectChargeCodeDto } from "../index.js";
 import { ProjectManagerDto } from "../index.js";
 import { ProjectCustomerDto } from "../index.js";
 import { ProjectMemberDto } from "../index.js";
+import { ProjectFieldValueDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
@@ -200,6 +201,12 @@ export type ProjectDto = {
   favorite: boolean;
 
   /**
+   * The TemplateId that this project was created from.
+   * Will be null if no template was selected at project creation.
+   */
+  creationTemplateId: string | null;
+
+  /**
    * The members of the project
    */
   members: ProjectMemberDto[] | null;
@@ -207,5 +214,5 @@ export type ProjectDto = {
   /**
    * Project fields array with values
    */
-  fields: object | null;
+  fieldValues: ProjectFieldValueDto[] | null;
 };
