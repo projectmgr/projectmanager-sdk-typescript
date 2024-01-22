@@ -18,7 +18,7 @@
  * and users should be aware that HTML embedding is not permitted due to the risk of cross-site
  * attacks and other embedding challenges.
  */
-export type DiscussionCreateDto = {
+export type DiscussionCommentCreateDto = {
 
   /**
    * The text of the comment to add to the discussion, in Markdown format.

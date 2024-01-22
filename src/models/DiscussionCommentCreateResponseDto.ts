@@ -18,7 +18,7 @@
  * and users should be aware that HTML embedding is not permitted due to the risk of cross-site
  * attacks and other embedding challenges.
  */
-export type DiscussionCreateResponseDto = {
+export type DiscussionCommentCreateResponseDto = {
 
   /**
    * The unique identifier of the discussion comment created.

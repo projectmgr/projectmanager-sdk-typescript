@@ -17,6 +17,7 @@ import { TaskAssigneeDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
 import { TaskStatusDto } from "../index.js";
 import { TaskFieldValueDto } from "../index.js";
+import { TaskFileDto } from "../index.js";
 
 /**
  * A Task is an individual element of work that must be performed to complete a Project.  A
@@ -211,4 +212,13 @@ export type TaskDto = {
    * Task fields array with values
    */
   fieldValues: TaskFieldValueDto[] | null;
+
+  /**
+   * The list of files associated with this Task, if any.
+   *
+   * This field will be present when you fetch a single object.
+   * When you query for multiple objects, this field is not included in results by default.
+   * To expand this field, specify the name of this field in the `$expand` parameter.
+   */
+  files: TaskFileDto[] | null;
 };

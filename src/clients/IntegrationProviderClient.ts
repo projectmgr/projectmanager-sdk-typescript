@@ -103,4 +103,16 @@ export class IntegrationProviderClient {
     const url = `/api/data/integrations/providers/${providerId}/user-connection`;
     return this.client.request<AstroResult<object>>("put", url, null, body);
   }
+
+  /**
+   * Allows you to disconnect the provider specific user connection.
+   *
+   * An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
+   *
+   * @param providerId The identifier to the provider
+   */
+  disconnectUserIntegrationProviderConnection(providerId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/integrations/providers/${providerId}/user-connection`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
 }

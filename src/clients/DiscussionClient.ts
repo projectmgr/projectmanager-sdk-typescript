@@ -13,9 +13,9 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { DiscussionDto } from "../index.js";
-import { DiscussionCreateResponseDto } from "../index.js";
-import { DiscussionCreateDto } from "../index.js";
+import { DiscussionCommentDto } from "../index.js";
+import { DiscussionCommentCreateResponseDto } from "../index.js";
+import { DiscussionCommentCreateDto } from "../index.js";
 
 export class DiscussionClient {
   private readonly client: ProjectManagerClient;
@@ -32,9 +32,9 @@ export class DiscussionClient {
    *
    * @param taskId The unique ID number of the task to retrieve comments
    */
-  retrieveTaskComments(taskId: string): Promise<AstroResult<DiscussionDto[]>> {
-    const url = `/api/data/tasks/${taskId}/discussions`;
-    return this.client.request<AstroResult<DiscussionDto[]>>("get", url, null, null);
+  retrieveTaskComments(taskId: string): Promise<AstroResult<DiscussionCommentDto[]>> {
+    const url = `/api/data/tasks/${taskId}/comments`;
+    return this.client.request<AstroResult<DiscussionCommentDto[]>>("get", url, null, null);
   }
 
   /**
@@ -45,8 +45,8 @@ export class DiscussionClient {
    * @param taskId The unique ID number of the task being commented upon
    * @param body The Markdown-formatted text of the comment
    */
-  createTaskComments(taskId: string, body: DiscussionCreateDto): Promise<AstroResult<DiscussionCreateResponseDto>> {
-    const url = `/api/data/tasks/${taskId}/discussions`;
-    return this.client.request<AstroResult<DiscussionCreateResponseDto>>("post", url, null, body);
+  createTaskComments(taskId: string, body: DiscussionCommentCreateDto): Promise<AstroResult<DiscussionCommentCreateResponseDto>> {
+    const url = `/api/data/tasks/${taskId}/comments`;
+    return this.client.request<AstroResult<DiscussionCommentCreateResponseDto>>("post", url, null, body);
   }
 }

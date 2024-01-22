@@ -35,18 +35,16 @@ export class ResourceTeamClient {
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
-   * @param select Specify which properties should be returned
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  retrieveResourceTeams(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
+  retrieveResourceTeams(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
     const url = `/api/data/resources/teams`;
     const options = {
       params: {
         '$top': top,
         '$skip': skip,
         '$filter': filter,
-        '$select': select,
         '$orderby': orderby,
         '$expand': expand,
       },

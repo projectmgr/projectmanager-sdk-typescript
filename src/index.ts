@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    101.0.2818
+ * @version    102.0.2886
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -46,6 +46,7 @@ export { TaskClient } from "./clients/TaskClient.js";
 export { TaskAssigneeClient } from "./clients/TaskAssigneeClient.js";
 export { TaskFieldClient } from "./clients/TaskFieldClient.js";
 export { TaskFileClient } from "./clients/TaskFileClient.js";
+export { TaskMetadataClient } from "./clients/TaskMetadataClient.js";
 export { TaskStatusClient } from "./clients/TaskStatusClient.js";
 export { TaskTagClient } from "./clients/TaskTagClient.js";
 export { TeamsClient } from "./clients/TeamsClient.js";
@@ -72,9 +73,10 @@ export { CreateTaskFieldDto } from "./models/CreateTaskFieldDto.js";
 export { DashboardSettingCreateDto } from "./models/DashboardSettingCreateDto.js";
 export { DashboardSettingDto } from "./models/DashboardSettingDto.js";
 export { DirectLinkDto } from "./models/DirectLinkDto.js";
-export { DiscussionCreateDto } from "./models/DiscussionCreateDto.js";
-export { DiscussionCreateResponseDto } from "./models/DiscussionCreateResponseDto.js";
-export { DiscussionDto } from "./models/DiscussionDto.js";
+export { DiscussionCommentCreateDto } from "./models/DiscussionCommentCreateDto.js";
+export { DiscussionCommentCreateResponseDto } from "./models/DiscussionCommentCreateResponseDto.js";
+export { DiscussionCommentDto } from "./models/DiscussionCommentDto.js";
+export { DiscussionCommentFileDto } from "./models/DiscussionCommentFileDto.js";
 export { DiscussionEmoji } from "./models/DiscussionEmoji.js";
 export { FileDto } from "./models/FileDto.js";
 export { GetProjectFieldsResponseDto } from "./models/GetProjectFieldsResponseDto.js";
@@ -97,6 +99,8 @@ export { ProjectCreateDto } from "./models/ProjectCreateDto.js";
 export { ProjectCustomerDto } from "./models/ProjectCustomerDto.js";
 export { ProjectDto } from "./models/ProjectDto.js";
 export { ProjectFieldValueDto } from "./models/ProjectFieldValueDto.js";
+export { ProjectFileDto } from "./models/ProjectFileDto.js";
+export { ProjectFileTaskDto } from "./models/ProjectFileTaskDto.js";
 export { ProjectFolderDto } from "./models/ProjectFolderDto.js";
 export { ProjectManagerDto } from "./models/ProjectManagerDto.js";
 export { ProjectMemberDto } from "./models/ProjectMemberDto.js";
@@ -125,6 +129,9 @@ export { TaskFieldDto } from "./models/TaskFieldDto.js";
 export { TaskFieldProjectDto } from "./models/TaskFieldProjectDto.js";
 export { TaskFieldValueDto } from "./models/TaskFieldValueDto.js";
 export { TaskFieldValueTaskDto } from "./models/TaskFieldValueTaskDto.js";
+export { TaskFileDto } from "./models/TaskFileDto.js";
+export { TaskMetadataSearchDto } from "./models/TaskMetadataSearchDto.js";
+export { TaskMetadataUpdateDto } from "./models/TaskMetadataUpdateDto.js";
 export { TaskPriorityDto } from "./models/TaskPriorityDto.js";
 export { TaskProjectDto } from "./models/TaskProjectDto.js";
 export { TaskStatusCreateDto } from "./models/TaskStatusCreateDto.js";
@@ -136,6 +143,7 @@ export { TaskUpdateDto } from "./models/TaskUpdateDto.js";
 export { TimesheetAdminTypeDto } from "./models/TimesheetAdminTypeDto.js";
 export { TimesheetCreateRequestDto } from "./models/TimesheetCreateRequestDto.js";
 export { TimesheetDto } from "./models/TimesheetDto.js";
+export { TimesheetFileDto } from "./models/TimesheetFileDto.js";
 export { TimeSheetProjectDto } from "./models/TimeSheetProjectDto.js";
 export { TimesheetResourceDto } from "./models/TimesheetResourceDto.js";
 export { TimesheetResponseDto } from "./models/TimesheetResponseDto.js";

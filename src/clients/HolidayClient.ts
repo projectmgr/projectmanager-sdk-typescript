@@ -33,18 +33,16 @@ export class HolidayClient {
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
-   * @param select Specify which properties should be returned
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  queryresourceholidays(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceHolidayDto[]>> {
+  queryresourceholidays(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceHolidayDto[]>> {
     const url = `/api/data/holidays/resource`;
     const options = {
       params: {
         '$top': top,
         '$skip': skip,
         '$filter': filter,
-        '$select': select,
         '$orderby': orderby,
         '$expand': expand,
       },
@@ -58,18 +56,16 @@ export class HolidayClient {
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
-   * @param select Specify which properties should be returned
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  querycountryholidays(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<CountryHolidayDto[]>> {
+  querycountryholidays(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<CountryHolidayDto[]>> {
     const url = `/api/data/holidays/country`;
     const options = {
       params: {
         '$top': top,
         '$skip': skip,
         '$filter': filter,
-        '$select': select,
         '$orderby': orderby,
         '$expand': expand,
       },
@@ -83,18 +79,16 @@ export class HolidayClient {
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
-   * @param select Specify which properties should be returned
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  queryglobalholidays(top?: number, skip?: number, filter?: string, select?: string, orderby?: string, expand?: string): Promise<AstroResult<GlobalHolidayDto[]>> {
+  queryglobalholidays(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<GlobalHolidayDto[]>> {
     const url = `/api/data/holidays/global`;
     const options = {
       params: {
         '$top': top,
         '$skip': skip,
         '$filter': filter,
-        '$select': select,
         '$orderby': orderby,
         '$expand': expand,
       },
