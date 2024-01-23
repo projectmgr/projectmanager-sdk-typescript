@@ -1,13 +1,13 @@
 /**
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -32,6 +32,8 @@ export class ProjectFileClient {
    *
    * When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
    *
+   * This API returns a JSON response indicating success or failure.
+   *
    * @param projectId The reference to the project
    * @param filename The full path of a file to upload to the API
    */
@@ -48,6 +50,8 @@ export class ProjectFileClient {
    * You can organize your files in the Home Files and Project Files pages by adding folders.
    *
    * When you upload a File, please allow a few moments for the File to be processed and verified. ProjectManager may reject File uploads that contain problems such as malware. Once a File has completed the upload the process, you may retrieve it using the DownloadFile API.
+   *
+   * This API returns a JSON response indicating success or failure.
    *
    * @param projectId The reference to the project
    * @param folderId The reference to the sub folder to put the file into

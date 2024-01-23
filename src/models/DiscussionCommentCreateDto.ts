@@ -1,13 +1,13 @@
 /**
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2023 ProjectManager.com, Inc.
+ * (c) 2023-2024 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2023 ProjectManager.com, Inc.
+ * @copyright  2023-2024 ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -18,10 +18,14 @@
  * and users should be aware that HTML embedding is not permitted due to the risk of cross-site
  * attacks and other embedding challenges.
  */
-export type DiscussionCreateResponseDto = {
+export type DiscussionCommentCreateDto = {
 
   /**
-   * The unique identifier of the discussion comment created.
+   * The text of the comment to add to the discussion, in Markdown format.
+   *
+   * Discussion comments are formatted using [Markdown](https://www.markdownguide.org/)
+   * and users should be aware that HTML embedding is not permitted due to the risk of cross-site
+   * attacks and other embedding challenges.
    */
-  discussionCommentId: string;
+  text: string | null;
 };
