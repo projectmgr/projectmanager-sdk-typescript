@@ -14,7 +14,6 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { TaskMetadataUpdateDto } from "../index.js";
-import { StringObjectDictionary } from "../index.js";
 import { TaskMetadataSearchDto } from "../index.js";
 
 export class TaskMetadataClient {
@@ -44,21 +43,6 @@ export class TaskMetadataClient {
       },
     };
     return this.client.request<AstroResult<object>>("put", url, options, body);
-  }
-
-  /**
-   *
-   * @param taskId Task ID
-   * @param isSystem If metadata is for system or customer, isSystem = true is only of ProjectManager
-   */
-  gettaskmetadata(taskId: string, isSystem?: boolean): Promise<AstroResult<StringObjectDictionary>> {
-    const url = `/api/data/tasks/${taskId}/metadata`;
-    const options = {
-      params: {
-        'isSystem': isSystem,
-      },
-    };
-    return this.client.request<AstroResult<StringObjectDictionary>>("get", url, options, null);
   }
 
   /**
