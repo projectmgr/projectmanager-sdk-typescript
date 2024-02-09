@@ -66,11 +66,6 @@ export type WorkSpaceDto = {
   registerDate: string;
 
   /**
-   * True if the user has accepted an invitation to this Workspace.
-   */
-  isInviteAccepted: boolean;
-
-  /**
    * The unique identifier of the BusinessUser that is the owner of this Workspace.
    */
   businessUserId: string | null;

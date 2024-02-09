@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    102.0.2886
+ * @version    103.0.3003
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -62,6 +62,7 @@ export { AstroResult } from "./models/AstroResult.js";
 export { AuthenticationDto } from "./models/AuthenticationDto.js";
 export { AuthenticationStatusDto } from "./models/AuthenticationStatusDto.js";
 export { ChangesetGetResponseDto } from "./models/ChangesetGetResponseDto.js";
+export { ChangeSetResponseDto } from "./models/ChangeSetResponseDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
 export { CountryHolidayDto } from "./models/CountryHolidayDto.js";
@@ -100,6 +101,7 @@ export { ProjectCustomerDto } from "./models/ProjectCustomerDto.js";
 export { ProjectDto } from "./models/ProjectDto.js";
 export { ProjectFieldValueDto } from "./models/ProjectFieldValueDto.js";
 export { ProjectFileDto } from "./models/ProjectFileDto.js";
+export { ProjectFileFolderDto } from "./models/ProjectFileFolderDto.js";
 export { ProjectFileTaskDto } from "./models/ProjectFileTaskDto.js";
 export { ProjectFolderDto } from "./models/ProjectFolderDto.js";
 export { ProjectManagerDto } from "./models/ProjectManagerDto.js";

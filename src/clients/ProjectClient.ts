@@ -90,4 +90,22 @@ export class ProjectClient {
     const url = `/api/data/projects/${projectId}`;
     return this.client.request<AstroResult<object>>("put", url, null, body);
   }
+
+  /**
+   * Delete a project based on the details provided.
+   *
+   * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks represent individual items of work that team members must complete.  The sum total of Tasks within a Project represents the work to be completed for that Project.
+   *
+   * @param projectId The unique identifier of the Project to delete
+   * @param hardDelete Hard delete project true or false
+   */
+  deleteProject(projectId: string, hardDelete?: boolean): Promise<AstroResult<object>> {
+    const url = `/api/data/projects/${projectId}`;
+    const options = {
+      params: {
+        'hardDelete': hardDelete,
+      },
+    };
+    return this.client.request<AstroResult<object>>("delete", url, options, null);
+  }
 }
