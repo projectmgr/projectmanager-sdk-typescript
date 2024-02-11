@@ -12,6 +12,7 @@
  */
 
 import { ProjectFileTaskDto } from "../index.js";
+import { ProjectFileFolderDto } from "../index.js";
 
 export type ProjectFileDto = {
 
@@ -38,4 +39,13 @@ export type ProjectFileDto = {
    * To expand this field, specify the name of this field in the `$expand` parameter.
    */
   task: ProjectFileTaskDto | null;
+
+  /**
+   * The folder that this file relates to.
+   *
+   * This field will be present when you fetch a single object.
+   * When you query for multiple objects, this field is not included in results by default.
+   * To expand this field, specify the name of this field in the `$expand` parameter.
+   */
+  folder: ProjectFileFolderDto | null;
 };
