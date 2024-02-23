@@ -15,7 +15,7 @@
 /**
  * The project task change set
  */
-export type ChangeSetResponseDto = {
+export type ChangeSetDto = {
 
   /**
    * Project Changeset ID

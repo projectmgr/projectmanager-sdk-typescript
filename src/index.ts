@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    103.0.3003
+ * @version    104.0.3086
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -61,8 +61,7 @@ export { AstroError } from "./models/AstroError.js";
 export { AstroResult } from "./models/AstroResult.js";
 export { AuthenticationDto } from "./models/AuthenticationDto.js";
 export { AuthenticationStatusDto } from "./models/AuthenticationStatusDto.js";
-export { ChangesetGetResponseDto } from "./models/ChangesetGetResponseDto.js";
-export { ChangeSetResponseDto } from "./models/ChangeSetResponseDto.js";
+export { ChangeSetDto } from "./models/ChangeSetDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
 export { CountryHolidayDto } from "./models/CountryHolidayDto.js";
@@ -93,6 +92,8 @@ export { LicenseDto } from "./models/LicenseDto.js";
 export { MasterConnectionSchemeDto } from "./models/MasterConnectionSchemeDto.js";
 export { NameDto } from "./models/NameDto.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
+export { ProjectChangeDto } from "./models/ProjectChangeDto.js";
+export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
 export { ProjectCreateAccessDto } from "./models/ProjectCreateAccessDto.js";
 export { ProjectCreateAccessMemberDto } from "./models/ProjectCreateAccessMemberDto.js";
