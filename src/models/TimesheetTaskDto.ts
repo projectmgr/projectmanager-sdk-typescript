@@ -157,12 +157,32 @@ export type TimesheetTaskDto = {
   color: string | null;
 
   /**
-   * The actual cost of this Task to date, if known.
+   * The actual cost of this Task, if known.
    */
   actualCost: number | null;
+
+  /**
+   * The actual resource cost of this Task
+   */
+  actualResourceCost: number | null;
+
+  /**
+   * The actual effort (in minutes) of this task, if known.
+   */
+  actualEffort: number | null;
 
   /**
    * The planned cost for this Task.  Cannot be negative.
    */
   plannedCost: number | null;
+
+  /**
+   * The planned resource cost of this Task
+   */
+  plannedResourceCost: number | null;
+
+  /**
+   * The planned effort (in minutes) of this task, if known.
+   */
+  plannedEffort: number | null;
 };

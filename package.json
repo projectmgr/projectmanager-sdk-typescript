@@ -1,6 +1,6 @@
 {
     "name": "projectmanager-sdk",
-    "version": "104.0.3086",
+    "version": "107.0.3368",
     "description": "Software development kit for the ProjectManager.com API. for TypeScript",
     "repository": "https://github.com/projectmgr/projectmanager-sdk-typescript",
     "license": "MIT",

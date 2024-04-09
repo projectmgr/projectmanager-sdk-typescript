@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    104.0.3086
+ * @version    107.0.3368
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -92,7 +92,6 @@ export { LicenseDto } from "./models/LicenseDto.js";
 export { MasterConnectionSchemeDto } from "./models/MasterConnectionSchemeDto.js";
 export { NameDto } from "./models/NameDto.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
-export { ProjectChangeDto } from "./models/ProjectChangeDto.js";
 export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
 export { ProjectCreateAccessDto } from "./models/ProjectCreateAccessDto.js";
@@ -113,6 +112,8 @@ export { ProjectStatusDto } from "./models/ProjectStatusDto.js";
 export { ProjectTemplateCategoryDto } from "./models/ProjectTemplateCategoryDto.js";
 export { ProjectTemplateDto } from "./models/ProjectTemplateDto.js";
 export { ProjectUpdateDto } from "./models/ProjectUpdateDto.js";
+export { ProjectVersionChangeDataDto } from "./models/ProjectVersionChangeDataDto.js";
+export { ProjectVersionDto } from "./models/ProjectVersionDto.js";
 export { ReactGridLayoutDto } from "./models/ReactGridLayoutDto.js";
 export { ReactGridLayoutItemDto } from "./models/ReactGridLayoutItemDto.js";
 export { ResourceApproverDto } from "./models/ResourceApproverDto.js";

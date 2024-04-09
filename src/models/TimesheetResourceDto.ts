@@ -44,4 +44,9 @@ export type TimesheetResourceDto = {
    * The email address of this Resource.
    */
   email: string | null;
+
+  /**
+   * The default hourly rate of the resource.
+   */
+  hourlyRate: number | null;
 };
