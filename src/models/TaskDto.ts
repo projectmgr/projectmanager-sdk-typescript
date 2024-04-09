@@ -138,6 +138,11 @@ export type TaskDto = {
   actualFinishDate: string | null;
 
   /**
+   * The actual effort (in minutes) for this Task.
+   */
+  actualEffort: number | null;
+
+  /**
    * The timestamp in UTC when this Task was most recently modified.
    */
   modifyDate: string;
@@ -194,9 +199,19 @@ export type TaskDto = {
   actualCost: number | null;
 
   /**
+   * The actual resource cost of this Task
+   */
+  actualResourceCost: number | null;
+
+  /**
    * The planned cost for this Task.  Cannot be negative.
    */
   plannedCost: number | null;
+
+  /**
+   * The planned resource cost of this Task
+   */
+  plannedResourceCost: number | null;
 
   /**
    * The planned duration (in minutes) for this Task.

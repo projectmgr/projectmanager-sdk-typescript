@@ -33,7 +33,7 @@ export type TimesheetCreateRequestDto = {
   taskId: string | null;
 
   /**
-   * Admin task id that time reportsed to
+   * Admin task id that time reported to
    */
   adminTypeId: string | null;
 

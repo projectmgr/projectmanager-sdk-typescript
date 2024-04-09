@@ -14,7 +14,6 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectChangeStatusDto } from "../index.js";
-import { ProjectChangeDto } from "../index.js";
 
 export class ChangesetClient {
   private readonly client: ProjectManagerClient;
@@ -54,25 +53,5 @@ export class ChangesetClient {
   retrieveCompletedChangesetstatus(changeSetId: string): Promise<AstroResult<ProjectChangeStatusDto>> {
     const url = `/api/data/changesets/${changeSetId}/poll`;
     return this.client.request<AstroResult<ProjectChangeStatusDto>>("get", url, null, null);
-  }
-
-  /**
-   * Retrieve specific Project Changes by Project ID
-   *
-   * @param projectId Documentation pending
-   * @param version Documentation pending
-   * @param page Documentation pending
-   * @param take Documentation pending
-   */
-  retrieveProjectChangesbyprojectID(projectId: string, version?: number, page?: number, take?: number): Promise<AstroResult<ProjectChangeDto[]>> {
-    const url = `/api/data/projects/${projectId}/changes`;
-    const options = {
-      params: {
-        'version': version,
-        'page': page,
-        'take': take,
-      },
-    };
-    return this.client.request<AstroResult<ProjectChangeDto[]>>("get", url, options, null);
   }
 }
