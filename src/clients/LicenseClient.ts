@@ -28,7 +28,10 @@ export class LicenseClient {
   /**
    * Retrieve information about the current licenses possessed by this Workspace.
    *
-   * Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
+   * Licenses contain information about your current subscription level and features that have
+   * been enabled on your Workspace.  To modify the License information, please log on to the
+   * ProjectManager.com application and use the Account | Editions screen to review or update
+   * your Licenses.
    *
    */
   retrieveLicenses(): Promise<AstroResult<LicenseDto[]>> {
@@ -39,7 +42,10 @@ export class LicenseClient {
   /**
    * Adds a new License to the current Workspace.
    *
-   * Licenses contain information about your current subscription level and features that have been enabled on your Workspace.  To modify the License information, please log on to the ProjectManager.com application and use the Account | Editions screen to review or update your Licenses.
+   * Licenses contain information about your current subscription level and features that have
+   * been enabled on your Workspace.  To modify the License information, please log on to the
+   * ProjectManager.com application and use the Account | Editions screen to review or update
+   * your Licenses.
    *
    * @param bundleSku Information about the SKU you wish to add to your Workspace
    */

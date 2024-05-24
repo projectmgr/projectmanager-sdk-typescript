@@ -28,7 +28,9 @@ export class IntegrationCategoryClient {
   /**
    * Retrieves the list of available IntegrationProvider categories.
    *
-   * An IntegrationProvider is the name of an external application or service that can be connected to ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
+   * An IntegrationProvider is the name of an external application or service that can be connected to
+   * ProjectManager.com.  The Integrations API is intended for use by ProjectManager and its business
+   * development partners.  Please contact ProjectManager's sales team to request use of this API.
    *
    */
   retrieveProviderCategories(): Promise<AstroResult<IntegrationCategoryDto[]>> {

@@ -30,7 +30,8 @@ export class TagClient {
   /**
    * Retrieve a list of Tags that match an [OData formatted query](https://www.odata.org/).
    *
-   * A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
+   * A Tag is a named categorization you can use to distinguish objects from each other.
+   * Tags each have a unique identifier, a name, and a color.
    *
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
@@ -55,7 +56,8 @@ export class TagClient {
   /**
    * Creates a new Tag based on information you provide.
    *
-   * A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
+   * A Tag is a named categorization you can use to distinguish objects from each other.
+   * Tags each have a unique identifier, a name, and a color.
    *
    * @param body The information for the new Tag to create
    */
@@ -67,7 +69,8 @@ export class TagClient {
   /**
    * Updates an existing Tag based on information you provide.
    *
-   * A Tag is a named categorization you can use to distinguish objects from each other. Tags each have a unique identifier, a name, and a color.
+   * A Tag is a named categorization you can use to distinguish objects from each other.
+   * Tags each have a unique identifier, a name, and a color.
    *
    * @param tagId The id of the tag
    * @param body The information to update the tag
