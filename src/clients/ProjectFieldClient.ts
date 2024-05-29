@@ -32,7 +32,10 @@ export class ProjectFieldClient {
   /**
    * Retrieves all ProjectFields defined within your Workspace.
    *
-   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+   * for any integration purpose that is important to your business.  Each ProjectField has a data
+   * type as well as options in how it is handled.  ProjectFields can be edited for each Project
+   * within your Workspace.
    *
    */
   retrieveProjectFields(): Promise<AstroResult<GetProjectFieldsResponseDto[]>> {
@@ -43,7 +46,10 @@ export class ProjectFieldClient {
   /**
    * Creates a new ProjectField within your Workspace.
    *
-   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+   * for any integration purpose that is important to your business.  Each ProjectField has a data
+   * type as well as options in how it is handled.  ProjectFields can be edited for each Project
+   * within your Workspace.
    *
    * @param body Information about the ProjectField to create
    */
@@ -55,7 +61,10 @@ export class ProjectFieldClient {
   /**
    * Deletes an existing ProjectField within your Workspace.
    *
-   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+   * for any integration purpose that is important to your business.  Each ProjectField has a data
+   * type as well as options in how it is handled.  ProjectFields can be edited for each Project
+   * within your Workspace.
    *
    * @param fieldId The unique identifier or short ID of this ProjectField
    */
@@ -67,7 +76,10 @@ export class ProjectFieldClient {
   /**
    * Replaces the current value of a ProjectField for a specific Project within your Workspace.
    *
-   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+   * for any integration purpose that is important to your business.  Each ProjectField has a data
+   * type as well as options in how it is handled.  ProjectFields can be edited for each Project
+   * within your Workspace.
    *
    * @param projectId The unique identifier of the Project that contains this ProjectField
    * @param fieldId The unique identifier or short ID of this ProjectField
@@ -81,7 +93,10 @@ export class ProjectFieldClient {
   /**
    * Retrieves the current ProjectField value for a particular Project and ProjectField.
    *
-   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+   * for any integration purpose that is important to your business.  Each ProjectField has a data
+   * type as well as options in how it is handled.  ProjectFields can be edited for each Project
+   * within your Workspace.
    *
    * @param projectId The unique identifier of the Project of the value to retrieve
    * @param fieldId The unique identifier or short ID of the ProjectField of the value to retrieve
@@ -94,7 +109,10 @@ export class ProjectFieldClient {
   /**
    * Retrieves all ProjectField values for a particular Project.
    *
-   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields for any integration purpose that is important to your business.  Each ProjectField has a data type as well as options in how it is handled.  ProjectFields can be edited for each Project within your Workspace.
+   * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
+   * for any integration purpose that is important to your business.  Each ProjectField has a data
+   * type as well as options in how it is handled.  ProjectFields can be edited for each Project
+   * within your Workspace.
    *
    * @param projectId The unique identifier of the Project for which we want ProjectField values
    */

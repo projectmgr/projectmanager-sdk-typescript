@@ -28,7 +28,8 @@ export class IntegrationClient {
   /**
    * Retrieves an Integration specified by a unique identifier.
    *
-   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
+   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please
+   * contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of this Integration
    */
@@ -40,7 +41,8 @@ export class IntegrationClient {
   /**
    * Enable a specific Integration for the current Workspace.
    *
-   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
+   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please
+   * contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of the Integration to enable
    */
@@ -52,7 +54,8 @@ export class IntegrationClient {
   /**
    * Disable a specific Integration for the current Workspace.
    *
-   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
+   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please
+   * contact ProjectManager's sales team to request use of this API.
    *
    * @param integrationId The unique identifier of the Integration to disable
    */
@@ -64,7 +67,8 @@ export class IntegrationClient {
   /**
    * Retrieves all Integrations for the current Workspace.
    *
-   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please contact ProjectManager's sales team to request use of this API.
+   * The Integrations API is intended for use by ProjectManager and its business development partners.  Please
+   * contact ProjectManager's sales team to request use of this API.
    *
    */
   retrieveAllIntegrations(): Promise<AstroResult<IntegrationDto[]>> {

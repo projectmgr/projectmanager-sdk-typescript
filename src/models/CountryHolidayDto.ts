@@ -28,7 +28,12 @@ export type CountryHolidayDto = {
   date: string;
 
   /**
-   * Country id holiday associated to
+   * The Country Id the holiday is associated to
    */
   countryId: number;
+
+  /**
+   * The Country Name the holiday is associated to
+   */
+  countryName: string | null;
 };

@@ -30,7 +30,10 @@ export class ResourceSkillClient {
   /**
    * Retrieves all ResourceSkills defined within your Workspace.
    *
-   * A ResourceSkill is a capability possessed by a Resource that can be used to distinguish different classes of Resources suitable for use by a Task.  You can specify that a Task requires a Resource with a particular set of ResourceSkills and then allocate Resources based on whether or not they have the suitable ResourceSkills.
+   * A ResourceSkill is a capability possessed by a Resource that can be used to distinguish
+   * different classes of Resources suitable for use by a Task.  You can specify that a Task
+   * requires a Resource with a particular set of ResourceSkills and then allocate Resources
+   * based on whether or not they have the suitable ResourceSkills.
    *
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records

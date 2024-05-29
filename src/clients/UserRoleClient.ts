@@ -28,7 +28,9 @@ export class UserRoleClient {
   /**
    * Retrieves the list of UserRoles defined within this Workspace.
    *
-   * A UserRole is a name for a privilege level granted to a specific User.  The 'Global Admin' UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed. You can choose which UserRole applies to a User within your Workspace.
+   * A UserRole is a name for a privilege level granted to a specific User.  The 'Global Admin'
+   * UserRole is granted to the owner of the Workspace, and this UserRole cannot be changed.
+   * You can choose which UserRole applies to a User within your Workspace.
    *
    */
   retrieveUserRoles(): Promise<AstroResult<UserRoleDto[]>> {
