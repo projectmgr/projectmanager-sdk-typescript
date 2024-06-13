@@ -34,4 +34,10 @@ export type TaskStatusCreateDto = {
    * needs of your business.
    */
   order: number | null;
+
+  /**
+   * A numerical value that can be used to sort TaskStatus values according to the
+   * needs of your business.
+   */
+  isDone: boolean | null;
 };

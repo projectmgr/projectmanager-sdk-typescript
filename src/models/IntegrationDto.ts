@@ -76,4 +76,9 @@ export type IntegrationDto = {
    * True if the integration is auto-enabled
    */
   autoEnabled: boolean;
+
+  /**
+   * No Admin Permission
+   */
+  noAdminPermission: boolean;
 };

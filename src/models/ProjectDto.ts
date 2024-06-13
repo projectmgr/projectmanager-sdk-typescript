@@ -225,4 +225,9 @@ export type ProjectDto = {
    * To expand this field, specify the name of this field in the `$expand` parameter.
    */
   files: ProjectFileDto[] | null;
+
+  /**
+   * The percentage of the project tasks completed
+   */
+  percentComplete: number | null;
 };
