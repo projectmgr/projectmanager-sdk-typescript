@@ -30,6 +30,11 @@ export type AstroError = {
   additionalErrors: string[] | null;
 
   /**
+   * This contains a dictionary of validation errors. The key is the name of the field
+   */
+  validationErrors: object | null;
+
+  /**
    * A description of the error that occurred.  If your application has a user
    * interface, show this message to explain what went wrong.
    */

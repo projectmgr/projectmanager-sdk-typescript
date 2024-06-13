@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    110.0.3705
+ * @version    112.0.3856
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -65,8 +65,6 @@ export { ChangeSetDto } from "./models/ChangeSetDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
 export { CountryHolidayDto } from "./models/CountryHolidayDto.js";
-export { CreateProjectFieldDto } from "./models/CreateProjectFieldDto.js";
-export { CreateProjectFieldResponseDto } from "./models/CreateProjectFieldResponseDto.js";
 export { CreateResourceSkillDto } from "./models/CreateResourceSkillDto.js";
 export { CreateResourceTeamDto } from "./models/CreateResourceTeamDto.js";
 export { CreateTaskFieldDto } from "./models/CreateTaskFieldDto.js";
@@ -79,7 +77,6 @@ export { DiscussionCommentDto } from "./models/DiscussionCommentDto.js";
 export { DiscussionCommentFileDto } from "./models/DiscussionCommentFileDto.js";
 export { DiscussionEmoji } from "./models/DiscussionEmoji.js";
 export { FileDto } from "./models/FileDto.js";
-export { GetProjectFieldsResponseDto } from "./models/GetProjectFieldsResponseDto.js";
 export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
 export { IdDto } from "./models/IdDto.js";
 export { IntegrationAuthSetupDto } from "./models/IntegrationAuthSetupDto.js";
@@ -99,6 +96,8 @@ export { ProjectCreateAccessMemberDto } from "./models/ProjectCreateAccessMember
 export { ProjectCreateDto } from "./models/ProjectCreateDto.js";
 export { ProjectCustomerDto } from "./models/ProjectCustomerDto.js";
 export { ProjectDto } from "./models/ProjectDto.js";
+export { ProjectFieldCreateDto } from "./models/ProjectFieldCreateDto.js";
+export { ProjectFieldDto } from "./models/ProjectFieldDto.js";
 export { ProjectFieldValueDto } from "./models/ProjectFieldValueDto.js";
 export { ProjectFileDto } from "./models/ProjectFileDto.js";
 export { ProjectFileFolderDto } from "./models/ProjectFileFolderDto.js";

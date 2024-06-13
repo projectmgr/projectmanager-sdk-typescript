@@ -12,6 +12,7 @@
  */
 
 import { ProjectCreateAccessDto } from "../index.js";
+import { TaskStatusCreateDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
@@ -124,4 +125,9 @@ export type ProjectCreateDto = {
    * True if this Project is marked as favorite for current user
    */
   favorite: boolean | null;
+
+  /**
+   * Create default task status upfront
+   */
+  taskStatusCreate: TaskStatusCreateDto[] | null;
 };

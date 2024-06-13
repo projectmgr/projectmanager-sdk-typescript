@@ -13,9 +13,8 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { GetProjectFieldsResponseDto } from "../index.js";
-import { CreateProjectFieldResponseDto } from "../index.js";
-import { CreateProjectFieldDto } from "../index.js";
+import { ProjectFieldDto } from "../index.js";
+import { ProjectFieldCreateDto } from "../index.js";
 import { UpdateProjectFieldValueDto } from "../index.js";
 import { ProjectFieldValueDto } from "../index.js";
 
@@ -38,9 +37,9 @@ export class ProjectFieldClient {
    * within your Workspace.
    *
    */
-  retrieveProjectFields(): Promise<AstroResult<GetProjectFieldsResponseDto[]>> {
+  retrieveProjectFields(): Promise<AstroResult<ProjectFieldDto[]>> {
     const url = `/api/data/projects/fields`;
-    return this.client.request<AstroResult<GetProjectFieldsResponseDto[]>>("get", url, null, null);
+    return this.client.request<AstroResult<ProjectFieldDto[]>>("get", url, null, null);
   }
 
   /**
@@ -53,9 +52,9 @@ export class ProjectFieldClient {
    *
    * @param body Information about the ProjectField to create
    */
-  createProjectField(body: CreateProjectFieldDto): Promise<AstroResult<CreateProjectFieldResponseDto>> {
+  createProjectField(body: ProjectFieldCreateDto): Promise<AstroResult<ProjectFieldDto>> {
     const url = `/api/data/projects/fields`;
-    return this.client.request<AstroResult<CreateProjectFieldResponseDto>>("post", url, null, body);
+    return this.client.request<AstroResult<ProjectFieldDto>>("post", url, null, body);
   }
 
   /**
