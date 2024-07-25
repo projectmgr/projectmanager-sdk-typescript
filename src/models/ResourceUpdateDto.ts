@@ -91,4 +91,16 @@ export type ResourceUpdateDto = {
    * The list of ResourceSkills possessed by this Resource.
    */
   skillIds: string[] | null;
+
+  /**
+   * Active/Inactive the Resource.
+   */
+  isActive: boolean | null;
+
+  /**
+   * The Approver Id associated with this Resource.
+   *
+   * Applies to personnel Resources only.
+   */
+  approverId: string | null;
 };

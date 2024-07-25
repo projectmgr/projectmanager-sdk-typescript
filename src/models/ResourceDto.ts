@@ -123,4 +123,24 @@ export type ResourceDto = {
    * to access this Workspace.
    */
   isActive: boolean;
+
+  /**
+   * The date this resource was created
+   */
+  createdDate: string;
+
+  /**
+   * Set to a unique identifier of the user who created this Resource.
+   */
+  createdBy: string;
+
+  /**
+   * The date this resource was last modified
+   */
+  modifiedDate: string;
+
+  /**
+   * Set to a unique identifier of the user who last modified this Resource.
+   */
+  modifiedBy: string;
 };

@@ -16,6 +16,8 @@ import { AstroResult } from "../index.js";
 import { ResourceDto } from "../index.js";
 import { ResourceCreateDto } from "../index.js";
 import { ResourceUpdateDto } from "../index.js";
+import { ResourcesDto } from "../index.js";
+import { ResourcesCreateDto } from "../index.js";
 
 export class ResourceClient {
   private readonly client: ProjectManagerClient;
@@ -103,5 +105,21 @@ export class ResourceClient {
   retrieveResource(resourceId: string): Promise<AstroResult<ResourceDto>> {
     const url = `/api/data/resources/${resourceId}`;
     return this.client.request<AstroResult<ResourceDto>>("get", url, null, null);
+  }
+
+  /**
+   * Create new Resources within your Workspace.
+   *
+   * A Resource represents a person, material, or tool that is used within your Projects.
+   * When you attach a Resources to more than one Task, the software will schedule the usage
+   * of your Resource so that it is not allocated to more than one Task at the same time.
+   * The users in your Workspace are also considered Resources.  To invite a new User to your
+   * Workspace, create a new Resource for that user.
+   *
+   * @param body The details for the new Resources to create
+   */
+  createManyResources(body: ResourcesCreateDto): Promise<AstroResult<ResourcesDto>> {
+    const url = `/api/data/resources/bulk`;
+    return this.client.request<AstroResult<ResourcesDto>>("post", url, null, body);
   }
 }

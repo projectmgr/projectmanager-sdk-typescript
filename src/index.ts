@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    112.0.3856
+ * @version    114.0.4169
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -27,6 +27,7 @@ export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.j
 export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.js";
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
+export { NotificationClient } from "./clients/NotificationClient.js";
 export { NptFilesClient } from "./clients/NptFilesClient.js";
 export { ProjectClient } from "./clients/ProjectClient.js";
 export { ProjectChargeCodeClient } from "./clients/ProjectChargeCodeClient.js";
@@ -76,6 +77,7 @@ export { DiscussionCommentCreateResponseDto } from "./models/DiscussionCommentCr
 export { DiscussionCommentDto } from "./models/DiscussionCommentDto.js";
 export { DiscussionCommentFileDto } from "./models/DiscussionCommentFileDto.js";
 export { DiscussionEmoji } from "./models/DiscussionEmoji.js";
+export { ExportDto } from "./models/ExportDto.js";
 export { FileDto } from "./models/FileDto.js";
 export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
 export { IdDto } from "./models/IdDto.js";
@@ -88,6 +90,12 @@ export { IntegrationProviderDto } from "./models/IntegrationProviderDto.js";
 export { LicenseDto } from "./models/LicenseDto.js";
 export { MasterConnectionSchemeDto } from "./models/MasterConnectionSchemeDto.js";
 export { NameDto } from "./models/NameDto.js";
+export { NotificationDataDto } from "./models/NotificationDataDto.js";
+export { NotificationDto } from "./models/NotificationDto.js";
+export { NotificationResponseDto } from "./models/NotificationResponseDto.js";
+export { NotificationTimestampDto } from "./models/NotificationTimestampDto.js";
+export { NotificationTotalCountDto } from "./models/NotificationTotalCountDto.js";
+export { NotificationUnreadCountDto } from "./models/NotificationUnreadCountDto.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
@@ -119,9 +127,12 @@ export { ResourceApproverDto } from "./models/ResourceApproverDto.js";
 export { ResourceCreateDto } from "./models/ResourceCreateDto.js";
 export { ResourceDto } from "./models/ResourceDto.js";
 export { ResourceHolidayDto } from "./models/ResourceHolidayDto.js";
+export { ResourcesCreateDto } from "./models/ResourcesCreateDto.js";
+export { ResourcesDto } from "./models/ResourcesDto.js";
 export { ResourceSkillDto } from "./models/ResourceSkillDto.js";
 export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";
+export { RiskExportSettingsDto } from "./models/RiskExportSettingsDto.js";
 export { TagCreateDto } from "./models/TagCreateDto.js";
 export { TagDto } from "./models/TagDto.js";
 export { TagUpdateDto } from "./models/TagUpdateDto.js";
@@ -157,6 +168,7 @@ export { UpdateRequestDto } from "./models/UpdateRequestDto.js";
 export { UpdateResourceSkillDto } from "./models/UpdateResourceSkillDto.js";
 export { UpdateResourceTeamDto } from "./models/UpdateResourceTeamDto.js";
 export { UpdateTaskFieldValueDto } from "./models/UpdateTaskFieldValueDto.js";
+export { UserError } from "./models/UserError.js";
 export { UserRoleDto } from "./models/UserRoleDto.js";
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
 export { WorkSpaceJoinDto } from "./models/WorkSpaceJoinDto.js";

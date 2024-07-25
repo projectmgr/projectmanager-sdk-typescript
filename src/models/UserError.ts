@@ -12,15 +12,9 @@
  */
 
 
-export type ProjectVersionChangeDataDto = {
+export type UserError = {
 
-  type: string | null;
+  email: string | null;
 
-  method: string | null;
-
-  property: string | null;
-
-  value: string | null;
-
-  restoreVersion: number | null;
+  reason: string | null;
 };
