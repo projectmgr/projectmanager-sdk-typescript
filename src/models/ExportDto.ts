@@ -12,15 +12,13 @@
  */
 
 
-export type ProjectVersionChangeDataDto = {
+/**
+ * Represents an export queue object. Use this ID to check the status of the export.
+ */
+export type ExportDto = {
 
-  type: string | null;
-
-  method: string | null;
-
-  property: string | null;
-
-  value: string | null;
-
-  restoreVersion: number | null;
+  /**
+   * Id of the export
+   */
+  id: string;
 };
