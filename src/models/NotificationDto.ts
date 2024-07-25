@@ -11,7 +11,6 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { NotificationDto } from "../index.js";
 import { NotificationDataDto } from "../index.js";
 
 /**
