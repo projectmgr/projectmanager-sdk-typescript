@@ -22,5 +22,10 @@ import { ResourceCreateDto } from "../index.js";
  */
 export type ResourcesCreateDto = {
 
+  /**
+   * When creating a user they will also be added to the projectIds specified. If null or empty the user will be invited but no access will be given to any projects.
+   */
+  projectIds: string[] | null;
+
   users: ResourceCreateDto[] | null;
 };

@@ -11,6 +11,9 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { ExportDueDateFilterDto } from "../index.js";
+import { ExportPriorityFilterDto } from "../index.js";
+import { RiskExportProgressFilterDto } from "../index.js";
 
 /**
  * Export Settings for Risk Export
@@ -26,7 +29,7 @@ export type RiskExportSettingsDto = {
    * Format to export to, currently csv and excel are supported
    *
    *  Valid options are:
-   *  * csv
+   *  * Csv
    *  * excel
    */
   format: string | null;
@@ -64,4 +67,34 @@ export type RiskExportSettingsDto = {
    *  * desc
    */
   orderDirection: string | null;
+
+  /**
+   * Timezone offset in minutes
+   */
+  timeZoneOffset: number;
+
+  /**
+   * Specify the due date filter for the export. If left null, no due date filter will be applied
+   */
+  dueDateFilter: ExportDueDateFilterDto | null;
+
+  /**
+   * Specify the priority filter for the export. If left null, no priority filter will be applied
+   */
+  priorityFilter: ExportPriorityFilterDto | null;
+
+  /**
+   * Specify the progress filter for the export. If left null, no progress filter will be applied
+   */
+  progressFilter: RiskExportProgressFilterDto | null;
+
+  /**
+   * A list of resourceIds to filter the risks by assignees. If left null or empty this will be ignored
+   */
+  assignees: string[] | null;
+
+  /**
+   * A list of tagIds to filter the risks by tags. If left null or empty this will be ignored
+   */
+  tags: string[] | null;
 };

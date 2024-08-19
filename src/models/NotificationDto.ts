@@ -23,17 +23,7 @@ export type NotificationDto = {
   /**
    * The unique identifier of this notification
    */
-  notificationId: string;
-
-  /**
-   * The unique identifier of the workspace for this notification
-   */
-  businessId: string;
-
-  /**
-   * The unique identifier of the recipient of this notification
-   */
-  userId: string;
+  id: string;
 
   /**
    * The unique identifier of the sender of this notification

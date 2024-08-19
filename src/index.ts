@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    114.0.4169
+ * @version    115.0.4328
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -78,6 +78,8 @@ export { DiscussionCommentDto } from "./models/DiscussionCommentDto.js";
 export { DiscussionCommentFileDto } from "./models/DiscussionCommentFileDto.js";
 export { DiscussionEmoji } from "./models/DiscussionEmoji.js";
 export { ExportDto } from "./models/ExportDto.js";
+export { ExportDueDateFilterDto } from "./models/ExportDueDateFilterDto.js";
+export { ExportPriorityFilterDto } from "./models/ExportPriorityFilterDto.js";
 export { FileDto } from "./models/FileDto.js";
 export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
 export { IdDto } from "./models/IdDto.js";
@@ -132,6 +134,7 @@ export { ResourcesDto } from "./models/ResourcesDto.js";
 export { ResourceSkillDto } from "./models/ResourceSkillDto.js";
 export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";
+export { RiskExportProgressFilterDto } from "./models/RiskExportProgressFilterDto.js";
 export { RiskExportSettingsDto } from "./models/RiskExportSettingsDto.js";
 export { TagCreateDto } from "./models/TagCreateDto.js";
 export { TagDto } from "./models/TagDto.js";

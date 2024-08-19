@@ -189,9 +189,18 @@ export type TaskDto = {
   wbs: string | null;
 
   /**
-   * Task Color as set in the Gantt
+   * The hexadecimal RRGGBB Task Color as set in the Gantt.  This value is read-only; to set this value,
+   * change the `Theme` field.
    */
   color: string | null;
+
+  /**
+   * Color theme definition for this Task.
+   *
+   * eg. Blue, Brown, DarkBlue, DarkGrey, Gold, Green, Grey, LightBrown, LightGreen,
+   * LightGrey, LightPurple, LightYellow, Magenta, Mauve, Navy, Orange, Purple, Red.
+   */
+  theme: string | null;
 
   /**
    * The actual cost of this Task to date, if known.
