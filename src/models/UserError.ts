@@ -18,5 +18,5 @@ export type UserError = {
 
   reason: string | null;
 
-  statusCode: HttpStatusCode;
+  statusCode: string;
 };
