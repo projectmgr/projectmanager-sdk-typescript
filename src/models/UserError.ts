@@ -11,10 +11,13 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { HttpStatusCode } from "../index.js";
 
 export type UserError = {
 
   email: string | null;
 
   reason: string | null;
+
+  statusCode: HttpStatusCode;
 };

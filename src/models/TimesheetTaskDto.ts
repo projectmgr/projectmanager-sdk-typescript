@@ -138,7 +138,7 @@ export type TimesheetTaskDto = {
   /**
    * Return the priority of a task
    */
-  priorityId: number;
+  priorityId: number | null;
 
   /**
    * The WBS (Work Breakdown Structure) number for this task within the Gantt chart hierarchy.  See [What
