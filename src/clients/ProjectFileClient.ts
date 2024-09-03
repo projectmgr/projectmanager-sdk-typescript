@@ -43,7 +43,7 @@ export class ProjectFileClient {
    */
   uploadProjectFile(projectId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 
   /**
@@ -67,6 +67,6 @@ export class ProjectFileClient {
    */
   uploadProjectFileToFolder(projectId: string, folderId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/folders/${folderId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 }

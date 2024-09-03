@@ -43,6 +43,6 @@ export class NptFilesClient {
    */
   uploadFileToNonProjectTasks(taskId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/non-project-tasks/${taskId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 }

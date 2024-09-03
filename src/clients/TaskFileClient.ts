@@ -43,6 +43,6 @@ export class TaskFileClient {
    */
   uploadTaskFile(taskId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/tasks/${taskId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 }
