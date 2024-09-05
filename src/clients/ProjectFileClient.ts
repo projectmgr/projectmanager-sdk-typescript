@@ -39,11 +39,11 @@ export class ProjectFileClient {
    * This API returns a JSON response indicating success or failure.
    *
    * @param projectId The reference to the project
-   * @param filename The full path of a file to upload to the API
+   * @param fileName The full path of a file to upload to the API
    */
-  uploadProjectFile(projectId: string, filename: string): Promise<AstroResult<FileDto>> {
+  uploadProjectFile(projectId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 
   /**
@@ -63,10 +63,10 @@ export class ProjectFileClient {
    *
    * @param projectId The reference to the project
    * @param folderId The reference to the sub folder to put the file into
-   * @param filename The full path of a file to upload to the API
+   * @param fileName The full path of a file to upload to the API
    */
-  uploadProjectFileToFolder(projectId: string, folderId: string, filename: string): Promise<AstroResult<FileDto>> {
+  uploadProjectFileToFolder(projectId: string, folderId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/projects/${projectId}/folders/${folderId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 }

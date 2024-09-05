@@ -143,4 +143,16 @@ export type ResourceDto = {
    * Set to a unique identifier of the user who last modified this Resource.
    */
   modifiedBy: string;
+
+  /**
+   * Collaboration Color for this resource.
+   *
+   * eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+   */
+  colorName: string | null;
+
+  /**
+   * Read only Hex code of the ColorName
+   */
+  color: string | null;
 };

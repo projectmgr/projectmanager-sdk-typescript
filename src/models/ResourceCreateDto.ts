@@ -89,4 +89,11 @@ export type ResourceCreateDto = {
    * The list of ResourceSkills possessed by this Resource.
    */
   skillIds: string[] | null;
+
+  /**
+   * Collaboration Color for this resource.
+   *
+   * eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+   */
+  colorName: string | null;
 };

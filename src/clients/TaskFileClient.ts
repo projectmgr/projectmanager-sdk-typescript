@@ -39,10 +39,10 @@ export class TaskFileClient {
    * This API returns a JSON response indicating success or failure.
    *
    * @param taskId The reference to the task
-   * @param filename The full path of a file to upload to the API
+   * @param fileName The full path of a file to upload to the API
    */
-  uploadTaskFile(taskId: string, filename: string): Promise<AstroResult<FileDto>> {
+  uploadTaskFile(taskId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/tasks/${taskId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 }

@@ -103,4 +103,11 @@ export type ResourceUpdateDto = {
    * Applies to personnel Resources only.
    */
   approverId: string | null;
+
+  /**
+   * Collaboration Color for this resource.
+   *
+   * eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+   */
+  colorName: string | null;
 };

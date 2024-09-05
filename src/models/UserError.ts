@@ -17,4 +17,6 @@ export type UserError = {
   email: string | null;
 
   reason: string | null;
+
+  statusCode: string;
 };

@@ -22,7 +22,7 @@ export type TaskPriorityDto = {
   /**
    * The unique identifier of this TaskPriority.
    */
-  id: number;
+  id: number | null;
 
   /**
    * The name of this TaskPriority.

@@ -38,11 +38,11 @@ export class HomeFileClient {
    *
    * This API returns a JSON response indicating success or failure.
    *
-   * @param filename The full path of a file to upload to the API
+   * @param fileName The full path of a file to upload to the API
    */
-  uploadHomeFile(filename: string): Promise<AstroResult<FileDto>> {
+  uploadHomeFile(fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/home/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 
   /**
@@ -61,10 +61,10 @@ export class HomeFileClient {
    * This API returns a JSON response indicating success or failure.
    *
    * @param folderId The reference to the sub folder to put the file into
-   * @param filename The full path of a file to upload to the API
+   * @param fileName The full path of a file to upload to the API
    */
-  uploadHomeFileToFolder(folderId: string, filename: string): Promise<AstroResult<FileDto>> {
+  uploadHomeFileToFolder(folderId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/home/folders/${folderId}/files`;
-    return this.client.fileUpload("post", url, null, filename);
+    return this.client.fileUpload("post", url, null, fileName);
   }
 }

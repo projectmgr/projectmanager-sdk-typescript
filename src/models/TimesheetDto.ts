@@ -18,32 +18,54 @@ import { TimesheetAdminTypeDto } from "../index.js";
 import { TimesheetFileDto } from "../index.js";
 
 /**
- * Created Time entry response data
+ * A Timesheet entry is a single record that contains information about time spent by a person on a task.  Each
+ * Timesheet entry object contains information about one task/day/person combination.  A fully completed Timesheet
+ * will often contain multiple records for the same date range which must be combined to produce a finished
+ * Timesheet.
  */
 export type TimesheetDto = {
 
   /**
-   * TimesheetId
+   * A unique identifier of a timesheet data entry
    */
   id: string;
 
   /**
-   * Date of time entry
+   * The unique identifier of the resource who is preparing this Timesheet.  You can filter on this value to measure
+   * the total work performed by this specific Resource.
+   */
+  resourceId: string;
+
+  /**
+   * The unique identifier of the task worked on for this Timesheet.  You can filter on this value to measure the
+   * total work performed against a specific Task.
+   */
+  taskId: string;
+
+  /**
+   * The unique identifier of the project worked on for this Timesheet.  You can filter on this value to measure the
+   * total work performed against a specific Project.
+   */
+  projectId: string;
+
+  /**
+   * The date of this time entry record.  You can filter on this value to obtain Timesheet data for a specific date
+   * range.
    */
   date: string;
 
   /**
-   * Notes
+   * Notes associated with this Timesheet, if any
    */
   notes: string | null;
 
   /**
-   * Shows if timesheet approved
+   * True if this Timesheet was approved by a person with the role of a Timesheet approver
    */
   approved: boolean;
 
   /**
-   * Total Hours
+   * Total Hours spent on this Task by this Resource on this specific Date
    */
   hours: number;
 

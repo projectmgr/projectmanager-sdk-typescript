@@ -122,4 +122,18 @@ export class ResourceClient {
     const url = `/api/data/resources/bulk`;
     return this.client.request<AstroResult<ResourcesDto>>("post", url, null, body);
   }
+
+  /**
+   * Resend Invite Email to a Resource within your Workspace.
+   *
+   * When you create a Resource that is a person, ProjectManager sends that person an email inviting them to join
+   * your Workspace.  If that email is accidentally deleted or sent to a spam folder, you can request this email
+   * be sent again using this API.
+   *
+   * @param resourceId The unique identifier of the Resource to send an invitation email
+   */
+  resendInviteEmail(resourceId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/resources/${resourceId}/resendinvite`;
+    return this.client.request<AstroResult<object>>("get", url, null, null);
+  }
 }
