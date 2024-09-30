@@ -42,6 +42,9 @@ export type NotificationDataDto = {
    */
   projectName: string | null;
 
+  /**
+   * Name of the task this notification is related to
+   */
   taskName: string | null;
 
   /**

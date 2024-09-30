@@ -35,11 +35,6 @@ export type WorkSpaceDto = {
   customProductDomain: string | null;
 
   /**
-   * TODO - What is this value?
-   */
-  customerId: string | null;
-
-  /**
    * This value is set to true if the user who retrieves this Workspace object via an API call is
    * the owner of this Workspace.
    */

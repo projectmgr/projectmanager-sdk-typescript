@@ -12,11 +12,24 @@
  */
 
 
+/**
+ * Represents an individual error for a specific Resource that could not be created in the context
+ * of a bulk Resource creation API call.
+ */
 export type UserError = {
 
+  /**
+   * The email of the Resource that could not be created
+   */
   email: string | null;
 
+  /**
+   * A description of the reason this Resource could not be created
+   */
   reason: string | null;
 
+  /**
+   * A status code explaining the category of reason this Resource could not be created
+   */
   statusCode: string;
 };

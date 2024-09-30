@@ -12,6 +12,10 @@
  */
 
 
+/**
+ * The DiscussionCommentFile represents a file that has been attached to a discussion
+ * and is available for download.
+ */
 export type DiscussionCommentFileDto = {
 
   /**
@@ -25,7 +29,7 @@ export type DiscussionCommentFileDto = {
   name: string | null;
 
   /**
-   * The url of the file which can be used for downloading
+   * The url of the DownloadFile API to retrieve this file
    */
   url: string | null;
 };
