@@ -12,6 +12,9 @@
  */
 
 
+/**
+ * Represents information about a file attached to a Timesheet.
+ */
 export type TimesheetFileDto = {
 
   /**

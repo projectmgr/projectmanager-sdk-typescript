@@ -96,7 +96,7 @@ export class NotificationClient {
    * workspace. Notifications are ephemeral and may be deleted when they are no longer needed.  When a user has more
    * than 1,000 pending notifications some old notifications will be deleted automatically.
    *
-   * @param id Documentation pending
+   * @param id The unique identifier of the notification to mark read
    */
   markNotificationRead(id: string): Promise<AstroResult<NotificationTimestampDto>> {
     const url = `/api/data/notifications/${id}/markread`;
@@ -123,7 +123,7 @@ export class NotificationClient {
    * workspace. Notifications are ephemeral and may be deleted when they are no longer needed.  When a user has more
    * than 1,000 pending notifications some old notifications will be deleted automatically.
    *
-   * @param id Documentation pending
+   * @param id The unique identifier of the notification to mark read
    */
   deleteNotification(id: string): Promise<AstroResult<object>> {
     const url = `/api/data/notifications/delete/${id}`;
@@ -137,7 +137,7 @@ export class NotificationClient {
    * workspace. Notifications are ephemeral and may be deleted when they are no longer needed.  When a user has more
    * than 1,000 pending notifications some old notifications will be deleted automatically.
    *
-   * @param id Documentation pending
+   * @param id The unique identifier of the notification to mark read
    */
   markNotificationUnread(id: string): Promise<AstroResult<object>> {
     const url = `/api/data/notifications/${id}/markunread`;

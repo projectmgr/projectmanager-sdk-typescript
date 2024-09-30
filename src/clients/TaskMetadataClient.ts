@@ -46,12 +46,13 @@ export class TaskMetadataClient {
   }
 
   /**
+   * Get tasks by project ID and foreign key ID
    *
    * @param foreignKey Foreign Key ID
    * @param projectId Project ID
    * @param isSystem If metadata is for system or customer, isSystem = true is only of ProjectManager
    */
-  gettasksbyprojectIDandforeignkeyID(projectId: string, foreignKey?: string, isSystem?: boolean): Promise<AstroResult<TaskMetadataSearchDto[]>> {
+  taskMetadataSearch(projectId: string, foreignKey?: string, isSystem?: boolean): Promise<AstroResult<TaskMetadataSearchDto[]>> {
     const url = `/api/data/projects/${projectId}/tasks/metadata`;
     const options = {
       params: {

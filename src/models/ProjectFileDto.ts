@@ -14,6 +14,10 @@
 import { ProjectFileTaskDto } from "../index.js";
 import { ProjectFileFolderDto } from "../index.js";
 
+/**
+ * The ProjectFile represents an attached file that is connected to a Project
+ * and can be retrieved for download.
+ */
 export type ProjectFileDto = {
 
   /**

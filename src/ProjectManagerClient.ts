@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    117.0.4438
+ * @version    119.0.4625
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -19,15 +19,15 @@ import { DiscussionClient } from "./index.js";
 import { FileClient } from "./index.js";
 import { HolidayClient } from "./index.js";
 import { HomeFileClient } from "./index.js";
-import { IntegrationClient } from "./index.js";
 import { IntegrationCategoryClient } from "./index.js";
+import { IntegrationClient } from "./index.js";
 import { IntegrationProviderClient } from "./index.js";
 import { LicenseClient } from "./index.js";
 import { MeClient } from "./index.js";
 import { NotificationClient } from "./index.js";
 import { NptFilesClient } from "./index.js";
-import { ProjectClient } from "./index.js";
 import { ProjectChargeCodeClient } from "./index.js";
+import { ProjectClient } from "./index.js";
 import { ProjectCustomerClient } from "./index.js";
 import { ProjectFieldClient } from "./index.js";
 import { ProjectFileClient } from "./index.js";
@@ -36,12 +36,14 @@ import { ProjectMembersClient } from "./index.js";
 import { ProjectPriorityClient } from "./index.js";
 import { ProjectStatusClient } from "./index.js";
 import { ProjectTemplateClient } from "./index.js";
+import { ProjectVersionClient } from "./index.js";
 import { ResourceClient } from "./index.js";
 import { ResourceSkillClient } from "./index.js";
 import { ResourceTeamClient } from "./index.js";
+import { RiskClient } from "./index.js";
 import { TagClient } from "./index.js";
-import { TaskClient } from "./index.js";
 import { TaskAssigneeClient } from "./index.js";
+import { TaskClient } from "./index.js";
 import { TaskFieldClient } from "./index.js";
 import { TaskFileClient } from "./index.js";
 import { TaskMetadataClient } from "./index.js";
@@ -79,7 +81,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "117.0.4438";
+  private readonly version: string = "119.0.4625";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -92,15 +94,15 @@ export class ProjectManagerClient {
   public readonly File: FileClient;
   public readonly Holiday: HolidayClient;
   public readonly HomeFile: HomeFileClient;
-  public readonly Integration: IntegrationClient;
   public readonly IntegrationCategory: IntegrationCategoryClient;
+  public readonly Integration: IntegrationClient;
   public readonly IntegrationProvider: IntegrationProviderClient;
   public readonly License: LicenseClient;
   public readonly Me: MeClient;
   public readonly Notification: NotificationClient;
   public readonly NptFiles: NptFilesClient;
-  public readonly Project: ProjectClient;
   public readonly ProjectChargeCode: ProjectChargeCodeClient;
+  public readonly Project: ProjectClient;
   public readonly ProjectCustomer: ProjectCustomerClient;
   public readonly ProjectField: ProjectFieldClient;
   public readonly ProjectFile: ProjectFileClient;
@@ -109,12 +111,14 @@ export class ProjectManagerClient {
   public readonly ProjectPriority: ProjectPriorityClient;
   public readonly ProjectStatus: ProjectStatusClient;
   public readonly ProjectTemplate: ProjectTemplateClient;
+  public readonly ProjectVersion: ProjectVersionClient;
   public readonly Resource: ResourceClient;
   public readonly ResourceSkill: ResourceSkillClient;
   public readonly ResourceTeam: ResourceTeamClient;
+  public readonly Risk: RiskClient;
   public readonly Tag: TagClient;
-  public readonly Task: TaskClient;
   public readonly TaskAssignee: TaskAssigneeClient;
+  public readonly Task: TaskClient;
   public readonly TaskField: TaskFieldClient;
   public readonly TaskFile: TaskFileClient;
   public readonly TaskMetadata: TaskMetadataClient;
@@ -138,15 +142,15 @@ export class ProjectManagerClient {
     this.File = new FileClient(this);
     this.Holiday = new HolidayClient(this);
     this.HomeFile = new HomeFileClient(this);
-    this.Integration = new IntegrationClient(this);
     this.IntegrationCategory = new IntegrationCategoryClient(this);
+    this.Integration = new IntegrationClient(this);
     this.IntegrationProvider = new IntegrationProviderClient(this);
     this.License = new LicenseClient(this);
     this.Me = new MeClient(this);
     this.Notification = new NotificationClient(this);
     this.NptFiles = new NptFilesClient(this);
-    this.Project = new ProjectClient(this);
     this.ProjectChargeCode = new ProjectChargeCodeClient(this);
+    this.Project = new ProjectClient(this);
     this.ProjectCustomer = new ProjectCustomerClient(this);
     this.ProjectField = new ProjectFieldClient(this);
     this.ProjectFile = new ProjectFileClient(this);
@@ -155,12 +159,14 @@ export class ProjectManagerClient {
     this.ProjectPriority = new ProjectPriorityClient(this);
     this.ProjectStatus = new ProjectStatusClient(this);
     this.ProjectTemplate = new ProjectTemplateClient(this);
+    this.ProjectVersion = new ProjectVersionClient(this);
     this.Resource = new ResourceClient(this);
     this.ResourceSkill = new ResourceSkillClient(this);
     this.ResourceTeam = new ResourceTeamClient(this);
+    this.Risk = new RiskClient(this);
     this.Tag = new TagClient(this);
-    this.Task = new TaskClient(this);
     this.TaskAssignee = new TaskAssigneeClient(this);
+    this.Task = new TaskClient(this);
     this.TaskField = new TaskFieldClient(this);
     this.TaskFile = new TaskFileClient(this);
     this.TaskMetadata = new TaskMetadataClient(this);
