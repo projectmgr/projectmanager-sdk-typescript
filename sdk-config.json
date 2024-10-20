@@ -36,7 +36,6 @@
     "VersionNumberRegex": "version\": \"(.*)\"",
     "Typescript": {
         "ModuleName": "projectmanager-sdk",
-        "Folder": "C:\\github\\projectmanager-sdk-typescript",
         "ClassName": "ProjectManagerClient",
         "ResponseClass": "AstroResult",
         "Namespace": "ProjectManagerSdk",
