@@ -36,7 +36,7 @@ export type ProjectFieldDto = {
   /**
    * The name of this Field
    */
-  name: string | null;
+  name: string;
 
   /**
    * The type of the Field.  Valid types are the following:
@@ -52,12 +52,12 @@ export type ProjectFieldDto = {
    * For Dropdown Field, specify the list of choices in the `Options`
    * field.
    */
-  type: string | null;
+  type: string;
 
   /**
    * The entity type of the Field, either `projects` or `tasks`.
    */
-  entityType: string | null;
+  entityType: string;
 
   /**
    * A list of options for use of this Field.  This is only valid if

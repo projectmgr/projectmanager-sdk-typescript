@@ -27,7 +27,7 @@ export type TaskAssigneeDto = {
    * A shortened set of initials to use when representing this TaskAssignee visually
    * in small areas.  The initials may be used in small icons or other overlays.
    */
-  initials: string | null;
+  initials: string;
 
   /**
    * The name of this TaskAssignee

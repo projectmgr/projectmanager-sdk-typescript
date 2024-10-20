@@ -26,7 +26,7 @@ export type ProjectTemplateCategoryDto = {
   /**
    * A friendly name for this ProjectTemplate Category.
    */
-  name: string | null;
+  name: string;
 
   /**
    * The overall order of this ProjectTemplate Category
@@ -36,5 +36,5 @@ export type ProjectTemplateCategoryDto = {
   /**
    * A list of templates in this category
    */
-  templates: ProjectTemplateDto[] | null;
+  templates: ProjectTemplateDto[];
 };

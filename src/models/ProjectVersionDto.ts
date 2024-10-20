@@ -33,12 +33,12 @@ export type ProjectVersionDto = {
   /**
    * the initials of the user
    */
-  initials: string | null;
+  initials: string;
 
   /**
    * The display name of the user
    */
-  name: string | null;
+  name: string;
 
   /**
    * Avatar URL
@@ -48,7 +48,7 @@ export type ProjectVersionDto = {
   /**
    * The color for their avatar
    */
-  color: string | null;
+  color: string;
 
   /**
    * Version datetime
@@ -68,5 +68,5 @@ export type ProjectVersionDto = {
   /**
    * Subset of the changes related to this ProjectVersion
    */
-  changeData: ProjectVersionChangeDataDto | null;
+  changeData: ProjectVersionChangeDataDto;
 };

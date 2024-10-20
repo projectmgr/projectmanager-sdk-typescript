@@ -31,7 +31,7 @@ export type DashboardSettingDto = {
   /**
    * Either custom or one of DashboardType enum
    */
-  type: string | null;
+  type: string;
 
   /**
    * React grid layout configuration

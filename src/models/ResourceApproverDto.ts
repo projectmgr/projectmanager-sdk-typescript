@@ -26,5 +26,5 @@ export type ResourceApproverDto = {
   /**
    * The name of this ResourceApprover
    */
-  name: string | null;
+  name: string;
 };

@@ -40,7 +40,7 @@ export type ReactGridLayoutItemDto = {
   /**
    * ID
    */
-  i: string | null;
+  i: string;
 
   /**
    * Moved indicator

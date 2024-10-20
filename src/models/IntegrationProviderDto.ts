@@ -28,32 +28,32 @@ export type IntegrationProviderDto = {
   /**
    * The friendly name of this Provider.
    */
-  name: string | null;
+  name: string;
 
   /**
    * A short ID that uniquely identifies this Provider.
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * A short summary of this Provider and their service.
    */
-  summary: string | null;
+  summary: string;
 
   /**
    * A longer description of this Provider and their service.
    */
-  description: string | null;
+  description: string;
 
   /**
    * A list of available license SKUs for this Provider.
    */
-  licenseSkus: string[] | null;
+  licenseSkus: string[];
 
   /**
    * A list of category IDs that this Provider exists within.
    */
-  categoryShortIds: string[] | null;
+  categoryShortIds: string[];
 
   /**
    * True if this Provider is available for use.
@@ -68,12 +68,12 @@ export type IntegrationProviderDto = {
   /**
    * The list of available Integrations for this Provider.
    */
-  integrations: IntegrationDto[] | null;
+  integrations: IntegrationDto[];
 
   /**
    * The list of available AuthSetup for this Provider.
    */
-  authSetup: IntegrationAuthSetupDto | null;
+  authSetup: IntegrationAuthSetupDto;
 
   /**
    * Flag whether user/workspace needs to be setup in Workato

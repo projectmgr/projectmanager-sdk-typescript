@@ -28,7 +28,7 @@ export type ResourcesDto = {
   /**
    * The list of the Resources created by this API call.
    */
-  resources: ResourceDto[] | null;
+  resources: ResourceDto[];
 
   /**
    * The list of errors that occurred for Resources that could not be created.

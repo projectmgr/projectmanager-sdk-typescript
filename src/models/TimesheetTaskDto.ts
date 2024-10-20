@@ -33,17 +33,17 @@ export type TimesheetTaskDto = {
    * A short ID that can be used to refer to this Task.  This short ID is
    * guaranteed to be unique within your Workspace.
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * The common name of this Task.
    */
-  name: string | null;
+  name: string;
 
   /**
    * A description of the work to be performed in this Task.
    */
-  description: string | null;
+  description: string;
 
   /**
    * The date when work on this Task is planned to begin.

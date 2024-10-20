@@ -22,12 +22,12 @@ export type ProjectVersionChangeDataDto = {
   /**
    * The type of change made
    */
-  type: string | null;
+  type: string;
 
   /**
    * The method used to make the change
    */
-  method: string | null;
+  method: string;
 
   /**
    * The property that was changed, if any

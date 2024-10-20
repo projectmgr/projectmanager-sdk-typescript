@@ -30,5 +30,5 @@ export type TaskMetadataSearchDto = {
   /**
    * Customer or system metadata
    */
-  metadata: object | null;
+  metadata: object;
 };

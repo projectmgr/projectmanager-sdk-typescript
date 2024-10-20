@@ -27,5 +27,5 @@ export type UserRoleDto = {
   /**
    * The friendly name of this UserRole.
    */
-  name: string | null;
+  name: string;
 };

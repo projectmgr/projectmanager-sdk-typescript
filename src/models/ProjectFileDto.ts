@@ -28,12 +28,12 @@ export type ProjectFileDto = {
   /**
    * The name of the file
    */
-  name: string | null;
+  name: string;
 
   /**
    * The url of the file which can be used for downloading
    */
-  url: string | null;
+  url: string;
 
   /**
    * The project task that this file relates to.

@@ -20,12 +20,12 @@ export type IntegrationConnectionSchemeObjectDto = {
   /**
    * The value of the property
    */
-  value: string | null;
+  value: string;
 
   /**
    * The type of the property
    */
-  type: string | null;
+  type: string;
 
   /**
    * Send to the client true/false

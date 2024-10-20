@@ -20,10 +20,10 @@ export type WorkSpaceLinksDto = {
   /**
    * The name of the project for this link.
    */
-  project: string | null;
+  project: string;
 
   /**
    * This is the link to the api for this business.  Some endpoints may need this value.
    */
-  workSpaceApi: string | null;
+  workSpaceApi: string;
 };

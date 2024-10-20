@@ -20,5 +20,5 @@ export type DirectLinkDto = {
   /**
    * The URL to use to authenticate with the Integration Provider.
    */
-  url: string | null;
+  url: string;
 };

@@ -26,7 +26,7 @@ export type TagDto = {
   /**
    * The name of this Tag.
    */
-  name: string | null;
+  name: string;
 
   /**
    * The color that will be used to represent this Tag visually.  This color
@@ -36,5 +36,5 @@ export type TagDto = {
    * syntax such as `#0088FF`, in the format `RRGGBB`.  You may not use names
    * for colors.
    */
-  color: string | null;
+  color: string;
 };

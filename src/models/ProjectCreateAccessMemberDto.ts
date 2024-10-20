@@ -25,5 +25,5 @@ export type ProjectCreateAccessMemberDto = {
   /**
    * Member's role in the project
    */
-  permission: string | null;
+  permission: string;
 };

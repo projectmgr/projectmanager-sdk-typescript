@@ -28,12 +28,12 @@ export type ProjectMemberDto = {
   /**
    * the initials of the user
    */
-  initials: string | null;
+  initials: string;
 
   /**
    * The display name of the user
    */
-  name: string | null;
+  name: string;
 
   /**
    * Avatar URL
@@ -48,7 +48,7 @@ export type ProjectMemberDto = {
   /**
    * The color for their avatar
    */
-  color: string | null;
+  color: string;
 
   /**
    * Specifies the permissions that you can set against the project member. This changes based on who is logged in and the role they have.

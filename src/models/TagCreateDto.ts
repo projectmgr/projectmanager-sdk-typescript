@@ -31,5 +31,5 @@ export type TagCreateDto = {
    * syntax such as `#0088FF`, in the format `RRGGBB`.  You may not use names
    * for colors.
    */
-  color: string | null;
+  color: string;
 };

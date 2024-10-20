@@ -31,5 +31,5 @@ export type ProjectFileTaskDto = {
   /**
    * The common name of this Task.
    */
-  name: string | null;
+  name: string;
 };

@@ -27,7 +27,7 @@ export type NotificationResponseDto = {
    * user, this will be an empty array.  If there are more than 1,000 notifications this list may be truncated to
    * only the 1,000 most recent notifications.
    */
-  items: NotificationDto[] | null;
+  items: NotificationDto[];
 
   /**
    * The total number of pending notifications for the current user, including both read and unread.

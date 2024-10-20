@@ -20,5 +20,5 @@ export type ApiKeyCreateDto = {
   /**
    * Name of token
    */
-  tokenName: string | null;
+  tokenName: string;
 };

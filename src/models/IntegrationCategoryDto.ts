@@ -25,15 +25,15 @@ export type IntegrationCategoryDto = {
   /**
    * A friendly name for this Integration Category.
    */
-  name: string | null;
+  name: string;
 
   /**
    * A short identifier that uniquely identifies this Integration Category.
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * A list of short identifiers for Integrations available within this Integration Category.
    */
-  integrationShortIds: string[] | null;
+  integrationShortIds: string[];
 };

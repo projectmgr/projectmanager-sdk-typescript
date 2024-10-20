@@ -27,5 +27,5 @@ export type DiscussionCommentCreateDto = {
    * and users should be aware that HTML embedding is not permitted due to the risk of cross-site
    * attacks and other embedding challenges.
    */
-  text: string | null;
+  text: string;
 };

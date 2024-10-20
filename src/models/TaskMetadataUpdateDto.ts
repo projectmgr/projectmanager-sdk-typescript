@@ -20,5 +20,5 @@ export type TaskMetadataUpdateDto = {
   /**
    * Customer or system metadata
    */
-  data: object | null;
+  data: object;
 };

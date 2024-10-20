@@ -20,5 +20,5 @@ export type UpdateProjectFieldValueDto = {
   /**
    * The new value to be set for this ProjectField.
    */
-  value: string | null;
+  value: string;
 };

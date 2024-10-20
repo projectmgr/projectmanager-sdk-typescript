@@ -34,5 +34,5 @@ export type ResourcesCreateDto = {
   /**
    * A list of Users to create
    */
-  users: ResourceCreateDto[] | null;
+  users: ResourceCreateDto[];
 };

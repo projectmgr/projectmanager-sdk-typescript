@@ -27,7 +27,7 @@ export type ProjectCreateDto = {
   /**
    * The name of the Project.
    */
-  name: string | null;
+  name: string;
 
   /**
    * An optional description of the Project

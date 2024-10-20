@@ -27,5 +27,5 @@ export type TaskPriorityDto = {
   /**
    * The name of this TaskPriority.
    */
-  name: string | null;
+  name: string;
 };

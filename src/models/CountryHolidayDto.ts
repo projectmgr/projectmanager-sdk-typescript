@@ -35,5 +35,5 @@ export type CountryHolidayDto = {
   /**
    * The Country Name the holiday is associated to
    */
-  countryName: string | null;
+  countryName: string;
 };

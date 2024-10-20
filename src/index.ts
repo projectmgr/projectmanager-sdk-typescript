@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    119.0.4625
+ * @version    120.0.4689
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -22,15 +22,15 @@ export { DiscussionClient } from "./clients/DiscussionClient.js";
 export { FileClient } from "./clients/FileClient.js";
 export { HolidayClient } from "./clients/HolidayClient.js";
 export { HomeFileClient } from "./clients/HomeFileClient.js";
-export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.js";
 export { IntegrationClient } from "./clients/IntegrationClient.js";
+export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.js";
 export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.js";
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
 export { NotificationClient } from "./clients/NotificationClient.js";
 export { NptFilesClient } from "./clients/NptFilesClient.js";
-export { ProjectChargeCodeClient } from "./clients/ProjectChargeCodeClient.js";
 export { ProjectClient } from "./clients/ProjectClient.js";
+export { ProjectChargeCodeClient } from "./clients/ProjectChargeCodeClient.js";
 export { ProjectCustomerClient } from "./clients/ProjectCustomerClient.js";
 export { ProjectFieldClient } from "./clients/ProjectFieldClient.js";
 export { ProjectFileClient } from "./clients/ProjectFileClient.js";
@@ -45,8 +45,8 @@ export { ResourceSkillClient } from "./clients/ResourceSkillClient.js";
 export { ResourceTeamClient } from "./clients/ResourceTeamClient.js";
 export { RiskClient } from "./clients/RiskClient.js";
 export { TagClient } from "./clients/TagClient.js";
-export { TaskAssigneeClient } from "./clients/TaskAssigneeClient.js";
 export { TaskClient } from "./clients/TaskClient.js";
+export { TaskAssigneeClient } from "./clients/TaskAssigneeClient.js";
 export { TaskFieldClient } from "./clients/TaskFieldClient.js";
 export { TaskFileClient } from "./clients/TaskFileClient.js";
 export { TaskMetadataClient } from "./clients/TaskMetadataClient.js";

@@ -29,29 +29,29 @@ export type ProjectTemplateDto = {
    *
    * Name can de used as a unique text reference for Project Templates.
    */
-  name: string | null;
+  name: string;
 
   /**
    * The title of this ProjectTemplate.
    *
    * Title can be used as a description text for Project Templates.
    */
-  title: string | null;
+  title: string;
 
   /**
    * The full text description of this ProjectTemplate.
    */
-  description: string | null;
+  description: string;
 
   /**
    * The icon path for this ProjectTemplate.
    */
-  icon: string | null;
+  icon: string;
 
   /**
    * The preview image path for this ProjectTemplate.
    */
-  previewImage: string | null;
+  previewImage: string;
 
   /**
    * The overall order of this ProjectTemplate.
@@ -71,5 +71,5 @@ export type ProjectTemplateDto = {
   /**
    * The web default view of the template.
    */
-  defaultView: string | null;
+  defaultView: string;
 };
