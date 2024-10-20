@@ -25,12 +25,12 @@ export type ProjectManagerDto = {
   /**
    * The name of this ProjectManager
    */
-  name: string | null;
+  name: string;
 
   /**
    * Manager initials
    */
-  initials: string | null;
+  initials: string;
 
   /**
    * Avatar's url

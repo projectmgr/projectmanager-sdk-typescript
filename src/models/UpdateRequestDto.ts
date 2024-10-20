@@ -26,7 +26,7 @@ export type UpdateRequestDto = {
   /**
    * The new name for the File.
    */
-  name: string | null;
+  name: string;
 
   /**
    * To assign this File to a Task, specify the TaskId here.

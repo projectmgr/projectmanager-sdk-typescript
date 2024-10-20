@@ -35,10 +35,10 @@ export type ApiKeyDto = {
   /**
    * Bearer Key
    */
-  apiKey: string | null;
+  apiKey: string;
 
   /**
    * Name of token
    */
-  name: string | null;
+  name: string;
 };

@@ -23,12 +23,12 @@ export type WorkSpaceUserInfoDto = {
   /**
    * A collection of shortcut links for the currently logged in Workspace.
    */
-  links: WorkSpaceLinksDto | null;
+  links: WorkSpaceLinksDto;
 
   /**
    * The email address of the currently logged in user.
    */
-  emailAddress: string | null;
+  emailAddress: string;
 
   /**
    * The unique identity of the currently logged in user.
@@ -38,18 +38,18 @@ export type WorkSpaceUserInfoDto = {
   /**
    * The full name of the currently logged in user.
    */
-  fullName: string | null;
+  fullName: string;
 
   /**
    * The name of the Workspace that the current user has logged onto.  For most companies, the workspace
    * name will be the name of the business.
    */
-  workSpaceName: string | null;
+  workSpaceName: string;
 
   /**
    * The user's role within the current Workspace.
    */
-  roleName: string | null;
+  roleName: string;
 
   /**
    * True if this user is considered a global administrator of the current Workspace.

@@ -32,7 +32,7 @@ export type RiskExportSettingsDto = {
    *  * Csv
    *  * excel
    */
-  format: string | null;
+  format: string;
 
   /**
    * The list of column names to export
@@ -57,7 +57,7 @@ export type RiskExportSettingsDto = {
    *  * description
    *  * resolution
    */
-  orderBy: string | null;
+  orderBy: string;
 
   /**
    * Specifies the direction of the order. Valid values are "asc" and "desc"
@@ -66,7 +66,7 @@ export type RiskExportSettingsDto = {
    *  * asc
    *  * desc
    */
-  orderDirection: string | null;
+  orderDirection: string;
 
   /**
    * Timezone offset in minutes

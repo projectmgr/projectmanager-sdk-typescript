@@ -27,17 +27,17 @@ export type IntegrationDto = {
   /**
    * The friendly name of this Integration
    */
-  name: string | null;
+  name: string;
 
   /**
    * A description of this Integration that can be shared with users
    */
-  description: string | null;
+  description: string;
 
   /**
    * A short ID that uniquely identifies this Integration
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * True if this Integration allows multiple Instances.
@@ -50,17 +50,17 @@ export type IntegrationDto = {
   /**
    * Extra configuration metadata for this Instance.
    */
-  config: object | null;
+  config: object;
 
   /**
    * The list of SKUS for this Integration.
    */
-  licenseSkus: string[] | null;
+  licenseSkus: string[];
 
   /**
    * For multi-Instance Integrations, this contains the list of IntegrationInstances.
    */
-  instances: IntegrationInstanceDto[] | null;
+  instances: IntegrationInstanceDto[];
 
   /**
    * True if this Integration is enabled for the current Workspace.

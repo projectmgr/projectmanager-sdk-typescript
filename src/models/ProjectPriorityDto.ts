@@ -27,5 +27,5 @@ export type ProjectPriorityDto = {
   /**
    * The name of this ProjectPriority.
    */
-  name: string | null;
+  name: string;
 };

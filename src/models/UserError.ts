@@ -21,12 +21,12 @@ export type UserError = {
   /**
    * The email of the Resource that could not be created
    */
-  email: string | null;
+  email: string;
 
   /**
    * A description of the reason this Resource could not be created
    */
-  reason: string | null;
+  reason: string;
 
   /**
    * A status code explaining the category of reason this Resource could not be created

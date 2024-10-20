@@ -29,7 +29,7 @@ export type TaskFieldDto = {
   /**
    * The name of this TaskField
    */
-  name: string | null;
+  name: string;
 
   /**
    * The type of this TaskField.  Valid types are the following:
@@ -46,7 +46,7 @@ export type TaskFieldDto = {
    * For Dropdown TaskFields, specify the list of choices in the `Options`
    * field.
    */
-  type: string | null;
+  type: string;
 
   /**
    * A list of options for use of this TaskField.  This is only valid if
@@ -56,7 +56,7 @@ export type TaskFieldDto = {
    * application, they will be able to choose one of the `Options` in this
    * list.
    */
-  options: string[] | null;
+  options: string[];
 
   /**
    * The short Id of this TaskField - human readable identity
@@ -66,7 +66,7 @@ export type TaskFieldDto = {
   /**
    * The Project to which this TaskField belongs.
    */
-  project: TaskFieldProjectDto | null;
+  project: TaskFieldProjectDto;
 
   /**
    * Date and time (in UTC) that this TaskField was created.

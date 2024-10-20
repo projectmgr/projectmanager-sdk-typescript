@@ -20,5 +20,5 @@ export type UpdateTaskFieldValueDto = {
   /**
    * The new value to be set for this TaskField.
    */
-  value: string | null;
+  value: string;
 };

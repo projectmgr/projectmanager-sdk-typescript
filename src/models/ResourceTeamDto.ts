@@ -26,5 +26,5 @@ export type ResourceTeamDto = {
   /**
    * The name of this ResourceTeam
    */
-  name: string | null;
+  name: string;
 };

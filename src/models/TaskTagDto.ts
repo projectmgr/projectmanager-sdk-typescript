@@ -27,7 +27,7 @@ export type TaskTagDto = {
   /**
    * The common name of this TaskTag.
    */
-  name: string | null;
+  name: string;
 
   /**
    * The color that will be used to represent this Tag visually.  This color
@@ -37,5 +37,5 @@ export type TaskTagDto = {
    * syntax such as `#0088FF`, in the format `RRGGBB`.  You may not use names
    * for colors.
    */
-  color: string | null;
+  color: string;
 };

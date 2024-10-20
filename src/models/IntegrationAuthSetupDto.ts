@@ -20,12 +20,12 @@ export type IntegrationAuthSetupDto = {
   /**
    * Master Connection for provider
    */
-  masterConnection: string | null;
+  masterConnection: string;
 
   /**
    * UserConnection for Provider.
    */
-  userConnection: string | null;
+  userConnection: string;
 
   /**
    * Master Connection scheme for Provider.

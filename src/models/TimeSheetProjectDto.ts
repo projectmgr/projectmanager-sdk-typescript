@@ -27,7 +27,7 @@ export type TimeSheetProjectDto = {
   /**
    * The name of the Project.
    */
-  name: string | null;
+  name: string;
 
   /**
    * An optional description of the Project
@@ -39,7 +39,7 @@ export type TimeSheetProjectDto = {
    * name can be edited in the Project Settings page within the application
    * and can be any text you wish.
    */
-  shortCode: string | null;
+  shortCode: string;
 
   /**
    * A short identifier that uniquely identifies this Project within your Workspace
@@ -53,7 +53,7 @@ export type TimeSheetProjectDto = {
    *
    * This code is automatically assigned for you and cannot be changed.
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * The earliest planned or actual start date of tasks on the project.

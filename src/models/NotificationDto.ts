@@ -40,7 +40,7 @@ export type NotificationDto = {
   /**
    * A friendly category or type for this notification
    */
-  notificationType: string | null;
+  notificationType: string;
 
   /**
    * Timestamp when the notification was sent
@@ -50,12 +50,12 @@ export type NotificationDto = {
   /**
    * User readable subject line for the notification
    */
-  subject: string | null;
+  subject: string;
 
   /**
    * User readable message content for the notification
    */
-  message: string | null;
+  message: string;
 
   /**
    * Timestamp when the notification was acknowledged as read
@@ -65,5 +65,5 @@ export type NotificationDto = {
   /**
    * A string containing JSON-encoded extra data for the notification
    */
-  data: NotificationDataDto | null;
+  data: NotificationDataDto;
 };

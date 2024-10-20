@@ -28,5 +28,5 @@ export type ResourceSkillDto = {
   /**
    * The name of this ResourceSkill
    */
-  name: string | null;
+  name: string;
 };

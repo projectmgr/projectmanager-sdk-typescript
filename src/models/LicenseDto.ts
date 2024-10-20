@@ -26,12 +26,12 @@ export type LicenseDto = {
   /**
    * The SKU code of this License, used for billing purposes.
    */
-  licenseSku: string | null;
+  licenseSku: string;
 
   /**
    * The SKU code of the bundle of this License, used for billing purposes.
    */
-  bundleSku: string | null;
+  bundleSku: string;
 
   /**
    * True if this license is optional.

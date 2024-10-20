@@ -23,7 +23,7 @@ export type CreateTaskFieldDto = {
   /**
    * The name of the TaskField
    */
-  name: string | null;
+  name: string;
 
   /**
    * The type of this TaskField.  Valid types are the following:
@@ -35,7 +35,7 @@ export type CreateTaskFieldDto = {
    * * DropdownSingle
    * * DropdownMulti
    */
-  type: string | null;
+  type: string;
 
   /**
    * A list of options for use of this TaskField.  This is only valid if

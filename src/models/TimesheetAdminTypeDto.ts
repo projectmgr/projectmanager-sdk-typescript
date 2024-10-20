@@ -25,5 +25,5 @@ export type TimesheetAdminTypeDto = {
   /**
    * admin task name
    */
-  name: string | null;
+  name: string;
 };

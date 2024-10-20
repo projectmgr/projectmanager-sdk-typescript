@@ -26,7 +26,7 @@ export type TaskTodoDto = {
   /**
    * The full description of this TaskTodo.
    */
-  text: string | null;
+  text: string;
 
   /**
    * True if this TaskTodo is complete.

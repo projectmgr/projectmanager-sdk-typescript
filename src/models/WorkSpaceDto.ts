@@ -27,12 +27,12 @@ export type WorkSpaceDto = {
   /**
    * The name of this Workspace.
    */
-  company: string | null;
+  company: string;
 
   /**
    * The unique DNS domain of this Workspace.
    */
-  customProductDomain: string | null;
+  customProductDomain: string;
 
   /**
    * This value is set to true if the user who retrieves this Workspace object via an API call is
@@ -43,17 +43,17 @@ export type WorkSpaceDto = {
   /**
    * The organization code used for authentication systems for this Workspace.
    */
-  organizationId: string | null;
+  organizationId: string;
 
   /**
    * The RGB color in the format `#RRGGBB` for this Workspace.
    */
-  color: string | null;
+  color: string;
 
   /**
    * The role of the current user within this Workspace.
    */
-  roleName: string | null;
+  roleName: string;
 
   /**
    * The timestamp when the Workspace was created.

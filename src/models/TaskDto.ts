@@ -34,7 +34,7 @@ export type TaskDto = {
   /**
    * The Project to which this Task belongs.
    */
-  project: TaskProjectDto | null;
+  project: TaskProjectDto;
 
   /**
    * The TaskTags that apply to this Task.
@@ -65,7 +65,7 @@ export type TaskDto = {
   /**
    * The common name of this Task.
    */
-  name: string | null;
+  name: string;
 
   /**
    * A description of the work to be performed in this Task.
@@ -75,7 +75,7 @@ export type TaskDto = {
   /**
    * The TaskStatus assigned to this Task.
    */
-  status: TaskStatusDto | null;
+  status: TaskStatusDto;
 
   /**
    * The date when work on this Task is planned to begin.

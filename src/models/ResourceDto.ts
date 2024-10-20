@@ -30,6 +30,11 @@ export type ResourceDto = {
   id: string;
 
   /**
+   * The resource initials.
+   */
+  initials: string;
+
+  /**
    * The first name of the person Resource.
    *
    * Applies to personnel Resources only.
@@ -94,12 +99,12 @@ export type ResourceDto = {
   /**
    * The list of ResourceTeams to which this Resource belongs.
    */
-  teams: ResourceTeamDto[] | null;
+  teams: ResourceTeamDto[];
 
   /**
    * The list of ResourceSkills possessed by this Resource.
    */
-  skills: ResourceSkillDto[] | null;
+  skills: ResourceSkillDto[];
 
   /**
    * The last time when this Resource was online.
@@ -127,22 +132,22 @@ export type ResourceDto = {
   /**
    * The date this resource was created
    */
-  createdDate: string;
+  createdDate: string | null;
 
   /**
    * Set to a unique identifier of the user who created this Resource.
    */
-  createdBy: string;
+  createdBy: string | null;
 
   /**
    * The date this resource was last modified
    */
-  modifiedDate: string;
+  modifiedDate: string | null;
 
   /**
    * Set to a unique identifier of the user who last modified this Resource.
    */
-  modifiedBy: string;
+  modifiedBy: string | null;
 
   /**
    * Collaboration Color for this resource.
@@ -155,4 +160,9 @@ export type ResourceDto = {
    * Read only Hex code of the ColorName
    */
   color: string | null;
+
+  /**
+   * The resources avatar url, if any.
+   */
+  avatarUrl: string | null;
 };

@@ -25,10 +25,10 @@ export type TaskFieldValueTaskDto = {
   /**
    * The unique Short Id of this Task.
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * The common name of this Task.
    */
-  name: string | null;
+  name: string;
 };

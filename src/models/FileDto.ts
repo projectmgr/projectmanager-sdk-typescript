@@ -50,12 +50,12 @@ export type FileDto = {
   /**
    * The type of the file
    */
-  fileType: string | null;
+  fileType: string;
 
   /**
    * A user friendly label for the file type
    */
-  fileTypeLabel: string | null;
+  fileTypeLabel: string;
 
   /**
    * Size of the file in bytes
@@ -65,7 +65,7 @@ export type FileDto = {
   /**
    * Path to download the file
    */
-  downloadPath: string | null;
+  downloadPath: string;
 
   /**
    * Is the file in the trash can
@@ -75,12 +75,12 @@ export type FileDto = {
   /**
    * Defines the object type the file belongs to.
    */
-  type: string | null;
+  type: string;
 
   /**
    * The name of the file
    */
-  name: string | null;
+  name: string;
 
   /**
    * Id of owner of parent entity

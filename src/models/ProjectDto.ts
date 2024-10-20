@@ -37,7 +37,7 @@ export type ProjectDto = {
   /**
    * The name of the Project.
    */
-  name: string | null;
+  name: string;
 
   /**
    * An optional description of the Project
@@ -49,7 +49,7 @@ export type ProjectDto = {
    * name can be edited in the Project Settings page within the application
    * and can be any text you wish.
    */
-  shortCode: string | null;
+  shortCode: string;
 
   /**
    * A short identifier that uniquely identifies this Project within your Workspace
@@ -63,7 +63,7 @@ export type ProjectDto = {
    *
    * This code is automatically assigned for you and cannot be changed.
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * If this Project is grouped within a ProjectFolder, this contains the ProjectFolder information.
@@ -73,7 +73,7 @@ export type ProjectDto = {
   /**
    * The ProjectStatus chosen for this Project.
    */
-  status: ProjectStatusDto | null;
+  status: ProjectStatusDto;
 
   /**
    * The earliest planned or actual start date of tasks on the project.
@@ -137,7 +137,7 @@ export type ProjectDto = {
   /**
    * The ProjectPriority level of this Project, if defined.
    */
-  priority: ProjectPriorityDto | null;
+  priority: ProjectPriorityDto;
 
   /**
    * The ChargeCode of this Project, if defined.

@@ -27,10 +27,10 @@ export type TaskProjectDto = {
   /**
    * The ShortId of this Project.
    */
-  shortId: string | null;
+  shortId: string;
 
   /**
    * The common name of this Project.
    */
-  name: string | null;
+  name: string;
 };

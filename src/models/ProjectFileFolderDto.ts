@@ -25,5 +25,5 @@ export type ProjectFileFolderDto = {
   /**
    * The name of this Folder.
    */
-  name: string | null;
+  name: string;
 };

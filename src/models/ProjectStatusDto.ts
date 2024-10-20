@@ -27,7 +27,7 @@ export type ProjectStatusDto = {
   /**
    * The name of this ProjectStatus.
    */
-  name: string | null;
+  name: string;
 
   /**
    * Is this a deleted status

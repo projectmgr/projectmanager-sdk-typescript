@@ -31,7 +31,7 @@ export type TaskFieldValueDto = {
   /**
    * The name of this Project Field.
    */
-  name: string | null;
+  name: string;
 
   /**
    * The type of this TaskField.  Valid types are the following:
@@ -42,12 +42,12 @@ export type TaskFieldValueDto = {
    * * Currency
    * * Dropdown
    */
-  type: string | null;
+  type: string;
 
   /**
    * The value currently set for this TaskFieldValue.
    */
-  value: string | null;
+  value: string;
 
   /**
    * Date and time (in UTC) that this TaskField was created.
@@ -62,5 +62,5 @@ export type TaskFieldValueDto = {
   /**
    * The Task to which this Value belongs.
    */
-  task: TaskFieldValueTaskDto | null;
+  task: TaskFieldValueTaskDto;
 };

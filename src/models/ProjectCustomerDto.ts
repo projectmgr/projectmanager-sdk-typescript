@@ -27,5 +27,5 @@ export type ProjectCustomerDto = {
   /**
    * The name of this ProjectCustomer
    */
-  name: string | null;
+  name: string;
 };

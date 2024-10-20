@@ -31,19 +31,19 @@ export type TimesheetResourceDto = {
    *
    * Applies to personnel Resources only.
    */
-  firstName: string | null;
+  firstName: string;
 
   /**
    * The last name of the person Resource.
    *
    * Applies to personnel Resources only.
    */
-  lastName: string | null;
+  lastName: string;
 
   /**
    * The email address of this Resource.
    */
-  email: string | null;
+  email: string;
 
   /**
    * The default hourly rate of the resource.

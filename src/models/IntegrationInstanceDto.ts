@@ -26,7 +26,7 @@ export type IntegrationInstanceDto = {
   /**
    * A short ID that uniquely identifies this IntegrationInstance
    */
-  integrationShortId: string | null;
+  integrationShortId: string;
 
   /**
    * The unique identifier of the user who enabled this IntegrationInstance
@@ -51,10 +51,10 @@ export type IntegrationInstanceDto = {
   /**
    * The identifier in the integration provider, could be a reference to a file, task, project.
    */
-  providerItemId: string | null;
+  providerItemId: string;
 
   /**
    * The name of the item in the integration provider.
    */
-  providerItemName: string | null;
+  providerItemName: string;
 };

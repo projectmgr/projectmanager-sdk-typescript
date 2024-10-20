@@ -25,10 +25,10 @@ export type TimesheetFileDto = {
   /**
    * The name of the file
    */
-  name: string | null;
+  name: string;
 
   /**
    * The url of the file which can be used for downloading
    */
-  url: string | null;
+  url: string;
 };

@@ -27,5 +27,5 @@ export type ProjectChargeCodeDto = {
   /**
    * The name of this ChargeCode
    */
-  name: string | null;
+  name: string;
 };

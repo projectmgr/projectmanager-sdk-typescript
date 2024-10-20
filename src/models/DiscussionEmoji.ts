@@ -20,10 +20,10 @@ export type DiscussionEmoji = {
   /**
    * The name of the emoji
    */
-  name: string | null;
+  name: string;
 
   /**
    * The list of user IDs of the users who tagged these emoji
    */
-  userIds: string[] | null;
+  userIds: string[];
 };

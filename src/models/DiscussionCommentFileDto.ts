@@ -26,10 +26,10 @@ export type DiscussionCommentFileDto = {
   /**
    * The name of the file
    */
-  name: string | null;
+  name: string;
 
   /**
    * The url of the DownloadFile API to retrieve this file
    */
-  url: string | null;
+  url: string;
 };
