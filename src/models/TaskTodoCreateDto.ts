@@ -13,22 +13,17 @@
 
 
 /**
- * Payload to update time entry
+ * The properties for creating a TaskTodo.
  */
-export type TimesheetUpdateRequestDto = {
+export type TaskTodoCreateDto = {
 
   /**
-   * Reported hours. If minutes is specified this property is ignored
+   * The full description of this TaskTodo.
    */
-  hours: number | null;
+  text: string;
 
   /**
-   * Specify the time in minutes. This overrides the Hours property.
+   * True if this TaskTodo is complete.
    */
-  minutes: number | null;
-
-  /**
-   * Notes
-   */
-  notes: string | null;
+  complete: boolean;
 };

@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    120.0.4689
+ * @version    1.0.0
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -52,6 +52,7 @@ export { TaskFileClient } from "./clients/TaskFileClient.js";
 export { TaskMetadataClient } from "./clients/TaskMetadataClient.js";
 export { TaskStatusClient } from "./clients/TaskStatusClient.js";
 export { TaskTagClient } from "./clients/TaskTagClient.js";
+export { TaskTodoClient } from "./clients/TaskTodoClient.js";
 export { TeamsClient } from "./clients/TeamsClient.js";
 export { TimesheetClient } from "./clients/TimesheetClient.js";
 export { UserRoleClient } from "./clients/UserRoleClient.js";
@@ -157,7 +158,9 @@ export { TaskStatusCreateDto } from "./models/TaskStatusCreateDto.js";
 export { TaskStatusDto } from "./models/TaskStatusDto.js";
 export { TaskStatusUpdateDto } from "./models/TaskStatusUpdateDto.js";
 export { TaskTagDto } from "./models/TaskTagDto.js";
+export { TaskTodoCreateDto } from "./models/TaskTodoCreateDto.js";
 export { TaskTodoDto } from "./models/TaskTodoDto.js";
+export { TaskTodoUpdateDto } from "./models/TaskTodoUpdateDto.js";
 export { TaskUpdateDto } from "./models/TaskUpdateDto.js";
 export { TimesheetAdminTypeDto } from "./models/TimesheetAdminTypeDto.js";
 export { TimesheetCreateRequestDto } from "./models/TimesheetCreateRequestDto.js";
