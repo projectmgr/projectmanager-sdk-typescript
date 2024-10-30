@@ -85,6 +85,11 @@ export type ResourceDto = {
   country: string | null;
 
   /**
+   * Returns the name of the country
+   */
+  countryName: string | null;
+
+  /**
    * Free-form text notes about this Resource.  You may use this field to store extra
    * information about the Resource.
    */

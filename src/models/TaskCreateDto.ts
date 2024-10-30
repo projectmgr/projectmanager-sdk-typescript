@@ -96,4 +96,20 @@ export type TaskCreateDto = {
    * LightGrey, LightPurple, LightYellow, Magenta, Mauve, Navy, Orange, Purple, Red.
    */
   theme: string | null;
+
+  /**
+   * Unlocked tasks can be adjusted by changes to their dependencies, resource leveling, or other factors.
+   *
+   * All tasks are unlocked by default.
+   *
+   * If a task is set to `IsLocked` = `true`, the dates and assigned resources are locked for this task and will not
+   * be automatically changed by any process.
+   */
+  isLocked: boolean | null;
+
+  /**
+   * True if this task is a milestone.  Milestones represent a specific point in time for the project.  When a
+   * milestone is locked, it represents a fixed time within the project that can be used to relate to other tasks.
+   */
+  isMilestone: boolean | null;
 };
