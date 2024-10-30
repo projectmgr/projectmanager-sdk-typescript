@@ -61,4 +61,9 @@ export type TimesheetResponseDto = {
    * Total Hours
    */
   hours: number;
+
+  /**
+   * Total Minutes
+   */
+  minutes: number;
 };

@@ -39,12 +39,18 @@ export class NotificationClient {
    * using the parameter `lastId` of the oldest notification from each batch to fetch the next 500 notifications.
    *
    * @param lastId To continue loading more notifications in a series of requests, provide the ID of the oldest notification from the currently loaded batch as the `lastId` parameter
+   * @param senderId Filter the notifications to only those sent by the user with the specified ID
+   * @param notificationTypes Specifies the types of notifications to return. If not provided, all notifications will be returned.
+   * @param asFlatList If set to true all notifications will be returned as a flat list, otherwise they will be grouped by parent in the same manner as displayed in the UI.
    */
-  retrieveNotifications(lastId?: string): Promise<AstroResult<NotificationResponseDto>> {
+  retrieveNotifications(lastId?: string, senderId?: string, notificationTypes?: string[], asFlatList?: boolean): Promise<AstroResult<NotificationResponseDto>> {
     const url = `/api/data/notifications`;
     const options = {
       params: {
         'lastId': lastId,
+        'senderId': senderId,
+        'notificationTypes': notificationTypes,
+        'asFlatList': asFlatList,
       },
     };
     return this.client.request<AstroResult<NotificationResponseDto>>("get", url, options, null);

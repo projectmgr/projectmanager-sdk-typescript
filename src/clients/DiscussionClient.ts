@@ -52,4 +52,34 @@ export class DiscussionClient {
     const url = `/api/data/tasks/${taskId}/comments`;
     return this.client.request<AstroResult<DiscussionCommentCreateResponseDto>>("post", url, null, body);
   }
+
+  /**
+   * Puts a thumbsup on a comment
+   *
+   * @param commentId the id of the comment
+   */
+  likeacomment(commentId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/comments/${commentId}/like`;
+    return this.client.request<AstroResult<object>>("post", url, null, null);
+  }
+
+  /**
+   * Unlike a comment that was previously liked
+   *
+   * @param commentId the id of the comment
+   */
+  removesathumbsupfromacomment(commentId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/comments/${commentId}/like`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
+
+  /**
+   * Removes a comment by it's id
+   *
+   * @param commentId Remove a comment
+   */
+  removeacomment(commentId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/comments/${commentId}`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
 }

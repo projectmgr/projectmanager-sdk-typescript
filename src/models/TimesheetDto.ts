@@ -70,6 +70,11 @@ export type TimesheetDto = {
   hours: number;
 
   /**
+   * Total minutes spent on this Task by this Resource on this specific Date
+   */
+  minutes: number;
+
+  /**
    * Date and time (in UTC) that this timesheet entry was last modified.
    */
   modifiedDate: string;
