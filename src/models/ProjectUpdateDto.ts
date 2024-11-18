@@ -48,6 +48,8 @@ export type ProjectUpdateDto = {
   /**
    * To assign this Project to a ProjectCustomer, set this to the unique identifier of the
    * ProjectCustomer.
+   *
+   * If set to an empty guid the Project will be unassigned from the current ProjectCustomer.
    */
   customerId: string | null;
 
