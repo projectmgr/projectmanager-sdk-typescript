@@ -1,14 +1,14 @@
 /***
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2024 ProjectManager.com, Inc.
+ * (c) 2023-2025 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    122.0.214
+ * @copyright  2023-2025 ProjectManager.com, Inc.
+ * @version    125.2.176
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -82,7 +82,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "122.0.214";
+  private readonly version: string = "125.2.176";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;

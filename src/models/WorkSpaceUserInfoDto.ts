@@ -1,17 +1,18 @@
 /**
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2024 ProjectManager.com, Inc.
+ * (c) ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
- * @copyright  2023-2024 ProjectManager.com, Inc.
+ * @copyright  ProjectManager.com, Inc.
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
 import { WorkSpaceLinksDto } from "../index.js";
+import { WorkSpacePermissionsDto } from "../index.js";
 
 /**
  * Information about a currently logged in user.
@@ -60,4 +61,9 @@ export type WorkSpaceUserInfoDto = {
    * True if this user is considered an account administrator of the current Workspace.
    */
   isAccountAdministrator: boolean | null;
+
+  /**
+   * Workspace Permissions that the user has within the current Workspace.
+   */
+  permissions: WorkSpacePermissionsDto;
 };
