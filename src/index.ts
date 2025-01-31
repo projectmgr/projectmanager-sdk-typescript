@@ -1,15 +1,15 @@
 /***
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2024 ProjectManager.com, Inc.
+ * (c) 2023-2025 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
- * @copyright  2023-2024 ProjectManager.com, Inc.
- * @version    122.0.214
+ * @copyright  2023-2025 ProjectManager.com, Inc.
+ * @version    125.2.176
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -182,4 +182,5 @@ export { UserRoleDto } from "./models/UserRoleDto.js";
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
 export { WorkSpaceJoinDto } from "./models/WorkSpaceJoinDto.js";
 export { WorkSpaceLinksDto } from "./models/WorkSpaceLinksDto.js";
+export { WorkSpacePermissionsDto } from "./models/WorkSpacePermissionsDto.js";
 export { WorkSpaceUserInfoDto } from "./models/WorkSpaceUserInfoDto.js";
