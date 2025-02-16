@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    125.2.176
+ * @version    126.0.205
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -180,7 +180,6 @@ export { UpdateTaskFieldValueDto } from "./models/UpdateTaskFieldValueDto.js";
 export { UserError } from "./models/UserError.js";
 export { UserRoleDto } from "./models/UserRoleDto.js";
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
-export { WorkSpaceJoinDto } from "./models/WorkSpaceJoinDto.js";
 export { WorkSpaceLinksDto } from "./models/WorkSpaceLinksDto.js";
 export { WorkSpacePermissionsDto } from "./models/WorkSpacePermissionsDto.js";
 export { WorkSpaceUserInfoDto } from "./models/WorkSpaceUserInfoDto.js";
