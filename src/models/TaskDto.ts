@@ -68,7 +68,11 @@ export type TaskDto = {
   name: string;
 
   /**
-   * A description of the work to be performed in this Task.
+   * This field contains the task's "Note" or "Description", which is a description of the work to be done to complete the task.
+   *
+   * Within the ProjectManager application, you can use this field as follows:
+   * * When in the Gantt view, select a task and click the "Add Note" button.
+   * * When in the Board view, click on a task to open the task panel, then edit the "Description" field.
    */
   description: string | null;
 

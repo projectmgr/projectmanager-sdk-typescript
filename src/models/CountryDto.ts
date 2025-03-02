@@ -13,14 +13,18 @@
 
 
 /**
- * A Workspace represents a single business subscription to the ProjectManager.com service.  You
- * can be a member of multiple Workspaces.  Each Workspace is completely separate from all other
- * Workspaces and a user cannot log in to multiple Workspaces at the same time.
+ * Represents a country with its details.
  */
-export type WorkSpaceJoinDto = {
+export type CountryDto = {
 
   /**
-   * The unique identifier of the BusinessUser to invite to this Workspace.
+   * Gets or sets the unique identifier for the country. This should translate to the ISO2 code
+   * for that country.
    */
-  businessUserId: string;
+  id: string;
+
+  /**
+   * Gets or sets the name of the country.
+   */
+  name: string;
 };

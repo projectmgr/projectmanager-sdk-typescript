@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    125.2.176
+ * @version    127.0.185
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -68,6 +68,7 @@ export { AuthenticationStatusDto } from "./models/AuthenticationStatusDto.js";
 export { ChangeSetDto } from "./models/ChangeSetDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
+export { CountryDto } from "./models/CountryDto.js";
 export { CountryHolidayDto } from "./models/CountryHolidayDto.js";
 export { CreateResourceSkillDto } from "./models/CreateResourceSkillDto.js";
 export { CreateResourceTeamDto } from "./models/CreateResourceTeamDto.js";
@@ -140,6 +141,7 @@ export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";
 export { RiskExportProgressFilterDto } from "./models/RiskExportProgressFilterDto.js";
 export { RiskExportSettingsDto } from "./models/RiskExportSettingsDto.js";
+export { StateDto } from "./models/StateDto.js";
 export { TagCreateDto } from "./models/TagCreateDto.js";
 export { TagDto } from "./models/TagDto.js";
 export { TagUpdateDto } from "./models/TagUpdateDto.js";
@@ -180,7 +182,6 @@ export { UpdateTaskFieldValueDto } from "./models/UpdateTaskFieldValueDto.js";
 export { UserError } from "./models/UserError.js";
 export { UserRoleDto } from "./models/UserRoleDto.js";
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
-export { WorkSpaceJoinDto } from "./models/WorkSpaceJoinDto.js";
 export { WorkSpaceLinksDto } from "./models/WorkSpaceLinksDto.js";
 export { WorkSpacePermissionsDto } from "./models/WorkSpacePermissionsDto.js";
 export { WorkSpaceUserInfoDto } from "./models/WorkSpaceUserInfoDto.js";
