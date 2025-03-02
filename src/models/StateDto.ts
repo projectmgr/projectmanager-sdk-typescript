@@ -13,23 +13,22 @@
 
 
 /**
- * A License represents a subscription to a particular product or bundle of products
- * within ProjectManager.
+ * Represents a state with its details.
  */
-export type LicenseDto = {
+export type StateDto = {
 
   /**
-   * The unique identifier of this License.
+   * Gets or sets the unique identifier for the state.
    */
-  id: string;
+  id: number;
 
   /**
-   * The SKU code of this License, used for billing purposes.
+   * Gets or sets the code of the state.
    */
-  licenseSku: string;
+  stateCode: string;
 
   /**
-   * The SKU code of the bundle of this License, used for billing purposes.
+   * Gets or sets the name of the state.
    */
-  bundleSku: string | null;
+  name: string;
 };
