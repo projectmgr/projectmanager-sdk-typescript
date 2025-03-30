@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    127.0.185
+ * @version    129.0.113
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -25,7 +25,9 @@ import { IntegrationProviderClient } from "./index.js";
 import { LicenseClient } from "./index.js";
 import { MeClient } from "./index.js";
 import { NotificationClient } from "./index.js";
+import { NptClient } from "./index.js";
 import { NptFilesClient } from "./index.js";
+import { NptStatusClient } from "./index.js";
 import { ProjectClient } from "./index.js";
 import { ProjectChargeCodeClient } from "./index.js";
 import { ProjectCustomerClient } from "./index.js";
@@ -82,7 +84,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "127.0.185";
+  private readonly version: string = "129.0.113";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -101,7 +103,9 @@ export class ProjectManagerClient {
   public readonly License: LicenseClient;
   public readonly Me: MeClient;
   public readonly Notification: NotificationClient;
+  public readonly Npt: NptClient;
   public readonly NptFiles: NptFilesClient;
+  public readonly NptStatus: NptStatusClient;
   public readonly Project: ProjectClient;
   public readonly ProjectChargeCode: ProjectChargeCodeClient;
   public readonly ProjectCustomer: ProjectCustomerClient;
@@ -150,7 +154,9 @@ export class ProjectManagerClient {
     this.License = new LicenseClient(this);
     this.Me = new MeClient(this);
     this.Notification = new NotificationClient(this);
+    this.Npt = new NptClient(this);
     this.NptFiles = new NptFilesClient(this);
+    this.NptStatus = new NptStatusClient(this);
     this.Project = new ProjectClient(this);
     this.ProjectChargeCode = new ProjectChargeCodeClient(this);
     this.ProjectCustomer = new ProjectCustomerClient(this);

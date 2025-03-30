@@ -38,4 +38,14 @@ export class MeClient {
     const url = `/api/data/me`;
     return this.client.request<AstroResult<WorkSpaceUserInfoDto>>("get", url, null, null);
   }
+
+  /**
+   * Updates the logged in user avatar
+   *
+   * @param fileName The full path of a file to upload to the API
+   */
+  updateMyAvatar(fileName: string): Promise<AstroResult<object>> {
+    const url = `/api/data/me/avatar`;
+    return this.client.fileUpload("post", url, null, fileName);
+  }
 }
