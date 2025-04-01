@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectVersionDto } from "../index.js";
+import { ProjectRestoreProjectDto } from "../index.js";
 
 export class ProjectVersionClient {
   private readonly client: ProjectManagerClient;
@@ -66,13 +67,13 @@ export class ProjectVersionClient {
    * @param version The version number of the Project to copy
    * @param timezoneOffset If specified, sets the default timezone of the newly copied Project to this specified timezone
    */
-  copyProjectVersion(projectId: string, version: number, timezoneOffset?: number): Promise<AstroResult<object>> {
+  copyProjectVersion(projectId: string, version: number, timezoneOffset?: number): Promise<AstroResult<ProjectRestoreProjectDto>> {
     const url = `/api/data/projects/${projectId}/version/${version}/copy`;
     const options = {
       params: {
         'timezoneOffset': timezoneOffset,
       },
     };
-    return this.client.request<AstroResult<object>>("post", url, options, null);
+    return this.client.request<AstroResult<ProjectRestoreProjectDto>>("post", url, options, null);
   }
 }

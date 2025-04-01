@@ -32,7 +32,7 @@ export class TaskTodoClient {
    *
    * @param taskId the id of the task
    */
-  gettodosforatask(taskId: string): Promise<AstroResult<TaskTodoDto[]>> {
+  getTodos(taskId: string): Promise<AstroResult<TaskTodoDto[]>> {
     const url = `/api/data/tasks/${taskId}/todos`;
     return this.client.request<AstroResult<TaskTodoDto[]>>("get", url, null, null);
   }
@@ -43,7 +43,7 @@ export class TaskTodoClient {
    * @param taskId the id of the task
    * @param body the data for creating a todo
    */
-  createatodoforatask(taskId: string, body: TaskTodoCreateDto): Promise<AstroResult<TaskTodoDto>> {
+  createTodo(taskId: string, body: TaskTodoCreateDto): Promise<AstroResult<TaskTodoDto>> {
     const url = `/api/data/tasks/${taskId}/todos`;
     return this.client.request<AstroResult<TaskTodoDto>>("post", url, null, body);
   }
@@ -54,7 +54,7 @@ export class TaskTodoClient {
    * @param todoId the id of the task
    * @param body the data for updating a todo
    */
-  updateatodo(todoId: string, body: TaskTodoUpdateDto): Promise<AstroResult<TaskTodoDto>> {
+  updateTodo(todoId: string, body: TaskTodoUpdateDto): Promise<AstroResult<TaskTodoDto>> {
     const url = `/api/data/tasks/todos/${todoId}`;
     return this.client.request<AstroResult<TaskTodoDto>>("put", url, null, body);
   }
@@ -64,7 +64,7 @@ export class TaskTodoClient {
    *
    * @param todoId the id of the todo
    */
-  deleteatodo(todoId: string): Promise<AstroResult<object>> {
+  deleteTodo(todoId: string): Promise<AstroResult<object>> {
     const url = `/api/data/tasks/todos/${todoId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }

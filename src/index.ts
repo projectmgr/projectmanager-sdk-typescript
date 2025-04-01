@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    127.0.185
+ * @version    129.0.113
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -28,7 +28,9 @@ export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.j
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
 export { NotificationClient } from "./clients/NotificationClient.js";
+export { NptClient } from "./clients/NptClient.js";
 export { NptFilesClient } from "./clients/NptFilesClient.js";
+export { NptStatusClient } from "./clients/NptStatusClient.js";
 export { ProjectClient } from "./clients/ProjectClient.js";
 export { ProjectChargeCodeClient } from "./clients/ProjectChargeCodeClient.js";
 export { ProjectCustomerClient } from "./clients/ProjectCustomerClient.js";
@@ -65,7 +67,6 @@ export { AstroError } from "./models/AstroError.js";
 export { AstroResult } from "./models/AstroResult.js";
 export { AuthenticationDto } from "./models/AuthenticationDto.js";
 export { AuthenticationStatusDto } from "./models/AuthenticationStatusDto.js";
-export { ChangeSetDto } from "./models/ChangeSetDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
 export { CountryDto } from "./models/CountryDto.js";
@@ -102,6 +103,11 @@ export { NotificationResponseDto } from "./models/NotificationResponseDto.js";
 export { NotificationTimestampDto } from "./models/NotificationTimestampDto.js";
 export { NotificationTotalCountDto } from "./models/NotificationTotalCountDto.js";
 export { NotificationUnreadCountDto } from "./models/NotificationUnreadCountDto.js";
+export { NptAssigneeDto } from "./models/NptAssigneeDto.js";
+export { NptCreateDto } from "./models/NptCreateDto.js";
+export { NptDto } from "./models/NptDto.js";
+export { NptStatusDto } from "./models/NptStatusDto.js";
+export { NptUpdateDto } from "./models/NptUpdateDto.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
@@ -122,6 +128,7 @@ export { ProjectManagerDto } from "./models/ProjectManagerDto.js";
 export { ProjectMemberDto } from "./models/ProjectMemberDto.js";
 export { ProjectMemberRoleDto } from "./models/ProjectMemberRoleDto.js";
 export { ProjectPriorityDto } from "./models/ProjectPriorityDto.js";
+export { ProjectRestoreProjectDto } from "./models/ProjectRestoreProjectDto.js";
 export { ProjectStatusDto } from "./models/ProjectStatusDto.js";
 export { ProjectTemplateCategoryDto } from "./models/ProjectTemplateCategoryDto.js";
 export { ProjectTemplateDto } from "./models/ProjectTemplateDto.js";
