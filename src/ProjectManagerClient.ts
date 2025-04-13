@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    129.0.113
+ * @version    130.1.162
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -43,6 +43,7 @@ import { ResourceClient } from "./index.js";
 import { ResourceSkillClient } from "./index.js";
 import { ResourceTeamClient } from "./index.js";
 import { RiskClient } from "./index.js";
+import { RiskFileClient } from "./index.js";
 import { TagClient } from "./index.js";
 import { TaskClient } from "./index.js";
 import { TaskAssigneeClient } from "./index.js";
@@ -84,7 +85,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "129.0.113";
+  private readonly version: string = "130.1.162";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -121,6 +122,7 @@ export class ProjectManagerClient {
   public readonly ResourceSkill: ResourceSkillClient;
   public readonly ResourceTeam: ResourceTeamClient;
   public readonly Risk: RiskClient;
+  public readonly RiskFile: RiskFileClient;
   public readonly Tag: TagClient;
   public readonly Task: TaskClient;
   public readonly TaskAssignee: TaskAssigneeClient;
@@ -172,6 +174,7 @@ export class ProjectManagerClient {
     this.ResourceSkill = new ResourceSkillClient(this);
     this.ResourceTeam = new ResourceTeamClient(this);
     this.Risk = new RiskClient(this);
+    this.RiskFile = new RiskFileClient(this);
     this.Tag = new TagClient(this);
     this.Task = new TaskClient(this);
     this.TaskAssignee = new TaskAssigneeClient(this);

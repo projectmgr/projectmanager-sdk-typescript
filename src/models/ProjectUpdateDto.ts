@@ -96,4 +96,15 @@ export type ProjectUpdateDto = {
    * Mark this project as favorite for the logged in user.
    */
   favorite: boolean | null;
+
+  /**
+   * True if this Project is a template that will be reused as a framework
+   * for future Projects.
+   *
+   * You can save a Project as a template and reuse it in the future for creating
+   * additional Projects.  If this Project is a template, set this to `true` and this
+   * template will be available to choose from when creating a new Project within the
+   * application.
+   */
+  template: boolean | null;
 };

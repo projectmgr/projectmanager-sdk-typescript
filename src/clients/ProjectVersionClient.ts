@@ -55,9 +55,9 @@ export class ProjectVersionClient {
    * @param projectId The unique identifier of the Project to restore
    * @param version The version number to restore to
    */
-  restoreProjectVersion(projectId: string, version: number): Promise<AstroResult<object>> {
+  restoreProjectVersion(projectId: string, version: number): Promise<AstroResult<ProjectRestoreProjectDto>> {
     const url = `/api/data/projects/${projectId}/version/${version}/restore`;
-    return this.client.request<AstroResult<object>>("post", url, null, null);
+    return this.client.request<AstroResult<ProjectRestoreProjectDto>>("post", url, null, null);
   }
 
   /**
