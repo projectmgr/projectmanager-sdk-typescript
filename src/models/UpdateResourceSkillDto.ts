@@ -18,7 +18,7 @@
 export type UpdateResourceSkillDto = {
 
   /**
-   * The name of this Skill.
+   * The name of this Skill, if specified it will be updated
    */
-  name: string;
+  name: string | null;
 };

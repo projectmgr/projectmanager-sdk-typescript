@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    129.0.113
+ * @version    130.1.162
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -46,6 +46,7 @@ export { ResourceClient } from "./clients/ResourceClient.js";
 export { ResourceSkillClient } from "./clients/ResourceSkillClient.js";
 export { ResourceTeamClient } from "./clients/ResourceTeamClient.js";
 export { RiskClient } from "./clients/RiskClient.js";
+export { RiskFileClient } from "./clients/RiskFileClient.js";
 export { TagClient } from "./clients/TagClient.js";
 export { TaskClient } from "./clients/TaskClient.js";
 export { TaskAssigneeClient } from "./clients/TaskAssigneeClient.js";
