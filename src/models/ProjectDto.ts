@@ -230,4 +230,9 @@ export type ProjectDto = {
    * The percentage of the project tasks completed
    */
   percentComplete: number | null;
+
+  /**
+   * True if allow actual dates to update planned dates
+   */
+  updatePlannedWithActual: boolean;
 };

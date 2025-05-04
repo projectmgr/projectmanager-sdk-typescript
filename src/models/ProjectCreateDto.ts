@@ -13,6 +13,7 @@
 
 import { ProjectCreateAccessDto } from "../index.js";
 import { TaskStatusCreateDto } from "../index.js";
+import { ProjectWorkingDaysDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
@@ -33,6 +34,11 @@ export type ProjectCreateDto = {
    * An optional description of the Project
    */
   description: string | null;
+
+  /**
+   * An optional project short name. Up to 7 symbols
+   */
+  shortName: string | null;
 
   /**
    * The unique identifier of the folder of this project, or null if not assigned.
@@ -116,7 +122,18 @@ export type ProjectCreateDto = {
   favorite: boolean | null;
 
   /**
+   * True if allow actual dates to update planned dates
+   */
+  updatePlannedWithActual: boolean | null;
+
+  /**
    * Create default task status upfront
    */
   taskStatusCreate: TaskStatusCreateDto[] | null;
+
+  /**
+   * Working days for the project. If not specified, the workspace working days will be used.
+   * This value can be set when the project is created but may not be updated afterwards.
+   */
+  workingDays: ProjectWorkingDaysDto | null;
 };
