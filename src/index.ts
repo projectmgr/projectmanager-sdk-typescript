@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    130.1.162
+ * @version    131.1.208
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -136,6 +136,7 @@ export { ProjectTemplateDto } from "./models/ProjectTemplateDto.js";
 export { ProjectUpdateDto } from "./models/ProjectUpdateDto.js";
 export { ProjectVersionChangeDataDto } from "./models/ProjectVersionChangeDataDto.js";
 export { ProjectVersionDto } from "./models/ProjectVersionDto.js";
+export { ProjectWorkingDaysDto } from "./models/ProjectWorkingDaysDto.js";
 export { ReactGridLayoutDto } from "./models/ReactGridLayoutDto.js";
 export { ReactGridLayoutItemDto } from "./models/ReactGridLayoutItemDto.js";
 export { ResourceApproverDto } from "./models/ResourceApproverDto.js";

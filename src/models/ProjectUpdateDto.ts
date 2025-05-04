@@ -28,6 +28,11 @@ export type ProjectUpdateDto = {
   name: string | null;
 
   /**
+   * The short name of the Project.
+   */
+  shortName: string | null;
+
+  /**
    * An optional description of the Project
    */
   description: string | null;
@@ -107,4 +112,9 @@ export type ProjectUpdateDto = {
    * application.
    */
   template: boolean | null;
+
+  /**
+   * True if allow actual dates to update planned dates
+   */
+  updatePlannedWithActual: boolean | null;
 };

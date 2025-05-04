@@ -29,4 +29,9 @@ export type ResourceSkillDto = {
    * The name of this ResourceSkill
    */
   name: string;
+
+  /**
+   * Set to true if this ResourceSkill is in use
+   */
+  inUse: boolean;
 };
