@@ -117,4 +117,9 @@ export type ProjectUpdateDto = {
    * True if allow actual dates to update planned dates
    */
   updatePlannedWithActual: boolean | null;
+
+  /**
+   * To update the project notes
+   */
+  notes: string | null;
 };
