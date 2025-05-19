@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectMemberDto } from "../index.js";
+import { ProjectMembersAccessDto } from "../index.js";
 import { ProjectMemberRoleDto } from "../index.js";
 
 export class ProjectMembersClient {
@@ -40,7 +41,7 @@ export class ProjectMembersClient {
 
   /**
    * Returns a list of users that are currently members of a specified project, as well as their current project security roles and available project security roles.
-   * Optionally include users who are not currently members of the project, but who are available to be added.
+   * Optionally include users who are not currently members of the project, but who can be added.
    *
    * A project member is a user who has access to a specific project. Project members are assigned a project security role, which controls the level of access they have to
    * the project. Possible project security roles include manage, edit, collaborate, creator, and guest.
@@ -59,6 +60,23 @@ export class ProjectMembersClient {
   }
 
   /**
+   * Updates the project access for a current member of a specified project
+   * by giving the users a new project security role.
+   *
+   * A project member is a user who has access to a specific project.
+   * Project members are assigned a project security role, which controls the level of access they have to
+   * the project.
+   * Possible project security roles include manage, edit, collaborate, creator, and guest.
+   *
+   * @param projectId Reference to Project
+   * @param body The permission to update
+   */
+  updateAListOfUserProjectMembership(projectId: string, body: ProjectMembersAccessDto): Promise<AstroResult<ProjectMemberDto>> {
+    const url = `/api/data/projects/${projectId}/members`;
+    return this.client.request<AstroResult<ProjectMemberDto>>("put", url, null, body);
+  }
+
+  /**
    * Returns the project security role in a specified project for a current project member.
    *
    * A project member is a user who has access to a specific project. Project members are assigned a project security role, which controls the level of access they have to
@@ -73,10 +91,13 @@ export class ProjectMembersClient {
   }
 
   /**
-   * Creates a membership for a user in a specified project, and assigns the user the appropriate project access based on the specified project security role.
+   * Creates a membership for a user in a specified project
+   * and assigns the user the appropriate project access based on the specified project security role.
    *
-   * A project member is a user who has access to a specific project. Project members are assigned a project security role, which controls the level of access they have to
-   * the project. Possible project security roles include manage, edit, collaborate, creator, and guest.
+   * A project member is a user who has access to a specific project.
+   * Project members are assigned a project security role, which controls the level of access they have to
+   * the project.
+   * Possible project security roles include manage, edit, collaborate, creator, and guest.
    *
    * @param projectId Reference to Project
    * @param userId Reference to User
