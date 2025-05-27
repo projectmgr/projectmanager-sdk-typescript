@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    132.1.183
+ * @version    133.1.136
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 

@@ -107,4 +107,9 @@ export type TimesheetDto = {
    * To expand this field, specify the name of this field in the `$expand` parameter.
    */
   files: TimesheetFileDto[] | null;
+
+  /**
+   * Indicates if the timesheet entry is copied from another week.
+   */
+  isCopied: boolean;
 };

@@ -66,4 +66,9 @@ export type TimesheetResponseDto = {
    * Total Minutes
    */
   minutes: number;
+
+  /**
+   * Is the timesheet entry copied from another week?
+   */
+  isCopied: boolean;
 };
