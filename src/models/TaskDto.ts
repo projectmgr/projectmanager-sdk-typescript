@@ -253,6 +253,22 @@ export type TaskDto = {
   plannedEffort: number | null;
 
   /**
+   * The one-based index of this Task within its parent project.
+   *
+   * This value is used to determine the order of tasks and sub-tasks in a project.
+   * For example, a Task with an Index of 1 is the first Task in the project.
+   */
+  index: number;
+
+  /**
+   * The hierarchical level of this Task within the Task structure.
+   *
+   * A Level of 1 indicates that the Task is at the top level (e.g. a root Task),
+   * while higher values indicate deeper levels in the hierarchy (e.g. subtasks).
+   */
+  level: number;
+
+  /**
    * Task fields array with values
    */
   fieldValues: TaskFieldValueDto[] | null;
