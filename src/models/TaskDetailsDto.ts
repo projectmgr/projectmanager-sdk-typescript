@@ -24,7 +24,7 @@ import { TaskFileDto } from "../index.js";
  * Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to
  * indicate whether they have a dependency or a connection.
  */
-export type TaskDto = {
+export type TaskDetailsDto = {
 
   /**
    * The unique identifier of this Task.
@@ -286,4 +286,9 @@ export type TaskDto = {
    * To expand this field, specify the name of this field in the `$expand` parameter.
    */
   files: TaskFileDto[] | null;
+
+  /**
+   * The parent task of this Task.
+   */
+  parentTaskId: string | null;
 };

@@ -18,6 +18,9 @@ import { TimesheetCreateRequestDto } from "../index.js";
 import { TimesheetDto } from "../index.js";
 import { TimesheetUpdateRequestDto } from "../index.js";
 import { TimesheetAdminTypeDto } from "../index.js";
+import { TimeSheetApprovalResponseDto } from "../index.js";
+import { TimeSheetApprovalDto } from "../index.js";
+import { TimeSheetApprovalRejectDto } from "../index.js";
 
 export class TimesheetClient {
   private readonly client: ProjectManagerClient;
@@ -92,5 +95,35 @@ export class TimesheetClient {
   returnsactiveadmintasksthatareusedtoreporttime(): Promise<AstroResult<TimesheetAdminTypeDto[]>> {
     const url = `/api/data/timesheets/admin-tasks`;
     return this.client.request<AstroResult<TimesheetAdminTypeDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Submit a timesheet for approval for a specific resource.
+   *
+   * @param body The timesheet to be submitted for approval
+   */
+  submitResourceTimeSheetForApproval(body: TimeSheetApprovalDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
+    const url = `/api/data/timesheets/approvals`;
+    return this.client.request<AstroResult<TimeSheetApprovalResponseDto>>("post", url, null, body);
+  }
+
+  /**
+   * Approve a timesheet approval request
+   *
+   * @param body The timesheet to approve
+   */
+  approveResourceTimeSheetApprovalRequest(body: TimeSheetApprovalDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
+    const url = `/api/data/timesheets/approvals/approve`;
+    return this.client.request<AstroResult<TimeSheetApprovalResponseDto>>("post", url, null, body);
+  }
+
+  /**
+   * Rejects a specific resource's timesheet approval request for a specific week.
+   *
+   * @param body The data for rejecting the approval request
+   */
+  rejectResourceTimeSheetApprovalRequest(body: TimeSheetApprovalRejectDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
+    const url = `/api/data/timesheets/approvals/reject`;
+    return this.client.request<AstroResult<TimeSheetApprovalResponseDto>>("post", url, null, body);
   }
 }

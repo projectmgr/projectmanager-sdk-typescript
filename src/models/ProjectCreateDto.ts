@@ -36,6 +36,22 @@ export type ProjectCreateDto = {
   description: string | null;
 
   /**
+   * Specify the shortId for this project. If left blank a shortId will be generated.
+   *
+   * A short identifier that uniquely identifies this Project within your Workspace
+   * using a single letter followed by a number.  This code can be used for APIs
+   * that accept Project unique identifiers.
+   *
+   * You can observe the short ID within the application by observing the URL of
+   * the page you visit when you click on this project.  The page's URL will appear
+   * in the form `https://pm.app.projectmanager.com/project/board/D16` - in this
+   * example, the `ShortId` is `D16`.
+   *
+   * This id can only be set on creation, and can not be updated.
+   */
+  shortId: string | null;
+
+  /**
    * An optional project short name. Up to 7 symbols
    */
   shortName: string | null;

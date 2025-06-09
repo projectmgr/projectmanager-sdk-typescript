@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    133.1.136
+ * @version    134.0.125
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -109,6 +109,7 @@ export { NptCreateDto } from "./models/NptCreateDto.js";
 export { NptDto } from "./models/NptDto.js";
 export { NptStatusDto } from "./models/NptStatusDto.js";
 export { NptUpdateDto } from "./models/NptUpdateDto.js";
+export { PendingTimeSheetApprovalDto } from "./models/PendingTimeSheetApprovalDto.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectAccessEntryDto } from "./models/ProjectAccessEntryDto.js";
 export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
@@ -158,6 +159,7 @@ export { TagDto } from "./models/TagDto.js";
 export { TagUpdateDto } from "./models/TagUpdateDto.js";
 export { TaskAssigneeDto } from "./models/TaskAssigneeDto.js";
 export { TaskCreateDto } from "./models/TaskCreateDto.js";
+export { TaskDetailsDto } from "./models/TaskDetailsDto.js";
 export { TaskDto } from "./models/TaskDto.js";
 export { TaskFieldDto } from "./models/TaskFieldDto.js";
 export { TaskFieldProjectDto } from "./models/TaskFieldProjectDto.js";
@@ -177,6 +179,9 @@ export { TaskTodoDto } from "./models/TaskTodoDto.js";
 export { TaskTodoUpdateDto } from "./models/TaskTodoUpdateDto.js";
 export { TaskUpdateDto } from "./models/TaskUpdateDto.js";
 export { TimesheetAdminTypeDto } from "./models/TimesheetAdminTypeDto.js";
+export { TimeSheetApprovalDto } from "./models/TimeSheetApprovalDto.js";
+export { TimeSheetApprovalRejectDto } from "./models/TimeSheetApprovalRejectDto.js";
+export { TimeSheetApprovalResponseDto } from "./models/TimeSheetApprovalResponseDto.js";
 export { TimesheetCreateRequestDto } from "./models/TimesheetCreateRequestDto.js";
 export { TimesheetDto } from "./models/TimesheetDto.js";
 export { TimesheetFileDto } from "./models/TimesheetFileDto.js";
