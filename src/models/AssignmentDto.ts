@@ -13,22 +13,22 @@
 
 
 /**
- * Data for rejecting a timesheet approval
+ * User assigned to task or risk
  */
-export type TimeSheetApprovalRejectDto = {
+export type AssignmentDto = {
 
   /**
-   * The id for the resource, if null it indicates the request is for the current logged-in user
+   * Task or risk the user is assigned to
    */
-  resourceId: string | null;
+  taskId: string;
 
   /**
-   * The date of the week to which the timesheet applies
+   * The task or risk project Id
    */
-  date: string;
+  projectId: string | null;
 
   /**
-   * The reason why the timesheet approval is being rejected
+   * Resource identifier
    */
-  reason: string;
+  resourceId: string;
 };

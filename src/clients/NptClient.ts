@@ -13,6 +13,7 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
+import { NptDetailsDto } from "../index.js";
 import { NptDto } from "../index.js";
 import { NptUpdateDto } from "../index.js";
 import { NptCreateDto } from "../index.js";
@@ -32,9 +33,9 @@ export class NptClient {
    *
    * @param nptId the id of the npt
    */
-  getNpt(nptId: string): Promise<AstroResult<NptDto>> {
+  getNpt(nptId: string): Promise<AstroResult<NptDetailsDto>> {
     const url = `/api/data/non-project-tasks/${nptId}`;
-    return this.client.request<AstroResult<NptDto>>("get", url, null, null);
+    return this.client.request<AstroResult<NptDetailsDto>>("get", url, null, null);
   }
 
   /**

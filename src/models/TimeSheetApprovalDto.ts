@@ -18,9 +18,9 @@
 export type TimeSheetApprovalDto = {
 
   /**
-   * The resource whose timesheet is being approved
+   * The id for the resource, if null it indicates the request is for the current logged-in user
    */
-  resourceId: string;
+  resourceId: string | null;
 
   /**
    * The date of the week to which the timesheet applies

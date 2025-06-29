@@ -35,7 +35,7 @@ export type RiskExportSettingsDto = {
   format: string;
 
   /**
-   * The list of column names to export
+   * The list of column names to export, if blank all columns will be exported
    */
   columns: string[];
 

@@ -15,6 +15,7 @@ import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ExportDto } from "../index.js";
 import { RiskExportSettingsDto } from "../index.js";
+import { RiskDto } from "../index.js";
 
 export class RiskClient {
   private readonly client: ProjectManagerClient;
@@ -37,5 +38,28 @@ export class RiskClient {
   createRiskExport(projectId: string, body: RiskExportSettingsDto): Promise<AstroResult<ExportDto>> {
     const url = `/api/data/projects/${projectId}/risks/export`;
     return this.client.request<AstroResult<ExportDto>>("post", url, null, body);
+  }
+
+  /**
+   * Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
+   *
+   * @param top The number of records to return
+   * @param skip Skips the given number of records and then returns $top records
+   * @param filter Filter the expression according to oData queries
+   * @param orderby Order collection by this field.
+   * @param expand Include related data in the response
+   */
+  getrisklist(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<RiskDto[]>> {
+    const url = `/api/data/risks`;
+    const options = {
+      params: {
+        '$top': top,
+        '$skip': skip,
+        '$filter': filter,
+        '$orderby': orderby,
+        '$expand': expand,
+      },
+    };
+    return this.client.request<AstroResult<RiskDto[]>>("get", url, options, null);
   }
 }

@@ -25,12 +25,12 @@ export type TimesheetCreateRequestDto = {
   /**
    * Reported hours. If minutes is specified this property is ignored
    */
-  hours: number;
+  hours: number | null;
 
   /**
    * Specify the time in minutes. This overrides the Hours property.
    */
-  minutes: number;
+  minutes: number | null;
 
   /**
    * Task id that time reported to
