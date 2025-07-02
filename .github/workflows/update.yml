@@ -37,7 +37,11 @@ jobs:
             SdkGenerator get-patch-notes -p ./sdk-config.json
             echo EOF
           } >> $GITHUB_OUTPUT
-          
+        
+# Running npm audit fix here will address minor issues with package-lock.json and ensure they are committed to main
+      - name: npm audit (with fix)
+        run: npm audit fix
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6
