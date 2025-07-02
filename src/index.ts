@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    134.0.125
+ * @version    135.0.134
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -64,6 +64,7 @@ export { WorkSpaceClient } from "./clients/WorkSpaceClient.js";
 export { ApiKeyCreateDto } from "./models/ApiKeyCreateDto.js";
 export { ApiKeyDto } from "./models/ApiKeyDto.js";
 export { AssigneeUpsertDto } from "./models/AssigneeUpsertDto.js";
+export { AssignmentDto } from "./models/AssignmentDto.js";
 export { AstroError } from "./models/AstroError.js";
 export { AstroResult } from "./models/AstroResult.js";
 export { AuthenticationDto } from "./models/AuthenticationDto.js";
@@ -106,6 +107,7 @@ export { NotificationTotalCountDto } from "./models/NotificationTotalCountDto.js
 export { NotificationUnreadCountDto } from "./models/NotificationUnreadCountDto.js";
 export { NptAssigneeDto } from "./models/NptAssigneeDto.js";
 export { NptCreateDto } from "./models/NptCreateDto.js";
+export { NptDetailsDto } from "./models/NptDetailsDto.js";
 export { NptDto } from "./models/NptDto.js";
 export { NptStatusDto } from "./models/NptStatusDto.js";
 export { NptUpdateDto } from "./models/NptUpdateDto.js";
@@ -151,6 +153,7 @@ export { ResourcesDto } from "./models/ResourcesDto.js";
 export { ResourceSkillDto } from "./models/ResourceSkillDto.js";
 export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";
+export { RiskDto } from "./models/RiskDto.js";
 export { RiskExportProgressFilterDto } from "./models/RiskExportProgressFilterDto.js";
 export { RiskExportSettingsDto } from "./models/RiskExportSettingsDto.js";
 export { StateDto } from "./models/StateDto.js";
@@ -168,6 +171,7 @@ export { TaskFieldValueTaskDto } from "./models/TaskFieldValueTaskDto.js";
 export { TaskFileDto } from "./models/TaskFileDto.js";
 export { TaskMetadataSearchDto } from "./models/TaskMetadataSearchDto.js";
 export { TaskMetadataUpdateDto } from "./models/TaskMetadataUpdateDto.js";
+export { TaskOwnerDto } from "./models/TaskOwnerDto.js";
 export { TaskPriorityDto } from "./models/TaskPriorityDto.js";
 export { TaskProjectDto } from "./models/TaskProjectDto.js";
 export { TaskStatusCreateDto } from "./models/TaskStatusCreateDto.js";

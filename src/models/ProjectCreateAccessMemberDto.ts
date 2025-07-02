@@ -23,7 +23,13 @@ export type ProjectCreateAccessMemberDto = {
   userId: string;
 
   /**
-   * Member's role in the project
+   * Member's role in the project, if left empty the default role will be used
+   *
+   * For users with Access All Data permission, this will be set to `Manager`.
+   * For guests, this will be set to `Guest`.
+   * For all other users, this will be set to `Editor`.
+   *
+   * Valid values are: `Manager`, `Editor`, `Collaborate`, `Guest`.
    */
-  permission: string;
+  permission: string | null;
 };

@@ -19,7 +19,7 @@ import { NptAssigneeDto } from "../index.js";
  *
  * NPT's are a lightweight version of a project task.
  */
-export type NptDto = {
+export type NptDetailsDto = {
 
   /**
    * The unique identifier of the NPT

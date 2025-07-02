@@ -60,15 +60,20 @@ export type TimesheetResponseDto = {
   /**
    * Total Hours
    */
-  hours: number;
+  hours: number | null;
 
   /**
    * Total Minutes
    */
-  minutes: number;
+  minutes: number | null;
 
   /**
    * Is the timesheet entry copied from another week?
    */
   isCopied: boolean;
+
+  /**
+   * Is the last timesheet modified by the user
+   */
+  lastUpdatedDate: string | null;
 };
