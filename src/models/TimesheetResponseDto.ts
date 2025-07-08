@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { TimesheetFileResponseDto } from "../index.js";
 
 /**
  * Time entry representation
@@ -75,5 +76,10 @@ export type TimesheetResponseDto = {
   /**
    * Is the last timesheet modified by the user
    */
-  lastUpdatedDate: string | null;
+  lastUpdatedDate: string;
+
+  /**
+   * Document Details
+   */
+  documents: TimesheetFileResponseDto[];
 };

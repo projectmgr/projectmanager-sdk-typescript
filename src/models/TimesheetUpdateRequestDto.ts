@@ -31,4 +31,9 @@ export type TimesheetUpdateRequestDto = {
    * Notes
    */
   notes: string | null;
+
+  /**
+   * Document Ids
+   */
+  documentIds: string[] | null;
 };

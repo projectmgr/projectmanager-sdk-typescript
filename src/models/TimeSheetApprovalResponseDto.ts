@@ -19,6 +19,11 @@ import { PendingTimeSheetApprovalDto } from "../index.js";
 export type TimeSheetApprovalResponseDto = {
 
   /**
+   * Date and time (in UTC) that this timesheet entry was last modified.
+   */
+  modifiedDate: string;
+
+  /**
    * A list of pending timesheet approvals
    */
   pendingApprovals: PendingTimeSheetApprovalDto[];
