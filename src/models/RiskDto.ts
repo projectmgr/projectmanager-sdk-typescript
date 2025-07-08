@@ -134,4 +134,14 @@ export type RiskDto = {
    * The number of comments added to the risk.
    */
   commentsCount: number | null;
+
+  /**
+   * The id of the Risk Type
+   * Risk = 1
+   * Assumption = 2
+   * Issue = 3
+   * Dependency = 4
+   * Change = 5
+   */
+  riskTypeId: number;
 };

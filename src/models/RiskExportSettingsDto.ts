@@ -56,6 +56,7 @@ export type RiskExportSettingsDto = {
    *  * tags
    *  * description
    *  * resolution
+   *  * type
    */
   orderBy: string;
 
