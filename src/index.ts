@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    135.0.134
+ * @version    136.0.106
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -189,6 +189,7 @@ export { TimeSheetApprovalResponseDto } from "./models/TimeSheetApprovalResponse
 export { TimesheetCreateRequestDto } from "./models/TimesheetCreateRequestDto.js";
 export { TimesheetDto } from "./models/TimesheetDto.js";
 export { TimesheetFileDto } from "./models/TimesheetFileDto.js";
+export { TimesheetFileResponseDto } from "./models/TimesheetFileResponseDto.js";
 export { TimeSheetProjectDto } from "./models/TimeSheetProjectDto.js";
 export { TimesheetResourceDto } from "./models/TimesheetResourceDto.js";
 export { TimesheetResponseDto } from "./models/TimesheetResponseDto.js";
