@@ -43,13 +43,16 @@ export class RiskClient {
   /**
    * Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
    *
+   * A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
+   * Assumptions, Issues, or Dependencies.
+   *
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
    * @param filter Filter the expression according to oData queries
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  getrisklist(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<RiskDto[]>> {
+  queryRisks(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<RiskDto[]>> {
     const url = `/api/data/risks`;
     const options = {
       params: {
