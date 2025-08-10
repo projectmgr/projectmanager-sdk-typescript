@@ -35,6 +35,11 @@ export type ResourceDto = {
   initials: string;
 
   /**
+   * The name of the Resource. Usually this is the same as the FirstName and LastName
+   */
+  name: string | null;
+
+  /**
    * The first name of the person Resource.
    *
    * Applies to personnel Resources only.
@@ -170,4 +175,9 @@ export type ResourceDto = {
    * The resources avatar url, if any.
    */
   avatarUrl: string | null;
+
+  /**
+   * The language preference for this Resource, used for localization and communication.
+   */
+  language: string | null;
 };

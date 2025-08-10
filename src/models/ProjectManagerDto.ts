@@ -36,4 +36,11 @@ export type ProjectManagerDto = {
    * Avatar's url
    */
   avatarUrl: string | null;
+
+  /**
+   * Collaboration Color for this resource.
+   *
+   * eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
+   */
+  color: string | null;
 };

@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { FileDto } from "../index.js";
+import { TaskFileDto } from "../index.js";
 
 export class NptFilesClient {
   private readonly client: ProjectManagerClient;
@@ -44,5 +45,15 @@ export class NptFilesClient {
   uploadFileToNonProjectTasks(taskId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/non-project-tasks/${taskId}/files`;
     return this.client.fileUpload("post", url, null, fileName);
+  }
+
+  /**
+   * retrieves Npt files
+   *
+   * @param taskId The reference to the Npt
+   */
+  getNptFiles(taskId: string): Promise<AstroResult<TaskFileDto[]>> {
+    const url = `/api/data/non-project-tasks/${taskId}/files`;
+    return this.client.request<AstroResult<TaskFileDto[]>>("get", url, null, null);
   }
 }

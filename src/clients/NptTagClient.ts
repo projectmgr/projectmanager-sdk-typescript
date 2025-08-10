@@ -13,11 +13,10 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { ChangeSetStatusDto } from "../index.js";
-import { NameDto } from "../index.js";
 import { TaskTagDto } from "../index.js";
+import { NameDto } from "../index.js";
 
-export class TaskTagClient {
+export class NptTagClient {
   private readonly client: ProjectManagerClient;
 
   /**
@@ -37,9 +36,9 @@ export class TaskTagClient {
    * @param taskId The unique identifier of the Task for which we will replace TaskTags
    * @param body The replacement list of TaskTags for this Task
    */
-  replaceTaskTags(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
-    const url = `/api/data/tasks/${taskId}/tags`;
-    return this.client.request<AstroResult<ChangeSetStatusDto>>("post", url, null, body);
+  replaceTaskTags(taskId: string, body: NameDto[]): Promise<AstroResult<TaskTagDto[]>> {
+    const url = `/api/data/non-project-tasks/${taskId}/tags`;
+    return this.client.request<AstroResult<TaskTagDto[]>>("post", url, null, body);
   }
 
   /**
@@ -52,9 +51,9 @@ export class TaskTagClient {
    * @param taskId The unique identifier of the Task for which we will add TaskTags
    * @param body The new TaskTags to add to this Task
    */
-  addTaskTagtoTask(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
-    const url = `/api/data/tasks/${taskId}/tags`;
-    return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
+  addTaskTagtoTask(taskId: string, body: NameDto[]): Promise<AstroResult<TaskTagDto[]>> {
+    const url = `/api/data/non-project-tasks/${taskId}/tags`;
+    return this.client.request<AstroResult<TaskTagDto[]>>("put", url, null, body);
   }
 
   /**
@@ -67,9 +66,9 @@ export class TaskTagClient {
    * @param taskId The unique identifier of the Task for which we will remove existing TaskTags
    * @param body The TaskTags to remove from this Task
    */
-  removeTaskTagfromTask(taskId: string, body: NameDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
-    const url = `/api/data/tasks/${taskId}/tags`;
-    return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, body);
+  removeTaskTagfromTask(taskId: string, body: NameDto[]): Promise<AstroResult<object>> {
+    const url = `/api/data/non-project-tasks/${taskId}/tags`;
+    return this.client.request<AstroResult<object>>("delete", url, null, body);
   }
 
   /**
@@ -82,7 +81,7 @@ export class TaskTagClient {
    * @param taskId The unique identifier of the Task for which we will retrieve TaskTags
    */
   retrieveTaskTags(taskId: string): Promise<AstroResult<TaskTagDto[]>> {
-    const url = `/api/data/tasks/${taskId}/tags`;
+    const url = `/api/data/non-project-tasks/${taskId}/tags`;
     return this.client.request<AstroResult<TaskTagDto[]>>("get", url, null, null);
   }
 }

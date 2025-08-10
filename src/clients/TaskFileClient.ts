@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { FileDto } from "../index.js";
+import { TaskFileDto } from "../index.js";
 
 export class TaskFileClient {
   private readonly client: ProjectManagerClient;
@@ -44,5 +45,15 @@ export class TaskFileClient {
   uploadTaskFile(taskId: string, fileName: string): Promise<AstroResult<FileDto>> {
     const url = `/api/data/tasks/${taskId}/files`;
     return this.client.fileUpload("post", url, null, fileName);
+  }
+
+  /**
+   * retrieves task files
+   *
+   * @param taskId The reference to the task
+   */
+  getTaskFiles(taskId: string): Promise<AstroResult<TaskFileDto[]>> {
+    const url = `/api/data/tasks/${taskId}/files`;
+    return this.client.request<AstroResult<TaskFileDto[]>>("get", url, null, null);
   }
 }

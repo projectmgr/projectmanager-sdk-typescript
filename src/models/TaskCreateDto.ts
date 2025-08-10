@@ -112,4 +112,9 @@ export type TaskCreateDto = {
    * milestone is locked, it represents a fixed time within the project that can be used to relate to other tasks.
    */
   isMilestone: boolean | null;
+
+  /**
+   * ParentId
+   */
+  parentId: string | null;
 };

@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    137.0.201
+ * @version    138.1.170
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -26,8 +26,11 @@ import { LicenseClient } from "./index.js";
 import { MeClient } from "./index.js";
 import { NotificationClient } from "./index.js";
 import { NptClient } from "./index.js";
+import { NptDiscussionClient } from "./index.js";
 import { NptFilesClient } from "./index.js";
 import { NptStatusClient } from "./index.js";
+import { NptTagClient } from "./index.js";
+import { NptTodosClient } from "./index.js";
 import { ProjectClient } from "./index.js";
 import { ProjectChargeCodeClient } from "./index.js";
 import { ProjectCustomerClient } from "./index.js";
@@ -85,7 +88,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "137.0.201";
+  private readonly version: string = "138.1.170";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -105,8 +108,11 @@ export class ProjectManagerClient {
   public readonly Me: MeClient;
   public readonly Notification: NotificationClient;
   public readonly Npt: NptClient;
+  public readonly NptDiscussion: NptDiscussionClient;
   public readonly NptFiles: NptFilesClient;
   public readonly NptStatus: NptStatusClient;
+  public readonly NptTag: NptTagClient;
+  public readonly NptTodos: NptTodosClient;
   public readonly Project: ProjectClient;
   public readonly ProjectChargeCode: ProjectChargeCodeClient;
   public readonly ProjectCustomer: ProjectCustomerClient;
@@ -157,8 +163,11 @@ export class ProjectManagerClient {
     this.Me = new MeClient(this);
     this.Notification = new NotificationClient(this);
     this.Npt = new NptClient(this);
+    this.NptDiscussion = new NptDiscussionClient(this);
     this.NptFiles = new NptFilesClient(this);
     this.NptStatus = new NptStatusClient(this);
+    this.NptTag = new NptTagClient(this);
+    this.NptTodos = new NptTodosClient(this);
     this.Project = new ProjectClient(this);
     this.ProjectChargeCode = new ProjectChargeCodeClient(this);
     this.ProjectCustomer = new ProjectCustomerClient(this);
