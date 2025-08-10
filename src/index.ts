@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    137.0.201
+ * @version    138.1.170
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -29,8 +29,11 @@ export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
 export { NotificationClient } from "./clients/NotificationClient.js";
 export { NptClient } from "./clients/NptClient.js";
+export { NptDiscussionClient } from "./clients/NptDiscussionClient.js";
 export { NptFilesClient } from "./clients/NptFilesClient.js";
 export { NptStatusClient } from "./clients/NptStatusClient.js";
+export { NptTagClient } from "./clients/NptTagClient.js";
+export { NptTodosClient } from "./clients/NptTodosClient.js";
 export { ProjectClient } from "./clients/ProjectClient.js";
 export { ProjectChargeCodeClient } from "./clients/ProjectChargeCodeClient.js";
 export { ProjectCustomerClient } from "./clients/ProjectCustomerClient.js";

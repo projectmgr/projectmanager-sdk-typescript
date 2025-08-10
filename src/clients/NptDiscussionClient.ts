@@ -17,7 +17,7 @@ import { DiscussionCommentDto } from "../index.js";
 import { DiscussionCommentCreateResponseDto } from "../index.js";
 import { DiscussionCommentCreateDto } from "../index.js";
 
-export class DiscussionClient {
+export class NptDiscussionClient {
   private readonly client: ProjectManagerClient;
 
   /**
@@ -28,28 +28,28 @@ export class DiscussionClient {
   }
 
   /**
-   * Retrieve all comments written about a task
+   * Retrieve all comments written about a Npt
    *
-   * @param taskId The unique ID number of the task to retrieve comments
+   * @param nptId The unique ID number of the Npt to retrieve comments
    */
-  retrieveTaskComments(taskId: string): Promise<AstroResult<DiscussionCommentDto[]>> {
-    const url = `/api/data/tasks/${taskId}/comments`;
+  retrieveNptComments(nptId: string): Promise<AstroResult<DiscussionCommentDto[]>> {
+    const url = `/api/data/non-project-tasks/${nptId}/comments`;
     return this.client.request<AstroResult<DiscussionCommentDto[]>>("get", url, null, null);
   }
 
   /**
-   * Adds a Markdown-formatted comment to a task.
+   * Adds a Markdown-formatted comment to a Npt.
    *
-   * Tasks can have discussions attached to them.  These discussions can include text with simple
+   * Npts can have discussions attached to them.  These discussions can include text with simple
    * formatting.  Discussion comments are formatted using [Markdown](https://www.markdownguide.org/)
    * and users should be aware that HTML embedding is not permitted due to the risk of cross-site
    * attacks and other embedding challenges.
    *
-   * @param taskId The unique ID number of the task being commented upon
+   * @param nptId The unique ID number of the Npt being commented upon
    * @param body The Markdown-formatted text of the comment
    */
-  createTaskComment(taskId: string, body: DiscussionCommentCreateDto): Promise<AstroResult<DiscussionCommentCreateResponseDto>> {
-    const url = `/api/data/tasks/${taskId}/comments`;
+  createNptComments(nptId: string, body: DiscussionCommentCreateDto): Promise<AstroResult<DiscussionCommentCreateResponseDto>> {
+    const url = `/api/data/non-project-tasks/${nptId}/comments`;
     return this.client.request<AstroResult<DiscussionCommentCreateResponseDto>>("post", url, null, body);
   }
 
@@ -58,8 +58,8 @@ export class DiscussionClient {
    *
    * @param commentId the id of the comment
    */
-  likeComment(commentId: string): Promise<AstroResult<object>> {
-    const url = `/api/data/comments/${commentId}/like`;
+  likeacomment(commentId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/non-project-tasks/comments/${commentId}/like`;
     return this.client.request<AstroResult<object>>("post", url, null, null);
   }
 
@@ -68,8 +68,8 @@ export class DiscussionClient {
    *
    * @param commentId the id of the comment
    */
-  unlikeComment(commentId: string): Promise<AstroResult<object>> {
-    const url = `/api/data/comments/${commentId}/like`;
+  removesathumbsupfromacomment(commentId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/non-project-tasks/comments/${commentId}/like`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 
@@ -78,8 +78,8 @@ export class DiscussionClient {
    *
    * @param commentId Remove a comment
    */
-  removeComment(commentId: string): Promise<AstroResult<object>> {
-    const url = `/api/data/comments/${commentId}`;
+  removeacomment(commentId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/non-project-tasks/comments/${commentId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }

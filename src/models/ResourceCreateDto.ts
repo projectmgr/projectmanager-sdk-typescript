@@ -96,4 +96,9 @@ export type ResourceCreateDto = {
    * eg. teal, cyan, lightblue, blurple, purple, pink, orange, gray
    */
   colorName: string | null;
+
+  /**
+   * Language code for this Resource.
+   */
+  language: string | null;
 };
