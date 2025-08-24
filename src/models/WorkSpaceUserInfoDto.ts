@@ -42,6 +42,11 @@ export type WorkSpaceUserInfoDto = {
   fullName: string;
 
   /**
+   * The id of the workspace the user is currently logged into.
+   */
+  workSpaceId: string;
+
+  /**
    * The name of the Workspace that the current user has logged onto.  For most companies, the workspace
    * name will be the name of the business.
    */
@@ -66,4 +71,33 @@ export type WorkSpaceUserInfoDto = {
    * Workspace Permissions that the user has within the current Workspace.
    */
   permissions: WorkSpacePermissionsDto;
+
+  /**
+   * The current account status of this WorkSpace. This can be one of four statuses:
+   *  - Trial
+   *  - Active
+   *  - Cancelled
+   *  - Expired
+   */
+  workSpaceStatus: string;
+
+  /**
+   * This is true if the WorkSpace is in the Active or Trial state.
+   */
+  workSpaceIsActive: boolean;
+
+  /**
+   * The name of the country that the current Workspace is located in.
+   */
+  workSpaceCountry: string;
+
+  /**
+   * Returns the iso country code for the current workspace.
+   */
+  workSpaceCountryCode: string;
+
+  /**
+   * The location of the user, which is a combination of city, state (US Only), and country.
+   */
+  location: string;
 };

@@ -13,6 +13,8 @@
 
 import { NptStatusDto } from "../index.js";
 import { NptAssigneeDto } from "../index.js";
+import { TaskTagDto } from "../index.js";
+import { TaskTodoDto } from "../index.js";
 
 /**
  * A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
@@ -56,9 +58,64 @@ export type NptDetailsDto = {
   plannedFinishDate: string | null;
 
   /**
+   * If set, this is the actual date when work began on the Task.
+   *
+   * This value contains only the date in year-month-day format.  For display, this
+   * date will always be shown as this same year-month-day regardless of time zone.
+   * For reporting purposes, this date is calculated against the official time zone
+   * of the Workspace.
+   *
+   * For example: A Task has a planned completion date of July 5, 2023 in a Workspace
+   * that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
+   * savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
+   * US Pacific time.
+   */
+  actualStartDate: string | null;
+
+  /**
+   * If set, this is the actual date when work was completed on this Task.
+   *
+   * This value contains only the date in year-month-day format.  For display, this
+   * date will always be shown as this same year-month-day regardless of time zone.
+   * For reporting purposes, this date is calculated against the official time zone
+   * of the Workspace.
+   *
+   * For example: A Task has a planned completion date of July 5, 2023 in a Workspace
+   * that has a time zone of US Pacific Time (GMT-7 or GMT-8, depending on daylight
+   * savings time).  This project is considered overdue on 12:01 AM July 6th 2023 in
+   * US Pacific time.
+   */
+  actualFinishDate: string | null;
+
+  /**
    * The actual effort (in minutes) for this Task.
    */
   actualEffort: number | null;
+
+  /**
+   * The actual duration (in minutes) for this Task.
+   */
+  actualDuration: number | null;
+
+  /**
+   * The actual cost of this Task to date, if known.
+   */
+  actualCost: number | null;
+
+  /**
+   * The planned cost for this Task.  Cannot be negative.
+   */
+  plannedCost: number | null;
+
+  /**
+   * The planned duration (in minutes) for this Task.
+   */
+  plannedDuration: number | null;
+
+  /**
+   * The planned effort (in minutes) for this Task.
+   */
+  plannedEffort: number | null;
 
   /**
    * Return the priority of a task
@@ -90,4 +147,14 @@ export type NptDetailsDto = {
    * guaranteed to be unique within your Workspace.
    */
   shortId: string | null;
+
+  /**
+   * The TaskTags that apply to this Task.
+   */
+  tags: TaskTagDto[] | null;
+
+  /**
+   * A list of TaskTodo items, which are sub-tasks within this Task.
+   */
+  todos: TaskTodoDto[] | null;
 };

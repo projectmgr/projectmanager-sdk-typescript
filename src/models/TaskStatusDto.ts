@@ -32,7 +32,7 @@ export type TaskStatusDto = {
   /**
    * The name of this TaskStatus.
    */
-  name: string | null;
+  name: string;
 
   /**
    * A numerical value that can be used to sort TaskStatus values according to the

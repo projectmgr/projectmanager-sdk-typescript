@@ -152,4 +152,14 @@ export class ResourceClient {
     const url = `/api/data/resources/${resourceId}/resendinvite`;
     return this.client.request<AstroResult<object>>("get", url, null, null);
   }
+
+  /**
+   * Get Resource Avatar
+   *
+   * @param resourceId The id of the resource
+   */
+  getResourceAvatar(resourceId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/resources/${resourceId}/avatar`;
+    return this.client.request<AstroResult<object>>("get", url, null, null);
+  }
 }

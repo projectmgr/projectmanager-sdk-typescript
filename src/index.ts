@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    138.1.170
+ * @version    139.0.157
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -116,6 +116,7 @@ export { NptStatusDto } from "./models/NptStatusDto.js";
 export { NptUpdateDto } from "./models/NptUpdateDto.js";
 export { PendingTimeSheetApprovalDto } from "./models/PendingTimeSheetApprovalDto.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
+export { ProjectAccessDto } from "./models/ProjectAccessDto.js";
 export { ProjectAccessEntryDto } from "./models/ProjectAccessEntryDto.js";
 export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";

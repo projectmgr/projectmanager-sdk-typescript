@@ -51,7 +51,7 @@ export class TaskTodoClient {
   /**
    * Update a todo for a task
    *
-   * @param todoId the id of the task
+   * @param todoId the id of the todo
    * @param body the data for updating a todo
    */
   updateTodo(todoId: string, body: TaskTodoUpdateDto): Promise<AstroResult<TaskTodoDto>> {
