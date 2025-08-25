@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectMemberDto } from "../index.js";
+import { ProjectAccessDto } from "../index.js";
 import { ProjectMembersAccessDto } from "../index.js";
 import { ProjectMemberRoleDto } from "../index.js";
 
@@ -37,6 +38,15 @@ export class ProjectMembersClient {
   retrieveNewProjectMembers(): Promise<AstroResult<ProjectMemberDto[]>> {
     const url = `/api/data/projects/members`;
     return this.client.request<AstroResult<ProjectMemberDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Returns a list of project permissions the user is a member of
+   *
+   */
+  retrieveProjectstheuserisamemberof(): Promise<AstroResult<ProjectAccessDto[]>> {
+    const url = `/api/data/projects/membership`;
+    return this.client.request<AstroResult<ProjectAccessDto[]>>("get", url, null, null);
   }
 
   /**

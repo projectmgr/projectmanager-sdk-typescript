@@ -291,4 +291,14 @@ export type TaskDetailsDto = {
    * The parent task of this Task.
    */
   parentTaskId: string | null;
+
+  /**
+   * The number of child tasks
+   */
+  childTaskCount: number | null;
+
+  /**
+   * The name for the parent task of this Task.
+   */
+  parentTaskName: string | null;
 };

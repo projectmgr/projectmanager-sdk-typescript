@@ -122,4 +122,11 @@ export type ProjectUpdateDto = {
    * To update the project notes
    */
   notes: string | null;
+
+  /**
+   * An optional external reference identifier for this Project.
+   * This value can be used to link the Project to records in external systems,
+   * such as ERP, CRM, or other integrations.
+   */
+  externalReferenceId: string | null;
 };
