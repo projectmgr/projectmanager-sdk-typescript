@@ -120,4 +120,18 @@ export class ProjectClient {
     };
     return this.client.request<AstroResult<object>>("delete", url, options, null);
   }
+
+  /**
+   * Restore a soft deleted project based on its unique identifier.
+   *
+   * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
+   * represent individual items of work that team members must complete.  The sum total of Tasks
+   * within a Project represents the work to be completed for that Project.
+   *
+   * @param projectId The unique identifier of the Project to delete
+   */
+  restoreProject(projectId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/projects/${projectId}/restore`;
+    return this.client.request<AstroResult<object>>("put", url, null, null);
+  }
 }

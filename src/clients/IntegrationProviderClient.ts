@@ -16,8 +16,6 @@ import { AstroResult } from "../index.js";
 import { IntegrationProviderDto } from "../index.js";
 import { ConnectionSchemaDto } from "../index.js";
 import { AuthenticationDto } from "../index.js";
-import { DirectLinkDto } from "../index.js";
-import { AuthenticationStatusDto } from "../index.js";
 
 export class IntegrationProviderClient {
   private readonly client: ProjectManagerClient;
@@ -96,9 +94,9 @@ export class IntegrationProviderClient {
    *
    * @param providerId The unique identifier of the IntegrationProvider for which you are requesting authentication information
    */
-  createUserIntegrationProviderConnection(providerId: string): Promise<AstroResult<DirectLinkDto>> {
+  createUserIntegrationProviderConnection(providerId: string): Promise<AstroResult<ConnectionSchemaDto>> {
     const url = `/api/data/integrations/providers/${providerId}/user-connection`;
-    return this.client.request<AstroResult<DirectLinkDto>>("post", url, null, null);
+    return this.client.request<AstroResult<ConnectionSchemaDto>>("post", url, null, null);
   }
 
   /**
@@ -111,7 +109,7 @@ export class IntegrationProviderClient {
    * @param providerId The identifier to the provider
    * @param body Specify the auth status
    */
-  updateUserIntegrationProviderConnection(providerId: string, body: AuthenticationStatusDto): Promise<AstroResult<object>> {
+  updateUserIntegrationProviderConnection(providerId: string, body: AuthenticationDto): Promise<AstroResult<object>> {
     const url = `/api/data/integrations/providers/${providerId}/user-connection`;
     return this.client.request<AstroResult<object>>("put", url, null, body);
   }

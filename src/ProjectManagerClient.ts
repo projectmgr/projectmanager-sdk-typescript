@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    139.0.157
+ * @version    141.1.156
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -53,6 +53,7 @@ import { TaskAssigneeClient } from "./index.js";
 import { TaskFieldClient } from "./index.js";
 import { TaskFileClient } from "./index.js";
 import { TaskMetadataClient } from "./index.js";
+import { TaskRecurrencyClient } from "./index.js";
 import { TaskStatusClient } from "./index.js";
 import { TaskTagClient } from "./index.js";
 import { TaskTodoClient } from "./index.js";
@@ -88,7 +89,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "139.0.157";
+  private readonly version: string = "141.1.156";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -135,6 +136,7 @@ export class ProjectManagerClient {
   public readonly TaskField: TaskFieldClient;
   public readonly TaskFile: TaskFileClient;
   public readonly TaskMetadata: TaskMetadataClient;
+  public readonly TaskRecurrency: TaskRecurrencyClient;
   public readonly TaskStatus: TaskStatusClient;
   public readonly TaskTag: TaskTagClient;
   public readonly TaskTodo: TaskTodoClient;
@@ -190,6 +192,7 @@ export class ProjectManagerClient {
     this.TaskField = new TaskFieldClient(this);
     this.TaskFile = new TaskFileClient(this);
     this.TaskMetadata = new TaskMetadataClient(this);
+    this.TaskRecurrency = new TaskRecurrencyClient(this);
     this.TaskStatus = new TaskStatusClient(this);
     this.TaskTag = new TaskTagClient(this);
     this.TaskTodo = new TaskTodoClient(this);

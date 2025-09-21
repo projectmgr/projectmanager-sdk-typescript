@@ -29,7 +29,13 @@ export class NptClient {
   }
 
   /**
-   * Gets a Npt
+   * Retrieve a Non-Project Task (NPT) by its unique identifier or by its short ID.
+   * An NPT has both a unique identifier, which is a GUID, and a short ID, which is a small text label that is unique only within your Workspace.
+   *
+   * A Non-Project Task (NPT) is an individual element of work that is outside of a project.
+   * Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
+   * all the same features as other tasks, but since they are not part of a project, they can
+   * be tracked separately by individuals.
    *
    * @param nptId the id of the npt
    */
@@ -39,7 +45,12 @@ export class NptClient {
   }
 
   /**
-   * Update a Npt
+   * Updates a Non-Project Task (NPT) by its unique identifier, which is a GUID.
+   *
+   * A Non-Project Task (NPT) is an individual element of work that is outside of a project.
+   * Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
+   * all the same features as other tasks, but since they are not part of a project, they can
+   * be tracked separately by individuals.
    *
    * @param nptId the id of the npt
    * @param body the fields to update
@@ -50,7 +61,12 @@ export class NptClient {
   }
 
   /**
-   * Remove Npt
+   * Removes a Non-Project Task (NPT) by its unique identifier, which is a GUID.
+   *
+   * A Non-Project Task (NPT) is an individual element of work that is outside of a project.
+   * Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
+   * all the same features as other tasks, but since they are not part of a project, they can
+   * be tracked separately by individuals.
    *
    * @param nptId the id of the npt to remove
    */
@@ -60,7 +76,13 @@ export class NptClient {
   }
 
   /**
-   * Creates a new Npt
+   * Creates a new Non-Project Task (NPT) for the current user. If you specify an assignee for this NPT, that user will be assigned to this task.
+   * If you do not specify an assignee, the NPT will be automatically assigned to you.
+   *
+   * A Non-Project Task (NPT) is an individual element of work that is outside of a project.
+   * Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
+   * all the same features as other tasks, but since they are not part of a project, they can
+   * be tracked separately by individuals.
    *
    * @param body The data used to create the Npt
    */
