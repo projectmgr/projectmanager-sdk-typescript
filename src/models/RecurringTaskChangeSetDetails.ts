@@ -13,12 +13,12 @@
 
 
 /**
- * Set the connection status of an integration
+ * RecurringTaskChangeSetDetails
  */
-export type AuthenticationStatusDto = {
+export type RecurringTaskChangeSetDetails = {
 
   /**
-   * Set to true if the connection was successful. False is not supported right now.
+   * The created Task Ids
    */
-  connected: boolean;
+  taskIds: string[];
 };

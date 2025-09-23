@@ -13,12 +13,22 @@
 
 
 /**
- * This class contains the URL to use to authenticate with the Integration Provider.
+ * Settings for Daily Recurring Tasks
  */
-export type DirectLinkDto = {
+export type DailyRecurringSettingsDto = {
 
   /**
-   * The URL to use to authenticate with the Integration Provider.
+   * RecurringEndDate
    */
-  url: string;
+  recurringEndDate: string | null;
+
+  /**
+   * EndAfterNumberOfOccurences
+   */
+  endAfterNumberOfOccurences: number | null;
+
+  /**
+   * RepeatOnEveryNumberOfWeekDays
+   */
+  repeatOnEveryNumberOfWeekDays: number;
 };
