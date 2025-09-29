@@ -125,6 +125,11 @@ export type TaskUpdateDto = {
   actualFinishDate: string | null;
 
   /**
+   * The actual duration (in minutes) for this Task.  Cannot be negative.
+   */
+  actualDuration: number | null;
+
+  /**
    * If set, this represents the actual tracked cost for this Task.
    */
   actualCost: number | null;

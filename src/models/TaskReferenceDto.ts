@@ -13,27 +13,17 @@
 
 
 /**
- * Settings for Weeky Recurring Tasks
+ * Represents a task that links or depends on another task
  */
-export type WeeklyRecurringSettingsDto = {
+export type TaskReferenceDto = {
 
   /**
-   * RecurringEndDate
+   * The unique identifier for the predecessor task.
    */
-  recurringEndDate: string | null;
+  predecessorId: string;
 
   /**
-   * EndAfterNumberOfOccurences
+   * The unique identifier for the successor task.
    */
-  endAfterNumberOfOccurences: number | null;
-
-  /**
-   * RepeatOnEveryNumberOfWeeks
-   */
-  repeatOnEveryNumberOfWeeks: number | null;
-
-  /**
-   * RepeatWeekDays
-   */
-  repeatWeekDays: number[];
+  successorId: string;
 };

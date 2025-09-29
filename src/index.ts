@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    141.1.156
+ * @version    142.0.226
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -31,6 +31,7 @@ export { NotificationClient } from "./clients/NotificationClient.js";
 export { NptClient } from "./clients/NptClient.js";
 export { NptDiscussionClient } from "./clients/NptDiscussionClient.js";
 export { NptFilesClient } from "./clients/NptFilesClient.js";
+export { NptRecurrencyClient } from "./clients/NptRecurrencyClient.js";
 export { NptStatusClient } from "./clients/NptStatusClient.js";
 export { NptTagClient } from "./clients/NptTagClient.js";
 export { NptTodosClient } from "./clients/NptTodosClient.js";
@@ -67,6 +68,7 @@ export { WorkSpaceClient } from "./clients/WorkSpaceClient.js";
 
 export { ApiKeyCreateDto } from "./models/ApiKeyCreateDto.js";
 export { ApiKeyDto } from "./models/ApiKeyDto.js";
+export { AssigneeDto } from "./models/AssigneeDto.js";
 export { AssigneeUpsertDto } from "./models/AssigneeUpsertDto.js";
 export { AssignmentDto } from "./models/AssignmentDto.js";
 export { AstroError } from "./models/AstroError.js";
@@ -82,14 +84,17 @@ export { CreateTaskFieldDto } from "./models/CreateTaskFieldDto.js";
 export { DailyRecurringSettingsDto } from "./models/DailyRecurringSettingsDto.js";
 export { DashboardSettingCreateDto } from "./models/DashboardSettingCreateDto.js";
 export { DashboardSettingDto } from "./models/DashboardSettingDto.js";
+export { DeletedTasksDto } from "./models/DeletedTasksDto.js";
 export { DiscussionCommentCreateDto } from "./models/DiscussionCommentCreateDto.js";
 export { DiscussionCommentCreateResponseDto } from "./models/DiscussionCommentCreateResponseDto.js";
 export { DiscussionCommentDto } from "./models/DiscussionCommentDto.js";
 export { DiscussionCommentFileDto } from "./models/DiscussionCommentFileDto.js";
+export { DiscussionDataDto } from "./models/DiscussionDataDto.js";
 export { DiscussionEmoji } from "./models/DiscussionEmoji.js";
 export { ExportDto } from "./models/ExportDto.js";
 export { ExportDueDateFilterDto } from "./models/ExportDueDateFilterDto.js";
 export { ExportPriorityFilterDto } from "./models/ExportPriorityFilterDto.js";
+export { FileDataDto } from "./models/FileDataDto.js";
 export { FileDto } from "./models/FileDto.js";
 export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
 export { IdDto } from "./models/IdDto.js";
@@ -151,6 +156,8 @@ export { ReactGridLayoutDto } from "./models/ReactGridLayoutDto.js";
 export { ReactGridLayoutItemDto } from "./models/ReactGridLayoutItemDto.js";
 export { RecurringTaskChangeSetDetails } from "./models/RecurringTaskChangeSetDetails.js";
 export { RecurringTaskChangeSetDetailsChangeSetStatusDto } from "./models/RecurringTaskChangeSetDetailsChangeSetStatusDto.js";
+export { RecurringTaskSettingsDto } from "./models/RecurringTaskSettingsDto.js";
+export { RecurringTaskValidationResultDto } from "./models/RecurringTaskValidationResultDto.js";
 export { ResourceApproverDto } from "./models/ResourceApproverDto.js";
 export { ResourceCreateDto } from "./models/ResourceCreateDto.js";
 export { ResourceDto } from "./models/ResourceDto.js";
@@ -181,6 +188,7 @@ export { TaskMetadataUpdateDto } from "./models/TaskMetadataUpdateDto.js";
 export { TaskOwnerDto } from "./models/TaskOwnerDto.js";
 export { TaskPriorityDto } from "./models/TaskPriorityDto.js";
 export { TaskProjectDto } from "./models/TaskProjectDto.js";
+export { TaskReferenceDto } from "./models/TaskReferenceDto.js";
 export { TaskStatusCreateDto } from "./models/TaskStatusCreateDto.js";
 export { TaskStatusDto } from "./models/TaskStatusDto.js";
 export { TaskStatusUpdateDto } from "./models/TaskStatusUpdateDto.js";

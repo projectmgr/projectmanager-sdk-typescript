@@ -15,6 +15,7 @@ import { NptStatusDto } from "../index.js";
 import { NptAssigneeDto } from "../index.js";
 import { TaskTagDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
+import { TaskOwnerDto } from "../index.js";
 
 /**
  * A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
@@ -157,4 +158,19 @@ export type NptDto = {
    * A list of TaskTodo items, which are sub-tasks within this Task.
    */
   todos: TaskTodoDto[] | null;
+
+  /**
+   * Timestamp when the NPT was created
+   */
+  createDate: string;
+
+  /**
+   * The owner of this Task.
+   */
+  owner: TaskOwnerDto | null;
+
+  /**
+   * The ownerId of this Task.
+   */
+  ownerId: string | null;
 };

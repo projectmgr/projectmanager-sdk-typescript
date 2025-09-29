@@ -13,27 +13,12 @@
 
 
 /**
- * Settings for Weeky Recurring Tasks
+ * RecurringTaskValidationResult
  */
-export type WeeklyRecurringSettingsDto = {
+export type RecurringTaskValidationResultDto = {
 
   /**
-   * RecurringEndDate
+   * The Deleted Task Ids
    */
-  recurringEndDate: string | null;
-
-  /**
-   * EndAfterNumberOfOccurences
-   */
-  endAfterNumberOfOccurences: number | null;
-
-  /**
-   * RepeatOnEveryNumberOfWeeks
-   */
-  repeatOnEveryNumberOfWeeks: number | null;
-
-  /**
-   * RepeatWeekDays
-   */
-  repeatWeekDays: number[];
+  deletedTaskIds: string[];
 };

@@ -52,4 +52,9 @@ export type NptCreateDto = {
    * Specify a list of resources to assign to this NPT
    */
   assignees: string[] | null;
+
+  /**
+   * The unique identifier of the NptStatus for this Npt
+   */
+  statusId: string | null;
 };

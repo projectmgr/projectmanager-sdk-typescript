@@ -13,27 +13,17 @@
 
 
 /**
- * Settings for Weeky Recurring Tasks
+ * Contains details of recurring NPT task deletions.
  */
-export type WeeklyRecurringSettingsDto = {
+export type DeletedTasksDto = {
 
   /**
-   * RecurringEndDate
+   * The total number of tasks that were deleted.
    */
-  recurringEndDate: string | null;
+  deletedCount: number;
 
   /**
-   * EndAfterNumberOfOccurences
+   * The unique identifiers of the tasks that were deleted.
    */
-  endAfterNumberOfOccurences: number | null;
-
-  /**
-   * RepeatOnEveryNumberOfWeeks
-   */
-  repeatOnEveryNumberOfWeeks: number | null;
-
-  /**
-   * RepeatWeekDays
-   */
-  repeatWeekDays: number[];
+  deletedTaskIds: string[];
 };

@@ -21,4 +21,9 @@ export type RecurringTaskChangeSetDetails = {
    * The created Task Ids
    */
   taskIds: string[];
+
+  /**
+   * The ChangeSet Id
+   */
+  changeSetId: string | null;
 };
