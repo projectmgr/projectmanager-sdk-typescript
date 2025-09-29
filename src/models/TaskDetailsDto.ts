@@ -18,6 +18,11 @@ import { TaskTodoDto } from "../index.js";
 import { TaskStatusDto } from "../index.js";
 import { TaskFieldValueDto } from "../index.js";
 import { TaskFileDto } from "../index.js";
+import { TaskOwnerDto } from "../index.js";
+import { RecurringTaskSettingsDto } from "../index.js";
+import { DiscussionDataDto } from "../index.js";
+import { FileDataDto } from "../index.js";
+import { TaskReferenceDto } from "../index.js";
 
 /**
  * A Task is an individual element of work that must be performed to complete a Project.  A
@@ -301,4 +306,69 @@ export type TaskDetailsDto = {
    * The name for the parent task of this Task.
    */
   parentTaskName: string | null;
+
+  /**
+   * The ownerId of this Task.
+   */
+  ownerId: string | null;
+
+  /**
+   * The owner of this Task.
+   */
+  owner: TaskOwnerDto | null;
+
+  /**
+   * If this is a recurring task
+   */
+  recurring: boolean | null;
+
+  /**
+   * The parent task in the recurring task sequence
+   */
+  recurringParentTaskId: string | null;
+
+  /**
+   * The Task Recurrency settings
+   */
+  recurringSettings: RecurringTaskSettingsDto | null;
+
+  /**
+   * The Task Approval Status
+   */
+  approvalStatus: string | null;
+
+  /**
+   * The UserId who last changed the approval status
+   */
+  approvalStatusModifiedBy: string | null;
+
+  /**
+   * When the approval status was last changed
+   */
+  approvalStatusModifiedDate: string | null;
+
+  /**
+   * the last Reminder date for the approval
+   */
+  approvalLastReminderDate: string | null;
+
+  /**
+   * Task discussion data - number of comments, last read time
+   */
+  discussionData: DiscussionDataDto | null;
+
+  /**
+   * Task file data - number of files, last read time
+   */
+  fileData: FileDataDto | null;
+
+  /**
+   * Represents a collection of tasks that should execute after the current task
+   */
+  successors: TaskReferenceDto[] | null;
+
+  /**
+   * Represents a collection of tasks that should execute before the current task
+   */
+  predecessors: TaskReferenceDto[] | null;
 };

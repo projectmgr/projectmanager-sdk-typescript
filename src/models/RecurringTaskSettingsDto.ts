@@ -13,27 +13,37 @@
 
 
 /**
- * Settings for Weeky Recurring Tasks
+ * Recurring settings for a task
  */
-export type WeeklyRecurringSettingsDto = {
+export type RecurringTaskSettingsDto = {
 
   /**
-   * RecurringEndDate
+   * Type
    */
-  recurringEndDate: string | null;
+  type: number;
 
   /**
-   * EndAfterNumberOfOccurences
+   * RepeatEvery
    */
-  endAfterNumberOfOccurences: number | null;
+  repeatEvery: number | null;
 
   /**
-   * RepeatOnEveryNumberOfWeeks
+   * RepeatOn
    */
-  repeatOnEveryNumberOfWeeks: number | null;
+  repeatOn: number[];
 
   /**
-   * RepeatWeekDays
+   * RepeatOn2Level
    */
-  repeatWeekDays: number[];
+  repeatOn2Level: number | null;
+
+  /**
+   * EndsOn
+   */
+  endsOn: string | null;
+
+  /**
+   * EndsAfter
+   */
+  endsAfter: number | null;
 };

@@ -13,27 +13,17 @@
 
 
 /**
- * Settings for Weeky Recurring Tasks
+ * Task assignee dto
  */
-export type WeeklyRecurringSettingsDto = {
+export type AssigneeDto = {
 
   /**
-   * RecurringEndDate
+   * Assignee resource id
    */
-  recurringEndDate: string | null;
+  resourceId: string;
 
   /**
-   * EndAfterNumberOfOccurences
+   * Percent of work assigned to task
    */
-  endAfterNumberOfOccurences: number | null;
-
-  /**
-   * RepeatOnEveryNumberOfWeeks
-   */
-  repeatOnEveryNumberOfWeeks: number | null;
-
-  /**
-   * RepeatWeekDays
-   */
-  repeatWeekDays: number[];
+  percentAssignment: number | null;
 };

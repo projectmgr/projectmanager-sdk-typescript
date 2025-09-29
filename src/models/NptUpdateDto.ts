@@ -33,22 +33,6 @@ export type NptUpdateDto = {
   description: string | null;
 
   /**
-   * The date when work on this Task is planned to begin.
-   *
-   * This value contains only the date in year-month-day format. For display, this
-   * date will always be shown as this same year-month-day regardless of time zone.
-   */
-  plannedStartDate: string | null;
-
-  /**
-   * The date when work on this Task is expected to complete.
-   *
-   * This value contains only the date in year-month-day format. For display, this
-   * date will always be shown as this same year-month-day regardless of time zone.
-   */
-  plannedFinishDate: string | null;
-
-  /**
    * Return the priority of a task
    */
   priorityId: number | null;
@@ -69,9 +53,35 @@ export type NptUpdateDto = {
   statusId: string | null;
 
   /**
-   * If specified, replaces the list of resources assigned to this npt.
+   * The date when work on this Task is planned to begin.
+   *
+   * This value contains only the date in year-month-day format. For display, this
+   * date will always be shown as this same year-month-day regardless of time zone.
    */
-  assignees: string[] | null;
+  plannedStartDate: string | null;
+
+  /**
+   * The date when work on this Task is expected to complete.
+   *
+   * This value contains only the date in year-month-day format. For display, this
+   * date will always be shown as this same year-month-day regardless of time zone.
+   */
+  plannedFinishDate: string | null;
+
+  /**
+   * The planned duration (in minutes) for this Task.  Cannot be negative.
+   */
+  plannedDuration: number | null;
+
+  /**
+   * The planned effort (in minutes) for this Task.  Cannot be negative.
+   */
+  plannedEffort: number | null;
+
+  /**
+   * The planned cost for this Task.  Cannot be negative.
+   */
+  plannedCost: number | null;
 
   /**
    * If set, this is the actual date when work began on the Task.
@@ -104,12 +114,27 @@ export type NptUpdateDto = {
   actualFinishDate: string | null;
 
   /**
-   * The planned cost for this Task.  Cannot be negative.
+   * The actual duration (in minutes) for this Task.  Cannot be negative.
    */
-  plannedCost: number | null;
+  actualDuration: number | null;
 
   /**
    * If set, this represents the actual tracked cost for this Task.
    */
   actualCost: number | null;
+
+  /**
+   * If specified, replaces the list of resources assigned to this npt.
+   */
+  assignees: string[] | null;
+
+  /**
+   * Indicates whether this task participates in a recurring series.
+   * true if the task is part of a recurrence (series parent when is, or a child otherwise);
+   * false if it is a standalone task.
+   * When saved as false during an update, the service layer detaches the task
+   * from its series, which clears parent/child relationships including
+   * and recurringSettings.
+   */
+  recurring: boolean | null;
 };

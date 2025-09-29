@@ -13,27 +13,22 @@
 
 
 /**
- * Settings for Weeky Recurring Tasks
+ * File Data
  */
-export type WeeklyRecurringSettingsDto = {
+export type FileDataDto = {
 
   /**
-   * RecurringEndDate
+   * Task files count
    */
-  recurringEndDate: string | null;
+  count: number;
 
   /**
-   * EndAfterNumberOfOccurences
+   * Last update data
    */
-  endAfterNumberOfOccurences: number | null;
+  lastUpdatedDate: string | null;
 
   /**
-   * RepeatOnEveryNumberOfWeeks
+   * Last read date
    */
-  repeatOnEveryNumberOfWeeks: number | null;
-
-  /**
-   * RepeatWeekDays
-   */
-  repeatWeekDays: number[];
+  lastReadDate: string | null;
 };

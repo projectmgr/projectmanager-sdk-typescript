@@ -115,6 +115,16 @@ export class TaskClient {
   }
 
   /**
+   * Fetch the first level child tasks from the task
+   *
+   * @param taskId Parent task id
+   */
+  fetchthefirstlevelchildtasksfromthetask(taskId: string): Promise<AstroResult<TaskDto[]>> {
+    const url = `/api/data/tasks/${taskId}/subtasks`;
+    return this.client.request<AstroResult<TaskDto[]>>("get", url, null, null);
+  }
+
+  /**
    * Create a new Task within a specified project.
    *
    * A Task is an individual element of work that must be performed to complete a Project.  A

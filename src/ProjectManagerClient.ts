@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    141.1.156
+ * @version    142.0.226
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -28,6 +28,7 @@ import { NotificationClient } from "./index.js";
 import { NptClient } from "./index.js";
 import { NptDiscussionClient } from "./index.js";
 import { NptFilesClient } from "./index.js";
+import { NptRecurrencyClient } from "./index.js";
 import { NptStatusClient } from "./index.js";
 import { NptTagClient } from "./index.js";
 import { NptTodosClient } from "./index.js";
@@ -89,7 +90,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "141.1.156";
+  private readonly version: string = "142.0.226";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -111,6 +112,7 @@ export class ProjectManagerClient {
   public readonly Npt: NptClient;
   public readonly NptDiscussion: NptDiscussionClient;
   public readonly NptFiles: NptFilesClient;
+  public readonly NptRecurrency: NptRecurrencyClient;
   public readonly NptStatus: NptStatusClient;
   public readonly NptTag: NptTagClient;
   public readonly NptTodos: NptTodosClient;
@@ -167,6 +169,7 @@ export class ProjectManagerClient {
     this.Npt = new NptClient(this);
     this.NptDiscussion = new NptDiscussionClient(this);
     this.NptFiles = new NptFilesClient(this);
+    this.NptRecurrency = new NptRecurrencyClient(this);
     this.NptStatus = new NptStatusClient(this);
     this.NptTag = new NptTagClient(this);
     this.NptTodos = new NptTodosClient(this);

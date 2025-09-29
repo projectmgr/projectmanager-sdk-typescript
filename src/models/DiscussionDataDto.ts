@@ -13,27 +13,22 @@
 
 
 /**
- * Settings for Weeky Recurring Tasks
+ * Task discussion data
  */
-export type WeeklyRecurringSettingsDto = {
+export type DiscussionDataDto = {
 
   /**
-   * RecurringEndDate
+   * Count of task comments
    */
-  recurringEndDate: string | null;
+  count: number;
 
   /**
-   * EndAfterNumberOfOccurences
+   * Last update date
    */
-  endAfterNumberOfOccurences: number | null;
+  lastUpdatedDate: string | null;
 
   /**
-   * RepeatOnEveryNumberOfWeeks
+   * Last read date
    */
-  repeatOnEveryNumberOfWeeks: number | null;
-
-  /**
-   * RepeatWeekDays
-   */
-  repeatWeekDays: number[];
+  lastReadDate: string | null;
 };

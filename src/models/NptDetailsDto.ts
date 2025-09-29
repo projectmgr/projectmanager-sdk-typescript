@@ -15,6 +15,10 @@ import { NptStatusDto } from "../index.js";
 import { NptAssigneeDto } from "../index.js";
 import { TaskTagDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
+import { TaskOwnerDto } from "../index.js";
+import { DiscussionDataDto } from "../index.js";
+import { FileDataDto } from "../index.js";
+import { RecurringTaskSettingsDto } from "../index.js";
 
 /**
  * A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
@@ -157,4 +161,44 @@ export type NptDetailsDto = {
    * A list of TaskTodo items, which are sub-tasks within this Task.
    */
   todos: TaskTodoDto[] | null;
+
+  /**
+   * Timestamp when the NPT was created
+   */
+  createDate: string;
+
+  /**
+   * The owner of this Task.
+   */
+  owner: TaskOwnerDto | null;
+
+  /**
+   * The ownerId of this Task.
+   */
+  ownerId: string | null;
+
+  /**
+   * Task file data - number of comments, last read time
+   */
+  discussionData: DiscussionDataDto | null;
+
+  /**
+   * Task file data - number of files, last read time
+   */
+  fileData: FileDataDto | null;
+
+  /**
+   * If this is a recurring Npt task
+   */
+  recurring: boolean | null;
+
+  /**
+   * The parent task in the recurring Npt task sequence
+   */
+  recurringParentTaskId: string | null;
+
+  /**
+   * The  Npt Task Recurrency settings
+   */
+  recurringSettings: RecurringTaskSettingsDto | null;
 };

@@ -16,6 +16,7 @@ import { AstroResult } from "../index.js";
 import { ChangeSetStatusDto } from "../index.js";
 import { AssigneeUpsertDto } from "../index.js";
 import { IdDto } from "../index.js";
+import { AssigneeDto } from "../index.js";
 
 export class TaskAssigneeClient {
   private readonly client: ProjectManagerClient;
@@ -73,5 +74,18 @@ export class TaskAssigneeClient {
   deleteTaskAssignees(taskId: string, body: IdDto[]): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/assignees`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, body);
+  }
+
+  /**
+   * Returns list of assignees.
+   *
+   * A TaskAssignee is an assignment of a Resource to a Task.  You can assign multiple Resources
+   * to a Task and designate what proportion of their time will be allocated to this Task.
+   *
+   * @param taskId The unique identifier of the Task
+   */
+  returnstaskassignees(taskId: string): Promise<AstroResult<AssigneeDto[]>> {
+    const url = `/api/data/tasks/${taskId}/assignees`;
+    return this.client.request<AstroResult<AssigneeDto[]>>("get", url, null, null);
   }
 }
