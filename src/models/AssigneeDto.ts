@@ -26,4 +26,9 @@ export type AssigneeDto = {
    * Percent of work assigned to task
    */
   percentAssignment: number | null;
+
+  /**
+   * Effort assigned to the resource for the task.
+   */
+  assignedEffort: number;
 };
