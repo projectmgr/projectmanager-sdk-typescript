@@ -72,4 +72,14 @@ export type ProjectTemplateDto = {
    * The web default view of the template.
    */
   defaultView: string;
+
+  /**
+   * Used for custom templates - the template owner
+   */
+  ownerId: string;
+
+  /**
+   * User for custom templates - when was it created?
+   */
+  createDate: string;
 };

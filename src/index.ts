@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    143.0.162
+ * @version    144.0.155
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -125,6 +125,7 @@ export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectAccessDto } from "./models/ProjectAccessDto.js";
 export { ProjectAccessEntryDto } from "./models/ProjectAccessEntryDto.js";
 export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
+export { ProjectChargeCodeCreateDto } from "./models/ProjectChargeCodeCreateDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
 export { ProjectCreateAccessDto } from "./models/ProjectCreateAccessDto.js";
 export { ProjectCreateAccessMemberDto } from "./models/ProjectCreateAccessMemberDto.js";
@@ -145,6 +146,7 @@ export { ProjectMemberRoleDto } from "./models/ProjectMemberRoleDto.js";
 export { ProjectMembersAccessDto } from "./models/ProjectMembersAccessDto.js";
 export { ProjectPriorityDto } from "./models/ProjectPriorityDto.js";
 export { ProjectRestoreProjectDto } from "./models/ProjectRestoreProjectDto.js";
+export { ProjectStatusCreateDto } from "./models/ProjectStatusCreateDto.js";
 export { ProjectStatusDto } from "./models/ProjectStatusDto.js";
 export { ProjectTemplateCategoryDto } from "./models/ProjectTemplateCategoryDto.js";
 export { ProjectTemplateDto } from "./models/ProjectTemplateDto.js";
@@ -217,6 +219,8 @@ export { UpdateResourceTeamDto } from "./models/UpdateResourceTeamDto.js";
 export { UpdateTaskFieldValueDto } from "./models/UpdateTaskFieldValueDto.js";
 export { UserError } from "./models/UserError.js";
 export { UserRoleDto } from "./models/UserRoleDto.js";
+export { UserRolePermissionDto } from "./models/UserRolePermissionDto.js";
+export { UserRolePermissionsDto } from "./models/UserRolePermissionsDto.js";
 export { WeeklyRecurringSettingsDto } from "./models/WeeklyRecurringSettingsDto.js";
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
 export { WorkSpaceLinksDto } from "./models/WorkSpaceLinksDto.js";

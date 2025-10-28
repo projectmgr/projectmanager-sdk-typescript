@@ -13,24 +13,23 @@
 
 
 /**
- * A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has
- * a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared
- * among Projects.
+ * The basic permission object
  */
-export type ProjectChargeCodeDto = {
+export type UserRolePermissionDto = {
 
   /**
-   * The unique identifier of this ChargeCode
+   * The description of the permission
    */
-  id: string;
+  description: string;
 
   /**
-   * The name of this ChargeCode
+   * True if the permission is on
    */
-  name: string;
+  value: boolean;
 
   /**
-   * Status of Charge Code
+   * If true this permission can be turned on or off for this role.
+   * Most roles can have all permissions modified, but some roles have all or some permissions fixed.
    */
-  isActive: boolean;
+  canBeModified: boolean;
 };
