@@ -13,24 +13,14 @@
 
 
 /**
- * A ChargeCode is a code used to identify costs within your Projects.  Each ChargeCode has
- * a name and a unique identifier.  ChargeCodes are defined per Workspace and are shared
- * among Projects.
+ * A ProjectStatus is a code used to identify costs within your Projects.  Each
+ * ProjectStatus has a name and a unique identifier.  Status are defined per
+ * Workspace and are shared among Projects.
  */
-export type ProjectChargeCodeDto = {
+export type ProjectStatusCreateDto = {
 
   /**
-   * The unique identifier of this ChargeCode
-   */
-  id: string;
-
-  /**
-   * The name of this ChargeCode
+   * The name of this ProjectStatus
    */
   name: string;
-
-  /**
-   * Status of Charge Code
-   */
-  isActive: boolean;
 };

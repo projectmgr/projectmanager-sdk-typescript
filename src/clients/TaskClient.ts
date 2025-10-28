@@ -66,6 +66,9 @@ export class TaskClient {
    * Task can have one or more Resources assigned to it.  Tasks can be linked to other Tasks to
    * indicate whether they have a dependency or a connection.
    *
+   * This GET operation will also update the internal "last viewed" date for this Task for the
+   * current user.
+   *
    * @param taskId The unique identifier or short ID of the Task to retrieve
    */
   retrieveTask(taskId: string): Promise<AstroResult<TaskDetailsDto>> {

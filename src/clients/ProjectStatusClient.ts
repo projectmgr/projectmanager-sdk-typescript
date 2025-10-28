@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectStatusDto } from "../index.js";
+import { ProjectStatusCreateDto } from "../index.js";
 
 export class ProjectStatusClient {
   private readonly client: ProjectManagerClient;
@@ -36,5 +37,15 @@ export class ProjectStatusClient {
   retrieveProjectStatuses(): Promise<AstroResult<ProjectStatusDto[]>> {
     const url = `/api/data/projects/statuses`;
     return this.client.request<AstroResult<ProjectStatusDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Create a project Status
+   *
+   * @param body The data to create the Status
+   */
+  createProjectStatus(body: ProjectStatusCreateDto): Promise<AstroResult<ProjectStatusDto>> {
+    const url = `/api/data/projects/statuses`;
+    return this.client.request<AstroResult<ProjectStatusDto>>("post", url, null, body);
   }
 }

@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectChargeCodeDto } from "../index.js";
+import { ProjectChargeCodeCreateDto } from "../index.js";
 
 export class ProjectChargeCodeClient {
   private readonly client: ProjectManagerClient;
@@ -36,5 +37,15 @@ export class ProjectChargeCodeClient {
   retrieveChargeCodes(): Promise<AstroResult<ProjectChargeCodeDto[]>> {
     const url = `/api/data/projects/chargecodes`;
     return this.client.request<AstroResult<ProjectChargeCodeDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Create a project charge code
+   *
+   * @param body The data to create the charge code
+   */
+  createProjectChargeCode(body: ProjectChargeCodeCreateDto): Promise<AstroResult<ProjectChargeCodeDto>> {
+    const url = `/api/data/projects/chargecodes`;
+    return this.client.request<AstroResult<ProjectChargeCodeDto>>("post", url, null, body);
   }
 }
