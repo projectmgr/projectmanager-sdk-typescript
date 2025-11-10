@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    144.0.155
+ * @version    145.0.219
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -127,6 +127,7 @@ export { ProjectAccessEntryDto } from "./models/ProjectAccessEntryDto.js";
 export { ProjectChangeStatusDto } from "./models/ProjectChangeStatusDto.js";
 export { ProjectChargeCodeCreateDto } from "./models/ProjectChargeCodeCreateDto.js";
 export { ProjectChargeCodeDto } from "./models/ProjectChargeCodeDto.js";
+export { ProjectChargeCodeUpdateDto } from "./models/ProjectChargeCodeUpdateDto.js";
 export { ProjectCreateAccessDto } from "./models/ProjectCreateAccessDto.js";
 export { ProjectCreateAccessMemberDto } from "./models/ProjectCreateAccessMemberDto.js";
 export { ProjectCreateDto } from "./models/ProjectCreateDto.js";
@@ -139,7 +140,9 @@ export { ProjectFieldValueDto } from "./models/ProjectFieldValueDto.js";
 export { ProjectFileDto } from "./models/ProjectFileDto.js";
 export { ProjectFileFolderDto } from "./models/ProjectFileFolderDto.js";
 export { ProjectFileTaskDto } from "./models/ProjectFileTaskDto.js";
+export { ProjectFolderCreateDto } from "./models/ProjectFolderCreateDto.js";
 export { ProjectFolderDto } from "./models/ProjectFolderDto.js";
+export { ProjectFolderUpdateDto } from "./models/ProjectFolderUpdateDto.js";
 export { ProjectManagerDto } from "./models/ProjectManagerDto.js";
 export { ProjectMemberDto } from "./models/ProjectMemberDto.js";
 export { ProjectMemberRoleDto } from "./models/ProjectMemberRoleDto.js";
@@ -148,6 +151,7 @@ export { ProjectPriorityDto } from "./models/ProjectPriorityDto.js";
 export { ProjectRestoreProjectDto } from "./models/ProjectRestoreProjectDto.js";
 export { ProjectStatusCreateDto } from "./models/ProjectStatusCreateDto.js";
 export { ProjectStatusDto } from "./models/ProjectStatusDto.js";
+export { ProjectStatusUpdateDto } from "./models/ProjectStatusUpdateDto.js";
 export { ProjectTemplateCategoryDto } from "./models/ProjectTemplateCategoryDto.js";
 export { ProjectTemplateDto } from "./models/ProjectTemplateDto.js";
 export { ProjectUpdateDto } from "./models/ProjectUpdateDto.js";

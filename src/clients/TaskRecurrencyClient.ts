@@ -19,6 +19,9 @@ import { MonthlyRecurringSettingsDto } from "../index.js";
 import { DailyRecurringSettingsDto } from "../index.js";
 import { YearlyRecurringSettingsDto } from "../index.js";
 import { ChangeSetStatusDto } from "../index.js";
+import { RecurringTaskValidationResultDto } from "../index.js";
+import { RecurringTaskSettingsDto } from "../index.js";
+import { RecurringTaskChangeSetDetails } from "../index.js";
 
 export class TaskRecurrencyClient {
   private readonly client: ProjectManagerClient;
@@ -31,9 +34,14 @@ export class TaskRecurrencyClient {
   }
 
   /**
-   * Create Weekly Recurring Tasks
+   * Changes an existing Task into a Recurring Task, so that it will recur regularly given the specified rules.
    *
-   * @param taskId The unique identifier or short ID of the Task
+   * A Recurring Task is one that must be completed on a specific regular frequency, such as Daily, Weekly, Monthly,
+   * or Yearly.  To create a Recurring Task, you must first create a regular Task with the necessary information,
+   * then call one of the Create Recurring Task APIs.  To remove an instance of a Recurring Task, call Delete
+   * Recurring Task and specify one or more instances of the Recurring Task.
+   *
+   * @param taskId The unique identifier of the Task
    * @param body The weekly recurring settings
    */
   createWeeklyRecurringTasks(taskId: string, body: WeeklyRecurringSettingsDto): Promise<AstroResult<RecurringTaskChangeSetDetailsChangeSetStatusDto>> {
@@ -42,9 +50,14 @@ export class TaskRecurrencyClient {
   }
 
   /**
-   * Create Monthly Recurring Tasks
+   * Changes an existing Task into a Recurring Task, so that it will recur regularly given the specified rules.
    *
-   * @param taskId The unique identifier or short ID of the Task
+   * A Recurring Task is one that must be completed on a specific regular frequency, such as Daily, Weekly, Monthly,
+   * or Yearly.  To create a Recurring Task, you must first create a regular Task with the necessary information,
+   * then call one of the Create Recurring Task APIs.  To remove an instance of a Recurring Task, call Delete
+   * Recurring Task and specify one or more instances of the Recurring Task.
+   *
+   * @param taskId The unique identifier of the Task
    * @param body The monthly recurring settings
    */
   createMonthlyRecurringTasks(taskId: string, body: MonthlyRecurringSettingsDto): Promise<AstroResult<RecurringTaskChangeSetDetailsChangeSetStatusDto>> {
@@ -53,9 +66,14 @@ export class TaskRecurrencyClient {
   }
 
   /**
-   * Create Daily Recurring Tasks
+   * Changes an existing Task into a Recurring Task, so that it will recur regularly given the specified rules.
    *
-   * @param taskId The unique identifier or short ID of the Task
+   * A Recurring Task is one that must be completed on a specific regular frequency, such as Daily, Weekly, Monthly,
+   * or Yearly.  To create a Recurring Task, you must first create a regular Task with the necessary information,
+   * then call one of the Create Recurring Task APIs.  To remove an instance of a Recurring Task, call Delete
+   * Recurring Task and specify one or more instances of the Recurring Task.
+   *
+   * @param taskId The unique identifier of the Task
    * @param body The daily recurring settings
    */
   createDailyRecurringTasks(taskId: string, body: DailyRecurringSettingsDto): Promise<AstroResult<RecurringTaskChangeSetDetailsChangeSetStatusDto>> {
@@ -64,9 +82,14 @@ export class TaskRecurrencyClient {
   }
 
   /**
-   * Create Yearly Recurring Tasks
+   * Changes an existing Task into a Recurring Task, so that it will recur regularly given the specified rules.
    *
-   * @param taskId The unique identifier or short ID of the Task
+   * A Recurring Task is one that must be completed on a specific regular frequency, such as Daily, Weekly, Monthly,
+   * or Yearly.  To create a Recurring Task, you must first create a regular Task with the necessary information,
+   * then call one of the Create Recurring Task APIs.  To remove an instance of a Recurring Task, call Delete
+   * Recurring Task and specify one or more instances of the Recurring Task.
+   *
+   * @param taskId The unique identifier of the Task
    * @param body The yearly recurring settings
    */
   createYearlyRecurringTasks(taskId: string, body: YearlyRecurringSettingsDto): Promise<AstroResult<RecurringTaskChangeSetDetailsChangeSetStatusDto>> {
@@ -75,13 +98,61 @@ export class TaskRecurrencyClient {
   }
 
   /**
-   * Delete Recurring Tasks
+   * Removes one or more instances of a Recurring Task based on the `option` you specify: `this` means to remove
+   * a single instance, `all` means to remove all instances, or `future` means to remove all future instances of
+   * the Recurring Task.
    *
-   * @param taskId The unique identifier or short ID of the Task
-   * @param option The options for the deletion
+   * A Recurring Task is one that must be completed on a specific regular frequency, such as Daily, Weekly, Monthly,
+   * or Yearly.  To create a Recurring Task, you must first create a regular Task with the necessary information,
+   * then call one of the Create Recurring Task APIs.  To remove an instance of a Recurring Task, call Delete
+   * Recurring Task and specify one or more instances of the Recurring Task.
+   *
+   * @param taskId The unique identifier of the Task
+   * @param option Specify `this`, `all`, or `future` to indicate which task recurrnces to delete.
    */
   deleteRecurringTasks(taskId: string, option: string): Promise<AstroResult<ChangeSetStatusDto>> {
     const url = `/api/data/tasks/${taskId}/recurring/${option}`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, null);
+  }
+
+  /**
+   * Reviews potential updates to a Recurring Task and report back on the list of changes that would occur if this
+   * Recurring Task was updated with these settings.
+   *
+   * When making changes to a Recurring Task, you may want to investigate the consequences of your changes first
+   * before finalizing the changes.  You can use the Validate Recurring Tasks API to examine these changes.  When
+   * you are happy with the changes, call Update Recurring Tasks to complete them.
+   *
+   * A Recurring Task is one that must be completed on a specific regular frequency, such as Daily, Weekly, Monthly,
+   * or Yearly.  To create a Recurring Task, you must first create a regular Task with the necessary information,
+   * then call one of the Create Recurring Task APIs.  To remove an instance of a Recurring Task, call Delete
+   * Recurring Task and specify one or more instances of the Recurring Task.
+   *
+   * @param taskId The unique identifier of the Task
+   * @param body The new settings
+   */
+  validateRecurringTasks(taskId: string, body: RecurringTaskSettingsDto): Promise<AstroResult<RecurringTaskValidationResultDto>> {
+    const url = `/api/data/tasks/${taskId}/recurring/settings/validate`;
+    return this.client.request<AstroResult<RecurringTaskValidationResultDto>>("post", url, null, body);
+  }
+
+  /**
+   * Updates the settings for a Recurring Task and re-generates occurrences of the Recurring Task from the new rules.
+   *
+   * When making changes to a Recurring Task, you may want to investigate the consequences of your changes first
+   * before finalizing the changes.  You can use the Validate Recurring Tasks API to examine these changes.  When
+   * you are happy with the changes, call Update Recurring Tasks to complete them.
+   *
+   * A Recurring Task is one that must be completed on a specific regular frequency, such as Daily, Weekly, Monthly,
+   * or Yearly.  To create a Recurring Task, you must first create a regular Task with the necessary information,
+   * then call one of the Create Recurring Task APIs.  To remove an instance of a Recurring Task, call Delete
+   * Recurring Task and specify one or more instances of the Recurring Task.
+   *
+   * @param taskId The unique identifier of the Task
+   * @param body The new settings
+   */
+  updateRecurringTasks(taskId: string, body: RecurringTaskSettingsDto): Promise<AstroResult<RecurringTaskChangeSetDetails>> {
+    const url = `/api/data/tasks/${taskId}/recurring/settings`;
+    return this.client.request<AstroResult<RecurringTaskChangeSetDetails>>("put", url, null, body);
   }
 }

@@ -15,6 +15,7 @@ import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectChargeCodeDto } from "../index.js";
 import { ProjectChargeCodeCreateDto } from "../index.js";
+import { ProjectChargeCodeUpdateDto } from "../index.js";
 
 export class ProjectChargeCodeClient {
   private readonly client: ProjectManagerClient;
@@ -47,5 +48,26 @@ export class ProjectChargeCodeClient {
   createProjectChargeCode(body: ProjectChargeCodeCreateDto): Promise<AstroResult<ProjectChargeCodeDto>> {
     const url = `/api/data/projects/chargecodes`;
     return this.client.request<AstroResult<ProjectChargeCodeDto>>("post", url, null, body);
+  }
+
+  /**
+   * Update a project charge code
+   *
+   * @param chargeCodeId The id of the charge code
+   * @param body The data to update the charge code
+   */
+  updateProjectChargeCode(chargeCodeId: string, body: ProjectChargeCodeUpdateDto): Promise<AstroResult<ProjectChargeCodeDto>> {
+    const url = `/api/data/projects/chargecodes/${chargeCodeId}`;
+    return this.client.request<AstroResult<ProjectChargeCodeDto>>("put", url, null, body);
+  }
+
+  /**
+   * Delete a project charge code
+   *
+   * @param chargeCodeId The id of the charge code
+   */
+  deleteProjectChargeCode(chargeCodeId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/projects/chargecodes/${chargeCodeId}`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }
