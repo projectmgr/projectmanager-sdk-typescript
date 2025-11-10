@@ -33,19 +33,47 @@ export class TimesheetClient {
   }
 
   /**
-   * Creates new time entry for given resource on given day.
+   * Creates new time entry for Resource on a given day.
    *
-   * @param body Payload
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
+   *
+   * @param body The time entry you wish to create
    */
-  createtimeentry(body: TimesheetCreateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
+  createTimeEntry(body: TimesheetCreateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
     const url = `/api/data/timesheets`;
     return this.client.request<AstroResult<TimesheetResponseDto>>("post", url, null, body);
   }
 
   /**
-   * Retrieve a list of TimeSheets that match an [OData formatted query](https://www.odata.org/).
+   * Retrieve a list of time entries that match an [OData formatted query](https://www.odata.org/).
    *
-   * Time Sheets is a list of times per task
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
    *
    * @param top The number of records to return
    * @param skip Skips the given number of records and then returns $top records
@@ -53,7 +81,7 @@ export class TimesheetClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  queryTimeSheets(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<TimesheetDto[]>> {
+  queryTimeEntries(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<TimesheetDto[]>> {
     const url = `/api/data/timesheets`;
     const options = {
       params: {
@@ -68,11 +96,26 @@ export class TimesheetClient {
   }
 
   /**
-   * Delete time entry by id.
+   * Delete time entry by its unique identifier.
    *
-   * @param timesheetId time entry id
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
+   *
+   * @param timesheetId The unique identifier of the time entry to delete
    */
-  deletetimeentry(timesheetId: string): Promise<AstroResult<object>> {
+  deleteTimeEntry(timesheetId: string): Promise<AstroResult<object>> {
     const url = `/api/data/timesheets/${timesheetId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -80,49 +123,127 @@ export class TimesheetClient {
   /**
    * Updates a time entry by its unique identifier.
    *
-   * @param timesheetId time entry id
-   * @param body payload
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
+   *
+   * @param timesheetId The unique identifier of the time entry to update
+   * @param body The new information that should replace the previous time entry
    */
-  updatetimeentry(timesheetId: string, body: TimesheetUpdateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
+  updateTimeEntry(timesheetId: string, body: TimesheetUpdateRequestDto): Promise<AstroResult<TimesheetResponseDto>> {
     const url = `/api/data/timesheets/${timesheetId}`;
     return this.client.request<AstroResult<TimesheetResponseDto>>("put", url, null, body);
   }
 
   /**
-   * Returns active admin tasks that are used to report time not related to work on projects. I.e. annual/sick leave etc
+   * Retrieves a list of Administrative Tasks that are defined for use within your Workspace.
+   *
+   * Administrative tasks are a list of regular, recurring non-Task actions that are typically associated with
+   * overhead, such as sick leave, travel, or attending meetings.
+   *
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
    *
    */
-  returnsactiveadmintasksthatareusedtoreporttime(): Promise<AstroResult<TimesheetAdminTypeDto[]>> {
+  retrieveAdministrativeTasks(): Promise<AstroResult<TimesheetAdminTypeDto[]>> {
     const url = `/api/data/timesheets/admin-tasks`;
     return this.client.request<AstroResult<TimesheetAdminTypeDto[]>>("get", url, null, null);
   }
 
   /**
-   * Submit a timesheet for approval for a specific resource.
+   * Submit a Timesheet for approval for a specific Resource and week.
    *
-   * @param body The timesheet to be submitted for approval
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
+   *
+   * @param body The Timesheet to be submitted for approval
    */
-  submitResourceTimeSheetForApproval(body: TimeSheetApprovalDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
+  submitTimeSheet(body: TimeSheetApprovalDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
     const url = `/api/data/timesheets/approvals`;
     return this.client.request<AstroResult<TimeSheetApprovalResponseDto>>("post", url, null, body);
   }
 
   /**
-   * Approve a timesheet approval request
+   * Approve an existing Timesheet approval request.
    *
-   * @param body The timesheet to approve
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
+   *
+   * @param body The Timesheet to approve
    */
-  approveResourceTimeSheetApprovalRequest(body: TimeSheetApprovalDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
+  approveTimeSheet(body: TimeSheetApprovalDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
     const url = `/api/data/timesheets/approvals/approve`;
     return this.client.request<AstroResult<TimeSheetApprovalResponseDto>>("post", url, null, body);
   }
 
   /**
-   * Rejects a specific resource's timesheet approval request for a specific week.
+   * Rejects a specific resource's Timesheet approval request for a specific week.
    *
-   * @param body The data for rejecting the approval request
+   * A Timesheet is a collection of time entries for a particular Resource for a specific week.  Each time
+   * entry records the number of whole minutes spent by this Resource on an activity. An activity can be a Task
+   * in any project that Resource can access, or the activity can be an administrative task such as "Sick
+   * Leave" or "Meetings".  When a time entry is linked to a Task, the number of minutes spent on the time entry
+   * are recorded as time spent on the Task.  Time entries linked to an administrative tasks are grouped for
+   * reporting but are not added to any Task within your Workspace.
+   *
+   * Time entries are recorded in whole minutes.  If you specify a time entry in fractional hours, either using
+   * the API or via the web application, the amount you specify will be converted to minutes and rounded to the
+   * nearest neighbor using the rounding algorithm Midpoint-Away-From-Zero.
+   *
+   * When a Timesheet is submitted for approval or approved, users are no longer permitted to create, update, or
+   * delete time entries for that week.  Users with Global Admin level access can override this restriction and
+   * continue to make changes to a Timesheet after approval.
+   *
+   * @param body Information about the Timesheet approval request to be rejected
    */
-  rejectResourceTimeSheetApprovalRequest(body: TimeSheetApprovalRejectDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
+  rejectTimeSheet(body: TimeSheetApprovalRejectDto): Promise<AstroResult<TimeSheetApprovalResponseDto>> {
     const url = `/api/data/timesheets/approvals/reject`;
     return this.client.request<AstroResult<TimeSheetApprovalResponseDto>>("post", url, null, body);
   }

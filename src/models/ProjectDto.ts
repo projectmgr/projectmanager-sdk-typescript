@@ -242,4 +242,10 @@ export type ProjectDto = {
    * such as ERP, CRM, or other integrations.
    */
   externalReferenceId: string | null;
+
+  /**
+   * Represents the unique identifier of the owner associated with the Project.
+   * This may be used to identify the user or entity responsible for the Project.
+   */
+  ownerId: string | null;
 };

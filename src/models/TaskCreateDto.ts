@@ -114,7 +114,14 @@ export type TaskCreateDto = {
   isMilestone: boolean | null;
 
   /**
-   * ParentId
+   * Gets or sets the unique identifier of the parent task.
+   * If set, this task will be a child of the specified parent task, supporting task hierarchies and sub-tasks.
    */
   parentId: string | null;
+
+  /**
+   * Gets or sets the position of the task within the list of project tasks.
+   * Used to determine the order of tasks in the project with the first task being 1.
+   */
+  index: number | null;
 };
