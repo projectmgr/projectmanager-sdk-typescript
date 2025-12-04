@@ -33,4 +33,9 @@ export type ProjectStatusDto = {
    * Is this a deleted status
    */
   isDeleted: boolean;
+
+  /**
+   * Indicates whether this ProjectStatus is a system and cannot be deleted or modified.
+   */
+  isSystem: boolean;
 };

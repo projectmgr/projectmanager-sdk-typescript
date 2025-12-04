@@ -48,11 +48,6 @@ export type IntegrationDto = {
   isMultiInstance: boolean;
 
   /**
-   * Extra configuration metadata for this Instance.
-   */
-  config: object;
-
-  /**
    * The list of SKUS for this Integration.
    */
   licenseSkus: string[];

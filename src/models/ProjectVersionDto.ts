@@ -69,4 +69,19 @@ export type ProjectVersionDto = {
    * Subset of the changes related to this ProjectVersion
    */
   changeData: ProjectVersionChangeDataDto;
+
+  /**
+   * The name of the application that made this change
+   */
+  applicationName: string | null;
+
+  /**
+   * The Id of the token that made this change
+   */
+  tokenId: string | null;
+
+  /**
+   * The name of the token that made this change
+   */
+  tokenName: string | null;
 };

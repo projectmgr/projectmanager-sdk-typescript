@@ -20,6 +20,7 @@ import { ProjectCustomerDto } from "../index.js";
 import { ProjectMemberDto } from "../index.js";
 import { ProjectFieldValueDto } from "../index.js";
 import { ProjectFileDto } from "../index.js";
+import { ProjectWorkingDaysDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
@@ -248,4 +249,11 @@ export type ProjectDto = {
    * This may be used to identify the user or entity responsible for the Project.
    */
   ownerId: string | null;
+
+  /**
+   * Represents the configuration of working days for the project, indicating which days of the week
+   * are considered as working days.
+   * This allows for customization of scheduling and availability based on the project's requirements.
+   */
+  workingDays: ProjectWorkingDaysDto;
 };
