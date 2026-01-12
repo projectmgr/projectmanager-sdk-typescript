@@ -1,15 +1,15 @@
 /***
  * ProjectManager API for TypeScript
  *
- * (c) 2023-2025 ProjectManager.com, Inc.
+ * (c) 2023-2026 ProjectManager.com, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
- * @copyright  2023-2025 ProjectManager.com, Inc.
- * @version    146.1.229
+ * @copyright  2023-2026 ProjectManager.com, Inc.
+ * @version    148.0.136
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -27,6 +27,7 @@ export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.j
 export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.js";
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
+export { MeetingsClient } from "./clients/MeetingsClient.js";
 export { NotificationClient } from "./clients/NotificationClient.js";
 export { NptClient } from "./clients/NptClient.js";
 export { NptDiscussionClient } from "./clients/NptDiscussionClient.js";
@@ -106,6 +107,11 @@ export { IntegrationInstanceDto } from "./models/IntegrationInstanceDto.js";
 export { IntegrationProviderDto } from "./models/IntegrationProviderDto.js";
 export { LicenseDto } from "./models/LicenseDto.js";
 export { MasterConnectionSchemeDto } from "./models/MasterConnectionSchemeDto.js";
+export { MeetingAssigneeDto } from "./models/MeetingAssigneeDto.js";
+export { MeetingCreateDto } from "./models/MeetingCreateDto.js";
+export { MeetingDetailsDto } from "./models/MeetingDetailsDto.js";
+export { MeetingDto } from "./models/MeetingDto.js";
+export { MeetingUpdateDto } from "./models/MeetingUpdateDto.js";
 export { MonthlyRecurringSettingsDto } from "./models/MonthlyRecurringSettingsDto.js";
 export { NameDto } from "./models/NameDto.js";
 export { NotificationDataDto } from "./models/NotificationDataDto.js";
