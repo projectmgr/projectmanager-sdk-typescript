@@ -13,8 +13,8 @@
 
 
 /**
- * A NptAssignee is a Resource to whom a Npt is assigned. A single Npt
- * can be assigned to multiple NptAssignee.
+ * A MeetingAssignee is a Resource to whom a Meeting is assigned. A single Meeting
+ * can be assigned to multiple MeetingAssignee.
  */
 export type MeetingAssigneeDto = {
 
@@ -24,23 +24,23 @@ export type MeetingAssigneeDto = {
   id: string;
 
   /**
-   * A shortened set of initials to use when representing this NptAssignee visually
+   * A shortened set of initials to use when representing this MeetingAssignee visually
    * in small areas.  The initials may be used in small icons or other overlays.
    */
   initials: string;
 
   /**
-   * The name of this NptAssignee
+   * The name of this MeetingAssignee
    */
   name: string | null;
 
   /**
-   * A more complete description of the NptAssignee.
+   * A more complete description of the MeetingAssignee.
    */
   description: string | null;
 
   /**
-   * True if this NptAssignee is currently active with the Project.
+   * True if this MeetingAssignee is currently active with the Project.
    */
   isActive: boolean;
 
@@ -52,28 +52,28 @@ export type MeetingAssigneeDto = {
   colorName: string | null;
 
   /**
-   * The first or given name of this NptAssignee.
+   * The first or given name of this MeetingAssignee.
    *
-   * For personnel NptAssignees only.
+   * For personnel MeetingAssignees only.
    */
   firstName: string | null;
 
   /**
-   * The last or family name of this NptAssignee.
+   * The last or family name of this MeetingAssignee.
    *
-   * For personnel NptAssignees only.
+   * For personnel MeetingAssignees only.
    */
   lastName: string | null;
 
   /**
-   * A shortened version of the name of this NptAssignee.  This is used in areas
+   * A shortened version of the name of this MeetingAssignee.  This is used in areas
    * where the Initials are too short but the full name is too long.
    */
   shortName: string | null;
 
   /**
-   * A link to an Avatar for this NptAssignee.  Avatars are small images or representations
-   * that can be used to visually identify this NptAssignee at a glance.
+   * A link to an Avatar for this MeetingAssignee.  Avatars are small images or representations
+   * that can be used to visually identify this MeetingAssignee at a glance.
    */
   avatarUrl: string | null;
 

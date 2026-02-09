@@ -15,9 +15,10 @@ import { MeetingAssigneeDto } from "../index.js";
 import { TaskTagDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
 import { TaskOwnerDto } from "../index.js";
+import { MeetingProjectDto } from "../index.js";
 
 /**
- * A Meeting is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
+ * A Meeting is a task that does not belong to the project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
  *
  * Meeting's are a lightweight version of a project task.
  */
@@ -107,4 +108,9 @@ export type MeetingDto = {
    * The ownerId of this Task.
    */
   ownerId: string | null;
+
+  /**
+   * The project this meeting belongs to
+   */
+  project: MeetingProjectDto | null;
 };

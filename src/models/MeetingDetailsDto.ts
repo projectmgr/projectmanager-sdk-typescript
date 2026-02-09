@@ -15,14 +15,15 @@ import { MeetingAssigneeDto } from "../index.js";
 import { TaskTagDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
 import { TaskOwnerDto } from "../index.js";
+import { MeetingProjectDto } from "../index.js";
 import { DiscussionDataDto } from "../index.js";
 import { FileDataDto } from "../index.js";
 import { RecurringTaskSettingsDto } from "../index.js";
 
 /**
- * A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
+ * A Meeting is a task that either does not belong to a project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
  *
- * NPT's are a lightweight version of a project task.
+ * Meetings are a lightweight version of a project task.
  */
 export type MeetingDetailsDto = {
 
@@ -112,6 +113,11 @@ export type MeetingDetailsDto = {
   ownerId: string | null;
 
   /**
+   * The project this meeting belongs to
+   */
+  project: MeetingProjectDto | null;
+
+  /**
    * Task file data - number of comments, last read time
    */
   discussionData: DiscussionDataDto | null;
@@ -122,17 +128,17 @@ export type MeetingDetailsDto = {
   fileData: FileDataDto | null;
 
   /**
-   * If this is a recurring Npt task
+   * Indicates whether this meeting is part of a recurring meeting series
    */
   recurring: boolean | null;
 
   /**
-   * The parent task in the recurring Npt task sequence
+   * The parent task in the recurring meeting series
    */
   recurringParentTaskId: string | null;
 
   /**
-   * The  Npt Task Recurrency settings
+   * The meeting's recurrency settings
    */
   recurringSettings: RecurringTaskSettingsDto | null;
 };

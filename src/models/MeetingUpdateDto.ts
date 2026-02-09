@@ -13,9 +13,9 @@
 
 
 /**
- * A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
+ * A Meeting is a task that does not belong to the project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
  *
- * NPT's are a lightweight version of a project task.
+ * Meeting's are a lightweight version of a project task.
  */
 export type MeetingUpdateDto = {
 
@@ -51,7 +51,7 @@ export type MeetingUpdateDto = {
   durationMinutes: number | null;
 
   /**
-   * If specified, replaces the list of resources assigned to this npt.
+   * If specified, replaces the list of resources assigned to this meeting.
    */
   assignees: string[] | null;
 
