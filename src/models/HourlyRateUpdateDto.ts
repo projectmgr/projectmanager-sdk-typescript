@@ -13,22 +13,15 @@
 
 
 /**
- * User assigned to task or risk
+ * The payload to update a hourly rate
  */
-export type AssignmentDto = {
+export type HourlyRateUpdateDto = {
 
   /**
-   * Task or risk the user is assigned to
+   * Update the status of the rate from Active to InActive.
+   *
+   * An InActive rate will still be used in calculating the cost of a project
+   * but will not be displayed in the ui.
    */
-  taskId: string;
-
-  /**
-   * The task or risk project Id
-   */
-  projectId: string | null;
-
-  /**
-   * Resource identifier
-   */
-  resourceId: string;
+  isActive: boolean;
 };

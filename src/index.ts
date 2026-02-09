@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    148.0.136
+ * @version    149.0.187
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -22,6 +22,8 @@ export { DiscussionClient } from "./clients/DiscussionClient.js";
 export { FileClient } from "./clients/FileClient.js";
 export { HolidayClient } from "./clients/HolidayClient.js";
 export { HomeFileClient } from "./clients/HomeFileClient.js";
+export { HourlyRateClient } from "./clients/HourlyRateClient.js";
+export { HourlyRatePeriodClient } from "./clients/HourlyRatePeriodClient.js";
 export { IntegrationClient } from "./clients/IntegrationClient.js";
 export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.js";
 export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.js";
@@ -71,7 +73,6 @@ export { ApiKeyCreateDto } from "./models/ApiKeyCreateDto.js";
 export { ApiKeyDto } from "./models/ApiKeyDto.js";
 export { AssigneeDto } from "./models/AssigneeDto.js";
 export { AssigneeUpsertDto } from "./models/AssigneeUpsertDto.js";
-export { AssignmentDto } from "./models/AssignmentDto.js";
 export { AstroError } from "./models/AstroError.js";
 export { AstroResult } from "./models/AstroResult.js";
 export { AuthenticationDto } from "./models/AuthenticationDto.js";
@@ -98,6 +99,14 @@ export { ExportPriorityFilterDto } from "./models/ExportPriorityFilterDto.js";
 export { FileDataDto } from "./models/FileDataDto.js";
 export { FileDto } from "./models/FileDto.js";
 export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
+export { HourlyRateCreateDto } from "./models/HourlyRateCreateDto.js";
+export { HourlyRateDetailsDto } from "./models/HourlyRateDetailsDto.js";
+export { HourlyRateDto } from "./models/HourlyRateDto.js";
+export { HourlyRatePeriodCreateDto } from "./models/HourlyRatePeriodCreateDto.js";
+export { HourlyRatePeriodDto } from "./models/HourlyRatePeriodDto.js";
+export { HourlyRateUpdateDto } from "./models/HourlyRateUpdateDto.js";
+export { HourlyRateValueDto } from "./models/HourlyRateValueDto.js";
+export { HourlyRateValueUpdateDto } from "./models/HourlyRateValueUpdateDto.js";
 export { IdDto } from "./models/IdDto.js";
 export { IntegrationAuthSetupDto } from "./models/IntegrationAuthSetupDto.js";
 export { IntegrationCategoryDto } from "./models/IntegrationCategoryDto.js";
@@ -111,6 +120,7 @@ export { MeetingAssigneeDto } from "./models/MeetingAssigneeDto.js";
 export { MeetingCreateDto } from "./models/MeetingCreateDto.js";
 export { MeetingDetailsDto } from "./models/MeetingDetailsDto.js";
 export { MeetingDto } from "./models/MeetingDto.js";
+export { MeetingProjectDto } from "./models/MeetingProjectDto.js";
 export { MeetingUpdateDto } from "./models/MeetingUpdateDto.js";
 export { MonthlyRecurringSettingsDto } from "./models/MonthlyRecurringSettingsDto.js";
 export { NameDto } from "./models/NameDto.js";
@@ -126,6 +136,7 @@ export { NptDetailsDto } from "./models/NptDetailsDto.js";
 export { NptDto } from "./models/NptDto.js";
 export { NptStatusDto } from "./models/NptStatusDto.js";
 export { NptUpdateDto } from "./models/NptUpdateDto.js";
+export { PartialResourceDto } from "./models/PartialResourceDto.js";
 export { PendingTimeSheetApprovalDto } from "./models/PendingTimeSheetApprovalDto.js";
 export { PermissionOptionsDto } from "./models/PermissionOptionsDto.js";
 export { ProjectAccessDto } from "./models/ProjectAccessDto.js";
@@ -179,9 +190,14 @@ export { ResourcesDto } from "./models/ResourcesDto.js";
 export { ResourceSkillDto } from "./models/ResourceSkillDto.js";
 export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";
+export { RiskAssignmentDto } from "./models/RiskAssignmentDto.js";
+export { RiskCreateDto } from "./models/RiskCreateDto.js";
+export { RiskDetailsDto } from "./models/RiskDetailsDto.js";
 export { RiskDto } from "./models/RiskDto.js";
 export { RiskExportProgressFilterDto } from "./models/RiskExportProgressFilterDto.js";
 export { RiskExportSettingsDto } from "./models/RiskExportSettingsDto.js";
+export { RiskProjectDto } from "./models/RiskProjectDto.js";
+export { RiskUpdateDto } from "./models/RiskUpdateDto.js";
 export { StateDto } from "./models/StateDto.js";
 export { TagCreateDto } from "./models/TagCreateDto.js";
 export { TagDto } from "./models/TagDto.js";

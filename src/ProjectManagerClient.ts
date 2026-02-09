@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    148.0.136
+ * @version    149.0.187
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -19,6 +19,8 @@ import { DiscussionClient } from "./index.js";
 import { FileClient } from "./index.js";
 import { HolidayClient } from "./index.js";
 import { HomeFileClient } from "./index.js";
+import { HourlyRateClient } from "./index.js";
+import { HourlyRatePeriodClient } from "./index.js";
 import { IntegrationClient } from "./index.js";
 import { IntegrationCategoryClient } from "./index.js";
 import { IntegrationProviderClient } from "./index.js";
@@ -91,7 +93,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "148.0.136";
+  private readonly version: string = "149.0.187";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -104,6 +106,8 @@ export class ProjectManagerClient {
   public readonly File: FileClient;
   public readonly Holiday: HolidayClient;
   public readonly HomeFile: HomeFileClient;
+  public readonly HourlyRate: HourlyRateClient;
+  public readonly HourlyRatePeriod: HourlyRatePeriodClient;
   public readonly Integration: IntegrationClient;
   public readonly IntegrationCategory: IntegrationCategoryClient;
   public readonly IntegrationProvider: IntegrationProviderClient;
@@ -162,6 +166,8 @@ export class ProjectManagerClient {
     this.File = new FileClient(this);
     this.Holiday = new HolidayClient(this);
     this.HomeFile = new HomeFileClient(this);
+    this.HourlyRate = new HourlyRateClient(this);
+    this.HourlyRatePeriod = new HourlyRatePeriodClient(this);
     this.Integration = new IntegrationClient(this);
     this.IntegrationCategory = new IntegrationCategoryClient(this);
     this.IntegrationProvider = new IntegrationProviderClient(this);

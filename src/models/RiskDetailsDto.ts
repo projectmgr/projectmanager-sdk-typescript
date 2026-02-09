@@ -15,12 +15,18 @@ import { RiskAssignmentDto } from "../index.js";
 import { TaskTagDto } from "../index.js";
 import { TaskOwnerDto } from "../index.js";
 import { RiskProjectDto } from "../index.js";
+import { DiscussionDataDto } from "../index.js";
+import { FileDataDto } from "../index.js";
+import { RecurringTaskSettingsDto } from "../index.js";
 
 /**
- * Represents a potential threat or uncertainty that could impact a project, system, or process.
- * Contains information such as its likelihood, impact, response, and resolution details.
+ * A Risk represents an item of potential impact or uncertainty.
+ * It is visible to the creator and users assigned to manage or review it.
+ *
+ * Risks share many characteristics with tasks but are tracked independently
+ * from project execution work.
  */
-export type RiskDto = {
+export type RiskDetailsDto = {
 
   /**
    * The unique identifier of this risk.
@@ -150,4 +156,29 @@ export type RiskDto = {
    * The Project to which this Risk belongs.
    */
   project: RiskProjectDto | null;
+
+  /**
+   * Discussion data – number of comments, last read time
+   */
+  discussionData: DiscussionDataDto | null;
+
+  /**
+   * File data – number of files, last read time
+   */
+  fileData: FileDataDto | null;
+
+  /**
+   * Indicates whether this risk is recurring
+   */
+  recurring: boolean | null;
+
+  /**
+   * The parent risk in a recurring risk sequence
+   */
+  recurringParentTaskId: string | null;
+
+  /**
+   * Recurring risk configuration
+   */
+  recurringSettings: RecurringTaskSettingsDto | null;
 };
