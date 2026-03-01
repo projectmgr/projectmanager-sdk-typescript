@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    149.0.187
+ * @version    150.1.171
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -202,6 +202,7 @@ export { StateDto } from "./models/StateDto.js";
 export { TagCreateDto } from "./models/TagCreateDto.js";
 export { TagDto } from "./models/TagDto.js";
 export { TagUpdateDto } from "./models/TagUpdateDto.js";
+export { TaskApprovalStatusUpdateDto } from "./models/TaskApprovalStatusUpdateDto.js";
 export { TaskAssigneeDto } from "./models/TaskAssigneeDto.js";
 export { TaskCreateDto } from "./models/TaskCreateDto.js";
 export { TaskDetailsDto } from "./models/TaskDetailsDto.js";
@@ -238,6 +239,7 @@ export { TimesheetResourceDto } from "./models/TimesheetResourceDto.js";
 export { TimesheetResponseDto } from "./models/TimesheetResponseDto.js";
 export { TimesheetTaskDto } from "./models/TimesheetTaskDto.js";
 export { TimesheetUpdateRequestDto } from "./models/TimesheetUpdateRequestDto.js";
+export { UpdateProjectFieldDto } from "./models/UpdateProjectFieldDto.js";
 export { UpdateProjectFieldValueDto } from "./models/UpdateProjectFieldValueDto.js";
 export { UpdateRequestDto } from "./models/UpdateRequestDto.js";
 export { UpdateResourceSkillDto } from "./models/UpdateResourceSkillDto.js";
