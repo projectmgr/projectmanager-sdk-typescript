@@ -73,16 +73,19 @@ export class ProjectFieldClient {
   }
 
   /**
-   * Replaces the current value of a ProjectField for a specific Project within your Workspace.
+   * Sets or replaces the value of a ProjectField for a specific Project within your Workspace.
+   * This updates the stored value (e.g. "High", "123", "2025-01-15") for that project–field combination,
+   * not the field definition itself. Use UpdateProjectField or UpdateProjectFieldOptions to change
+   * the field's name or dropdown options.
    *
    * A ProjectField is a custom field defined within your Workspace.  You can define ProjectFields
    * for any integration purpose that is important to your business.  Each ProjectField has a data
    * type as well as options in how it is handled.  ProjectFields can be edited for each Project
    * within your Workspace.
    *
-   * @param projectId The unique identifier of the Project that contains this ProjectField
-   * @param fieldId The unique identifier or short ID of this ProjectField
-   * @param body The new information for this ProjectField
+   * @param projectId The unique identifier of the Project for which to set this field value
+   * @param fieldId The unique identifier or short ID of the ProjectField
+   * @param body The new value for this ProjectField on the specified Project
    */
   updateProjectFieldValue(projectId: string, fieldId: string, body: UpdateProjectFieldValueDto): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/fields/${fieldId}`;

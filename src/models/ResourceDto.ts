@@ -180,4 +180,10 @@ export type ResourceDto = {
    * The language preference for this Resource, used for localization and communication.
    */
   language: string | null;
+
+  /**
+   * The type identifier for this Resource.
+   * 1 = Resource (standard resource), 2 = Sample (sample resource).
+   */
+  resourceTypeId: number;
 };
