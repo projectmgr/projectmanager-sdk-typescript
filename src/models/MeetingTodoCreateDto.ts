@@ -13,15 +13,17 @@
 
 
 /**
- * The payload to update a hourly rate
+ * The properties for creating a MeetingTodo.
  */
-export type HourlyRateUpdateDto = {
+export type MeetingTodoCreateDto = {
 
   /**
-   * Update the status of the rate from Active to InActive.
-   *
-   * An InActive rate will still be used in calculating the cost of a project
-   * but will not be displayed in the ui.
+   * The full description of this MeetingTodo.
    */
-  isActive: boolean;
+  text: string;
+
+  /**
+   * True if this MeetingTodo is complete.
+   */
+  complete: boolean;
 };

@@ -15,10 +15,9 @@ import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { HourlyRateDto } from "../index.js";
 import { HourlyRateCreateDto } from "../index.js";
-import { HourlyRateUpdateDto } from "../index.js";
-import { HourlyRateDetailsDto } from "../index.js";
 import { HourlyRateValueDto } from "../index.js";
 import { HourlyRateValueUpdateDto } from "../index.js";
+import { HourlyRateDetailsDto } from "../index.js";
 
 export class HourlyRateClient {
   private readonly client: ProjectManagerClient;
@@ -50,14 +49,14 @@ export class HourlyRateClient {
   }
 
   /**
-   * Update a hourly rate
+   * Update Hourly Rate Value
    *
-   * @param rateId the id of the rate
-   * @param body the data to update the rate with
+   * @param rateValueId The rate valueId
+   * @param body The rate value data
    */
-  updateHourlyRate(rateId: string, body: HourlyRateUpdateDto): Promise<AstroResult<HourlyRateDto>> {
-    const url = `/api/data/hourly-rates/${rateId}`;
-    return this.client.request<AstroResult<HourlyRateDto>>("put", url, null, body);
+  updateHourlyRateValue(rateValueId: string, body: HourlyRateValueUpdateDto): Promise<AstroResult<HourlyRateValueDto>> {
+    const url = `/api/data/hourly-rates/values/${rateValueId}`;
+    return this.client.request<AstroResult<HourlyRateValueDto>>("put", url, null, body);
   }
 
   /**
@@ -78,16 +77,5 @@ export class HourlyRateClient {
   deleteHourlyRate(rateId: string): Promise<AstroResult<object>> {
     const url = `/api/data/hourly-rates/${rateId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
-  }
-
-  /**
-   * Update Hourly Rate Value
-   *
-   * @param rateValueId The rate valueId
-   * @param body The rate value data
-   */
-  updateHourlyRateValue(rateValueId: string, body: HourlyRateValueUpdateDto): Promise<AstroResult<HourlyRateValueDto>> {
-    const url = `/api/data/hourly-rates/values/${rateValueId}`;
-    return this.client.request<AstroResult<HourlyRateValueDto>>("put", url, null, body);
   }
 }

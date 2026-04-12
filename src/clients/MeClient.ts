@@ -40,6 +40,15 @@ export class MeClient {
   }
 
   /**
+   * Removes the logged in user's custom avatar so the default initials are shown.
+   *
+   */
+  removeMyAvatar(): Promise<AstroResult<object>> {
+    const url = `/api/data/me/avatar`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
+
+  /**
    * Updates the logged in user avatar
    *
    * @param fileName The full path of a file to upload to the API

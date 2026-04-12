@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    151.0.100
+ * @version    152.0.138
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -30,6 +30,8 @@ export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.j
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
 export { MeetingsClient } from "./clients/MeetingsClient.js";
+export { MeetingTagClient } from "./clients/MeetingTagClient.js";
+export { MeetingTodosClient } from "./clients/MeetingTodosClient.js";
 export { NotificationClient } from "./clients/NotificationClient.js";
 export { NptClient } from "./clients/NptClient.js";
 export { NptDiscussionClient } from "./clients/NptDiscussionClient.js";
@@ -54,6 +56,7 @@ export { ResourceSkillClient } from "./clients/ResourceSkillClient.js";
 export { ResourceTeamClient } from "./clients/ResourceTeamClient.js";
 export { RiskClient } from "./clients/RiskClient.js";
 export { RiskFileClient } from "./clients/RiskFileClient.js";
+export { RiskTagClient } from "./clients/RiskTagClient.js";
 export { TagClient } from "./clients/TagClient.js";
 export { TaskClient } from "./clients/TaskClient.js";
 export { TaskAssigneeClient } from "./clients/TaskAssigneeClient.js";
@@ -104,7 +107,6 @@ export { HourlyRateDetailsDto } from "./models/HourlyRateDetailsDto.js";
 export { HourlyRateDto } from "./models/HourlyRateDto.js";
 export { HourlyRatePeriodCreateDto } from "./models/HourlyRatePeriodCreateDto.js";
 export { HourlyRatePeriodDto } from "./models/HourlyRatePeriodDto.js";
-export { HourlyRateUpdateDto } from "./models/HourlyRateUpdateDto.js";
 export { HourlyRateValueDto } from "./models/HourlyRateValueDto.js";
 export { HourlyRateValueUpdateDto } from "./models/HourlyRateValueUpdateDto.js";
 export { IdDto } from "./models/IdDto.js";
@@ -121,6 +123,9 @@ export { MeetingCreateDto } from "./models/MeetingCreateDto.js";
 export { MeetingDetailsDto } from "./models/MeetingDetailsDto.js";
 export { MeetingDto } from "./models/MeetingDto.js";
 export { MeetingProjectDto } from "./models/MeetingProjectDto.js";
+export { MeetingTodoCreateDto } from "./models/MeetingTodoCreateDto.js";
+export { MeetingTodoDto } from "./models/MeetingTodoDto.js";
+export { MeetingTodoUpdateDto } from "./models/MeetingTodoUpdateDto.js";
 export { MeetingUpdateDto } from "./models/MeetingUpdateDto.js";
 export { MonthlyRecurringSettingsDto } from "./models/MonthlyRecurringSettingsDto.js";
 export { NameDto } from "./models/NameDto.js";
@@ -164,6 +169,7 @@ export { ProjectManagerDto } from "./models/ProjectManagerDto.js";
 export { ProjectMemberDto } from "./models/ProjectMemberDto.js";
 export { ProjectMemberRoleDto } from "./models/ProjectMemberRoleDto.js";
 export { ProjectMembersAccessDto } from "./models/ProjectMembersAccessDto.js";
+export { ProjectPriorityCreateDto } from "./models/ProjectPriorityCreateDto.js";
 export { ProjectPriorityDto } from "./models/ProjectPriorityDto.js";
 export { ProjectRestoreProjectDto } from "./models/ProjectRestoreProjectDto.js";
 export { ProjectStatusCreateDto } from "./models/ProjectStatusCreateDto.js";

@@ -69,4 +69,14 @@ export type RiskCreateDto = {
    * A list of unique identifiers of Assignees to be assigned to this Risk
    */
   assignees: string[] | null;
+
+  /**
+   * The type of risk.
+   * Risk = 1
+   * Assumption = 2
+   * Issue = 3
+   * Dependency = 4
+   * Change = 5
+   */
+  riskTypeId: number | null;
 };

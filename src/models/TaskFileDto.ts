@@ -31,4 +31,19 @@ export type TaskFileDto = {
    * The url of the file which can be used for downloading
    */
   url: string;
+
+  /**
+   * The date the file was created/uploaded
+   */
+  createDate: string;
+
+  /**
+   * The file type (e.g. extension or MIME type)
+   */
+  fileType: string | null;
+
+  /**
+   * The display label for the file type
+   */
+  fileTypeLabel: string | null;
 };

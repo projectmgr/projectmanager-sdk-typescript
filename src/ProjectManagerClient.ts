@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    151.0.100
+ * @version    152.0.138
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -27,6 +27,8 @@ import { IntegrationProviderClient } from "./index.js";
 import { LicenseClient } from "./index.js";
 import { MeClient } from "./index.js";
 import { MeetingsClient } from "./index.js";
+import { MeetingTagClient } from "./index.js";
+import { MeetingTodosClient } from "./index.js";
 import { NotificationClient } from "./index.js";
 import { NptClient } from "./index.js";
 import { NptDiscussionClient } from "./index.js";
@@ -51,6 +53,7 @@ import { ResourceSkillClient } from "./index.js";
 import { ResourceTeamClient } from "./index.js";
 import { RiskClient } from "./index.js";
 import { RiskFileClient } from "./index.js";
+import { RiskTagClient } from "./index.js";
 import { TagClient } from "./index.js";
 import { TaskClient } from "./index.js";
 import { TaskAssigneeClient } from "./index.js";
@@ -93,7 +96,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "151.0.100";
+  private readonly version: string = "152.0.138";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -114,6 +117,8 @@ export class ProjectManagerClient {
   public readonly License: LicenseClient;
   public readonly Me: MeClient;
   public readonly Meetings: MeetingsClient;
+  public readonly MeetingTag: MeetingTagClient;
+  public readonly MeetingTodos: MeetingTodosClient;
   public readonly Notification: NotificationClient;
   public readonly Npt: NptClient;
   public readonly NptDiscussion: NptDiscussionClient;
@@ -138,6 +143,7 @@ export class ProjectManagerClient {
   public readonly ResourceTeam: ResourceTeamClient;
   public readonly Risk: RiskClient;
   public readonly RiskFile: RiskFileClient;
+  public readonly RiskTag: RiskTagClient;
   public readonly Tag: TagClient;
   public readonly Task: TaskClient;
   public readonly TaskAssignee: TaskAssigneeClient;
@@ -174,6 +180,8 @@ export class ProjectManagerClient {
     this.License = new LicenseClient(this);
     this.Me = new MeClient(this);
     this.Meetings = new MeetingsClient(this);
+    this.MeetingTag = new MeetingTagClient(this);
+    this.MeetingTodos = new MeetingTodosClient(this);
     this.Notification = new NotificationClient(this);
     this.Npt = new NptClient(this);
     this.NptDiscussion = new NptDiscussionClient(this);
@@ -198,6 +206,7 @@ export class ProjectManagerClient {
     this.ResourceTeam = new ResourceTeamClient(this);
     this.Risk = new RiskClient(this);
     this.RiskFile = new RiskFileClient(this);
+    this.RiskTag = new RiskTagClient(this);
     this.Tag = new TagClient(this);
     this.Task = new TaskClient(this);
     this.TaskAssignee = new TaskAssigneeClient(this);

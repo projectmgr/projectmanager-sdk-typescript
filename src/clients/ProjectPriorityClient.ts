@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ProjectPriorityDto } from "../index.js";
+import { ProjectPriorityCreateDto } from "../index.js";
 
 export class ProjectPriorityClient {
   private readonly client: ProjectManagerClient;
@@ -39,5 +40,36 @@ export class ProjectPriorityClient {
   retrieveProjectPriorities(): Promise<AstroResult<ProjectPriorityDto[]>> {
     const url = `/api/data/projects/priorities`;
     return this.client.request<AstroResult<ProjectPriorityDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Create a project priority
+   *
+   * @param body The data to create the priority
+   */
+  createProjectPriority(body: ProjectPriorityCreateDto): Promise<AstroResult<ProjectPriorityDto>> {
+    const url = `/api/data/projects/priorities`;
+    return this.client.request<AstroResult<ProjectPriorityDto>>("post", url, null, body);
+  }
+
+  /**
+   * Updates a project priority
+   *
+   * @param priorityId The id of the priority to update
+   * @param body The data to update
+   */
+  updateProjectPriority(priorityId: string, body: ProjectPriorityCreateDto): Promise<AstroResult<ProjectPriorityDto>> {
+    const url = `/api/data/projects/priorities/${priorityId}`;
+    return this.client.request<AstroResult<ProjectPriorityDto>>("put", url, null, body);
+  }
+
+  /**
+   * Delete a project priority. They will also be removed from any projects they were assigned too.
+   *
+   * @param priorityId The id of the priority to remove
+   */
+  deleteProjectPriority(priorityId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/projects/priorities/${priorityId}`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }
