@@ -13,28 +13,14 @@
 
 
 /**
- * Represents a country with its details.
+ * A ProjectPriority is a named priority level used by your business to determine how to decide
+ * which Tasks are the most important.  You can name your ProjectPriority levels anything you like
+ * and you can reorganize the order of the ProjectPriority levels at any time.
  */
-export type CountryDto = {
+export type ProjectPriorityCreateDto = {
 
   /**
-   * Gets or sets the unique identifier for the country. This should translate to the ISO2 code
-   * for that country.
-   */
-  id: string;
-
-  /**
-   * Gets or sets the name of the country.
+   * The name of this ProjectPriority
    */
   name: string;
-
-  /**
-   * The PM Internal Id Reference for a country
-   */
-  countryId: number;
-
-  /**
-   * The Culture name for a country
-   */
-  cultureName: string;
 };

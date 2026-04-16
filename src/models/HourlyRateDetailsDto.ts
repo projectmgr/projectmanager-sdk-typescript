@@ -94,11 +94,6 @@ export type HourlyRateDetailsDto = {
   values: HourlyRateValueDto[];
 
   /**
-   * If this is an archived rate
-   */
-  isActive: boolean;
-
-  /**
    * Total number of tasks with at least 1 association to this rate
    */
   taskCount: number | null;

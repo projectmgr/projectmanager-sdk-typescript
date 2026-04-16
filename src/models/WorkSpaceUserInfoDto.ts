@@ -97,6 +97,26 @@ export type WorkSpaceUserInfoDto = {
   workSpaceCountryCode: string;
 
   /**
+   * The culture code (e.g., "en-US") used for formatting and localization in the workspace.
+   */
+  workSpaceCulture: string;
+
+  /**
+   * The culture code used for currency formatting in the workspace.
+   */
+  workSpaceCurrencyCulture: string;
+
+  /**
+   * The culture code (e.g., "en-US") used for formatting and localization for the user.
+   */
+  userCulture: string;
+
+  /**
+   * The culture code used for currency formatting for the user.
+   */
+  userCurrencyCulture: string;
+
+  /**
    * The location of the user, which is a combination of city, state (US Only), and country.
    */
   location: string;

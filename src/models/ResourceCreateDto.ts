@@ -101,4 +101,10 @@ export type ResourceCreateDto = {
    * Language code for this Resource.
    */
   language: string | null;
+
+  /**
+   * Public avatar image index (1-42). The avatar URL is generated as /assets/images/avatars/{index:000}.png.
+   * Only numeric public avatars are accepted; custom URLs are not supported.
+   */
+  publicAvatarId: number | null;
 };

@@ -13,28 +13,17 @@
 
 
 /**
- * Represents a country with its details.
+ * The properties for updating a MeetingTodo.
  */
-export type CountryDto = {
+export type MeetingTodoUpdateDto = {
 
   /**
-   * Gets or sets the unique identifier for the country. This should translate to the ISO2 code
-   * for that country.
+   * The full description of this MeetingTodo.
    */
-  id: string;
+  text: string | null;
 
   /**
-   * Gets or sets the name of the country.
+   * True if this MeetingTodo is complete.
    */
-  name: string;
-
-  /**
-   * The PM Internal Id Reference for a country
-   */
-  countryId: number;
-
-  /**
-   * The Culture name for a country
-   */
-  cultureName: string;
+  complete: boolean | null;
 };

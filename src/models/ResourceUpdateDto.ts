@@ -117,4 +117,15 @@ export type ResourceUpdateDto = {
    * e.g. en-US, en-GB, fr-FR, es-ES
    */
   language: string | null;
+
+  /**
+   * Public avatar image index (1-42). The avatar URL is generated as /assets/images/avatars/{index:000}.png.
+   * Only numeric public avatars are accepted; custom URLs are not supported.
+   */
+  publicAvatarId: number | null;
+
+  /**
+   * When true, removes the resource's custom avatar so the default initials are shown.
+   */
+  clearAvatar: boolean | null;
 };

@@ -92,9 +92,4 @@ export type HourlyRateDto = {
    * A list of all rates for each rate period
    */
   values: HourlyRateValueDto[];
-
-  /**
-   * If this is an archived rate
-   */
-  isActive: boolean;
 };
