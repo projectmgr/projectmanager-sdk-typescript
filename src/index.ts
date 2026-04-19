@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    152.0.138
+ * @version    153.2.193
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -171,6 +171,7 @@ export { ProjectMemberRoleDto } from "./models/ProjectMemberRoleDto.js";
 export { ProjectMembersAccessDto } from "./models/ProjectMembersAccessDto.js";
 export { ProjectPriorityCreateDto } from "./models/ProjectPriorityCreateDto.js";
 export { ProjectPriorityDto } from "./models/ProjectPriorityDto.js";
+export { ProjectReopenStatusDto } from "./models/ProjectReopenStatusDto.js";
 export { ProjectRestoreProjectDto } from "./models/ProjectRestoreProjectDto.js";
 export { ProjectStatusCreateDto } from "./models/ProjectStatusCreateDto.js";
 export { ProjectStatusDto } from "./models/ProjectStatusDto.js";

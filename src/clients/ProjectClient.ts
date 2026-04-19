@@ -16,6 +16,7 @@ import { AstroResult } from "../index.js";
 import { ProjectDto } from "../index.js";
 import { ProjectCreateDto } from "../index.js";
 import { ProjectUpdateDto } from "../index.js";
+import { ProjectReopenStatusDto } from "../index.js";
 
 export class ProjectClient {
   private readonly client: ProjectManagerClient;
@@ -96,9 +97,9 @@ export class ProjectClient {
    * @param projectId The unique identifier of the Project to update
    * @param body All non-null fields in this object will replace previous data within the Project
    */
-  updateProject(projectId: string, body: ProjectUpdateDto): Promise<AstroResult<object>> {
+  updateProject(projectId: string, body: ProjectUpdateDto): Promise<AstroResult<ProjectDto>> {
     const url = `/api/data/projects/${projectId}`;
-    return this.client.request<AstroResult<object>>("put", url, null, body);
+    return this.client.request<AstroResult<ProjectDto>>("put", url, null, body);
   }
 
   /**
@@ -122,16 +123,16 @@ export class ProjectClient {
   }
 
   /**
-   * Restore a soft deleted project based on its unique identifier.
+   * Check if a project is in a valid state so that it can be reopened without any side effects.
+   * For example, if Rates have changed for this project, reopening it will result is project
+   * costs being recalculated which will adjust costs.
    *
-   * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks
-   * represent individual items of work that team members must complete.  The sum total of Tasks
-   * within a Project represents the work to be completed for that Project.
+   * This endpoint will return what side effects may occur if it is reopened.
    *
-   * @param projectId The unique identifier of the Project to delete
+   * @param projectId The unique identifier of the project to check.
    */
-  restoreProject(projectId: string): Promise<AstroResult<object>> {
-    const url = `/api/data/projects/${projectId}/restore`;
-    return this.client.request<AstroResult<object>>("put", url, null, null);
+  reopenProjectStatus(projectId: string): Promise<AstroResult<ProjectReopenStatusDto>> {
+    const url = `/api/data/projects/${projectId}/reopen/status`;
+    return this.client.request<AstroResult<ProjectReopenStatusDto>>("get", url, null, null);
   }
 }
