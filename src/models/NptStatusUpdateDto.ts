@@ -17,7 +17,7 @@
  * progress of Tasks.  You can define your own named status levels that are appropriate for
  * your business and determine which status levels are considered done.
  */
-export type TaskStatusUpdateDto = {
+export type NptStatusUpdateDto = {
 
   /**
    * The name of this TaskStatus.

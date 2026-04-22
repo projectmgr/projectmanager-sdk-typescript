@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    152.0.138
+ * @version    154.0.181
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -57,6 +57,7 @@ export { ResourceTeamClient } from "./clients/ResourceTeamClient.js";
 export { RiskClient } from "./clients/RiskClient.js";
 export { RiskFileClient } from "./clients/RiskFileClient.js";
 export { RiskTagClient } from "./clients/RiskTagClient.js";
+export { SecurityClient } from "./clients/SecurityClient.js";
 export { TagClient } from "./clients/TagClient.js";
 export { TaskClient } from "./clients/TaskClient.js";
 export { TaskAssigneeClient } from "./clients/TaskAssigneeClient.js";
@@ -79,6 +80,7 @@ export { AssigneeUpsertDto } from "./models/AssigneeUpsertDto.js";
 export { AstroError } from "./models/AstroError.js";
 export { AstroResult } from "./models/AstroResult.js";
 export { AuthenticationDto } from "./models/AuthenticationDto.js";
+export { BusinessRolesListDto } from "./models/BusinessRolesListDto.js";
 export { ChangeSetStatusDto } from "./models/ChangeSetStatusDto.js";
 export { ConnectionSchemaDto } from "./models/ConnectionSchemaDto.js";
 export { CountryDto } from "./models/CountryDto.js";
@@ -139,7 +141,9 @@ export { NptAssigneeDto } from "./models/NptAssigneeDto.js";
 export { NptCreateDto } from "./models/NptCreateDto.js";
 export { NptDetailsDto } from "./models/NptDetailsDto.js";
 export { NptDto } from "./models/NptDto.js";
+export { NptStatusCreateDto } from "./models/NptStatusCreateDto.js";
 export { NptStatusDto } from "./models/NptStatusDto.js";
+export { NptStatusUpdateDto } from "./models/NptStatusUpdateDto.js";
 export { NptUpdateDto } from "./models/NptUpdateDto.js";
 export { PartialResourceDto } from "./models/PartialResourceDto.js";
 export { PendingTimeSheetApprovalDto } from "./models/PendingTimeSheetApprovalDto.js";
@@ -171,6 +175,7 @@ export { ProjectMemberRoleDto } from "./models/ProjectMemberRoleDto.js";
 export { ProjectMembersAccessDto } from "./models/ProjectMembersAccessDto.js";
 export { ProjectPriorityCreateDto } from "./models/ProjectPriorityCreateDto.js";
 export { ProjectPriorityDto } from "./models/ProjectPriorityDto.js";
+export { ProjectReopenStatusDto } from "./models/ProjectReopenStatusDto.js";
 export { ProjectRestoreProjectDto } from "./models/ProjectRestoreProjectDto.js";
 export { ProjectStatusCreateDto } from "./models/ProjectStatusCreateDto.js";
 export { ProjectStatusDto } from "./models/ProjectStatusDto.js";
@@ -204,6 +209,11 @@ export { RiskExportProgressFilterDto } from "./models/RiskExportProgressFilterDt
 export { RiskExportSettingsDto } from "./models/RiskExportSettingsDto.js";
 export { RiskProjectDto } from "./models/RiskProjectDto.js";
 export { RiskUpdateDto } from "./models/RiskUpdateDto.js";
+export { RoleCreateDto } from "./models/RoleCreateDto.js";
+export { RoleDto } from "./models/RoleDto.js";
+export { RolePermissionFeatureDto } from "./models/RolePermissionFeatureDto.js";
+export { RoleUpdateChangeItemDto } from "./models/RoleUpdateChangeItemDto.js";
+export { SimpleTaskFieldValueDto } from "./models/SimpleTaskFieldValueDto.js";
 export { StateDto } from "./models/StateDto.js";
 export { TagCreateDto } from "./models/TagCreateDto.js";
 export { TagDto } from "./models/TagDto.js";
