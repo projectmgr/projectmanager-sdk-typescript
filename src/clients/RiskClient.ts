@@ -100,8 +100,8 @@ export class RiskClient {
    * @param projectId The id of the project
    * @param body The data used to create the Risk
    */
-  createRisk(projectId: string, body: RiskCreateDto): Promise<AstroResult<RiskDto>> {
-    const url = `/api/data/risks/${projectId}`;
+  createProjectRisk(projectId: string, body: RiskCreateDto): Promise<AstroResult<RiskDto>> {
+    const url = `/api/data/risks/projects/${projectId}`;
     return this.client.request<AstroResult<RiskDto>>("post", url, null, body);
   }
 

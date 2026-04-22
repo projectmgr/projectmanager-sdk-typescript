@@ -79,4 +79,14 @@ export class TagClient {
     const url = `/api/data/tags/${tagId}`;
     return this.client.request<AstroResult<TagDto>>("put", url, null, body);
   }
+
+  /**
+   * Permanently removes the specified Tag.
+   *
+   * @param tagId The id of the tag to delete
+   */
+  deleteTag(tagId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/tags/${tagId}`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
 }
