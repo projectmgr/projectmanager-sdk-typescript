@@ -26,6 +26,11 @@ export type ProjectMemberDto = {
   id: string;
 
   /**
+   * The unique identifier of the project that this ProjectMember belongs to.
+   */
+  projectId: string;
+
+  /**
    * the initials of the user
    */
   initials: string;

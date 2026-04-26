@@ -63,11 +63,11 @@ export class TaskStatusClient {
    * progress of Tasks.  You can define your own named status levels that are appropriate for
    * your business.
    *
-   * @param projectId The unique identifier of the Project for the new TaskStatus
-   * @param body Information about the existing TaskStatus level to update within this Project
+   * @param taskStatusId The id of the task status
+   * @param body Information about the existing TaskStatus to update within this Project
    */
-  updateTaskStatus(projectId: string, body: TaskStatusUpdateDto): Promise<AstroResult<TaskStatusDto>> {
-    const url = `/api/data/projects/${projectId}/tasks/statuses`;
+  updateTaskStatus(taskStatusId: string, body: TaskStatusUpdateDto): Promise<AstroResult<TaskStatusDto>> {
+    const url = `/api/data/tasks/statuses/${taskStatusId}`;
     return this.client.request<AstroResult<TaskStatusDto>>("put", url, null, body);
   }
 
@@ -77,11 +77,10 @@ export class TaskStatusClient {
    * You will not be able to delete a TaskStatus if there are tasks that have been assigned to this status level
    * or if the TaskStatus is the default status level.
    *
-   * @param projectId The unique identifier of the Project for the TaskStatus level to delete
-   * @param taskStatusId The Id of the TaskStatus level to be removed.
+   * @param taskStatusId The id of the TaskStatus to be removed.
    */
-  deleteTaskStatus(projectId: string, taskStatusId: string): Promise<AstroResult<object>> {
-    const url = `/api/data/projects/${projectId}/tasks/statuses/${taskStatusId}`;
+  deleteTaskStatus(taskStatusId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/tasks/statuses/${taskStatusId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
 }
