@@ -99,12 +99,12 @@ export type WorkSpaceUserInfoDto = {
   /**
    * The culture code (e.g., "en-US") used for formatting and localization in the workspace.
    */
-  workSpaceCulture: string;
+  workspaceCulture: string;
 
   /**
    * The culture code used for currency formatting in the workspace.
    */
-  workSpaceCurrencyCulture: string;
+  workspaceCurrencyCulture: string;
 
   /**
    * The culture code (e.g., "en-US") used for formatting and localization for the user.

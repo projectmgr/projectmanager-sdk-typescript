@@ -77,11 +77,11 @@ export class ResourceTeamClient {
   /**
    * Update a Resource Team.
    *
-   * @param teamresourceId The id of the resource team
+   * @param resourceTeamId The id of the resource team
    * @param body The name of the team to Update.
    */
-  updateResourceTeam(teamresourceId: string, body: UpdateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
-    const url = `/api/data/resources/teams/${teamresourceId}`;
+  updateResourceTeam(resourceTeamId: string, body: UpdateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
+    const url = `/api/data/resources/teams/${resourceTeamId}`;
     return this.client.request<AstroResult<ResourceTeamDto>>("put", url, null, body);
   }
 }
