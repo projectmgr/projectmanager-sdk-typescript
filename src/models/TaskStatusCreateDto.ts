@@ -20,11 +20,6 @@
 export type TaskStatusCreateDto = {
 
   /**
-   * The unique identifier of this TaskStatus.
-   */
-  id: string | null;
-
-  /**
    * The name of this TaskStatus.
    */
   name: string;

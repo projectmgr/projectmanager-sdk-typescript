@@ -13,10 +13,10 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { RiskDetailsDto } from "../index.js";
 import { RiskDto } from "../index.js";
-import { RiskUpdateDto } from "../index.js";
 import { RiskCreateDto } from "../index.js";
+import { RiskDetailsDto } from "../index.js";
+import { RiskUpdateDto } from "../index.js";
 import { ExportDto } from "../index.js";
 import { RiskExportSettingsDto } from "../index.js";
 
@@ -28,6 +28,47 @@ export class RiskClient {
    */
   public constructor(client: ProjectManagerClient) {
     this.client = client;
+  }
+
+  /**
+   * Creates a new Risk within the specified Project.
+   *
+   * The Risk will inherit Project context such as access permissions
+   * and workspace ownership. Validation is applied to ensure the
+   * Project exists and the caller has permission to create Risks.
+   *
+   * @param projectId The id of the project
+   * @param body The data used to create the Risk
+   */
+  createProjectRisk(projectId: string, body: RiskCreateDto): Promise<AstroResult<RiskDto>> {
+    const url = `/api/data/projects/${projectId}`;
+    return this.client.request<AstroResult<RiskDto>>("post", url, null, body);
+  }
+
+  /**
+   * Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
+   *
+   * A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
+   * Assumptions, Issues, or Dependencies.
+   *
+   * @param top The number of records to return
+   * @param skip Skips the given number of records and then returns $top records
+   * @param filter Filter the expression according to oData queries
+   * @param orderby Order collection by this field.
+   * @param expand Include related data in the response
+   */
+  queryRisks(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<RiskDto[]>> {
+    const url = `/api/data/risks`;
+    const options = {
+      params: {
+        '$top': top,
+        '$skip': skip,
+        '$filter': filter,
+        '$orderby': orderby,
+        '$expand': expand,
+      },
+    };
+    return this.client.request<AstroResult<RiskDto[]>>("get", url, options, null);
   }
 
   /**
@@ -91,21 +132,6 @@ export class RiskClient {
   }
 
   /**
-   * Creates a new Risk within the specified Project.
-   *
-   * The Risk will inherit Project context such as access permissions
-   * and workspace ownership. Validation is applied to ensure the
-   * Project exists and the caller has permission to create Risks.
-   *
-   * @param projectId The id of the project
-   * @param body The data used to create the Risk
-   */
-  createRisk(projectId: string, body: RiskCreateDto): Promise<AstroResult<RiskDto>> {
-    const url = `/api/data/risks/${projectId}`;
-    return this.client.request<AstroResult<RiskDto>>("post", url, null, body);
-  }
-
-  /**
    * Initiates a new Export action for Risks.
    *
    * Returns the identifier of this Risk Export.
@@ -116,31 +142,5 @@ export class RiskClient {
   createRiskExport(projectId: string, body: RiskExportSettingsDto): Promise<AstroResult<ExportDto>> {
     const url = `/api/data/projects/${projectId}/risks/export`;
     return this.client.request<AstroResult<ExportDto>>("post", url, null, body);
-  }
-
-  /**
-   * Retrieve a list of risks that match an [OData formatted query](https://www.odata.org/).
-   *
-   * A Risk represents a tracked item of concern for a project.  Risks may be categorized as Changes, Risks,
-   * Assumptions, Issues, or Dependencies.
-   *
-   * @param top The number of records to return
-   * @param skip Skips the given number of records and then returns $top records
-   * @param filter Filter the expression according to oData queries
-   * @param orderby Order collection by this field.
-   * @param expand Include related data in the response
-   */
-  queryRisks(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<RiskDto[]>> {
-    const url = `/api/data/risks`;
-    const options = {
-      params: {
-        '$top': top,
-        '$skip': skip,
-        '$filter': filter,
-        '$orderby': orderby,
-        '$expand': expand,
-      },
-    };
-    return this.client.request<AstroResult<RiskDto[]>>("get", url, options, null);
   }
 }

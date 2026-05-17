@@ -11,30 +11,25 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ReactGridLayoutDto } from "../index.js";
+import { TaskPlannedAllocationDto } from "../index.js";
 
 /**
- * The Dashboards API is intended for use by ProjectManager
+ * Planned time for one resource assigned to the task.
  */
-export type DashboardSettingDto = {
+export type TaskPlannedResourceTimeDto = {
 
   /**
-   * Unique ID
+   * Resource identifier for this planned row.
    */
   id: string;
 
   /**
-   * User ID
+   * Total planned minutes for this resource (sum of allocations when broken down by day).
    */
-  userId: string;
+  totalMinutes: number;
 
   /**
-   * Either custom or one of DashboardType enum
+   * Planned minutes grouped by calendar date for this resource.
    */
-  type: string;
-
-  /**
-   * React grid layout configuration
-   */
-  reactGridLayout: ReactGridLayoutDto | null;
+  allocations: TaskPlannedAllocationDto[];
 };
