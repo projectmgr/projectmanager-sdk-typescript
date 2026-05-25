@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { ResourceWorkingDaysHours } from "../index.js";
 
 /**
  * A Resource represents a person, material, or tool that is used within your Projects.
@@ -128,4 +129,14 @@ export type ResourceUpdateDto = {
    * When true, removes the resource's custom avatar so the default initials are shown.
    */
   clearAvatar: boolean | null;
+
+  /**
+   * Default planned effort in hours. When set, updates the resource; when omitted, existing value is unchanged.
+   */
+  defaultPlannedHours: number | null;
+
+  /**
+   * Per-day working hours. When non-null, updates or creates the resource calendar; set only days to change—they merge over workspace defaults.
+   */
+  workingDays: ResourceWorkingDaysHours | null;
 };

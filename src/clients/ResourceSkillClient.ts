@@ -68,11 +68,11 @@ export class ResourceSkillClient {
   /**
    * Update a Resource Skill.
    *
-   * @param skillId The id of the skill to update.
+   * @param resourceSkillId The id of the skill to update.
    * @param body The data of the skill to update.
    */
-  updateResourceSkill(skillId: string, body: UpdateResourceSkillDto): Promise<AstroResult<ResourceSkillDto>> {
-    const url = `/api/data/resources/skills/${skillId}`;
+  updateResourceSkill(resourceSkillId: string, body: UpdateResourceSkillDto): Promise<AstroResult<ResourceSkillDto>> {
+    const url = `/api/data/resources/skills/${resourceSkillId}`;
     return this.client.request<AstroResult<ResourceSkillDto>>("put", url, null, body);
   }
 

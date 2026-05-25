@@ -13,10 +13,10 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { MeetingDetailsDto } from "../index.js";
 import { MeetingDto } from "../index.js";
-import { MeetingUpdateDto } from "../index.js";
 import { MeetingCreateDto } from "../index.js";
+import { MeetingDetailsDto } from "../index.js";
+import { MeetingUpdateDto } from "../index.js";
 import { RecurringTaskChangeSetDetails } from "../index.js";
 import { WeeklyRecurringSettingsDto } from "../index.js";
 import { MonthlyRecurringSettingsDto } from "../index.js";
@@ -34,6 +34,35 @@ export class MeetingsClient {
    */
   public constructor(client: ProjectManagerClient) {
     this.client = client;
+  }
+
+  /**
+   * Retrieve a list of Meetings.
+   *
+   * This endpoint does not use OData. If `projectId` is provided, results are limited to that Project.
+   *
+   * @param projectId Optional project id to scope results
+   */
+  getMeetings(projectId?: string): Promise<AstroResult<MeetingDto[]>> {
+    const url = `/api/data/meetings`;
+    const options = {
+      params: {
+        'projectId': projectId,
+      },
+    };
+    return this.client.request<AstroResult<MeetingDto[]>>("get", url, options, null);
+  }
+
+  /**
+   * Creates a new Meeting for the current user.
+   * If you specify an assignee for this Meeting, that user will be assigned to it.
+   * If you do not specify an assignee, the Meeting will be automatically assigned to you.
+   *
+   * @param body The data used to create the Meeting
+   */
+  createMeeting(body: MeetingCreateDto): Promise<AstroResult<MeetingDto>> {
+    const url = `/api/data/meetings`;
+    return this.client.request<AstroResult<MeetingDto>>("post", url, null, body);
   }
 
   /**
@@ -66,18 +95,6 @@ export class MeetingsClient {
   removeMeeting(meetingId: string): Promise<AstroResult<object>> {
     const url = `/api/data/meetings/${meetingId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
-  }
-
-  /**
-   * Creates a new Meeting for the current user.
-   * If you specify an assignee for this Meeting, that user will be assigned to it.
-   * If you do not specify an assignee, the Meeting will be automatically assigned to you.
-   *
-   * @param body The data used to create the Meeting
-   */
-  createMeeting(body: MeetingCreateDto): Promise<AstroResult<MeetingDto>> {
-    const url = `/api/data/meetings`;
-    return this.client.request<AstroResult<MeetingDto>>("post", url, null, body);
   }
 
   /**

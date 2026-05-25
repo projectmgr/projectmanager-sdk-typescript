@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { MoveTaskToProjectDto } from "../index.js";
 
 /**
  * A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
@@ -137,4 +138,9 @@ export type NptUpdateDto = {
    * and recurringSettings.
    */
   recurring: boolean | null;
+
+  /**
+   * Object contains data to move npt to another project
+   */
+  moveToProject: MoveTaskToProjectDto | null;
 };

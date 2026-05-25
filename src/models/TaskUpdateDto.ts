@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { MoveTaskToProjectDto } from "../index.js";
 
 /**
  * A Task is an individual element of work that must be performed to complete a Project.  A
@@ -157,4 +158,9 @@ export type TaskUpdateDto = {
    * milestone is locked, it represents a fixed time within the project that can be used to relate to other tasks.
    */
   isMilestone: boolean | null;
+
+  /**
+   * Object contains data to move task to another project
+   */
+  moveToProject: MoveTaskToProjectDto | null;
 };

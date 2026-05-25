@@ -17,16 +17,21 @@
  * progress of Tasks.  You can define your own named status levels that are appropriate for
  * your business and determine which status levels are considered done.
  */
-export type TaskStatusUpdateDto = {
+export type NptStatusCreateDto = {
 
   /**
    * The name of this TaskStatus.
    */
-  name: string | null;
+  name: string;
 
   /**
    * A numerical value that can be used to sort TaskStatus values according to the
    * needs of your business.
    */
   order: number | null;
+
+  /**
+   * True if a Task in this TaskStatus is considered done.
+   */
+  isDone: boolean | null;
 };

@@ -13,6 +13,7 @@
 
 import { WorkSpaceLinksDto } from "../index.js";
 import { WorkSpacePermissionsDto } from "../index.js";
+import { EntitlementDto } from "../index.js";
 
 /**
  * Information about a currently logged in user.
@@ -99,12 +100,12 @@ export type WorkSpaceUserInfoDto = {
   /**
    * The culture code (e.g., "en-US") used for formatting and localization in the workspace.
    */
-  workSpaceCulture: string;
+  workspaceCulture: string;
 
   /**
    * The culture code used for currency formatting in the workspace.
    */
-  workSpaceCurrencyCulture: string;
+  workspaceCurrencyCulture: string;
 
   /**
    * The culture code (e.g., "en-US") used for formatting and localization for the user.
@@ -120,4 +121,10 @@ export type WorkSpaceUserInfoDto = {
    * The location of the user, which is a combination of city, state (US Only), and country.
    */
   location: string;
+
+  /**
+   * The entitlements active for this Workspace. Each entry is either a boolean switch or a
+   * numeric limit.
+   */
+  entitlements: EntitlementDto[];
 };

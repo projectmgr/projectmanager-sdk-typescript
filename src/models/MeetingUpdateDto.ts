@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { MoveTaskToProjectDto } from "../index.js";
 
 /**
  * A Meeting is a task that does not belong to the project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
@@ -64,4 +65,9 @@ export type MeetingUpdateDto = {
    * and recurringSettings.
    */
   recurring: boolean | null;
+
+  /**
+   * Object contains data to move meeting to another project
+   */
+  moveToProject: MoveTaskToProjectDto | null;
 };
