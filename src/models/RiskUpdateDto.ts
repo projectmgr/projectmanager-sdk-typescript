@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { MoveTaskToProjectDto } from "../index.js";
 
 /**
  * A Risk represents an item of potential impact or uncertainty.
@@ -86,4 +87,9 @@ export type RiskUpdateDto = {
    * Change = 5
    */
   riskTypeId: number | null;
+
+  /**
+   * Object contains data to move risk to another project
+   */
+  moveToProject: MoveTaskToProjectDto | null;
 };

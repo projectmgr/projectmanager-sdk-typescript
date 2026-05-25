@@ -17,6 +17,7 @@ import { TaskAssigneeDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
 import { TaskStatusDto } from "../index.js";
 import { TaskFieldValueDto } from "../index.js";
+import { SimpleTaskFieldValueDto } from "../index.js";
 import { TaskFileDto } from "../index.js";
 
 /**
@@ -276,7 +277,7 @@ export type TaskDto = {
   /**
    * Task fields array with values
    */
-  fieldValues: TaskFieldValueDto[] | null;
+  fieldValues: SimpleTaskFieldValueDto[] | null;
 
   /**
    * The list of files associated with this Task, if any.

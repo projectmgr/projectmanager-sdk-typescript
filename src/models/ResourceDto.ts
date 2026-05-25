@@ -14,6 +14,7 @@
 import { ResourceApproverDto } from "../index.js";
 import { ResourceTeamDto } from "../index.js";
 import { ResourceSkillDto } from "../index.js";
+import { ResourceWorkingDaysHours } from "../index.js";
 
 /**
  * A Resource represents a person, material, or tool that is used within your Projects.
@@ -186,4 +187,14 @@ export type ResourceDto = {
    * 1 = Resource (standard resource), 2 = Sample (sample resource).
    */
   resourceTypeId: number;
+
+  /**
+   * Default planned effort for this resource, in hours (stored as whole minutes server-side).
+   */
+  defaultPlannedHours: number | null;
+
+  /**
+   * Hours available per weekday for scheduling (whole hours per day; matches workspace/resource calendar rows).
+   */
+  workingDays: ResourceWorkingDaysHours;
 };

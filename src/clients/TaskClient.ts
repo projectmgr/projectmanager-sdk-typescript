@@ -204,4 +204,16 @@ export class TaskClient {
     const url = `/api/data/tasks/${taskId}/parent`;
     return this.client.request<AstroResult<ChangeSetStatusDto>>("delete", url, null, null);
   }
+
+  /**
+   * Updates the task user read record (last viewed) for the authenticated user. Use this
+   * when the UI only needs to mark file/discussion read state
+   * without loading full task details.
+   *
+   * @param taskId Task unique identifier
+   */
+  marktaskasreadforthecurrentuser(taskId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/tasks/${taskId}/mark-read`;
+    return this.client.request<AstroResult<object>>("post", url, null, null);
+  }
 }

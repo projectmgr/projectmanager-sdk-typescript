@@ -8,13 +8,12 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    152.0.138
+ * @version    2026.156.162
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
 import { ApiKeyClient } from "./index.js";
 import { ChangesetClient } from "./index.js";
-import { DashboardClient } from "./index.js";
 import { DiscussionClient } from "./index.js";
 import { FileClient } from "./index.js";
 import { HolidayClient } from "./index.js";
@@ -54,6 +53,7 @@ import { ResourceTeamClient } from "./index.js";
 import { RiskClient } from "./index.js";
 import { RiskFileClient } from "./index.js";
 import { RiskTagClient } from "./index.js";
+import { SecurityClient } from "./index.js";
 import { TagClient } from "./index.js";
 import { TaskClient } from "./index.js";
 import { TaskAssigneeClient } from "./index.js";
@@ -96,7 +96,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "152.0.138";
+  private readonly version: string = "2026.156.162";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -104,7 +104,6 @@ export class ProjectManagerClient {
 
   public readonly ApiKey: ApiKeyClient;
   public readonly Changeset: ChangesetClient;
-  public readonly Dashboard: DashboardClient;
   public readonly Discussion: DiscussionClient;
   public readonly File: FileClient;
   public readonly Holiday: HolidayClient;
@@ -144,6 +143,7 @@ export class ProjectManagerClient {
   public readonly Risk: RiskClient;
   public readonly RiskFile: RiskFileClient;
   public readonly RiskTag: RiskTagClient;
+  public readonly Security: SecurityClient;
   public readonly Tag: TagClient;
   public readonly Task: TaskClient;
   public readonly TaskAssignee: TaskAssigneeClient;
@@ -167,7 +167,6 @@ export class ProjectManagerClient {
 
     this.ApiKey = new ApiKeyClient(this);
     this.Changeset = new ChangesetClient(this);
-    this.Dashboard = new DashboardClient(this);
     this.Discussion = new DiscussionClient(this);
     this.File = new FileClient(this);
     this.Holiday = new HolidayClient(this);
@@ -207,6 +206,7 @@ export class ProjectManagerClient {
     this.Risk = new RiskClient(this);
     this.RiskFile = new RiskFileClient(this);
     this.RiskTag = new RiskTagClient(this);
+    this.Security = new SecurityClient(this);
     this.Tag = new TagClient(this);
     this.Task = new TaskClient(this);
     this.TaskAssignee = new TaskAssigneeClient(this);

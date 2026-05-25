@@ -13,42 +13,17 @@
 
 
 /**
- * React grid layout item object
+ * Planned minutes attributed to a single calendar day for a resource.
  */
-export type ReactGridLayoutItemDto = {
+export type TaskPlannedAllocationDto = {
 
   /**
-   * Width
+   * Calendar date for this planned segment (date-only; workspace calendar applies).
    */
-  w: number;
+  date: string;
 
   /**
-   * Height
+   * Planned minutes on date for this resource.
    */
-  h: number;
-
-  /**
-   * X position
-   */
-  x: number;
-
-  /**
-   * Y position
-   */
-  y: number;
-
-  /**
-   * ID
-   */
-  i: string;
-
-  /**
-   * Moved indicator
-   */
-  moved: boolean;
-
-  /**
-   * If true, equal to `isDraggable: false, isResizable: false`
-   */
-  static: boolean;
+  minutes: number;
 };

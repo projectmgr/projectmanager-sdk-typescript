@@ -13,10 +13,10 @@
 
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
-import { NptDetailsDto } from "../index.js";
 import { NptDto } from "../index.js";
-import { NptUpdateDto } from "../index.js";
 import { NptCreateDto } from "../index.js";
+import { NptDetailsDto } from "../index.js";
+import { NptUpdateDto } from "../index.js";
 
 export class NptClient {
   private readonly client: ProjectManagerClient;
@@ -26,6 +26,33 @@ export class NptClient {
    */
   public constructor(client: ProjectManagerClient) {
     this.client = client;
+  }
+
+  /**
+   * Retrieve a list of Non-Project Tasks (NPTs).
+   *
+   * This endpoint does not use OData.
+   *
+   */
+  getNpts(): Promise<AstroResult<NptDto[]>> {
+    const url = `/api/data/non-project-tasks`;
+    return this.client.request<AstroResult<NptDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Creates a new Non-Project Task (NPT) for the current user. If you specify an assignee for this NPT, that user will be assigned to this task.
+   * If you do not specify an assignee, the NPT will be automatically assigned to you.
+   *
+   * A Non-Project Task (NPT) is an individual element of work that is outside of a project.
+   * Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
+   * all the same features as other tasks, but since they are not part of a project, they can
+   * be tracked separately by individuals.
+   *
+   * @param body The data used to create the Npt
+   */
+  createNpt(body: NptCreateDto): Promise<AstroResult<NptDto>> {
+    const url = `/api/data/non-project-tasks`;
+    return this.client.request<AstroResult<NptDto>>("post", url, null, body);
   }
 
   /**
@@ -73,21 +100,5 @@ export class NptClient {
   removeNpt(nptId: string): Promise<AstroResult<object>> {
     const url = `/api/data/non-project-tasks/${nptId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
-  }
-
-  /**
-   * Creates a new Non-Project Task (NPT) for the current user. If you specify an assignee for this NPT, that user will be assigned to this task.
-   * If you do not specify an assignee, the NPT will be automatically assigned to you.
-   *
-   * A Non-Project Task (NPT) is an individual element of work that is outside of a project.
-   * Many people use NPTs to track personal work or general administrative work.  NPTs have nearly
-   * all the same features as other tasks, but since they are not part of a project, they can
-   * be tracked separately by individuals.
-   *
-   * @param body The data used to create the Npt
-   */
-  createNpt(body: NptCreateDto): Promise<AstroResult<NptDto>> {
-    const url = `/api/data/non-project-tasks`;
-    return this.client.request<AstroResult<NptDto>>("post", url, null, body);
   }
 }

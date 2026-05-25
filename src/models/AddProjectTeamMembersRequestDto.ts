@@ -11,30 +11,15 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ReactGridLayoutDto } from "../index.js";
 
 /**
- * User dashboard create or update dto
+ * Request to grant project access to all active people on a business team.
  */
-export type DashboardSettingCreateDto = {
+export type AddProjectTeamMembersRequestDto = {
 
   /**
-   * Unique ID
+   * When true, new teammates receive editor-level access (subject to workspace role rules).
+   * When false, they receive collaborator access (again subject to role rules, e.g. guests).
    */
-  id: string | null;
-
-  /**
-   * User ID
-   */
-  userId: string | null;
-
-  /**
-   * Either custom or one of DashboardType enum
-   */
-  type: string;
-
-  /**
-   * React grid layout configuration
-   */
-  reactGridLayout: ReactGridLayoutDto | null;
+  addAsEditor: boolean;
 };

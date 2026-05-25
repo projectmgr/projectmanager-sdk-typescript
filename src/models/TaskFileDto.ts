@@ -46,4 +46,9 @@ export type TaskFileDto = {
    * The display label for the file type
    */
   fileTypeLabel: string | null;
+
+  /**
+   * File size in bytes (for task attachment lists / Gantt grid)
+   */
+  size: number;
 };
