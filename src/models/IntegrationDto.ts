@@ -12,6 +12,7 @@
  */
 
 import { IntegrationInstanceDto } from "../index.js";
+import { IntegrationMetadataDto } from "../index.js";
 
 /**
  * The Integrations API is intended for use by ProjectManager and its business
@@ -76,4 +77,11 @@ export type IntegrationDto = {
    * No Admin Permission
    */
   noAdminPermission: boolean;
+
+  /**
+   * Metadata key-value pairs stored against this Integration for the current Workspace.
+   * Only populated when the Integration is enabled. Values are comma-separated strings
+   * to support multi-value entries (e.g. a list of IDs, names, or reference values).
+   */
+  metadata: IntegrationMetadataDto[];
 };

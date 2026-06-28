@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { IntegrationDto } from "../index.js";
+import { IntegrationMetadataDto } from "../index.js";
 
 export class IntegrationClient {
   private readonly client: ProjectManagerClient;
@@ -74,5 +75,21 @@ export class IntegrationClient {
   retrieveAllIntegrations(): Promise<AstroResult<IntegrationDto[]>> {
     const url = `/api/data/integrations`;
     return this.client.request<AstroResult<IntegrationDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Replaces the metadata stored against a specific Integration for the current Workspace.
+   * Metadata is a list of key-value pairs where values are comma-separated strings to support
+   * multiple values per key (e.g. a list of IDs, names, or reference values).
+   *
+   * The Integrations API is intended for use by ProjectManager and its business development
+   * partners.  Please contact ProjectManager's sales team to request use of this API.
+   *
+   * @param integrationId The unique identifier of the Integration to update
+   * @param body The full set of metadata key-value pairs to store against this Integration
+   */
+  updateIntegrationMetadata(integrationId: string, body: IntegrationMetadataDto[]): Promise<AstroResult<IntegrationDto>> {
+    const url = `/api/data/integrations/${integrationId}/metadata`;
+    return this.client.request<AstroResult<IntegrationDto>>("put", url, null, body);
   }
 }

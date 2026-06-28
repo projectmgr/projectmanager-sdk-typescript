@@ -94,7 +94,7 @@ export type UserRolePermissionsDto = {
   viewPersonalBoard: UserRolePermissionDto;
 
   /**
-   * Access all projects and timesheets
+   * Edit all projects and timesheets
    */
   editAllProjects: UserRolePermissionDto;
 
