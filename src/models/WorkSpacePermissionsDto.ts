@@ -33,7 +33,7 @@ export type WorkSpacePermissionsDto = {
   editRole: boolean | null;
 
   /**
-   * True if this user can Access all account data
+   * True if this user can edit all projects and timesheets
    */
   editAllProjects: boolean | null;
 

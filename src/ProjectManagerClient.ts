@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    2026.156.162
+ * @version    2026.157.126
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -16,7 +16,6 @@ import { ApiKeyClient } from "./index.js";
 import { ChangesetClient } from "./index.js";
 import { DiscussionClient } from "./index.js";
 import { FileClient } from "./index.js";
-import { HolidayClient } from "./index.js";
 import { HomeFileClient } from "./index.js";
 import { HourlyRateClient } from "./index.js";
 import { HourlyRatePeriodClient } from "./index.js";
@@ -96,7 +95,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "2026.156.162";
+  private readonly version: string = "2026.157.126";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -106,7 +105,6 @@ export class ProjectManagerClient {
   public readonly Changeset: ChangesetClient;
   public readonly Discussion: DiscussionClient;
   public readonly File: FileClient;
-  public readonly Holiday: HolidayClient;
   public readonly HomeFile: HomeFileClient;
   public readonly HourlyRate: HourlyRateClient;
   public readonly HourlyRatePeriod: HourlyRatePeriodClient;
@@ -169,7 +167,6 @@ export class ProjectManagerClient {
     this.Changeset = new ChangesetClient(this);
     this.Discussion = new DiscussionClient(this);
     this.File = new FileClient(this);
-    this.Holiday = new HolidayClient(this);
     this.HomeFile = new HomeFileClient(this);
     this.HourlyRate = new HourlyRateClient(this);
     this.HourlyRatePeriod = new HourlyRatePeriodClient(this);
