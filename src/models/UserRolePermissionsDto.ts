@@ -94,7 +94,7 @@ export type UserRolePermissionsDto = {
   viewPersonalBoard: UserRolePermissionDto;
 
   /**
-   * Access all projects and timesheets
+   * Edit all projects and timesheets
    */
   editAllProjects: UserRolePermissionDto;
 
@@ -102,4 +102,9 @@ export type UserRolePermissionsDto = {
    * Edit own email address
    */
   changeOwnEmail: UserRolePermissionDto;
+
+  /**
+   * Use MCP server and AI integrations via OAuth
+   */
+  useMcp: UserRolePermissionDto;
 };

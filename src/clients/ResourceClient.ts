@@ -16,6 +16,8 @@ import { AstroResult } from "../index.js";
 import { ResourceDto } from "../index.js";
 import { ResourceCreateDto } from "../index.js";
 import { ResourceUpdateDto } from "../index.js";
+import { ResourceDetailsDto } from "../index.js";
+import { ResourceBulkUpdateDto } from "../index.js";
 import { ResourcesDto } from "../index.js";
 import { ResourcesCreateDto } from "../index.js";
 
@@ -102,9 +104,9 @@ export class ResourceClient {
    *
    * @param resourceId The id of the Resource
    */
-  retrieveResource(resourceId: string): Promise<AstroResult<ResourceDto>> {
+  retrieveResource(resourceId: string): Promise<AstroResult<ResourceDetailsDto>> {
     const url = `/api/data/resources/${resourceId}`;
-    return this.client.request<AstroResult<ResourceDto>>("get", url, null, null);
+    return this.client.request<AstroResult<ResourceDetailsDto>>("get", url, null, null);
   }
 
   /**
@@ -121,6 +123,22 @@ export class ResourceClient {
   deleteResource(resourceId: string): Promise<AstroResult<ResourceDto>> {
     const url = `/api/data/resources/${resourceId}`;
     return this.client.request<AstroResult<ResourceDto>>("delete", url, null, null);
+  }
+
+  /**
+   * Updates a list of existing Resources in a single API call.
+   *
+   * Each entry identifies the Resource to update via its ResourceId and supplies the fields to change.
+   * Only fields that are sensible to update across many Resources at once are accepted; see
+   * ResourceBulkUpdateDto for the supported fields. The whole request is validated before any changes
+   * are applied - if any entry fails validation, no Resources are updated and the individual failures
+   * are returned in the AdditionalErrors of the result.
+   *
+   * @param body The list of Resources to update
+   */
+  bulkUpdateResources(body: ResourceBulkUpdateDto[]): Promise<AstroResult<ResourceDto[]>> {
+    const url = `/api/data/resources/bulk`;
+    return this.client.request<AstroResult<ResourceDto[]>>("put", url, null, body);
   }
 
   /**

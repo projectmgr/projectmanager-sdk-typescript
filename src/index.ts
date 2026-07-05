@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    2026.156.162
+ * @version    2026.158.269
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -19,7 +19,6 @@ export { ApiKeyClient } from "./clients/ApiKeyClient.js";
 export { ChangesetClient } from "./clients/ChangesetClient.js";
 export { DiscussionClient } from "./clients/DiscussionClient.js";
 export { FileClient } from "./clients/FileClient.js";
-export { HolidayClient } from "./clients/HolidayClient.js";
 export { HomeFileClient } from "./clients/HomeFileClient.js";
 export { HourlyRateClient } from "./clients/HourlyRateClient.js";
 export { HourlyRatePeriodClient } from "./clients/HourlyRatePeriodClient.js";
@@ -111,6 +110,7 @@ export { HourlyRatePeriodDto } from "./models/HourlyRatePeriodDto.js";
 export { HourlyRateValueDto } from "./models/HourlyRateValueDto.js";
 export { HourlyRateValueUpdateDto } from "./models/HourlyRateValueUpdateDto.js";
 export { IdDto } from "./models/IdDto.js";
+export { IdNameDto } from "./models/IdNameDto.js";
 export { IntegrationAuthSetupDto } from "./models/IntegrationAuthSetupDto.js";
 export { IntegrationCategoryDto } from "./models/IntegrationCategoryDto.js";
 export { IntegrationConnectionSchemeObjectDto } from "./models/IntegrationConnectionSchemeObjectDto.js";
@@ -191,7 +191,9 @@ export { RecurringTaskChangeSetDetailsChangeSetStatusDto } from "./models/Recurr
 export { RecurringTaskSettingsDto } from "./models/RecurringTaskSettingsDto.js";
 export { RecurringTaskValidationResultDto } from "./models/RecurringTaskValidationResultDto.js";
 export { ResourceApproverDto } from "./models/ResourceApproverDto.js";
+export { ResourceBulkUpdateDto } from "./models/ResourceBulkUpdateDto.js";
 export { ResourceCreateDto } from "./models/ResourceCreateDto.js";
+export { ResourceDetailsDto } from "./models/ResourceDetailsDto.js";
 export { ResourceDto } from "./models/ResourceDto.js";
 export { ResourceHolidayDto } from "./models/ResourceHolidayDto.js";
 export { ResourcesCreateDto } from "./models/ResourcesCreateDto.js";
@@ -221,6 +223,7 @@ export { TaskActualResourceTimeDto } from "./models/TaskActualResourceTimeDto.js
 export { TaskActualTimeEntryDto } from "./models/TaskActualTimeEntryDto.js";
 export { TaskApprovalStatusUpdateDto } from "./models/TaskApprovalStatusUpdateDto.js";
 export { TaskAssigneeDto } from "./models/TaskAssigneeDto.js";
+export { TaskBaselineDto } from "./models/TaskBaselineDto.js";
 export { TaskCreateDto } from "./models/TaskCreateDto.js";
 export { TaskDetailsDto } from "./models/TaskDetailsDto.js";
 export { TaskDto } from "./models/TaskDto.js";
@@ -274,5 +277,8 @@ export { WeeklyRecurringSettingsDto } from "./models/WeeklyRecurringSettingsDto.
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
 export { WorkSpaceLinksDto } from "./models/WorkSpaceLinksDto.js";
 export { WorkSpacePermissionsDto } from "./models/WorkSpacePermissionsDto.js";
+export { WorkspaceSettingsDto } from "./models/WorkspaceSettingsDto.js";
+export { WorkspaceSettingsUpdateDto } from "./models/WorkspaceSettingsUpdateDto.js";
 export { WorkSpaceUserInfoDto } from "./models/WorkSpaceUserInfoDto.js";
+export { WorkspaceWorkingDaysDto } from "./models/WorkspaceWorkingDaysDto.js";
 export { YearlyRecurringSettingsDto } from "./models/YearlyRecurringSettingsDto.js";

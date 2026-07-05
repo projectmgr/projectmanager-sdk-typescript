@@ -33,7 +33,7 @@ export type WorkSpacePermissionsDto = {
   editRole: boolean | null;
 
   /**
-   * True if this user can Access all account data
+   * True if this user can edit all projects and timesheets
    */
   editAllProjects: boolean | null;
 
@@ -101,4 +101,14 @@ export type WorkSpacePermissionsDto = {
    * True if this user can View personal board
    */
   viewMyBoard: boolean | null;
+
+  /**
+   * True if this user can Edit their own email address
+   */
+  changeOwnEmail: boolean | null;
+
+  /**
+   * True if this user can use the MCP server and AI integrations via OAuth
+   */
+  useMcp: boolean | null;
 };

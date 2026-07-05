@@ -15,15 +15,15 @@ import { ResourceApproverDto } from "../index.js";
 import { ResourceTeamDto } from "../index.js";
 import { ResourceSkillDto } from "../index.js";
 import { ResourceWorkingDaysHours } from "../index.js";
+import { IdNameDto } from "../index.js";
 
 /**
- * A Resource represents a person, material, or tool that is used within your Projects.
- * When you attach a Resources to more than one Task, the software will schedule the usage
- * of your Resource so that it is not allocated to more than one Task at the same time.
- * The users in your Workspace are also considered Resources.  To invite a new User to your
- * Workspace, create a new Resource for that user.
+ * An extended view of a Resource returned when retrieving a single Resource.
+ *
+ * Includes everything on Astro.Api.Dto.Resources.ResourceDto plus additional profile details that are only
+ * surfaced for an individual Resource, such as the Projects the Resource has access to.
  */
-export type ResourceDto = {
+export type ResourceDetailsDto = {
 
   /**
    * The unique identifier of this Resource.
@@ -204,4 +204,11 @@ export type ResourceDto = {
    * Hours available per weekday for scheduling (whole hours per day; matches workspace/resource calendar rows).
    */
   workingDays: ResourceWorkingDaysHours;
+
+  /**
+   * The list of Projects this Resource has access to, each as an id and name.
+   *
+   * Returns an empty array when the Resource does not have access to any Projects.
+   */
+  projectMembership: IdNameDto[];
 };

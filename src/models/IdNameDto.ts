@@ -1,0 +1,34 @@
+/**
+ * ProjectManager API for TypeScript
+ *
+ * (c) ProjectManager.com, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     ProjectManager.com <support@projectmanager.com>
+ * @copyright  ProjectManager.com, Inc.
+ * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
+ */
+
+
+/**
+ * A lightweight reference that pairs a unique identifier with a display name.
+ *
+ * To determine what the identifier and name represent, see the field to which this
+ * value is attached in the parent object.
+ */
+export type IdNameDto = {
+
+  /**
+   * A unique identifier.  To determine the meaning of this unique identifier,
+   * see the field to which this value is attached.
+   */
+  id: string;
+
+  /**
+   * A name.  To determine the meaning of this name, see the field to which this
+   * value is attached in the parent object.
+   */
+  name: string;
+};
