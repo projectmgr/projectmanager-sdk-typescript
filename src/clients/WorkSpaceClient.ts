@@ -14,6 +14,7 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { WorkSpaceDto } from "../index.js";
+import { WorkspaceSettingsUpdateDto } from "../index.js";
 
 export class WorkSpaceClient {
   private readonly client: ProjectManagerClient;
@@ -26,16 +27,31 @@ export class WorkSpaceClient {
   }
 
   /**
-   * Retrieve the list of Workspaces to which the currently logged on user has access.
+   * Returns the workspace the user is currently logged on to as a single-item list.
    *
-   * A single User may have access to multiple Workspaces, although they can only be logged on
-   * to one Workspace at a time.  This API lists all Workspaces to which the currently logged on
-   * user is entitled to access.  To determine which Workspace a user is currently logged on
-   * use the `/api/data/me` endpoint.
+   * This endpoint does not return every workspace the user can access. To switch workspaces
+   * or list all accessible workspaces, use workspace selection flows (for example `/api/data/me`
+   * and the workspace selector).
    *
    */
-  retrieveWorkspaces(): Promise<AstroResult<WorkSpaceDto[]>> {
+  retrievecurrentworkspace(): Promise<AstroResult<WorkSpaceDto[]>> {
     const url = `/api/data/workspaces`;
     return this.client.request<AstroResult<WorkSpaceDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Updates workspace-level scheduling defaults for the workspace the user is currently logged on to,
+   * including default planned hours and working-day hours (Monday through Sunday).
+   *
+   * Only properties included in the request body are updated; omitted properties are left unchanged.
+   * When workingDays is provided, only the weekdays included in that object are updated.
+   *
+   * Values must be between 0 and 24.
+   *
+   * @param body Workspace settings to update
+   */
+  updatecurrentworkspacesettings(body: WorkspaceSettingsUpdateDto): Promise<AstroResult<WorkSpaceDto>> {
+    const url = `/api/data/workspaces/settings`;
+    return this.client.request<AstroResult<WorkSpaceDto>>("put", url, null, body);
   }
 }

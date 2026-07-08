@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { WorkspaceSettingsDto } from "../index.js";
 
 /**
  * A Workspace represents a single business subscription to the ProjectManager.com service.  You
@@ -69,4 +70,9 @@ export type WorkSpaceDto = {
    * True if this Workspace has an active subscription; false if this is a free trial.
    */
   isPaid: boolean;
+
+  /**
+   * Workspace-level scheduling defaults.
+   */
+  settings: WorkspaceSettingsDto;
 };

@@ -24,6 +24,7 @@ import { RecurringTaskSettingsDto } from "../index.js";
 import { DiscussionDataDto } from "../index.js";
 import { FileDataDto } from "../index.js";
 import { TaskReferenceDto } from "../index.js";
+import { TaskBaselineDto } from "../index.js";
 
 /**
  * A Task is an individual element of work that must be performed to complete a Project.  A
@@ -372,4 +373,9 @@ export type TaskDetailsDto = {
    * Represents a collection of tasks that should execute before the current task
    */
   predecessors: TaskReferenceDto[] | null;
+
+  /**
+   * The baseline values for this Task, if a project baseline has been set.
+   */
+  baseline: TaskBaselineDto | null;
 };
