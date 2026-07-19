@@ -13,13 +13,12 @@
 
 
 /**
- * Represents a request to update the approval status of a Task.
+ * Request body for updating a holiday. Only the reason can be changed.
  */
-export type TaskApprovalStatusUpdateDto = {
+export type HolidayUpdateDto = {
 
   /**
-   * The approval status to apply to the Task.
-   * Must be one of: approved, denied, or pending.
+   * Updated reason or label for the holiday.
    */
-  status: string;
+  reason: string;
 };

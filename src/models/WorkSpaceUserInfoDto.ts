@@ -127,4 +127,9 @@ export type WorkSpaceUserInfoDto = {
    * numeric limit.
    */
   entitlements: EntitlementDto[];
+
+  /**
+   * True if the user signed in via a social provider (Google, Apple, or Microsoft).
+   */
+  isSocial: boolean;
 };
