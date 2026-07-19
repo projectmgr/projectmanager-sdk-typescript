@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    2026.158.269
+ * @version    2026.159.208
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -102,6 +102,11 @@ export { ExportPriorityFilterDto } from "./models/ExportPriorityFilterDto.js";
 export { FileDataDto } from "./models/FileDataDto.js";
 export { FileDto } from "./models/FileDto.js";
 export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
+export { HolidayCreateDto } from "./models/HolidayCreateDto.js";
+export { HolidayDetailDto } from "./models/HolidayDetailDto.js";
+export { HolidayListItemDto } from "./models/HolidayListItemDto.js";
+export { HolidayResourceDto } from "./models/HolidayResourceDto.js";
+export { HolidayUpdateDto } from "./models/HolidayUpdateDto.js";
 export { HourlyRateCreateDto } from "./models/HourlyRateCreateDto.js";
 export { HourlyRateDetailsDto } from "./models/HourlyRateDetailsDto.js";
 export { HourlyRateDto } from "./models/HourlyRateDto.js";
@@ -275,6 +280,7 @@ export { UserRolePermissionDto } from "./models/UserRolePermissionDto.js";
 export { UserRolePermissionsDto } from "./models/UserRolePermissionsDto.js";
 export { WeeklyRecurringSettingsDto } from "./models/WeeklyRecurringSettingsDto.js";
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
+export { WorkspaceLicensesDto } from "./models/WorkspaceLicensesDto.js";
 export { WorkSpaceLinksDto } from "./models/WorkSpaceLinksDto.js";
 export { WorkSpacePermissionsDto } from "./models/WorkSpacePermissionsDto.js";
 export { WorkspaceSettingsDto } from "./models/WorkspaceSettingsDto.js";
