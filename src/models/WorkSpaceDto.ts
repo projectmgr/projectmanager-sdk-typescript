@@ -11,6 +11,7 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { WorkspaceLicensesDto } from "../index.js";
 import { WorkspaceSettingsDto } from "../index.js";
 
 /**
@@ -34,6 +35,11 @@ export type WorkSpaceDto = {
    * The unique DNS domain of this Workspace.
    */
   customProductDomain: string;
+
+  /**
+   * The unique identifier of the user that is the account owner of this Workspace.
+   */
+  accountOwnerId: string | null;
 
   /**
    * This value is set to true if the user who retrieves this Workspace object via an API call is
@@ -70,6 +76,26 @@ export type WorkSpaceDto = {
    * True if this Workspace has an active subscription; false if this is a free trial.
    */
   isPaid: boolean;
+
+  /**
+   * The account status of this Workspace (for example `Active`, `Trial`, `Cancelled`).
+   */
+  status: string;
+
+  /**
+   * True if this Workspace is currently active or in trial and can be used.
+   */
+  isActive: boolean;
+
+  /**
+   * True if this Workspace is provisioned through a reseller (for example, Acumatica).
+   */
+  isReseller: boolean;
+
+  /**
+   * A summary of the paid user licenses for this Workspace.
+   */
+  licenses: WorkspaceLicensesDto;
 
   /**
    * Workspace-level scheduling defaults.

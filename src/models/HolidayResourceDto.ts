@@ -13,13 +13,12 @@
 
 
 /**
- * Represents a request to update the approval status of a Task.
+ * A resource affected by a holiday. Additional fields may be added later.
  */
-export type TaskApprovalStatusUpdateDto = {
+export type HolidayResourceDto = {
 
   /**
-   * The approval status to apply to the Task.
-   * Must be one of: approved, denied, or pending.
+   * The resource identifier.
    */
-  status: string;
+  id: string;
 };
