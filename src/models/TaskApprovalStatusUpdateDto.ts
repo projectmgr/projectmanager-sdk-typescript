@@ -19,7 +19,7 @@ export type TaskApprovalStatusUpdateDto = {
 
   /**
    * The approval status to apply to the Task.
-   * Must be one of: Approved, Denied, or Pending.
+   * Must be one of: approved, denied, or pending.
    */
   status: string;
 };

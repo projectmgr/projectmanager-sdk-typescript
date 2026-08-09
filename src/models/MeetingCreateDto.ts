@@ -13,31 +13,25 @@
 
 
 /**
- * A Meeting is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.
- *
- * Meeting's are a lightweight version of a project task.
+ * A Meeting is a lightweight calendar event that may or may not belong to a project.
+ * It is only visible to the person who created it and the users assigned to it.
  */
 export type MeetingCreateDto = {
 
   /**
-   * The common name of this Task.
+   * The common name of this Meeting.
    */
   name: string;
 
   /**
-   * This field contains the task's "Note" or "Description", which is a description of the work to be done to complete the task.
-   *
-   * Within the ProjectManager application, you can use this field as follows:
-   * * When in the Board or List view, click on a task to open the task panel, then edit the "Description" field.
+   * This field contains the Meeting's description.
    */
   description: string | null;
 
   /**
-   * The date when work on this Task is planned to begin.
-   *
-   * This value contains only the date in year-month-day format.  For display, this
-   * date will always be shown as this same year-month-day regardless of time zone.
-   *  time needs to be in 15-minute increments, valid values are 0, 15, 30, 45
+   * The planned start date/time for this Meeting, in UTC.
+   * Time must be on a 15-minute boundary (0, 15, 30, or 45 minutes).
+   * Clients should convert to local time only when displaying to the user.
    */
   startDate: string;
 
@@ -47,7 +41,7 @@ export type MeetingCreateDto = {
   durationMinutes: number | null;
 
   /**
-   * Specify a list of resources to assign to this NPT
+   * Specify a list of resources to assign to this Meeting
    */
   assignees: string[] | null;
 
