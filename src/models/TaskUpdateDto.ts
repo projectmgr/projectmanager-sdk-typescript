@@ -160,6 +160,18 @@ export type TaskUpdateDto = {
   isMilestone: boolean | null;
 
   /**
+   * Set this to true to break this Task out of its recurring series as part of this update.
+   *
+   * The Task is detached from its series, clearing its parent/child relationship and its
+   * recurrence settings.  Any other changes in the same update are then applied to this
+   * Task alone rather than being propagated across the rest of the series.
+   *
+   * This has no effect if the Task is not part of a recurring series.  A Task can only be
+   * made recurring through the TaskRecurrency endpoints.
+   */
+  breakRecurrency: boolean;
+
+  /**
    * Object contains data to move task to another project
    */
   moveToProject: MoveTaskToProjectDto | null;

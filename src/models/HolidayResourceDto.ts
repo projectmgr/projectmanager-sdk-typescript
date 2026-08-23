@@ -11,25 +11,14 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { RecurrenceDto } from "../index.js";
 
 /**
- * RecurringTaskChangeSetDetails
+ * A resource affected by a holiday. Additional fields may be added later.
  */
-export type RecurringTaskChangeSetDetails = {
+export type HolidayResourceDto = {
 
   /**
-   * The created Task Ids
+   * The resource identifier.
    */
-  taskIds: string[];
-
-  /**
-   * The ChangeSet Id
-   */
-  changeSetId: string | null;
-
-  /**
-   * The recurrence instances created by this action
-   */
-  recurrences: RecurrenceDto[];
+  id: string;
 };

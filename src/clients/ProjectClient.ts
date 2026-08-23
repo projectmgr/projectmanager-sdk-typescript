@@ -17,6 +17,8 @@ import { ProjectDto } from "../index.js";
 import { ProjectCreateDto } from "../index.js";
 import { ProjectUpdateDto } from "../index.js";
 import { ProjectReopenStatusDto } from "../index.js";
+import { ExportDto } from "../index.js";
+import { ProjectExportSettingsDto } from "../index.js";
 
 export class ProjectClient {
   private readonly client: ProjectManagerClient;
@@ -130,5 +132,17 @@ export class ProjectClient {
   reopenProjectStatus(projectId: string): Promise<AstroResult<ProjectReopenStatusDto>> {
     const url = `/api/data/projects/${projectId}/reopen/status`;
     return this.client.request<AstroResult<ProjectReopenStatusDto>>("get", url, null, null);
+  }
+
+  /**
+   * Initiates a new Export action for Projects.
+   *
+   * Returns the identifier of this Projects Export.
+   *
+   * @param body The settings to use for this export action
+   */
+  createProjectExport(body: ProjectExportSettingsDto): Promise<AstroResult<ExportDto>> {
+    const url = `/api/data/projects/export`;
+    return this.client.request<AstroResult<ExportDto>>("post", url, null, body);
   }
 }

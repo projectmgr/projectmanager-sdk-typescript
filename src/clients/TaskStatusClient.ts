@@ -16,6 +16,8 @@ import { AstroResult } from "../index.js";
 import { TaskStatusDto } from "../index.js";
 import { TaskStatusCreateDto } from "../index.js";
 import { TaskStatusUpdateDto } from "../index.js";
+import { TaskStatusMoveResultDto } from "../index.js";
+import { TaskStatusMoveDto } from "../index.js";
 
 export class TaskStatusClient {
   private readonly client: ProjectManagerClient;
@@ -82,5 +84,18 @@ export class TaskStatusClient {
   deleteTaskStatus(taskStatusId: string): Promise<AstroResult<object>> {
     const url = `/api/data/tasks/statuses/${taskStatusId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
+
+  /**
+   * Moves one or more Tasks into the specified TaskStatus.  If a Position is specified for a Task,
+   * it will be placed at that position within the target TaskStatus.  If no Position is specified,
+   * the Task will be placed at the end of the list within the target TaskStatus.
+   *
+   * @param taskStatusId The unique identifier of the TaskStatus to move the Tasks into
+   * @param body The Tasks to move and the position each should occupy within the target TaskStatus
+   */
+  moveTaskstoaTaskStatus(taskStatusId: string, body: TaskStatusMoveDto[]): Promise<AstroResult<TaskStatusMoveResultDto[]>> {
+    const url = `/api/data/tasks/statuses/${taskStatusId}/tasks`;
+    return this.client.request<AstroResult<TaskStatusMoveResultDto[]>>("post", url, null, body);
   }
 }
