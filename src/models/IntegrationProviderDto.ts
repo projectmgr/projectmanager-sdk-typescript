@@ -11,8 +11,8 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { IntegrationDto } from "../index.js";
 import { IntegrationAuthSetupDto } from "../index.js";
+import { IntegrationDto } from "../index.js";
 
 /**
  * The Integrations API is intended for use by ProjectManager and its business

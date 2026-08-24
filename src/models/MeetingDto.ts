@@ -12,15 +12,14 @@
  */
 
 import { MeetingAssigneeDto } from "../index.js";
+import { MeetingProjectDto } from "../index.js";
+import { TaskOwnerDto } from "../index.js";
 import { TaskTagDto } from "../index.js";
 import { TaskTodoDto } from "../index.js";
-import { TaskOwnerDto } from "../index.js";
-import { MeetingProjectDto } from "../index.js";
 
 /**
- * A Meeting is a task that does not belong to the project or is part of a project. It is only visible to the person who created it, and the users assigned to it.
- *
- * Meeting's are a lightweight version of a project task.
+ * A Meeting is a lightweight calendar event that may or may not belong to a project.
+ * It is only visible to the person who created it and the users assigned to it.
  */
 export type MeetingDto = {
 
@@ -30,46 +29,39 @@ export type MeetingDto = {
   id: string;
 
   /**
-   * The common name of this Task.
+   * The common name of this Meeting.
    */
   name: string;
 
   /**
-   * This field contains the task's "Note" or "Description", which is a description of the work to be done to complete the task.
-   *
-   * Within the ProjectManager application, you can use this field as follows:
-   * * When in the Board or List view, click on a task to open the task panel, then edit the "Description" field.
+   * This field contains the Meeting's description.
    */
   description: string | null;
 
   /**
-   * The date when work on this Task is planned to begin.
-   *
-   * This value contains only the date in year-month-day format. For display, this
-   * date will always be shown as this same year-month-day regardless of time zone.
+   * The planned start date/time for this Meeting, in UTC.
+   * Clients should convert to local time only when displaying to the user.
    */
   plannedStartDate: string | null;
 
   /**
-   * The date when work on this Task is expected to complete.
-   *
-   * This value contains only the date in year-month-day format. For display, this
-   * date will always be shown as this same year-month-day regardless of time zone.
+   * The planned finish date/time for this Meeting, in UTC.
+   * Clients should convert to local time only when displaying to the user.
    */
   plannedFinishDate: string | null;
 
   /**
-   * The planned duration (in minutes) for this Task.
+   * The planned duration (in minutes) for this Meeting.
    */
   plannedDuration: number | null;
 
   /**
-   * The planned effort (in minutes) for this Task.
+   * The planned effort (in minutes) for this Meeting.
    */
   plannedEffort: number | null;
 
   /**
-   * Return the priority of a task
+   * Return the priority of a Meeting
    */
   priorityId: number | null;
 
@@ -79,18 +71,18 @@ export type MeetingDto = {
   assignees: MeetingAssigneeDto[];
 
   /**
-   * A short ID that can be used to refer to this Task.  This short ID is
+   * A short ID that can be used to refer to this Meeting. This short ID is
    * guaranteed to be unique within your Workspace.
    */
   shortId: string | null;
 
   /**
-   * The TaskTags that apply to this Task.
+   * The tags that apply to this Meeting.
    */
   tags: TaskTagDto[] | null;
 
   /**
-   * A list of TaskTodo items, which are sub-tasks within this Task.
+   * A list of todo items for this Meeting.
    */
   todos: TaskTodoDto[] | null;
 
@@ -100,12 +92,12 @@ export type MeetingDto = {
   createDate: string;
 
   /**
-   * The owner of this Task.
+   * The owner of this Meeting.
    */
   owner: TaskOwnerDto | null;
 
   /**
-   * The ownerId of this Task.
+   * The ownerId of this Meeting.
    */
   ownerId: string | null;
 

@@ -11,25 +11,24 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { RecurrenceDto } from "../index.js";
 
 /**
- * RecurringTaskChangeSetDetails
+ * A single recurrence instance created by a recurring Task, NPT, or Meeting action
  */
-export type RecurringTaskChangeSetDetails = {
+export type RecurrenceDto = {
 
   /**
-   * The created Task Ids
+   * The unique identifier of the created recurrence instance
    */
-  taskIds: string[];
+  id: string;
 
   /**
-   * The ChangeSet Id
+   * The occurrence start (UTC). For Meetings this carries the meeting time.
    */
-  changeSetId: string | null;
+  startDate: string;
 
   /**
-   * The recurrence instances created by this action
+   * The occurrence finish (UTC)
    */
-  recurrences: RecurrenceDto[];
+  endDate: string;
 };

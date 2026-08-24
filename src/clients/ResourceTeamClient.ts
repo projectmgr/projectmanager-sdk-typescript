@@ -14,8 +14,8 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { ResourceTeamDto } from "../index.js";
-import { CreateResourceTeamDto } from "../index.js";
 import { UpdateResourceTeamDto } from "../index.js";
+import { CreateResourceTeamDto } from "../index.js";
 
 export class ResourceTeamClient {
   private readonly client: ProjectManagerClient;
@@ -25,6 +25,49 @@ export class ResourceTeamClient {
    */
   public constructor(client: ProjectManagerClient) {
     this.client = client;
+  }
+
+  /**
+   * Retrieves a single ResourceTeam object by its unique identifier
+   *
+   * A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+   * in a manner consistent with your business needs.  You can assign Resources to be members
+   * of zero, one, or many ResourceTeams.
+   *
+   * @param resourceTeamId The unique identifier of the ResourceTeam to retrieve
+   */
+  getResourceTeam(resourceTeamId: string): Promise<AstroResult<ResourceTeamDto>> {
+    const url = `/api/data/resources/teams/${resourceTeamId}`;
+    return this.client.request<AstroResult<ResourceTeamDto>>("get", url, null, null);
+  }
+
+  /**
+   * Deletes a resource team by its unique identifier.
+   *
+   * A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+   * in a manner consistent with your business needs.  You can assign Resources to be members
+   * of zero, one, or many ResourceTeams.
+   *
+   * @param resourceTeamId The unique ID of the team to be removed
+   */
+  deleteResourceTeam(resourceTeamId: string): Promise<AstroResult<object>> {
+    const url = `/api/data/resources/teams/${resourceTeamId}`;
+    return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
+
+  /**
+   * Update a Resource Team.
+   *
+   * A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+   * in a manner consistent with your business needs.  You can assign Resources to be members
+   * of zero, one, or many ResourceTeams.
+   *
+   * @param resourceTeamId The id of the resource team
+   * @param body The name of the team to Update.
+   */
+  updateResourceTeam(resourceTeamId: string, body: UpdateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
+    const url = `/api/data/resources/teams/${resourceTeamId}`;
+    return this.client.request<AstroResult<ResourceTeamDto>>("put", url, null, body);
   }
 
   /**
@@ -40,7 +83,7 @@ export class ResourceTeamClient {
    * @param orderby Order collection by this field.
    * @param expand Include related data in the response
    */
-  retrieveResourceTeams(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
+  queryResourceTeams(top?: number, skip?: number, filter?: string, orderby?: string, expand?: string): Promise<AstroResult<ResourceTeamDto[]>> {
     const url = `/api/data/resources/teams`;
     const options = {
       params: {
@@ -55,33 +98,16 @@ export class ResourceTeamClient {
   }
 
   /**
-   * Create a Resource Team.
+   * Create a Resource Team within your workspace
    *
-   * @param body The name of the team to create.
+   * A ResourceTeam is a grouping of Resources that allows you to keep track of assignments
+   * in a manner consistent with your business needs.  You can assign Resources to be members
+   * of zero, one, or many ResourceTeams.
+   *
+   * @param body The name of the ResourceTeam to create
    */
   createResourceTeam(body: CreateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
     const url = `/api/data/resources/teams`;
     return this.client.request<AstroResult<ResourceTeamDto>>("post", url, null, body);
-  }
-
-  /**
-   * The endpoint is used to delete a resource team. Users assigned to this team will no longer be assigned thereafter.
-   *
-   * @param resourceTeamId The Id of the team to be removed.
-   */
-  deleteResourceTeam(resourceTeamId: string): Promise<AstroResult<object>> {
-    const url = `/api/data/resources/teams/${resourceTeamId}`;
-    return this.client.request<AstroResult<object>>("delete", url, null, null);
-  }
-
-  /**
-   * Update a Resource Team.
-   *
-   * @param resourceTeamId The id of the resource team
-   * @param body The name of the team to Update.
-   */
-  updateResourceTeam(resourceTeamId: string, body: UpdateResourceTeamDto): Promise<AstroResult<ResourceTeamDto>> {
-    const url = `/api/data/resources/teams/${resourceTeamId}`;
-    return this.client.request<AstroResult<ResourceTeamDto>>("put", url, null, body);
   }
 }

@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    2026.158.269
+ * @version    2026.161.149
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -27,6 +27,7 @@ export { IntegrationCategoryClient } from "./clients/IntegrationCategoryClient.j
 export { IntegrationProviderClient } from "./clients/IntegrationProviderClient.js";
 export { LicenseClient } from "./clients/LicenseClient.js";
 export { MeClient } from "./clients/MeClient.js";
+export { MeetingRecurrencyClient } from "./clients/MeetingRecurrencyClient.js";
 export { MeetingsClient } from "./clients/MeetingsClient.js";
 export { MeetingTagClient } from "./clients/MeetingTagClient.js";
 export { MeetingTodosClient } from "./clients/MeetingTodosClient.js";
@@ -102,6 +103,11 @@ export { ExportPriorityFilterDto } from "./models/ExportPriorityFilterDto.js";
 export { FileDataDto } from "./models/FileDataDto.js";
 export { FileDto } from "./models/FileDto.js";
 export { GlobalHolidayDto } from "./models/GlobalHolidayDto.js";
+export { HolidayCreateDto } from "./models/HolidayCreateDto.js";
+export { HolidayDetailDto } from "./models/HolidayDetailDto.js";
+export { HolidayListItemDto } from "./models/HolidayListItemDto.js";
+export { HolidayResourceDto } from "./models/HolidayResourceDto.js";
+export { HolidayUpdateDto } from "./models/HolidayUpdateDto.js";
 export { HourlyRateCreateDto } from "./models/HourlyRateCreateDto.js";
 export { HourlyRateDetailsDto } from "./models/HourlyRateDetailsDto.js";
 export { HourlyRateDto } from "./models/HourlyRateDto.js";
@@ -160,6 +166,8 @@ export { ProjectCreateDto } from "./models/ProjectCreateDto.js";
 export { ProjectCustomerCreateDto } from "./models/ProjectCustomerCreateDto.js";
 export { ProjectCustomerDto } from "./models/ProjectCustomerDto.js";
 export { ProjectDto } from "./models/ProjectDto.js";
+export { ProjectExportFilterDto } from "./models/ProjectExportFilterDto.js";
+export { ProjectExportSettingsDto } from "./models/ProjectExportSettingsDto.js";
 export { ProjectFieldCreateDto } from "./models/ProjectFieldCreateDto.js";
 export { ProjectFieldDto } from "./models/ProjectFieldDto.js";
 export { ProjectFieldValueDto } from "./models/ProjectFieldValueDto.js";
@@ -186,6 +194,7 @@ export { ProjectUpdateDto } from "./models/ProjectUpdateDto.js";
 export { ProjectVersionChangeDataDto } from "./models/ProjectVersionChangeDataDto.js";
 export { ProjectVersionDto } from "./models/ProjectVersionDto.js";
 export { ProjectWorkingDaysDto } from "./models/ProjectWorkingDaysDto.js";
+export { RecurrenceDto } from "./models/RecurrenceDto.js";
 export { RecurringTaskChangeSetDetails } from "./models/RecurringTaskChangeSetDetails.js";
 export { RecurringTaskChangeSetDetailsChangeSetStatusDto } from "./models/RecurringTaskChangeSetDetailsChangeSetStatusDto.js";
 export { RecurringTaskSettingsDto } from "./models/RecurringTaskSettingsDto.js";
@@ -242,6 +251,8 @@ export { TaskProjectDto } from "./models/TaskProjectDto.js";
 export { TaskReferenceDto } from "./models/TaskReferenceDto.js";
 export { TaskStatusCreateDto } from "./models/TaskStatusCreateDto.js";
 export { TaskStatusDto } from "./models/TaskStatusDto.js";
+export { TaskStatusMoveDto } from "./models/TaskStatusMoveDto.js";
+export { TaskStatusMoveResultDto } from "./models/TaskStatusMoveResultDto.js";
 export { TaskStatusUpdateDto } from "./models/TaskStatusUpdateDto.js";
 export { TaskStatusUpdateObsoleteDto } from "./models/TaskStatusUpdateObsoleteDto.js";
 export { TaskTagDto } from "./models/TaskTagDto.js";
@@ -275,6 +286,7 @@ export { UserRolePermissionDto } from "./models/UserRolePermissionDto.js";
 export { UserRolePermissionsDto } from "./models/UserRolePermissionsDto.js";
 export { WeeklyRecurringSettingsDto } from "./models/WeeklyRecurringSettingsDto.js";
 export { WorkSpaceDto } from "./models/WorkSpaceDto.js";
+export { WorkspaceLicensesDto } from "./models/WorkspaceLicensesDto.js";
 export { WorkSpaceLinksDto } from "./models/WorkSpaceLinksDto.js";
 export { WorkSpacePermissionsDto } from "./models/WorkSpacePermissionsDto.js";
 export { WorkspaceSettingsDto } from "./models/WorkspaceSettingsDto.js";

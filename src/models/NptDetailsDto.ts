@@ -11,14 +11,14 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { NptStatusDto } from "../index.js";
-import { NptAssigneeDto } from "../index.js";
-import { TaskTagDto } from "../index.js";
-import { TaskTodoDto } from "../index.js";
-import { TaskOwnerDto } from "../index.js";
 import { DiscussionDataDto } from "../index.js";
 import { FileDataDto } from "../index.js";
+import { NptAssigneeDto } from "../index.js";
+import { NptStatusDto } from "../index.js";
 import { RecurringTaskSettingsDto } from "../index.js";
+import { TaskOwnerDto } from "../index.js";
+import { TaskTagDto } from "../index.js";
+import { TaskTodoDto } from "../index.js";
 
 /**
  * A Npt is a task that does not belong to the project. It is only visible to the person who created it, and the users assigned to it.

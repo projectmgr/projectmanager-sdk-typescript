@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    2026.158.269
+ * @version    2026.161.149
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -24,6 +24,7 @@ import { IntegrationCategoryClient } from "./index.js";
 import { IntegrationProviderClient } from "./index.js";
 import { LicenseClient } from "./index.js";
 import { MeClient } from "./index.js";
+import { MeetingRecurrencyClient } from "./index.js";
 import { MeetingsClient } from "./index.js";
 import { MeetingTagClient } from "./index.js";
 import { MeetingTodosClient } from "./index.js";
@@ -95,7 +96,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "2026.158.269";
+  private readonly version: string = "2026.161.149";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -113,6 +114,7 @@ export class ProjectManagerClient {
   public readonly IntegrationProvider: IntegrationProviderClient;
   public readonly License: LicenseClient;
   public readonly Me: MeClient;
+  public readonly MeetingRecurrency: MeetingRecurrencyClient;
   public readonly Meetings: MeetingsClient;
   public readonly MeetingTag: MeetingTagClient;
   public readonly MeetingTodos: MeetingTodosClient;
@@ -175,6 +177,7 @@ export class ProjectManagerClient {
     this.IntegrationProvider = new IntegrationProviderClient(this);
     this.License = new LicenseClient(this);
     this.Me = new MeClient(this);
+    this.MeetingRecurrency = new MeetingRecurrencyClient(this);
     this.Meetings = new MeetingsClient(this);
     this.MeetingTag = new MeetingTagClient(this);
     this.MeetingTodos = new MeetingTodosClient(this);

@@ -11,11 +11,11 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ResourceApproverDto } from "../index.js";
-import { ResourceTeamDto } from "../index.js";
-import { ResourceSkillDto } from "../index.js";
-import { ResourceWorkingDaysHours } from "../index.js";
 import { IdNameDto } from "../index.js";
+import { ResourceApproverDto } from "../index.js";
+import { ResourceSkillDto } from "../index.js";
+import { ResourceTeamDto } from "../index.js";
+import { ResourceWorkingDaysHours } from "../index.js";
 
 /**
  * An extended view of a Resource returned when retrieving a single Resource.

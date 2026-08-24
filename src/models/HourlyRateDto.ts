@@ -11,10 +11,10 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { TaskProjectDto } from "../index.js";
+import { HourlyRateValueDto } from "../index.js";
 import { PartialResourceDto } from "../index.js";
 import { ResourceSkillDto } from "../index.js";
-import { HourlyRateValueDto } from "../index.js";
+import { TaskProjectDto } from "../index.js";
 
 /**
  * Hourly rate

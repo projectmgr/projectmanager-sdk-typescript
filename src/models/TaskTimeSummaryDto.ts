@@ -11,8 +11,8 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { TaskPlannedResourceTimeDto } from "../index.js";
 import { TaskActualResourceTimeDto } from "../index.js";
+import { TaskPlannedResourceTimeDto } from "../index.js";
 
 /**
  * Task-level planned work (TotalPlannedMinutes from task Work), per-resource assigned

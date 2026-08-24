@@ -11,13 +11,13 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { RiskAssignmentDto } from "../index.js";
-import { TaskTagDto } from "../index.js";
-import { TaskOwnerDto } from "../index.js";
-import { RiskProjectDto } from "../index.js";
 import { DiscussionDataDto } from "../index.js";
 import { FileDataDto } from "../index.js";
 import { RecurringTaskSettingsDto } from "../index.js";
+import { RiskAssignmentDto } from "../index.js";
+import { RiskProjectDto } from "../index.js";
+import { TaskOwnerDto } from "../index.js";
+import { TaskTagDto } from "../index.js";
 
 /**
  * A Risk represents an item of potential impact or uncertainty.

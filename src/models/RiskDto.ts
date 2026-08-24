@@ -12,9 +12,9 @@
  */
 
 import { RiskAssignmentDto } from "../index.js";
-import { TaskTagDto } from "../index.js";
-import { TaskOwnerDto } from "../index.js";
 import { RiskProjectDto } from "../index.js";
+import { TaskOwnerDto } from "../index.js";
+import { TaskTagDto } from "../index.js";
 
 /**
  * Represents a potential threat or uncertainty that could impact a project, system, or process.
