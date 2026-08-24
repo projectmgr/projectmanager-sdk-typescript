@@ -11,25 +11,14 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { RecurrenceDto } from "../index.js";
 
 /**
- * RecurringTaskChangeSetDetails
+ * Request body for updating a holiday. Only the reason can be changed.
  */
-export type RecurringTaskChangeSetDetails = {
+export type HolidayUpdateDto = {
 
   /**
-   * The created Task Ids
+   * Updated reason or label for the holiday.
    */
-  taskIds: string[];
-
-  /**
-   * The ChangeSet Id
-   */
-  changeSetId: string | null;
-
-  /**
-   * The recurrence instances created by this action
-   */
-  recurrences: RecurrenceDto[];
+  reason: string;
 };

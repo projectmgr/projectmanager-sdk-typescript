@@ -11,15 +11,15 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectFolderDto } from "../index.js";
-import { ProjectStatusDto } from "../index.js";
-import { ProjectPriorityDto } from "../index.js";
 import { ProjectChargeCodeDto } from "../index.js";
-import { ProjectManagerDto } from "../index.js";
 import { ProjectCustomerDto } from "../index.js";
-import { ProjectMemberDto } from "../index.js";
 import { ProjectFieldValueDto } from "../index.js";
 import { ProjectFileDto } from "../index.js";
+import { ProjectFolderDto } from "../index.js";
+import { ProjectManagerDto } from "../index.js";
+import { ProjectMemberDto } from "../index.js";
+import { ProjectPriorityDto } from "../index.js";
+import { ProjectStatusDto } from "../index.js";
 import { ProjectWorkingDaysDto } from "../index.js";
 
 /**

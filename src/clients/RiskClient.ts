@@ -14,9 +14,9 @@
 import { ProjectManagerClient } from "../index.js";
 import { AstroResult } from "../index.js";
 import { RiskDto } from "../index.js";
-import { RiskCreateDto } from "../index.js";
 import { RiskDetailsDto } from "../index.js";
 import { RiskUpdateDto } from "../index.js";
+import { RiskCreateDto } from "../index.js";
 import { ExportDto } from "../index.js";
 import { RiskExportSettingsDto } from "../index.js";
 
@@ -28,21 +28,6 @@ export class RiskClient {
    */
   public constructor(client: ProjectManagerClient) {
     this.client = client;
-  }
-
-  /**
-   * Creates a new Risk within the specified Project.
-   *
-   * The Risk will inherit Project context such as access permissions
-   * and workspace ownership. Validation is applied to ensure the
-   * Project exists and the caller has permission to create Risks.
-   *
-   * @param projectId The id of the project
-   * @param body The data used to create the Risk
-   */
-  createProjectRisk(projectId: string, body: RiskCreateDto): Promise<AstroResult<RiskDto>> {
-    const url = `/api/data/projects/${projectId}`;
-    return this.client.request<AstroResult<RiskDto>>("post", url, null, body);
   }
 
   /**
@@ -129,6 +114,21 @@ export class RiskClient {
   getRisksforProject(projectId: string): Promise<AstroResult<RiskDetailsDto[]>> {
     const url = `/api/data/risks/projects/${projectId}`;
     return this.client.request<AstroResult<RiskDetailsDto[]>>("get", url, null, null);
+  }
+
+  /**
+   * Creates a new Risk within the specified Project.
+   *
+   * The Risk will inherit Project context such as access permissions
+   * and workspace ownership. Validation is applied to ensure the
+   * Project exists and the caller has permission to create Risks.
+   *
+   * @param projectId The id of the project
+   * @param body The data used to create the Risk
+   */
+  createRisk(projectId: string, body: RiskCreateDto): Promise<AstroResult<RiskDto>> {
+    const url = `/api/data/projects/${projectId}/risks`;
+    return this.client.request<AstroResult<RiskDto>>("post", url, null, body);
   }
 
   /**

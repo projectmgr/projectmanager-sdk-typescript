@@ -11,11 +11,11 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { TimesheetTaskDto } from "../index.js";
-import { TimeSheetProjectDto } from "../index.js";
-import { TimesheetResourceDto } from "../index.js";
 import { TimesheetAdminTypeDto } from "../index.js";
 import { TimesheetFileDto } from "../index.js";
+import { TimeSheetProjectDto } from "../index.js";
+import { TimesheetResourceDto } from "../index.js";
+import { TimesheetTaskDto } from "../index.js";
 
 /**
  * A Timesheet entry is a single record that contains information about time spent by a person on a task.  Each

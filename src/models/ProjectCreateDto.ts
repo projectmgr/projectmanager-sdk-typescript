@@ -12,8 +12,8 @@
  */
 
 import { ProjectCreateAccessDto } from "../index.js";
-import { TaskStatusCreateDto } from "../index.js";
 import { ProjectWorkingDaysDto } from "../index.js";
+import { TaskStatusCreateDto } from "../index.js";
 
 /**
  * A Project is a collection of Tasks that contributes towards a goal.  Within a Project, Tasks

@@ -11,8 +11,8 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
-import { ProjectFileTaskDto } from "../index.js";
 import { ProjectFileFolderDto } from "../index.js";
+import { ProjectFileTaskDto } from "../index.js";
 
 /**
  * The ProjectFile represents an attached file that is connected to a Project

@@ -11,9 +11,9 @@
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
+import { EntitlementDto } from "../index.js";
 import { WorkSpaceLinksDto } from "../index.js";
 import { WorkSpacePermissionsDto } from "../index.js";
-import { EntitlementDto } from "../index.js";
 
 /**
  * Information about a currently logged in user.
@@ -127,4 +127,9 @@ export type WorkSpaceUserInfoDto = {
    * numeric limit.
    */
   entitlements: EntitlementDto[];
+
+  /**
+   * True if the user signed in via a social provider (Google, Apple, or Microsoft).
+   */
+  isSocial: boolean;
 };

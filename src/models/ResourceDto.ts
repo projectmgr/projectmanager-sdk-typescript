@@ -12,8 +12,8 @@
  */
 
 import { ResourceApproverDto } from "../index.js";
-import { ResourceTeamDto } from "../index.js";
 import { ResourceSkillDto } from "../index.js";
+import { ResourceTeamDto } from "../index.js";
 import { ResourceWorkingDaysHours } from "../index.js";
 
 /**
