@@ -104,7 +104,7 @@ export type UserRolePermissionsDto = {
   changeOwnEmail: UserRolePermissionDto;
 
   /**
-   * Use MCP server and AI integrations via OAuth
+   * Access work from ChatGPT and Claude via OAuth
    */
   useMcp: UserRolePermissionDto;
 };

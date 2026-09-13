@@ -32,6 +32,16 @@ export type TaskOwnerDto = {
   initials: string;
 
   /**
+   * Display name for this Resource.
+   */
+  name: string | null;
+
+  /**
+   * Short display name for this Resource.
+   */
+  shortName: string | null;
+
+  /**
    * The first name of the person Resource.
    *
    * Applies to personnel Resources only.
