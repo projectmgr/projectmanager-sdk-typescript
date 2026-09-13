@@ -108,7 +108,7 @@ export type WorkSpacePermissionsDto = {
   changeOwnEmail: boolean | null;
 
   /**
-   * True if this user can use the MCP server and AI integrations via OAuth
+   * True if this user can access work from ChatGPT and Claude via OAuth
    */
   useMcp: boolean | null;
 };

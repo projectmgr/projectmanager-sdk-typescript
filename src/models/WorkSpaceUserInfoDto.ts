@@ -83,6 +83,16 @@ export type WorkSpaceUserInfoDto = {
   workSpaceStatus: string;
 
   /**
+   * This is pricing type of workspace
+   */
+  workSpacePricingType: number;
+
+  /**
+   * This is true if workspace has scheduled changes
+   */
+  workSpaceHasScheduledChanges: boolean;
+
+  /**
    * This is true if the WorkSpace is in the Active or Trial state.
    */
   workSpaceIsActive: boolean;
@@ -103,19 +113,19 @@ export type WorkSpaceUserInfoDto = {
   workspaceCulture: string;
 
   /**
-   * The culture code used for currency formatting in the workspace.
+   * The currency symbol used for currency formatting in the workspace (e.g., "$" for USD, "€" for EUR).
    */
-  workspaceCurrencyCulture: string;
+  workspaceCurrencySymbol: string;
+
+  /**
+   * The name of the currency used for currency formatting in the workspace (e.g., "USD" for US Dollar, "EUR" for Euro).
+   */
+  workspaceCurrency: string;
 
   /**
    * The culture code (e.g., "en-US") used for formatting and localization for the user.
    */
   userCulture: string;
-
-  /**
-   * The culture code used for currency formatting for the user.
-   */
-  userCurrencyCulture: string;
 
   /**
    * The location of the user, which is a combination of city, state (US Only), and country.
