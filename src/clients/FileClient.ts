@@ -40,7 +40,7 @@ export class FileClient {
    * occurs, you will receive a JSON result with error information.
    *
    * @param documentId The unique identifier of the document to download
-   * @param type If you specify a type of `html`, processes the file using text encoding, otherwise binary
+   * @param type If you specify a type of `html`, processes the file using text encoding. A type of `inline` displays PDF files in the browser. Otherwise, returns a download.
    */
   downloadFile(documentId: string, type?: string): Promise<AstroResult<Blob>> {
     const url = `/api/data/files/${documentId}/download`;
