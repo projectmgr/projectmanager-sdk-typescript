@@ -9,7 +9,7 @@
  * @author     ProjectManager.com <support@projectmanager.com>
  *             
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    2026.162.255
+ * @version    2026.163.302
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -62,6 +62,7 @@ export { TaskClient } from "./clients/TaskClient.js";
 export { TaskAssigneeClient } from "./clients/TaskAssigneeClient.js";
 export { TaskFieldClient } from "./clients/TaskFieldClient.js";
 export { TaskFileClient } from "./clients/TaskFileClient.js";
+export { TaskLinkClient } from "./clients/TaskLinkClient.js";
 export { TaskMetadataClient } from "./clients/TaskMetadataClient.js";
 export { TaskRecurrencyClient } from "./clients/TaskRecurrencyClient.js";
 export { TaskStatusClient } from "./clients/TaskStatusClient.js";
@@ -70,6 +71,7 @@ export { TaskTodoClient } from "./clients/TaskTodoClient.js";
 export { TeamsClient } from "./clients/TeamsClient.js";
 export { TimesheetClient } from "./clients/TimesheetClient.js";
 export { UserRoleClient } from "./clients/UserRoleClient.js";
+export { WorkloadClient } from "./clients/WorkloadClient.js";
 export { WorkSpaceClient } from "./clients/WorkSpaceClient.js";
 
 export { AddProjectTeamMembersRequestDto } from "./models/AddProjectTeamMembersRequestDto.js";
@@ -211,6 +213,9 @@ export { ResourceSkillDto } from "./models/ResourceSkillDto.js";
 export { ResourceTeamDto } from "./models/ResourceTeamDto.js";
 export { ResourceUpdateDto } from "./models/ResourceUpdateDto.js";
 export { ResourceWorkingDaysHours } from "./models/ResourceWorkingDaysHours.js";
+export { ResourceWorkloadAllocationDto } from "./models/ResourceWorkloadAllocationDto.js";
+export { ResourceWorkloadTaskAssignmentDto } from "./models/ResourceWorkloadTaskAssignmentDto.js";
+export { ResourceWorkloadTaskDetailsDto } from "./models/ResourceWorkloadTaskDetailsDto.js";
 export { RiskAssignmentDto } from "./models/RiskAssignmentDto.js";
 export { RiskCreateDto } from "./models/RiskCreateDto.js";
 export { RiskDetailsDto } from "./models/RiskDetailsDto.js";
@@ -241,6 +246,9 @@ export { TaskFieldProjectDto } from "./models/TaskFieldProjectDto.js";
 export { TaskFieldValueDto } from "./models/TaskFieldValueDto.js";
 export { TaskFieldValueTaskDto } from "./models/TaskFieldValueTaskDto.js";
 export { TaskFileDto } from "./models/TaskFileDto.js";
+export { TaskLinkCreateDto } from "./models/TaskLinkCreateDto.js";
+export { TaskLinkDto } from "./models/TaskLinkDto.js";
+export { TaskLinkUpdateDto } from "./models/TaskLinkUpdateDto.js";
 export { TaskMetadataSearchDto } from "./models/TaskMetadataSearchDto.js";
 export { TaskMetadataUpdateDto } from "./models/TaskMetadataUpdateDto.js";
 export { TaskOwnerDto } from "./models/TaskOwnerDto.js";

@@ -8,7 +8,7 @@
  *
  * @author     ProjectManager.com <support@projectmanager.com>
  * @copyright  2023-2026 ProjectManager.com, Inc.
- * @version    2026.162.255
+ * @version    2026.163.302
  * @link       https://github.com/projectmgr/projectmanager-sdk-typescript
  */
 
@@ -59,6 +59,7 @@ import { TaskClient } from "./index.js";
 import { TaskAssigneeClient } from "./index.js";
 import { TaskFieldClient } from "./index.js";
 import { TaskFileClient } from "./index.js";
+import { TaskLinkClient } from "./index.js";
 import { TaskMetadataClient } from "./index.js";
 import { TaskRecurrencyClient } from "./index.js";
 import { TaskStatusClient } from "./index.js";
@@ -67,6 +68,7 @@ import { TaskTodoClient } from "./index.js";
 import { TeamsClient } from "./index.js";
 import { TimesheetClient } from "./index.js";
 import { UserRoleClient } from "./index.js";
+import { WorkloadClient } from "./index.js";
 import { WorkSpaceClient } from "./index.js";
 import { AstroResult } from "./index.js";
 
@@ -96,7 +98,7 @@ export class ProjectManagerClient {
 
   // The URL of the environment we will use
   private readonly serverUrl: string;
-  private readonly version: string = "2026.162.255";
+  private readonly version: string = "2026.163.302";
   private bearerToken: string | null = null;
   private sdkName = "TypeScript";
   private appName: string | null = null;
@@ -149,6 +151,7 @@ export class ProjectManagerClient {
   public readonly TaskAssignee: TaskAssigneeClient;
   public readonly TaskField: TaskFieldClient;
   public readonly TaskFile: TaskFileClient;
+  public readonly TaskLink: TaskLinkClient;
   public readonly TaskMetadata: TaskMetadataClient;
   public readonly TaskRecurrency: TaskRecurrencyClient;
   public readonly TaskStatus: TaskStatusClient;
@@ -157,6 +160,7 @@ export class ProjectManagerClient {
   public readonly Teams: TeamsClient;
   public readonly Timesheet: TimesheetClient;
   public readonly UserRole: UserRoleClient;
+  public readonly Workload: WorkloadClient;
   public readonly WorkSpace: WorkSpaceClient;
 
   /** 
@@ -212,6 +216,7 @@ export class ProjectManagerClient {
     this.TaskAssignee = new TaskAssigneeClient(this);
     this.TaskField = new TaskFieldClient(this);
     this.TaskFile = new TaskFileClient(this);
+    this.TaskLink = new TaskLinkClient(this);
     this.TaskMetadata = new TaskMetadataClient(this);
     this.TaskRecurrency = new TaskRecurrencyClient(this);
     this.TaskStatus = new TaskStatusClient(this);
@@ -220,6 +225,7 @@ export class ProjectManagerClient {
     this.Teams = new TeamsClient(this);
     this.Timesheet = new TimesheetClient(this);
     this.UserRole = new UserRoleClient(this);
+    this.Workload = new WorkloadClient(this);
     this.WorkSpace = new WorkSpaceClient(this);
   }
 
