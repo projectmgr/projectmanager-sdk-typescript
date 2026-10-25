@@ -34,12 +34,12 @@ export type HolidayListItemDto = {
   type: string;
 
   /**
-   * Start of the holiday date span (metadata).
+   * Start of the holiday date span (year-month-day only; no time zone).
    */
   dateFrom: string | null;
 
   /**
-   * End of the holiday date span (metadata).
+   * End of the holiday date span (year-month-day only; no time zone).
    */
   dateTo: string | null;
 

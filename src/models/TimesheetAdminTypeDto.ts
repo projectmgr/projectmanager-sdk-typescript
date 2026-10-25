@@ -26,4 +26,9 @@ export type TimesheetAdminTypeDto = {
    * admin task name
    */
   name: string;
+
+  /**
+   * The integration that created this admin task for its non-project time, such as acumatica
+   */
+  providerShortId: string | null;
 };
