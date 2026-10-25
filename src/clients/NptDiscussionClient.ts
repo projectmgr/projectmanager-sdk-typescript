@@ -54,11 +54,14 @@ export class NptDiscussionClient {
   }
 
   /**
-   * Puts a thumbsup on a comment
+   * Puts a thumbsup on a comment on a non-project task.
+   *
+   * Comments may have reactions, specifically thumbsup reactions, associated with them.  You can add a thumbs-up to
+   * a comment by calling this API.  You can remove the thumbs-up by calling UnlikeNptComment
    *
    * @param commentId the id of the comment
    */
-  likeacomment(commentId: string): Promise<AstroResult<object>> {
+  likeNptComment(commentId: string): Promise<AstroResult<object>> {
     const url = `/api/data/non-project-tasks/comments/${commentId}/like`;
     return this.client.request<AstroResult<object>>("post", url, null, null);
   }
@@ -68,7 +71,7 @@ export class NptDiscussionClient {
    *
    * @param commentId the id of the comment
    */
-  removesathumbsupfromacomment(commentId: string): Promise<AstroResult<object>> {
+  unlikeNptComment(commentId: string): Promise<AstroResult<object>> {
     const url = `/api/data/non-project-tasks/comments/${commentId}/like`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
@@ -78,7 +81,7 @@ export class NptDiscussionClient {
    *
    * @param commentId Remove a comment
    */
-  removeacomment(commentId: string): Promise<AstroResult<object>> {
+  removeComment(commentId: string): Promise<AstroResult<object>> {
     const url = `/api/data/non-project-tasks/comments/${commentId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
   }
