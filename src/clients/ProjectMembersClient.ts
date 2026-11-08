@@ -16,6 +16,7 @@ import { AstroResult } from "../index.js";
 import { ProjectMemberDto } from "../index.js";
 import { ProjectAccessDto } from "../index.js";
 import { ProjectMemberRoleDto } from "../index.js";
+import { AddProjectTeamMembersRequestDto } from "../index.js";
 
 export class ProjectMembersClient {
   private readonly client: ProjectManagerClient;
@@ -40,10 +41,12 @@ export class ProjectMembersClient {
   }
 
   /**
-   * Returns a list of project permissions the user is a member of
+   * Returns a list of projects where the currently authenticated user is a member.
+   *
+   * The information returned by this API indicates the project's ID and the current user's role.
    *
    */
-  retrieveProjectstheuserisamemberof(): Promise<AstroResult<ProjectAccessDto[]>> {
+  retrieveProjectsByUser(): Promise<AstroResult<ProjectAccessDto[]>> {
     const url = `/api/data/projects/membership`;
     return this.client.request<AstroResult<ProjectAccessDto[]>>("get", url, null, null);
   }
@@ -98,7 +101,7 @@ export class ProjectMembersClient {
    * @param userId Reference to User
    * @param body The permission to set. The role is optional.
    */
-  createOrUpdateUserProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<ProjectMemberDto>> {
+  createOrUpdateProjectMembership(projectId: string, userId: string, body: ProjectMemberRoleDto): Promise<AstroResult<ProjectMemberDto>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<ProjectMemberDto>>("put", url, null, body);
   }
@@ -115,5 +118,26 @@ export class ProjectMembersClient {
   removeUserProjectMembership(projectId: string, userId: string): Promise<AstroResult<object>> {
     const url = `/api/data/projects/${projectId}/members/${userId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
+
+  /**
+   * Adds all active people on a business team to a project.
+   *
+   * Resolves the team to its member resources, grants project access to each user who is not already a member,
+   * and leaves existing members unchanged. Access levels follow the same rules as creating or updating
+   * individual project membership (workspace role constraints, guest vs licensed user, global admin, etc.).
+   *
+   * A project member is a user who has access to a specific project.
+   * Project members are assigned a project security role, which controls the level of access they have to
+   * the project.
+   * Possible project security roles include manage, edit, collaborate, creator, and guest.
+   *
+   * @param projectId Reference to the project receiving access.
+   * @param teamId Business team identifier (`BusinessTeamId`); all active team members with a user account are considered.
+   * @param body Optional flags for default access (e.g. editor vs collaborator) for newly added members.
+   */
+  addTeamToProject(projectId: string, teamId: string, body: AddProjectTeamMembersRequestDto): Promise<AstroResult<ProjectMemberDto>> {
+    const url = `/api/data/projects/${projectId}/teams/${teamId}/members`;
+    return this.client.request<AstroResult<ProjectMemberDto>>("post", url, null, body);
   }
 }

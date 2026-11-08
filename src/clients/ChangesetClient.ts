@@ -40,7 +40,7 @@ export class ChangesetClient {
    *
    * @param changeSetId The unique ID number of the Changeset to retrieve
    */
-  retrieveChangesetstatus(changeSetId: string): Promise<AstroResult<ProjectChangeStatusDto>> {
+  retrieveChangeset(changeSetId: string): Promise<AstroResult<ProjectChangeStatusDto>> {
     const url = `/api/data/changesets/${changeSetId}`;
     return this.client.request<AstroResult<ProjectChangeStatusDto>>("get", url, null, null);
   }
@@ -54,8 +54,8 @@ export class ChangesetClient {
    * a Changeset causes a conflict or cannot be applied, it will be rejected.  You can examine a
    * Changeset to determine its conflict resolution status.
    *
-   * When checking the status of a Changeset, you can call either RetrieveChangeset or
-   * RetrieveCompletedChangeset.  Using RetrieveChangeset will give you the immediate status of the
+   * When checking the status of a Changeset, you can call either `RetrieveChangeset` or
+   * `RetrieveCompletedChangeset`.  Using RetrieveChangeset will give you the immediate status of the
    * Changeset.  Using RetrieveCompletedChangeset will delay the response until the Changeset has
    * finished processing.
    *
@@ -66,7 +66,7 @@ export class ChangesetClient {
    *
    * @param changeSetId The unique ID number of the Changeset to retrieve
    */
-  retrieveCompletedChangesetstatus(changeSetId: string): Promise<AstroResult<ProjectChangeStatusDto>> {
+  retrieveCompletedChangeset(changeSetId: string): Promise<AstroResult<ProjectChangeStatusDto>> {
     const url = `/api/data/changesets/${changeSetId}/poll`;
     return this.client.request<AstroResult<ProjectChangeStatusDto>>("get", url, null, null);
   }

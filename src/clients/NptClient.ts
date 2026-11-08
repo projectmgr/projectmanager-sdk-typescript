@@ -17,6 +17,7 @@ import { NptDto } from "../index.js";
 import { NptCreateDto } from "../index.js";
 import { NptDetailsDto } from "../index.js";
 import { NptUpdateDto } from "../index.js";
+import { TaskTimeSummaryDto } from "../index.js";
 
 export class NptClient {
   private readonly client: ProjectManagerClient;
@@ -100,5 +101,21 @@ export class NptClient {
   removeNpt(nptId: string): Promise<AstroResult<object>> {
     const url = `/api/data/non-project-tasks/${nptId}`;
     return this.client.request<AstroResult<object>>("delete", url, null, null);
+  }
+
+  /**
+   * Retrieve allocations and actual timesheet minutes for a non-project task, grouped by resource.
+   *
+   * Returns a summary of planned allocations and logged timesheet minutes for the specified NPT,
+   * grouped by resource. Use this when the client needs time rollups without loading individual
+   * timesheet entries. The root `totalActualMinutes` is at least the task's stored actual work
+   * (minutes) and the merged timesheet total. `hasTimeEntries` is true only when merged timesheet
+   * rows exist, not when actual work was set without timesheets (e.g. import).
+   *
+   * @param nptId The unique identifier of the non-project task
+   */
+  getNptTime(nptId: string): Promise<AstroResult<TaskTimeSummaryDto>> {
+    const url = `/api/data/non-project-tasks/${nptId}/time`;
+    return this.client.request<AstroResult<TaskTimeSummaryDto>>("get", url, null, null);
   }
 }
