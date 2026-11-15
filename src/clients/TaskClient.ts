@@ -19,6 +19,8 @@ import { ChangeSetStatusDto } from "../index.js";
 import { TaskUpdateDto } from "../index.js";
 import { TaskCreateDto } from "../index.js";
 import { TaskPriorityDto } from "../index.js";
+import { TaskApprovalStatusUpdateDto } from "../index.js";
+import { TaskTimeSummaryDto } from "../index.js";
 
 export class TaskClient {
   private readonly client: ProjectManagerClient;
@@ -118,11 +120,11 @@ export class TaskClient {
   }
 
   /**
-   * Fetch the first level child tasks from the task
+   * Fetch the first level child tasks from the task.
    *
    * @param taskId Parent task id
    */
-  fetchthefirstlevelchildtasksfromthetask(taskId: string): Promise<AstroResult<TaskDto[]>> {
+  retrieveFirstLevelChildTasks(taskId: string): Promise<AstroResult<TaskDto[]>> {
     const url = `/api/data/tasks/${taskId}/subtasks`;
     return this.client.request<AstroResult<TaskDto[]>>("get", url, null, null);
   }
@@ -206,14 +208,45 @@ export class TaskClient {
   }
 
   /**
+   * Sets the approval status of an existing Task to either `Approved` or `Denied`.
+   *
+   * Approval status is only supported for project Tasks. Non-project tasks (NPTs) and
+   * non-task task types do not support approval and will return a validation error.
+   *
+   * This operation is processed as a Changeset to ensure sequential application and
+   * concurrency safety.
+   *
+   * @param taskId The unique identifier of the Task to update
+   * @param body The approval status update payload indicating whether the Task is approved or denied.
+   */
+  updateApprovalStatus(taskId: string, body: TaskApprovalStatusUpdateDto): Promise<AstroResult<ChangeSetStatusDto>> {
+    const url = `/api/data/tasks/${taskId}/approval-status`;
+    return this.client.request<AstroResult<ChangeSetStatusDto>>("put", url, null, body);
+  }
+
+  /**
+   * Marks the specified Task as having been 'read' by the current user.
+   *
    * Updates the task user read record (last viewed) for the authenticated user. Use this
    * when the UI only needs to mark file/discussion read state
    * without loading full task details.
    *
    * @param taskId Task unique identifier
    */
-  marktaskasreadforthecurrentuser(taskId: string): Promise<AstroResult<object>> {
+  markTaskRead(taskId: string): Promise<AstroResult<object>> {
     const url = `/api/data/tasks/${taskId}/mark-read`;
     return this.client.request<AstroResult<object>>("post", url, null, null);
+  }
+
+  /**
+   * Returns a summary of planned allocations and logged timesheet minutes for the specified task,
+   * grouped by resource. Use this when the client needs time rollups without loading individual
+   * timesheet entries.
+   *
+   * @param taskId The unique identifier of the task
+   */
+  retrieveTaskTimeAllocations(taskId: string): Promise<AstroResult<TaskTimeSummaryDto>> {
+    const url = `/api/data/task/${taskId}/time`;
+    return this.client.request<AstroResult<TaskTimeSummaryDto>>("get", url, null, null);
   }
 }
