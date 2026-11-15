@@ -25,13 +25,13 @@ export class TeamsClient {
   }
 
   /**
-   * Retrieves zip file for teams integrations.
+   * Retrieves the integration's bundle (a zip file) for teams integrations.
    *
    * The Teams API is intended for use by ProjectManager and its business development partners.  Please
    * contact ProjectManager's sales team to request use of this API.
    *
    */
-  retrievezipfileforTeamsIntegrations(): Promise<AstroResult<Blob>> {
+  retrieveIntegrationBundle(): Promise<AstroResult<Blob>> {
     const url = `/api/data/integrations/teams/application`;
     return this.client.requestBlob("get", url, null, null);
   }
