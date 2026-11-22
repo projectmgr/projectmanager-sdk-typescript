@@ -75,7 +75,7 @@ export type TaskCreateDto = {
   plannedEffort: number | null;
 
   /**
-   * The planned cost for this Task.  Cannot be negative.
+   * The planned cost for this Task.  Cannot be negative or more than 90,000,000,000,000.
    */
   plannedCost: number | null;
 
@@ -85,7 +85,7 @@ export type TaskCreateDto = {
   actualStartDate: string | null;
 
   /**
-   * The actual cost of this Task to date, if known.
+   * The actual cost of this Task to date, if known.  Cannot be negative or more than 90,000,000,000,000.
    */
   actualCost: number | null;
 

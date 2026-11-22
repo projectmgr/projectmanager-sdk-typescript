@@ -91,7 +91,7 @@ export type TaskUpdateDto = {
   plannedEffort: number | null;
 
   /**
-   * The planned cost for this Task.  Cannot be negative.
+   * The planned cost for this Task.  Cannot be negative or more than 90,000,000,000,000.
    */
   plannedCost: number | null;
 
@@ -131,7 +131,8 @@ export type TaskUpdateDto = {
   actualDuration: number | null;
 
   /**
-   * If set, this represents the actual tracked cost for this Task.
+   * If set, this represents the actual tracked cost for this Task.  Cannot be negative or more than
+   * 90,000,000,000,000.
    */
   actualCost: number | null;
 

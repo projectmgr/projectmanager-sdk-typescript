@@ -88,4 +88,16 @@ export type IntegrationProviderDto = {
    * Flag whether user/workspace needs to be setup in Workato
    */
   createInWorkato: boolean;
+
+  /**
+   * For Acumatica/MYOB: which cost types Receive Costs includes (Planned, Committed, Actual).
+   * Null for other providers. Used so the UI can unlock Planned Cost when it is not synced.
+   */
+  includeCosts: string[] | null;
+
+  /**
+   * For Acumatica/MYOB: whether Sync Time Entries sends time (Send) or receives it (Receive).
+   * Null for other providers. Used so the UI can make time read-only when it is received.
+   */
+  timeSyncDirection: string | null;
 };
